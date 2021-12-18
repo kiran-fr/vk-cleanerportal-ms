@@ -1,5 +1,5 @@
 Resources:
-  signUpCustomerServiceRole318FE6E1:
+  UserRegistrationServiceRoleBCB3F31D:
     Type: AWS::IAM::Role
     Properties:
       AssumeRolePolicyDocument:
@@ -16,13 +16,13 @@ Resources:
               - Ref: AWS::Partition
               - :iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
     Metadata:
-      aws:cdk:path: VrishkarServicesStack/signUpCustomer/ServiceRole/Resource
-  signUpCustomer6EE06107:
+      aws:cdk:path: CdkExampleStack/UserRegistration/ServiceRole/Resource
+  UserRegistration1E985772:
     Type: AWS::Lambda::Function
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameters0204bbc81823b4c5f88b9c49b9e2f36afbca2c53ee62a795d26623889ae60f0cS3BucketFD19767C
+          Ref: AssetParameters2997849becde32ad231964628b3a521052db06f444f23dccfcffcc93ee28a43cS3Bucket3C706BA7
         S3Key:
           Fn::Join:
             - ""
@@ -30,45 +30,175 @@ Resources:
                   - 0
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters0204bbc81823b4c5f88b9c49b9e2f36afbca2c53ee62a795d26623889ae60f0cS3VersionKey10CDF0AC
+                      - Ref: AssetParameters2997849becde32ad231964628b3a521052db06f444f23dccfcffcc93ee28a43cS3VersionKey5C44FFA4
               - Fn::Select:
                   - 1
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters0204bbc81823b4c5f88b9c49b9e2f36afbca2c53ee62a795d26623889ae60f0cS3VersionKey10CDF0AC
+                      - Ref: AssetParameters2997849becde32ad231964628b3a521052db06f444f23dccfcffcc93ee28a43cS3VersionKey5C44FFA4
       Role:
         Fn::GetAtt:
-          - signUpCustomerServiceRole318FE6E1
+          - UserRegistrationServiceRoleBCB3F31D
           - Arn
+      FunctionName: UserRegistration
       Handler: index.UserRegistrationHanlder
       MemorySize: 1024
       Runtime: nodejs14.x
-      Timeout: 40
     DependsOn:
-      - signUpCustomerServiceRole318FE6E1
+      - UserRegistrationServiceRoleBCB3F31D
     Metadata:
-      aws:cdk:path: VrishkarServicesStack/signUpCustomer/Resource
+      aws:cdk:path: CdkExampleStack/UserRegistration/Resource
       aws:asset:path: C:\Users\kiran\vrishkar\vk-cleanerportal-ms\functions\UserRegistration
       aws:asset:original-path: C:\Users\kiran\vrishkar\vk-cleanerportal-ms\functions\UserRegistration
       aws:asset:is-bundled: false
       aws:asset:property: Code
+  UserEmailConfirmServiceRole1A79C4F4:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Action: sts:AssumeRole
+            Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+        Version: "2012-10-17"
+      ManagedPolicyArns:
+        - Fn::Join:
+            - ""
+            - - "arn:"
+              - Ref: AWS::Partition
+              - :iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+    Metadata:
+      aws:cdk:path: CdkExampleStack/UserEmailConfirm/ServiceRole/Resource
+  UserEmailConfirmB609801E:
+    Type: AWS::Lambda::Function
+    Properties:
+      Code:
+        S3Bucket:
+          Ref: AssetParameters7345ab6d5cbad35c8b189a8f8503ed8a56c2f6e7f9dabd362663e239403d9883S3Bucket6FE5D86D
+        S3Key:
+          Fn::Join:
+            - ""
+            - - Fn::Select:
+                  - 0
+                  - Fn::Split:
+                      - "||"
+                      - Ref: AssetParameters7345ab6d5cbad35c8b189a8f8503ed8a56c2f6e7f9dabd362663e239403d9883S3VersionKey256A511A
+              - Fn::Select:
+                  - 1
+                  - Fn::Split:
+                      - "||"
+                      - Ref: AssetParameters7345ab6d5cbad35c8b189a8f8503ed8a56c2f6e7f9dabd362663e239403d9883S3VersionKey256A511A
+      Role:
+        Fn::GetAtt:
+          - UserEmailConfirmServiceRole1A79C4F4
+          - Arn
+      Handler: index.handler
+      MemorySize: 1024
+      Runtime: nodejs14.x
+      Timeout: 40
+    DependsOn:
+      - UserEmailConfirmServiceRole1A79C4F4
+    Metadata:
+      aws:cdk:path: CdkExampleStack/UserEmailConfirm/Resource
+      aws:asset:path: C:\Users\kiran\vrishkar\vk-cleanerportal-ms\functions\UserEmailConfirm
+      aws:asset:original-path: C:\Users\kiran\vrishkar\vk-cleanerportal-ms\functions\UserEmailConfirm
+      aws:asset:is-bundled: false
+      aws:asset:property: Code
+  StateMachineRoleB840431D:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Action: sts:AssumeRole
+            Effect: Allow
+            Principal:
+              Service:
+                Fn::Join:
+                  - ""
+                  - - states.
+                    - Ref: AWS::Region
+                    - .amazonaws.com
+        Version: "2012-10-17"
+    Metadata:
+      aws:cdk:path: CdkExampleStack/StateMachine/Role/Resource
+  StateMachineRoleDefaultPolicyDF1E6607:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyDocument:
+        Statement:
+          - Action: lambda:InvokeFunction
+            Effect: Allow
+            Resource:
+              Fn::GetAtt:
+                - UserRegistration1E985772
+                - Arn
+          - Action: lambda:InvokeFunction
+            Effect: Allow
+            Resource:
+              Fn::GetAtt:
+                - UserEmailConfirmB609801E
+                - Arn
+        Version: "2012-10-17"
+      PolicyName: StateMachineRoleDefaultPolicyDF1E6607
+      Roles:
+        - Ref: StateMachineRoleB840431D
+    Metadata:
+      aws:cdk:path: CdkExampleStack/StateMachine/Role/DefaultPolicy/Resource
+  StateMachine2E01A3A5:
+    Type: AWS::StepFunctions::StateMachine
+    Properties:
+      RoleArn:
+        Fn::GetAtt:
+          - StateMachineRoleB840431D
+          - Arn
+      DefinitionString:
+        Fn::Join:
+          - ""
+          - - '{"StartAt":"User Registration","States":{"User Registration":{"Next":"User Email Confirm","Retry":[{"ErrorEquals":["Lambda.ServiceException","Lambda.AWSLambdaException","Lambda.SdkClientException"],"IntervalSeconds":2,"MaxAttempts":6,"BackoffRate":2}],"Type":"Task","OutputPath":"$.Payload","Resource":"arn:'
+            - Ref: AWS::Partition
+            - :states:::lambda:invoke","Parameters":{"FunctionName":"
+            - Fn::GetAtt:
+                - UserRegistration1E985772
+                - Arn
+            - '","Payload.$":"$"}},"User Email Confirm":{"End":true,"Retry":[{"ErrorEquals":["Lambda.ServiceException","Lambda.AWSLambdaException","Lambda.SdkClientException"],"IntervalSeconds":2,"MaxAttempts":6,"BackoffRate":2}],"Type":"Task","OutputPath":"$.Payload","Resource":"arn:'
+            - Ref: AWS::Partition
+            - :states:::lambda:invoke","Parameters":{"FunctionName":"
+            - Fn::GetAtt:
+                - UserEmailConfirmB609801E
+                - Arn
+            - '","Payload.$":"$"}}}}'
+    DependsOn:
+      - StateMachineRoleDefaultPolicyDF1E6607
+      - StateMachineRoleB840431D
+    Metadata:
+      aws:cdk:path: CdkExampleStack/StateMachine/Resource
   CDKMetadata:
     Type: AWS::CDK::Metadata
     Properties:
-      Analytics: v2:deflate64:H4sIAAAAAAAA/01Oyw7CIBD8lt7pVqzxrDXxbOoXrHRt6AMSFvRA+HdLG6Onmck8MhKirPewK0745lJ1Y6WsI4h3j2oUF2vYu6C8uDzNDR3O5Mll0RLb4BRlvqQ67bU1Scj68L8VM4kTzo8OIV6DUTmWO1+ehMYZYmundSpjElyXyEye4Zxh0dAENZJvkBd7e7hay81em/53NKUkjO0IBq5e8giyBlkMrHXpgvF6Jmg3/AAqGKwN+QAAAA==
+      Analytics: v2:deflate64:H4sIAAAAAAAA/11Q0UoDMRD8lr7ntsYTn7WFgqBQzi9Yc9ua5i6R7KYiIf/uJVUsPs0MOzvDroas+1u4WT3gJ3dmdGsTIkF+FTRObYNnicmI2h78HiPOJBSrGIhDioYqX1yjFRt8Ubq/u87KleQJ57cRIe+SN9VWd355URZnyEOYWlTDfZis+WqVjRXFfYfMJAyPFRYNm2QcyQaZFAt9HH7yuBNkx/DcOp/8Obh/hnab0Auad+tb6bUuRV0e0IqWydH6498fyjL3YSQ48fqs70H3oFcntraLyYudCYYLfgMgGOrZWAEAAA==
     Metadata:
-      aws:cdk:path: VrishkarServicesStack/CDKMetadata/Default
+      aws:cdk:path: CdkExampleStack/CDKMetadata/Default
     Condition: CDKMetadataAvailable
 Parameters:
-  AssetParameters0204bbc81823b4c5f88b9c49b9e2f36afbca2c53ee62a795d26623889ae60f0cS3BucketFD19767C:
+  AssetParameters2997849becde32ad231964628b3a521052db06f444f23dccfcffcc93ee28a43cS3Bucket3C706BA7:
     Type: String
-    Description: S3 bucket for asset "0204bbc81823b4c5f88b9c49b9e2f36afbca2c53ee62a795d26623889ae60f0c"
-  AssetParameters0204bbc81823b4c5f88b9c49b9e2f36afbca2c53ee62a795d26623889ae60f0cS3VersionKey10CDF0AC:
+    Description: S3 bucket for asset "2997849becde32ad231964628b3a521052db06f444f23dccfcffcc93ee28a43c"
+  AssetParameters2997849becde32ad231964628b3a521052db06f444f23dccfcffcc93ee28a43cS3VersionKey5C44FFA4:
     Type: String
-    Description: S3 key for asset version "0204bbc81823b4c5f88b9c49b9e2f36afbca2c53ee62a795d26623889ae60f0c"
-  AssetParameters0204bbc81823b4c5f88b9c49b9e2f36afbca2c53ee62a795d26623889ae60f0cArtifactHashFEAF0AD7:
+    Description: S3 key for asset version "2997849becde32ad231964628b3a521052db06f444f23dccfcffcc93ee28a43c"
+  AssetParameters2997849becde32ad231964628b3a521052db06f444f23dccfcffcc93ee28a43cArtifactHashD64A2A82:
     Type: String
-    Description: Artifact hash for asset "0204bbc81823b4c5f88b9c49b9e2f36afbca2c53ee62a795d26623889ae60f0c"
+    Description: Artifact hash for asset "2997849becde32ad231964628b3a521052db06f444f23dccfcffcc93ee28a43c"
+  AssetParameters7345ab6d5cbad35c8b189a8f8503ed8a56c2f6e7f9dabd362663e239403d9883S3Bucket6FE5D86D:
+    Type: String
+    Description: S3 bucket for asset "7345ab6d5cbad35c8b189a8f8503ed8a56c2f6e7f9dabd362663e239403d9883"
+  AssetParameters7345ab6d5cbad35c8b189a8f8503ed8a56c2f6e7f9dabd362663e239403d9883S3VersionKey256A511A:
+    Type: String
+    Description: S3 key for asset version "7345ab6d5cbad35c8b189a8f8503ed8a56c2f6e7f9dabd362663e239403d9883"
+  AssetParameters7345ab6d5cbad35c8b189a8f8503ed8a56c2f6e7f9dabd362663e239403d9883ArtifactHash1202EDF8:
+    Type: String
+    Description: Artifact hash for asset "7345ab6d5cbad35c8b189a8f8503ed8a56c2f6e7f9dabd362663e239403d9883"
 Conditions:
   CDKMetadataAvailable:
     Fn::Or:

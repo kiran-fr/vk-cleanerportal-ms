@@ -6,3 +6,10 @@ export declare const UserRegistrationLambda: () => {
     memorySize: number;
     runtime: lambda.Runtime;
 };
+export declare const UserEmailConfirmLambda: () => {
+    code: lambda.AssetCode;
+    function: string;
+    handler: string;
+    memorySize: number;
+    runtime: lambda.Runtime;
+};

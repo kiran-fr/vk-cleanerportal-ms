@@ -2,7 +2,7 @@ import * as cdk from '@aws-cdk/core';
 // import * as ec2 from '@aws-cdk/aws-ec2';
 // import * as rds from '@aws-cdk/aws-rds';
 import * as lambda from '@aws-cdk/aws-lambda';
-import { UserRegistrationLambda } from './resources/lambda/allLambda';
+import { UserEmailConfirmLambda, UserRegistrationLambda } from './resources/lambda/allLambda';
 import * as sfn from "@aws-cdk/aws-stepfunctions";
 import * as tasks from "@aws-cdk/aws-stepfunctions-tasks";
 
@@ -38,22 +38,24 @@ export class CdkExampleStack extends cdk.Stack {
 
     
     const UserRegistration = new lambda.Function(this,'UserRegistration',UserRegistrationLambda())
+    const UserEmailConfirm = new lambda.Function(this,'UserEmailConfirm',UserEmailConfirmLambda())
 
     const definition = new tasks.LambdaInvoke(this,'User Registration' , {
       lambdaFunction:UserRegistration,
-      outputPath:"$.Scuccess"
+      outputPath:"$.Payload"
     })
-      // .next(
-      //   new tasks.LambdaInvoke(this, "Post Customer", {
-      //     lambdaFunction: postCustomer,
-      //     outputPath: "$.Payload",
-      //   })
-      // );
+      .next(
+        new tasks.LambdaInvoke(this, "User Email Confirm", {
+          lambdaFunction: UserEmailConfirm,
+          outputPath: "$.Payload",
+        })
+      );
 
-    // this.Machine = new sfn.StateMachine(this, "StateMachine", {
-    //   definition,
+    this.Machine = new sfn.StateMachine(this, "StateMachine", {
+      definition,
 
-    // });
+    });
+
 
 
   }
