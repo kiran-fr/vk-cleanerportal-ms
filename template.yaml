@@ -1,5 +1,5 @@
 Resources:
-  signupServiceRole22DA917C:
+  signUpCustomerServiceRole318FE6E1:
     Type: AWS::IAM::Role
     Properties:
       AssumeRolePolicyDocument:
@@ -16,13 +16,13 @@ Resources:
               - Ref: AWS::Partition
               - :iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
     Metadata:
-      aws:cdk:path: VkCleanerportalMsStack/signup/ServiceRole/Resource
-  signup3542BA4E:
+      aws:cdk:path: VrishkarServicesStack/signUpCustomer/ServiceRole/Resource
+  signUpCustomer6EE06107:
     Type: AWS::Lambda::Function
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameters160912c2ec02c01e4cac81aaa236dcd6da233b9cfbb1835a66580ddd3e96c8b6S3Bucket4754CF09
+          Ref: AssetParameters0204bbc81823b4c5f88b9c49b9e2f36afbca2c53ee62a795d26623889ae60f0cS3BucketFD19767C
         S3Key:
           Fn::Join:
             - ""
@@ -30,44 +30,45 @@ Resources:
                   - 0
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters160912c2ec02c01e4cac81aaa236dcd6da233b9cfbb1835a66580ddd3e96c8b6S3VersionKey772C7BF9
+                      - Ref: AssetParameters0204bbc81823b4c5f88b9c49b9e2f36afbca2c53ee62a795d26623889ae60f0cS3VersionKey10CDF0AC
               - Fn::Select:
                   - 1
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters160912c2ec02c01e4cac81aaa236dcd6da233b9cfbb1835a66580ddd3e96c8b6S3VersionKey772C7BF9
+                      - Ref: AssetParameters0204bbc81823b4c5f88b9c49b9e2f36afbca2c53ee62a795d26623889ae60f0cS3VersionKey10CDF0AC
       Role:
         Fn::GetAtt:
-          - signupServiceRole22DA917C
+          - signUpCustomerServiceRole318FE6E1
           - Arn
-      FunctionName: signup
-      Handler: index.handler
+      Handler: index.UserRegistrationHanlder
       MemorySize: 1024
       Runtime: nodejs14.x
+      Timeout: 40
     DependsOn:
-      - signupServiceRole22DA917C
+      - signUpCustomerServiceRole318FE6E1
     Metadata:
-      aws:cdk:path: VkCleanerportalMsStack/signup/Resource
-      aws:asset:path: C:\Users\kiran\vrishkar\vk-cleanerportal-ms\function
+      aws:cdk:path: VrishkarServicesStack/signUpCustomer/Resource
+      aws:asset:path: C:\Users\kiran\vrishkar\vk-cleanerportal-ms\functions\UserRegistration
+      aws:asset:original-path: C:\Users\kiran\vrishkar\vk-cleanerportal-ms\functions\UserRegistration
       aws:asset:is-bundled: false
       aws:asset:property: Code
   CDKMetadata:
     Type: AWS::CDK::Metadata
     Properties:
-      Analytics: v2:deflate64:H4sIAAAAAAAA/zWOwQ7CIBBEv6V3urVp9Kw18WzqF6ywNrQFEhb0QPh3ocbTvNnM7mwP/XCEQ3PGD7dSrV2SzhOkR0C5igszhYKztrO4OsvBRxnE9WXv6NFQIF/NROyil1S5pJQO2tks6sm0oXkqhHSLVtZxzfw5C40G0uS2fbVqFjy0WGsZ9vbiYYxypTAiU87COkWwcPfuT+V36JuFtW59tEEbgumnXwg13o7XAAAA
+      Analytics: v2:deflate64:H4sIAAAAAAAA/01Oyw7CIBD8lt7pVqzxrDXxbOoXrHRt6AMSFvRA+HdLG6Onmck8MhKirPewK0745lJ1Y6WsI4h3j2oUF2vYu6C8uDzNDR3O5Mll0RLb4BRlvqQ67bU1Scj68L8VM4kTzo8OIV6DUTmWO1+ehMYZYmundSpjElyXyEye4Zxh0dAENZJvkBd7e7hay81em/53NKUkjO0IBq5e8giyBlkMrHXpgvF6Jmg3/AAqGKwN+QAAAA==
     Metadata:
-      aws:cdk:path: VkCleanerportalMsStack/CDKMetadata/Default
+      aws:cdk:path: VrishkarServicesStack/CDKMetadata/Default
     Condition: CDKMetadataAvailable
 Parameters:
-  AssetParameters160912c2ec02c01e4cac81aaa236dcd6da233b9cfbb1835a66580ddd3e96c8b6S3Bucket4754CF09:
+  AssetParameters0204bbc81823b4c5f88b9c49b9e2f36afbca2c53ee62a795d26623889ae60f0cS3BucketFD19767C:
     Type: String
-    Description: S3 bucket for asset "160912c2ec02c01e4cac81aaa236dcd6da233b9cfbb1835a66580ddd3e96c8b6"
-  AssetParameters160912c2ec02c01e4cac81aaa236dcd6da233b9cfbb1835a66580ddd3e96c8b6S3VersionKey772C7BF9:
+    Description: S3 bucket for asset "0204bbc81823b4c5f88b9c49b9e2f36afbca2c53ee62a795d26623889ae60f0c"
+  AssetParameters0204bbc81823b4c5f88b9c49b9e2f36afbca2c53ee62a795d26623889ae60f0cS3VersionKey10CDF0AC:
     Type: String
-    Description: S3 key for asset version "160912c2ec02c01e4cac81aaa236dcd6da233b9cfbb1835a66580ddd3e96c8b6"
-  AssetParameters160912c2ec02c01e4cac81aaa236dcd6da233b9cfbb1835a66580ddd3e96c8b6ArtifactHash5751A808:
+    Description: S3 key for asset version "0204bbc81823b4c5f88b9c49b9e2f36afbca2c53ee62a795d26623889ae60f0c"
+  AssetParameters0204bbc81823b4c5f88b9c49b9e2f36afbca2c53ee62a795d26623889ae60f0cArtifactHashFEAF0AD7:
     Type: String
-    Description: Artifact hash for asset "160912c2ec02c01e4cac81aaa236dcd6da233b9cfbb1835a66580ddd3e96c8b6"
+    Description: Artifact hash for asset "0204bbc81823b4c5f88b9c49b9e2f36afbca2c53ee62a795d26623889ae60f0c"
 Conditions:
   CDKMetadataAvailable:
     Fn::Or:

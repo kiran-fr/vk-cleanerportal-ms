@@ -1,0 +1,8 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const UserRegistrationServices_1 = require("./services/UserRegistrationServices");
+exports.UserRegistrationHanlder = async () => {
+    const data = UserRegistrationServices_1.UserRegistrationServices();
+    return data;
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJpbmRleC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLGtGQUE4RTtBQUU5RSxPQUFPLENBQUMsdUJBQXVCLEdBQUcsS0FBSyxJQUFHLEVBQUU7SUFDekMsTUFBTSxJQUFJLEdBQUcsbURBQXdCLEVBQUUsQ0FBQTtJQUN2QyxPQUFPLElBQUksQ0FBQTtBQUNkLENBQUMsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IFVzZXJSZWdpc3RyYXRpb25TZXJ2aWNlcyB9IGZyb20gXCIuL3NlcnZpY2VzL1VzZXJSZWdpc3RyYXRpb25TZXJ2aWNlc1wiXHJcblxyXG5leHBvcnRzLlVzZXJSZWdpc3RyYXRpb25IYW5sZGVyID0gYXN5bmMoKSA9PntcclxuICAgY29uc3QgZGF0YSA9IFVzZXJSZWdpc3RyYXRpb25TZXJ2aWNlcygpXHJcbiAgIHJldHVybiBkYXRhXHJcbn0iXX0=

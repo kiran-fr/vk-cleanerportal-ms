@@ -1,13 +1,23 @@
+import * as cdk from '@aws-cdk/core';
+// import * as sqs from '@aws-cdk/aws-sqs';
+import * as lambda from '@aws-cdk/aws-lambda';
 
-import * as lambda from "@aws-cdk/aws-lambda"
-// import {} from "../../../function/services/singUp"
 
-export const signUpLambda = () =>{
-    return {
-        code:lambda.Code.fromAsset('./function'),
-        functionName:'signup',
-        handler:'index.handler',
-        memorySize:1024,
-        runtime:lambda.Runtime.NODEJS_14_X
-    }
+export const UserRegistrationLambda = () =>{
+  return {
+    code:lambda.Code.fromAsset('./functions/UserRegistration'),
+    functionName:'UserRegistration',
+    handler:'index.UserRegistrationHanlder',
+    memorySize:1024,
+    runtime:lambda.Runtime.NODEJS_14_X,
+    // timeout:cdk.Duration.seconds(30000)
+  }
 }
+
+// export const UserEmailConfirmLambda = () =>{
+//   return {
+//     code:lambda.Code.fromAsset('./functions/UserEmailConfirm'),
+//     function:'UserEmailConfirm',
+//     handler:
+//   }
+// }
