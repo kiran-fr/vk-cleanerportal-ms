@@ -1,3 +1,4 @@
+import * as cdk from '@aws-cdk/core';
 import * as lambda from '@aws-cdk/aws-lambda';
 export declare const UserRegistrationLambda: () => {
     code: lambda.AssetCode;
@@ -5,6 +6,7 @@ export declare const UserRegistrationLambda: () => {
     handler: string;
     memorySize: number;
     runtime: lambda.Runtime;
+    timeout: cdk.Duration;
 };
 export declare const UserEmailConfirmLambda: () => {
     code: lambda.AssetCode;
@@ -12,4 +14,5 @@ export declare const UserEmailConfirmLambda: () => {
     handler: string;
     memorySize: number;
     runtime: lambda.Runtime;
+    timeout: cdk.Duration;
 };
