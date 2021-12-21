@@ -6,7 +6,10 @@
 # Node artifact files
 node_modules/
 dist/
+bin/
+test/
 
+**/test
 # Ignore node_modules
 **/node_modules
 
