@@ -44,6 +44,7 @@ Resources:
       Handler: index.UserRegistrationHanlder
       MemorySize: 1024
       Runtime: nodejs14.x
+      Timeout: 40
     DependsOn:
       - UserRegistrationServiceRoleBCB3F31D
     Metadata:

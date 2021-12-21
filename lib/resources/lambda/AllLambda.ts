@@ -13,13 +13,3 @@ export const UserRegistrationLambda = () =>{
     // timeout:cdk.Duration.seconds(30000)
   }
 }
-
-export const UserEmailConfirmLambda = () =>{
-  return {
-    code:lambda.Code.fromAsset('./functions/UserEmailConfirm'),
-    function:'UserEmailConfirm',
-    handler:'index.handler',
-    memorySize:1024,
-    runtime:lambda.Runtime.NODEJS_14_X
-  }
-}
