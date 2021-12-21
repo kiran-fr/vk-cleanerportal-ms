@@ -1,0 +1,17 @@
+{
+  "headers": {
+    "Content-Type": "application/json",
+    "userId": "1"
+  },
+  "body": {
+    "cognito_userid": 15,
+    "first_name": "venki",
+    "last_name": "venki",
+    "email": "venki@gmail.com",
+    "phone": "7518625399",
+    "date_of_birth": "1988-05-12"
+  },
+  "queryStringParameters": {
+    "userId": "1"
+  }
+}

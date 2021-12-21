@@ -22,7 +22,7 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameters2997849becde32ad231964628b3a521052db06f444f23dccfcffcc93ee28a43cS3Bucket3C706BA7
+          Ref: AssetParametersc393f72db6078f2a02bf0b6a79ec5cbacd960fda5947e8deac6b95a3103b797bS3BucketE08CABFC
         S3Key:
           Fn::Join:
             - ""
@@ -30,12 +30,12 @@ Resources:
                   - 0
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters2997849becde32ad231964628b3a521052db06f444f23dccfcffcc93ee28a43cS3VersionKey5C44FFA4
+                      - Ref: AssetParametersc393f72db6078f2a02bf0b6a79ec5cbacd960fda5947e8deac6b95a3103b797bS3VersionKeyC7240C16
               - Fn::Select:
                   - 1
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters2997849becde32ad231964628b3a521052db06f444f23dccfcffcc93ee28a43cS3VersionKey5C44FFA4
+                      - Ref: AssetParametersc393f72db6078f2a02bf0b6a79ec5cbacd960fda5947e8deac6b95a3103b797bS3VersionKeyC7240C16
       Role:
         Fn::GetAtt:
           - UserRegistrationServiceRoleBCB3F31D
@@ -44,162 +44,32 @@ Resources:
       Handler: index.UserRegistrationHanlder
       MemorySize: 1024
       Runtime: nodejs14.x
-      Timeout: 40
+      Timeout: 15
     DependsOn:
       - UserRegistrationServiceRoleBCB3F31D
     Metadata:
       aws:cdk:path: CdkExampleStack/UserRegistration/Resource
-      aws:asset:path: C:\Users\kiran\vrishkar\vk-cleanerportal-ms\functions\UserRegistration
-      aws:asset:original-path: C:\Users\kiran\vrishkar\vk-cleanerportal-ms\functions\UserRegistration
+      aws:asset:path: /Users/ramya/Desktop/vrishkarprojects/vk-cleanerportal-ms/functions/UserRegistration
+      aws:asset:original-path: /Users/ramya/Desktop/vrishkarprojects/vk-cleanerportal-ms/functions/UserRegistration
       aws:asset:is-bundled: false
       aws:asset:property: Code
-  UserEmailConfirmServiceRole1A79C4F4:
-    Type: AWS::IAM::Role
-    Properties:
-      AssumeRolePolicyDocument:
-        Statement:
-          - Action: sts:AssumeRole
-            Effect: Allow
-            Principal:
-              Service: lambda.amazonaws.com
-        Version: "2012-10-17"
-      ManagedPolicyArns:
-        - Fn::Join:
-            - ""
-            - - "arn:"
-              - Ref: AWS::Partition
-              - :iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
-    Metadata:
-      aws:cdk:path: CdkExampleStack/UserEmailConfirm/ServiceRole/Resource
-  UserEmailConfirmB609801E:
-    Type: AWS::Lambda::Function
-    Properties:
-      Code:
-        S3Bucket:
-          Ref: AssetParameters7345ab6d5cbad35c8b189a8f8503ed8a56c2f6e7f9dabd362663e239403d9883S3Bucket6FE5D86D
-        S3Key:
-          Fn::Join:
-            - ""
-            - - Fn::Select:
-                  - 0
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParameters7345ab6d5cbad35c8b189a8f8503ed8a56c2f6e7f9dabd362663e239403d9883S3VersionKey256A511A
-              - Fn::Select:
-                  - 1
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParameters7345ab6d5cbad35c8b189a8f8503ed8a56c2f6e7f9dabd362663e239403d9883S3VersionKey256A511A
-      Role:
-        Fn::GetAtt:
-          - UserEmailConfirmServiceRole1A79C4F4
-          - Arn
-      Handler: index.handler
-      MemorySize: 1024
-      Runtime: nodejs14.x
-      Timeout: 40
-    DependsOn:
-      - UserEmailConfirmServiceRole1A79C4F4
-    Metadata:
-      aws:cdk:path: CdkExampleStack/UserEmailConfirm/Resource
-      aws:asset:path: C:\Users\kiran\vrishkar\vk-cleanerportal-ms\functions\UserEmailConfirm
-      aws:asset:original-path: C:\Users\kiran\vrishkar\vk-cleanerportal-ms\functions\UserEmailConfirm
-      aws:asset:is-bundled: false
-      aws:asset:property: Code
-  StateMachineRoleB840431D:
-    Type: AWS::IAM::Role
-    Properties:
-      AssumeRolePolicyDocument:
-        Statement:
-          - Action: sts:AssumeRole
-            Effect: Allow
-            Principal:
-              Service:
-                Fn::Join:
-                  - ""
-                  - - states.
-                    - Ref: AWS::Region
-                    - .amazonaws.com
-        Version: "2012-10-17"
-    Metadata:
-      aws:cdk:path: CdkExampleStack/StateMachine/Role/Resource
-  StateMachineRoleDefaultPolicyDF1E6607:
-    Type: AWS::IAM::Policy
-    Properties:
-      PolicyDocument:
-        Statement:
-          - Action: lambda:InvokeFunction
-            Effect: Allow
-            Resource:
-              Fn::GetAtt:
-                - UserRegistration1E985772
-                - Arn
-          - Action: lambda:InvokeFunction
-            Effect: Allow
-            Resource:
-              Fn::GetAtt:
-                - UserEmailConfirmB609801E
-                - Arn
-        Version: "2012-10-17"
-      PolicyName: StateMachineRoleDefaultPolicyDF1E6607
-      Roles:
-        - Ref: StateMachineRoleB840431D
-    Metadata:
-      aws:cdk:path: CdkExampleStack/StateMachine/Role/DefaultPolicy/Resource
-  StateMachine2E01A3A5:
-    Type: AWS::StepFunctions::StateMachine
-    Properties:
-      RoleArn:
-        Fn::GetAtt:
-          - StateMachineRoleB840431D
-          - Arn
-      DefinitionString:
-        Fn::Join:
-          - ""
-          - - '{"StartAt":"User Registration","States":{"User Registration":{"Next":"User Email Confirm","Retry":[{"ErrorEquals":["Lambda.ServiceException","Lambda.AWSLambdaException","Lambda.SdkClientException"],"IntervalSeconds":2,"MaxAttempts":6,"BackoffRate":2}],"Type":"Task","OutputPath":"$.Payload","Resource":"arn:'
-            - Ref: AWS::Partition
-            - :states:::lambda:invoke","Parameters":{"FunctionName":"
-            - Fn::GetAtt:
-                - UserRegistration1E985772
-                - Arn
-            - '","Payload.$":"$"}},"User Email Confirm":{"End":true,"Retry":[{"ErrorEquals":["Lambda.ServiceException","Lambda.AWSLambdaException","Lambda.SdkClientException"],"IntervalSeconds":2,"MaxAttempts":6,"BackoffRate":2}],"Type":"Task","OutputPath":"$.Payload","Resource":"arn:'
-            - Ref: AWS::Partition
-            - :states:::lambda:invoke","Parameters":{"FunctionName":"
-            - Fn::GetAtt:
-                - UserEmailConfirmB609801E
-                - Arn
-            - '","Payload.$":"$"}}}}'
-    DependsOn:
-      - StateMachineRoleDefaultPolicyDF1E6607
-      - StateMachineRoleB840431D
-    Metadata:
-      aws:cdk:path: CdkExampleStack/StateMachine/Resource
   CDKMetadata:
     Type: AWS::CDK::Metadata
     Properties:
-      Analytics: v2:deflate64:H4sIAAAAAAAA/11Q0UoDMRD8lr7ntsYTn7WFgqBQzi9Yc9ua5i6R7KYiIf/uJVUsPs0MOzvDroas+1u4WT3gJ3dmdGsTIkF+FTRObYNnicmI2h78HiPOJBSrGIhDioYqX1yjFRt8Ubq/u87KleQJ57cRIe+SN9VWd355URZnyEOYWlTDfZis+WqVjRXFfYfMJAyPFRYNm2QcyQaZFAt9HH7yuBNkx/DcOp/8Obh/hnab0Auad+tb6bUuRV0e0IqWydH6498fyjL3YSQ48fqs70H3oFcntraLyYudCYYLfgMgGOrZWAEAAA==
+      Analytics: v2:deflate64:H4sIAAAAAAAA/zWNzQoCMQyEn8V7N1pWPPsDguBB1ieI3Si1bitNqofSd3e76mm+CTMZDbpdwmK2xjc3pnfzbEIkyGdB49SGmWTEm/U3tQueJSYjanf1J4w4kFCspiMOKRqqPKZ6Kzb4ourL/MDh0iPkffKmnmvmz0VZHCB34TFVqxbFbYN1lmFaHz1sk3EkW2RSLPS8/urcCLJjOE4TB/8KjkpRPvQEd56/9BL0CvTsztY2MXmxA0H31Q+vs7K7+AAAAA==
     Metadata:
       aws:cdk:path: CdkExampleStack/CDKMetadata/Default
     Condition: CDKMetadataAvailable
 Parameters:
-  AssetParameters2997849becde32ad231964628b3a521052db06f444f23dccfcffcc93ee28a43cS3Bucket3C706BA7:
+  AssetParametersc393f72db6078f2a02bf0b6a79ec5cbacd960fda5947e8deac6b95a3103b797bS3BucketE08CABFC:
     Type: String
-    Description: S3 bucket for asset "2997849becde32ad231964628b3a521052db06f444f23dccfcffcc93ee28a43c"
-  AssetParameters2997849becde32ad231964628b3a521052db06f444f23dccfcffcc93ee28a43cS3VersionKey5C44FFA4:
+    Description: S3 bucket for asset "c393f72db6078f2a02bf0b6a79ec5cbacd960fda5947e8deac6b95a3103b797b"
+  AssetParametersc393f72db6078f2a02bf0b6a79ec5cbacd960fda5947e8deac6b95a3103b797bS3VersionKeyC7240C16:
     Type: String
-    Description: S3 key for asset version "2997849becde32ad231964628b3a521052db06f444f23dccfcffcc93ee28a43c"
-  AssetParameters2997849becde32ad231964628b3a521052db06f444f23dccfcffcc93ee28a43cArtifactHashD64A2A82:
+    Description: S3 key for asset version "c393f72db6078f2a02bf0b6a79ec5cbacd960fda5947e8deac6b95a3103b797b"
+  AssetParametersc393f72db6078f2a02bf0b6a79ec5cbacd960fda5947e8deac6b95a3103b797bArtifactHashC7737E9D:
     Type: String
-    Description: Artifact hash for asset "2997849becde32ad231964628b3a521052db06f444f23dccfcffcc93ee28a43c"
-  AssetParameters7345ab6d5cbad35c8b189a8f8503ed8a56c2f6e7f9dabd362663e239403d9883S3Bucket6FE5D86D:
-    Type: String
-    Description: S3 bucket for asset "7345ab6d5cbad35c8b189a8f8503ed8a56c2f6e7f9dabd362663e239403d9883"
-  AssetParameters7345ab6d5cbad35c8b189a8f8503ed8a56c2f6e7f9dabd362663e239403d9883S3VersionKey256A511A:
-    Type: String
-    Description: S3 key for asset version "7345ab6d5cbad35c8b189a8f8503ed8a56c2f6e7f9dabd362663e239403d9883"
-  AssetParameters7345ab6d5cbad35c8b189a8f8503ed8a56c2f6e7f9dabd362663e239403d9883ArtifactHash1202EDF8:
-    Type: String
-    Description: Artifact hash for asset "7345ab6d5cbad35c8b189a8f8503ed8a56c2f6e7f9dabd362663e239403d9883"
+    Description: Artifact hash for asset "c393f72db6078f2a02bf0b6a79ec5cbacd960fda5947e8deac6b95a3103b797b"
 Conditions:
   CDKMetadataAvailable:
     Fn::Or:
