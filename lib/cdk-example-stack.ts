@@ -11,31 +11,6 @@ export class CdkExampleStack extends cdk.Stack {
   public Machine: sfn.StateMachine;
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
-    // example resource
-    // const queue = new sqs.Queue(this, 'CdkExampleQueue', {
-    //   visibilityTimeout: cdk.Duration.seconds(300)
-    // });
-
-    // const getCustomer = new lambda.Function(this, 'getcustomer', getCustomerLambda());
-    // const postCustomer = new lambda.Function(this, 'postcustomer', postCustomerLambda());
-    
-    // const definition = new tasks.LambdaInvoke(this, "Get Customer", {
-    //   lambdaFunction: getCustomer,
-    //   outputPath: "$.Payload",
-    // })
-
-    //   .next(
-    //     new tasks.LambdaInvoke(this, "Post Customer", {
-    //       lambdaFunction: postCustomer,
-    //       outputPath: "$.Payload",
-    //     })
-    //   );
-
-    // this.Machine = new sfn.StateMachine(this, "StateMachine", {
-    //   definition,
-
-    // });
-
     
     const userRegistration = new lambda.Function(this,'UserRegistration',UserRegistrationLambda())
     // const UserEmailConfirm = new lambda.Function(this,'UserEmailConfirm',UserEmailConfirmLambda())

@@ -20,3 +20,4 @@ https://tlakomy.com/run-cdk-lambda-function-locally
 npm run build
 cdk synth --no-staging > template.yaml 
 sam local invoke getcustomer --no-event
+sam local invoke UserRegistration -e  functions/UserRegistration/mock.json
