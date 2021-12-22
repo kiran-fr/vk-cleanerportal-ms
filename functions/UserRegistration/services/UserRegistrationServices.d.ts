@@ -1,1 +1,1 @@
-export declare const UserRegistrationServices: (event: any) => Promise<[number, number]>;
+export declare const UserRegistrationServices: (userAttributes: any) => Promise<[number, number]>;
