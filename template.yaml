@@ -22,7 +22,7 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParametersc393f72db6078f2a02bf0b6a79ec5cbacd960fda5947e8deac6b95a3103b797bS3BucketE08CABFC
+          Ref: AssetParametersfb01db6c2b66fc4f1c0f976906951be96257604f455ac54646793fbd521802e6S3BucketE310D95E
         S3Key:
           Fn::Join:
             - ""
@@ -30,12 +30,12 @@ Resources:
                   - 0
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParametersc393f72db6078f2a02bf0b6a79ec5cbacd960fda5947e8deac6b95a3103b797bS3VersionKeyC7240C16
+                      - Ref: AssetParametersfb01db6c2b66fc4f1c0f976906951be96257604f455ac54646793fbd521802e6S3VersionKeyEF042E5C
               - Fn::Select:
                   - 1
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParametersc393f72db6078f2a02bf0b6a79ec5cbacd960fda5947e8deac6b95a3103b797bS3VersionKeyC7240C16
+                      - Ref: AssetParametersfb01db6c2b66fc4f1c0f976906951be96257604f455ac54646793fbd521802e6S3VersionKeyEF042E5C
       Role:
         Fn::GetAtt:
           - UserRegistrationServiceRoleBCB3F31D
@@ -49,27 +49,27 @@ Resources:
       - UserRegistrationServiceRoleBCB3F31D
     Metadata:
       aws:cdk:path: CdkExampleStack/UserRegistration/Resource
-      aws:asset:path: /Users/ramya/Desktop/vrishkarprojects/vk-cleanerportal-ms/functions/UserRegistration
-      aws:asset:original-path: /Users/ramya/Desktop/vrishkarprojects/vk-cleanerportal-ms/functions/UserRegistration
+      aws:asset:path: C:\Users\kiran\vrishkar\vk-cleanerportal-ms\functions\UserRegistration
+      aws:asset:original-path: C:\Users\kiran\vrishkar\vk-cleanerportal-ms\functions\UserRegistration
       aws:asset:is-bundled: false
       aws:asset:property: Code
   CDKMetadata:
     Type: AWS::CDK::Metadata
     Properties:
-      Analytics: v2:deflate64:H4sIAAAAAAAA/zWNzQoCMQyEn8V7N1pWPPsDguBB1ieI3Si1bitNqofSd3e76mm+CTMZDbpdwmK2xjc3pnfzbEIkyGdB49SGmWTEm/U3tQueJSYjanf1J4w4kFCspiMOKRqqPKZ6Kzb4ourL/MDh0iPkffKmnmvmz0VZHCB34TFVqxbFbYN1lmFaHz1sk3EkW2RSLPS8/urcCLJjOE4TB/8KjkpRPvQEd56/9BL0CvTsztY2MXmxA0H31Q+vs7K7+AAAAA==
+      Analytics: v2:deflate64:H4sIAAAAAAAA/zVPyw7CMAz7lt27wDTEmYeEhMQBjS8IXYZKWYuaFA5V/511wMl2ZMdyA027gmW1wTfXureLpH0gSBdBbdWWmWSiN+Nuau8dS4ha1H5wZww4klAooiP2MWgqfHL1Rox3WZWX6YHjtUdIh+h0ORfPn2dlcITU+cccLZgVtzWWWoa5fdKwi9qS7JBJsdBz+MW5FmTLcJorju7lLeWsnO8J7rx4NetpHDTVnY2pQ3RiRoLuix9VfomO+AAAAA==
     Metadata:
       aws:cdk:path: CdkExampleStack/CDKMetadata/Default
     Condition: CDKMetadataAvailable
 Parameters:
-  AssetParametersc393f72db6078f2a02bf0b6a79ec5cbacd960fda5947e8deac6b95a3103b797bS3BucketE08CABFC:
+  AssetParametersfb01db6c2b66fc4f1c0f976906951be96257604f455ac54646793fbd521802e6S3BucketE310D95E:
     Type: String
-    Description: S3 bucket for asset "c393f72db6078f2a02bf0b6a79ec5cbacd960fda5947e8deac6b95a3103b797b"
-  AssetParametersc393f72db6078f2a02bf0b6a79ec5cbacd960fda5947e8deac6b95a3103b797bS3VersionKeyC7240C16:
+    Description: S3 bucket for asset "fb01db6c2b66fc4f1c0f976906951be96257604f455ac54646793fbd521802e6"
+  AssetParametersfb01db6c2b66fc4f1c0f976906951be96257604f455ac54646793fbd521802e6S3VersionKeyEF042E5C:
     Type: String
-    Description: S3 key for asset version "c393f72db6078f2a02bf0b6a79ec5cbacd960fda5947e8deac6b95a3103b797b"
-  AssetParametersc393f72db6078f2a02bf0b6a79ec5cbacd960fda5947e8deac6b95a3103b797bArtifactHashC7737E9D:
+    Description: S3 key for asset version "fb01db6c2b66fc4f1c0f976906951be96257604f455ac54646793fbd521802e6"
+  AssetParametersfb01db6c2b66fc4f1c0f976906951be96257604f455ac54646793fbd521802e6ArtifactHash25DBCE2D:
     Type: String
-    Description: Artifact hash for asset "c393f72db6078f2a02bf0b6a79ec5cbacd960fda5947e8deac6b95a3103b797b"
+    Description: Artifact hash for asset "fb01db6c2b66fc4f1c0f976906951be96257604f455ac54646793fbd521802e6"
 Conditions:
   CDKMetadataAvailable:
     Fn::Or:
