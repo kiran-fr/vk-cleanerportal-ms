@@ -22,7 +22,7 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParametersfb01db6c2b66fc4f1c0f976906951be96257604f455ac54646793fbd521802e6S3BucketE310D95E
+          Ref: AssetParameters871d8a0e245ce0456380add64ddf79381625794913bfa6324bfb9306ecae22b8S3BucketCCE49326
         S3Key:
           Fn::Join:
             - ""
@@ -30,12 +30,12 @@ Resources:
                   - 0
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParametersfb01db6c2b66fc4f1c0f976906951be96257604f455ac54646793fbd521802e6S3VersionKeyEF042E5C
+                      - Ref: AssetParameters871d8a0e245ce0456380add64ddf79381625794913bfa6324bfb9306ecae22b8S3VersionKey629B0F22
               - Fn::Select:
                   - 1
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParametersfb01db6c2b66fc4f1c0f976906951be96257604f455ac54646793fbd521802e6S3VersionKeyEF042E5C
+                      - Ref: AssetParameters871d8a0e245ce0456380add64ddf79381625794913bfa6324bfb9306ecae22b8S3VersionKey629B0F22
       Role:
         Fn::GetAtt:
           - UserRegistrationServiceRoleBCB3F31D
@@ -53,6 +53,60 @@ Resources:
       aws:asset:original-path: C:\Users\kiran\vrishkar\vk-cleanerportal-ms\functions\UserRegistration
       aws:asset:is-bundled: false
       aws:asset:property: Code
+  UserEmailConfirmServiceRole1A79C4F4:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Action: sts:AssumeRole
+            Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+        Version: "2012-10-17"
+      ManagedPolicyArns:
+        - Fn::Join:
+            - ""
+            - - "arn:"
+              - Ref: AWS::Partition
+              - :iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+    Metadata:
+      aws:cdk:path: CdkExampleStack/UserEmailConfirm/ServiceRole/Resource
+  UserEmailConfirmB609801E:
+    Type: AWS::Lambda::Function
+    Properties:
+      Code:
+        S3Bucket:
+          Ref: AssetParameters3440e629ea943f88c44eddd2b9a8117fff42e2da58be70283b92a8b6bc3936dcS3BucketB445C7BA
+        S3Key:
+          Fn::Join:
+            - ""
+            - - Fn::Select:
+                  - 0
+                  - Fn::Split:
+                      - "||"
+                      - Ref: AssetParameters3440e629ea943f88c44eddd2b9a8117fff42e2da58be70283b92a8b6bc3936dcS3VersionKeyC6C7AD94
+              - Fn::Select:
+                  - 1
+                  - Fn::Split:
+                      - "||"
+                      - Ref: AssetParameters3440e629ea943f88c44eddd2b9a8117fff42e2da58be70283b92a8b6bc3936dcS3VersionKeyC6C7AD94
+      Role:
+        Fn::GetAtt:
+          - UserEmailConfirmServiceRole1A79C4F4
+          - Arn
+      FunctionName: userEmail
+      Handler: index.handler
+      MemorySize: 1024
+      Runtime: nodejs14.x
+      Timeout: 15
+    DependsOn:
+      - UserEmailConfirmServiceRole1A79C4F4
+    Metadata:
+      aws:cdk:path: CdkExampleStack/UserEmailConfirm/Resource
+      aws:asset:path: C:\Users\kiran\vrishkar\vk-cleanerportal-ms\functions\UserEmailConfirm
+      aws:asset:original-path: C:\Users\kiran\vrishkar\vk-cleanerportal-ms\functions\UserEmailConfirm
+      aws:asset:is-bundled: false
+      aws:asset:property: Code
   CDKMetadata:
     Type: AWS::CDK::Metadata
     Properties:
@@ -61,15 +115,24 @@ Resources:
       aws:cdk:path: CdkExampleStack/CDKMetadata/Default
     Condition: CDKMetadataAvailable
 Parameters:
-  AssetParametersfb01db6c2b66fc4f1c0f976906951be96257604f455ac54646793fbd521802e6S3BucketE310D95E:
+  AssetParameters871d8a0e245ce0456380add64ddf79381625794913bfa6324bfb9306ecae22b8S3BucketCCE49326:
     Type: String
-    Description: S3 bucket for asset "fb01db6c2b66fc4f1c0f976906951be96257604f455ac54646793fbd521802e6"
-  AssetParametersfb01db6c2b66fc4f1c0f976906951be96257604f455ac54646793fbd521802e6S3VersionKeyEF042E5C:
+    Description: S3 bucket for asset "871d8a0e245ce0456380add64ddf79381625794913bfa6324bfb9306ecae22b8"
+  AssetParameters871d8a0e245ce0456380add64ddf79381625794913bfa6324bfb9306ecae22b8S3VersionKey629B0F22:
     Type: String
-    Description: S3 key for asset version "fb01db6c2b66fc4f1c0f976906951be96257604f455ac54646793fbd521802e6"
-  AssetParametersfb01db6c2b66fc4f1c0f976906951be96257604f455ac54646793fbd521802e6ArtifactHash25DBCE2D:
+    Description: S3 key for asset version "871d8a0e245ce0456380add64ddf79381625794913bfa6324bfb9306ecae22b8"
+  AssetParameters871d8a0e245ce0456380add64ddf79381625794913bfa6324bfb9306ecae22b8ArtifactHash4F4844E7:
     Type: String
-    Description: Artifact hash for asset "fb01db6c2b66fc4f1c0f976906951be96257604f455ac54646793fbd521802e6"
+    Description: Artifact hash for asset "871d8a0e245ce0456380add64ddf79381625794913bfa6324bfb9306ecae22b8"
+  AssetParameters3440e629ea943f88c44eddd2b9a8117fff42e2da58be70283b92a8b6bc3936dcS3BucketB445C7BA:
+    Type: String
+    Description: S3 bucket for asset "3440e629ea943f88c44eddd2b9a8117fff42e2da58be70283b92a8b6bc3936dc"
+  AssetParameters3440e629ea943f88c44eddd2b9a8117fff42e2da58be70283b92a8b6bc3936dcS3VersionKeyC6C7AD94:
+    Type: String
+    Description: S3 key for asset version "3440e629ea943f88c44eddd2b9a8117fff42e2da58be70283b92a8b6bc3936dc"
+  AssetParameters3440e629ea943f88c44eddd2b9a8117fff42e2da58be70283b92a8b6bc3936dcArtifactHashC6CA463A:
+    Type: String
+    Description: Artifact hash for asset "3440e629ea943f88c44eddd2b9a8117fff42e2da58be70283b92a8b6bc3936dc"
 Conditions:
   CDKMetadataAvailable:
     Fn::Or:

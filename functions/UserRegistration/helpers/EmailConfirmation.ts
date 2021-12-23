@@ -1,7 +1,7 @@
 var aws = require("aws-sdk");
 var ses = new aws.SES({ region: "us-east-1" });
 
-export const EmailConfirmation = (toAddress:any) =>{
+export const EmailConfirmation= (toAddress:any) =>{
     
         const params = {
             Destination: {
@@ -14,7 +14,7 @@ export const EmailConfirmation = (toAddress:any) =>{
         
               Subject: { Data: "Test Email" },
             },
-            Source: "venki.suragani@vrishkar.com",
+            Source: "kiran.budipi@vrishkar.com",
           };
          
           return ses.sendEmail(params).promise()
