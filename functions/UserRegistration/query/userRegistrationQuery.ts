@@ -8,6 +8,6 @@ console.warn("watch1" + JSON.stringify(userAttributes))
 
 export const getUserRegistrationQuery = () =>{
     return `
-        SELECT * FROM user_registration
+        SELECT * FROM user_registration 
     `
 }

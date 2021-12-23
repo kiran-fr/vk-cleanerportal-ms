@@ -8,3 +8,11 @@ export declare const UserRegistrationLambda: () => {
     runtime: lambda.Runtime;
     timeout: cdk.Duration;
 };
+export declare const userEmailConfirm: () => {
+    code: lambda.AssetCode;
+    functionName: string;
+    handler: string;
+    memorySize: number;
+    runtime: lambda.Runtime;
+    timeout: cdk.Duration;
+};
