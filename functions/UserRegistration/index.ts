@@ -12,7 +12,7 @@ exports.UserRegistrationHanlder = async(event:any,context:any) =>{
     await EmailConfirmation(event.request.userAttributes.email) 
     context.succeed(event)
     }
-    catch(exception: any){
+    catch(exception){
         console.log('Error is at UserRegistrationHanlder' + JSON.stringify(exception));
     }
    }

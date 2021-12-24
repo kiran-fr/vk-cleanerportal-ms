@@ -31,8 +31,8 @@ export class CdkExampleStack extends cdk.Stack {
     });
 
 
-    const api = new apigateway.RestApi(this, 'api', {
-      description: 'example api gateway',
+    const api = new apigateway.RestApi(this, 'UserRegistrationApi', {
+      description: 'User Registration api gateway',
       deployOptions: {
         stageName: 'dev',
       },
@@ -53,10 +53,10 @@ export class CdkExampleStack extends cdk.Stack {
     new cdk.CfnOutput(this, 'apiUrl', {value: api.url});
 
     // 👇 add a /todos resource
-    const customer = api.root.addResource('customer');
+    const getcustomer = api.root.addResource('getcustomer');
 
     // 👇 integrate GET /todos with getTodosLambda
-    customer.addMethod(
+    getcustomer.addMethod(
       'GET',
       new apigateway.LambdaIntegration(UserEmailConfirm, {proxy: true}),
     );
