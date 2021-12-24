@@ -7,5 +7,6 @@ export const UserRegistrationServices = (userAttributes:any) => {
     return sequelizeConnection.query(UserRegistrationQuery(userAttributes), {
         type: QueryTypes.INSERT
     })
+  
 }
 

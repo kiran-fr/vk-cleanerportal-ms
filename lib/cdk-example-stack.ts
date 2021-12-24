@@ -13,24 +13,53 @@ export class CdkExampleStack extends cdk.Stack {
     super(scope, id, props);
     
     const userRegistration = new lambda.Function(this,'UserRegistration',UserRegistrationLambda())
-    // const UserEmailConfirm = new lambda.Function(this,'UserEmailConfirm',userEmailConfirm())
+    const UserEmailConfirm = new lambda.Function(this,'UserEmailConfirm',userEmailConfirm())
 
     const definition = new tasks.LambdaInvoke(this,'User Registration' , {
       lambdaFunction:userRegistration,
       outputPath:"$.Payload"
     })
-      // .next(
-      //   new tasks.LambdaInvoke(this, "User Email Confirm", {
-      //     lambdaFunction: UserEmailConfirm,
-      //     outputPath: "$.Payload",
-      //   })
-      // );
+      .next(
+        new tasks.LambdaInvoke(this, "User Email Confirm", {
+          lambdaFunction: UserEmailConfirm,
+          outputPath: "$.Payload",
+        })
+      );
 
-    // this.Machine = new sfn.StateMachine(this, "StateMachine", {
-    //   definition,
+    this.Machine = new sfn.StateMachine(this, "StateMachine", {
+      definition,
+    });
 
-    // });
 
+    const api = new apigateway.RestApi(this, 'api', {
+      description: 'example api gateway',
+      deployOptions: {
+        stageName: 'dev',
+      },
+      // 👇 enable CORS
+      defaultCorsPreflightOptions: {
+        allowHeaders: [
+          'Content-Type',
+          'X-Amz-Date',
+          'Authorization',
+          'X-Api-Key',
+        ],
+        allowMethods: ['OPTIONS', 'GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
+        allowCredentials: true,
+        allowOrigins: ['http://localhost:3000'],
+      },
+    });
+
+    new cdk.CfnOutput(this, 'apiUrl', {value: api.url});
+
+    // 👇 add a /todos resource
+    const customer = api.root.addResource('customer');
+
+    // 👇 integrate GET /todos with getTodosLambda
+    customer.addMethod(
+      'GET',
+      new apigateway.LambdaIntegration(UserEmailConfirm, {proxy: true}),
+    );
 
   }
 }
