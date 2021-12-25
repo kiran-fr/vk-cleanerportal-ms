@@ -6,6 +6,7 @@ import { UserRegistrationLambda, userEmailConfirm } from './resources/lambda/all
 import * as sfn from "@aws-cdk/aws-stepfunctions";
 import * as tasks from "@aws-cdk/aws-stepfunctions-tasks";
 import * as apigateway from "@aws-cdk/aws-apigateway"
+import { ApigatewayDataConstants } from '../constants/ApiGatewayConstant';
 
 export class CdkExampleStack extends cdk.Stack {
   public Machine: sfn.StateMachine;
@@ -31,24 +32,7 @@ export class CdkExampleStack extends cdk.Stack {
     });
 
 
-    const api = new apigateway.RestApi(this, 'UserRegistrationApi', {
-      description: 'User Registration api gateway',
-      deployOptions: {
-        stageName: 'dev',
-      },
-      // 👇 enable CORS
-      defaultCorsPreflightOptions: {
-        allowHeaders: [
-          'Content-Type',
-          'X-Amz-Date',
-          'Authorization',
-          'X-Api-Key',
-        ],
-        allowMethods: ['OPTIONS', 'GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
-        allowCredentials: true,
-        allowOrigins: ['http://localhost:3000'],
-      },
-    });
+    const api = new apigateway.RestApi(this, 'UserRegistrationApi', ApigatewayDataConstants());
 
     new cdk.CfnOutput(this, 'apiUrl', {value: api.url});
 
