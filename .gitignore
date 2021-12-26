@@ -10,6 +10,10 @@ bin/
 test/
 
 *.js
+**/.js
+***/.js
+****/.js
+.js/
 
 **/test
 # Ignore node_modules
