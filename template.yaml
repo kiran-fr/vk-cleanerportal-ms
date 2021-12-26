@@ -76,7 +76,7 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameters796a3d705d0a990ba91998208e86445c8761761172df4e7e60127c312f1376b0S3BucketAF4AEBCF
+          Ref: AssetParameters25b6598833fa5e8695e8235f8cb26189e1489be10e8d8a7108acc53c14d3820bS3Bucket069A7E24
         S3Key:
           Fn::Join:
             - ""
@@ -84,12 +84,12 @@ Resources:
                   - 0
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters796a3d705d0a990ba91998208e86445c8761761172df4e7e60127c312f1376b0S3VersionKey2E8654B4
+                      - Ref: AssetParameters25b6598833fa5e8695e8235f8cb26189e1489be10e8d8a7108acc53c14d3820bS3VersionKey22B2ECB6
               - Fn::Select:
                   - 1
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters796a3d705d0a990ba91998208e86445c8761761172df4e7e60127c312f1376b0S3VersionKey2E8654B4
+                      - Ref: AssetParameters25b6598833fa5e8695e8235f8cb26189e1489be10e8d8a7108acc53c14d3820bS3VersionKey22B2ECB6
       Role:
         Fn::GetAtt:
           - UserEmailConfirmServiceRole1A79C4F4
@@ -211,16 +211,16 @@ Resources:
       - UserRegistrationApi52CD672A
     Metadata:
       aws:cdk:path: CdkExampleStack/UserRegistrationApi/Account
-  UserRegistrationApiDeploymentD48ADAF45c124892f5adb98a0e22f8b58fbcdc96:
+  UserRegistrationApiDeploymentD48ADAF4a9c1d2409f3ce215c4931ad4287c4b80:
     Type: AWS::ApiGateway::Deployment
     Properties:
       RestApiId:
         Ref: UserRegistrationApi52CD672A
       Description: Automatically created by the RestApi construct
     DependsOn:
-      - UserRegistrationApicustomerGETC97BA723
-      - UserRegistrationApicustomerOPTIONS0F5BA4F9
-      - UserRegistrationApicustomer5350E6EF
+      - UserRegistrationApigetcustomerGETBFB4FCEF
+      - UserRegistrationApigetcustomerOPTIONS0830FEA7
+      - UserRegistrationApigetcustomer3C6C98FB
       - UserRegistrationApiOPTIONSBE213390
     Metadata:
       aws:cdk:path: CdkExampleStack/UserRegistrationApi/Deployment/Resource
@@ -230,7 +230,7 @@ Resources:
       RestApiId:
         Ref: UserRegistrationApi52CD672A
       DeploymentId:
-        Ref: UserRegistrationApiDeploymentD48ADAF45c124892f5adb98a0e22f8b58fbcdc96
+        Ref: UserRegistrationApiDeploymentD48ADAF4a9c1d2409f3ce215c4931ad4287c4b80
       StageName: dev
     Metadata:
       aws:cdk:path: CdkExampleStack/UserRegistrationApi/DeploymentStage.dev/Resource
@@ -267,24 +267,24 @@ Resources:
           StatusCode: "204"
     Metadata:
       aws:cdk:path: CdkExampleStack/UserRegistrationApi/Default/OPTIONS/Resource
-  UserRegistrationApicustomer5350E6EF:
+  UserRegistrationApigetcustomer3C6C98FB:
     Type: AWS::ApiGateway::Resource
     Properties:
       ParentId:
         Fn::GetAtt:
           - UserRegistrationApi52CD672A
           - RootResourceId
-      PathPart: customer
+      PathPart: getcustomer
       RestApiId:
         Ref: UserRegistrationApi52CD672A
     Metadata:
-      aws:cdk:path: CdkExampleStack/UserRegistrationApi/Default/customer/Resource
-  UserRegistrationApicustomerOPTIONS0F5BA4F9:
+      aws:cdk:path: CdkExampleStack/UserRegistrationApi/Default/getcustomer/Resource
+  UserRegistrationApigetcustomerOPTIONS0830FEA7:
     Type: AWS::ApiGateway::Method
     Properties:
       HttpMethod: OPTIONS
       ResourceId:
-        Ref: UserRegistrationApicustomer5350E6EF
+        Ref: UserRegistrationApigetcustomer3C6C98FB
       RestApiId:
         Ref: UserRegistrationApi52CD672A
       AuthorizationType: NONE
@@ -309,8 +309,8 @@ Resources:
             method.response.header.Access-Control-Allow-Credentials: true
           StatusCode: "204"
     Metadata:
-      aws:cdk:path: CdkExampleStack/UserRegistrationApi/Default/customer/OPTIONS/Resource
-  UserRegistrationApicustomerGETApiPermissionCdkExampleStackUserRegistrationApi614ED873GETcustomerF72BC6BC:
+      aws:cdk:path: CdkExampleStack/UserRegistrationApi/Default/getcustomer/OPTIONS/Resource
+  UserRegistrationApigetcustomerGETApiPermissionCdkExampleStackUserRegistrationApi614ED873GETgetcustomer7CDD01E5:
     Type: AWS::Lambda::Permission
     Properties:
       Action: lambda:InvokeFunction
@@ -332,10 +332,10 @@ Resources:
             - Ref: UserRegistrationApi52CD672A
             - /
             - Ref: UserRegistrationApiDeploymentStagedevB2F98C70
-            - /GET/customer
+            - /GET/getcustomer
     Metadata:
-      aws:cdk:path: CdkExampleStack/UserRegistrationApi/Default/customer/GET/ApiPermission.CdkExampleStackUserRegistrationApi614ED873.GET..customer
-  UserRegistrationApicustomerGETApiPermissionTestCdkExampleStackUserRegistrationApi614ED873GETcustomerD4438310:
+      aws:cdk:path: CdkExampleStack/UserRegistrationApi/Default/getcustomer/GET/ApiPermission.CdkExampleStackUserRegistrationApi614ED873.GET..getcustomer
+  UserRegistrationApigetcustomerGETApiPermissionTestCdkExampleStackUserRegistrationApi614ED873GETgetcustomer68C87AF7:
     Type: AWS::Lambda::Permission
     Properties:
       Action: lambda:InvokeFunction
@@ -355,21 +355,29 @@ Resources:
             - Ref: AWS::AccountId
             - ":"
             - Ref: UserRegistrationApi52CD672A
-            - /test-invoke-stage/GET/customer
+            - /test-invoke-stage/GET/getcustomer
     Metadata:
-      aws:cdk:path: CdkExampleStack/UserRegistrationApi/Default/customer/GET/ApiPermission.Test.CdkExampleStackUserRegistrationApi614ED873.GET..customer
-  UserRegistrationApicustomerGETC97BA723:
+      aws:cdk:path: CdkExampleStack/UserRegistrationApi/Default/getcustomer/GET/ApiPermission.Test.CdkExampleStackUserRegistrationApi614ED873.GET..getcustomer
+  UserRegistrationApigetcustomerGETBFB4FCEF:
     Type: AWS::ApiGateway::Method
     Properties:
       HttpMethod: GET
       ResourceId:
-        Ref: UserRegistrationApicustomer5350E6EF
+        Ref: UserRegistrationApigetcustomer3C6C98FB
       RestApiId:
         Ref: UserRegistrationApi52CD672A
       AuthorizationType: NONE
       Integration:
         IntegrationHttpMethod: POST
-        Type: AWS_PROXY
+        IntegrationResponses:
+          - ResponseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            ResponseTemplates:
+              application/json: '{"message":"$util.parseJson($input.body)","state":"ok"}'
+            StatusCode: "200"
+        RequestTemplates:
+          application/json: '{"input":"this is the input"}'
+        Type: AWS
         Uri:
           Fn::Join:
             - ""
@@ -382,8 +390,12 @@ Resources:
                   - UserEmailConfirmB609801E
                   - Arn
               - /invocations
+      MethodResponses:
+        - ResponseParameters:
+            method.response.header.Access-Control-Allow-Origin: true
+          StatusCode: "200"
     Metadata:
-      aws:cdk:path: CdkExampleStack/UserRegistrationApi/Default/customer/GET/Resource
+      aws:cdk:path: CdkExampleStack/UserRegistrationApi/Default/getcustomer/GET/Resource
   CDKMetadata:
     Type: AWS::CDK::Metadata
     Properties:
@@ -401,15 +413,15 @@ Parameters:
   AssetParameters7433cc8c7156422be203c172470535c1a4b9a8acdaccca5bb31fb4f2364a4e12ArtifactHash7A115427:
     Type: String
     Description: Artifact hash for asset "7433cc8c7156422be203c172470535c1a4b9a8acdaccca5bb31fb4f2364a4e12"
-  AssetParameters796a3d705d0a990ba91998208e86445c8761761172df4e7e60127c312f1376b0S3BucketAF4AEBCF:
+  AssetParameters25b6598833fa5e8695e8235f8cb26189e1489be10e8d8a7108acc53c14d3820bS3Bucket069A7E24:
     Type: String
-    Description: S3 bucket for asset "796a3d705d0a990ba91998208e86445c8761761172df4e7e60127c312f1376b0"
-  AssetParameters796a3d705d0a990ba91998208e86445c8761761172df4e7e60127c312f1376b0S3VersionKey2E8654B4:
+    Description: S3 bucket for asset "25b6598833fa5e8695e8235f8cb26189e1489be10e8d8a7108acc53c14d3820b"
+  AssetParameters25b6598833fa5e8695e8235f8cb26189e1489be10e8d8a7108acc53c14d3820bS3VersionKey22B2ECB6:
     Type: String
-    Description: S3 key for asset version "796a3d705d0a990ba91998208e86445c8761761172df4e7e60127c312f1376b0"
-  AssetParameters796a3d705d0a990ba91998208e86445c8761761172df4e7e60127c312f1376b0ArtifactHash65DABEEF:
+    Description: S3 key for asset version "25b6598833fa5e8695e8235f8cb26189e1489be10e8d8a7108acc53c14d3820b"
+  AssetParameters25b6598833fa5e8695e8235f8cb26189e1489be10e8d8a7108acc53c14d3820bArtifactHash8F47B236:
     Type: String
-    Description: Artifact hash for asset "796a3d705d0a990ba91998208e86445c8761761172df4e7e60127c312f1376b0"
+    Description: Artifact hash for asset "25b6598833fa5e8695e8235f8cb26189e1489be10e8d8a7108acc53c14d3820b"
 Outputs:
   UserRegistrationApiEndpoint80341E45:
     Value:

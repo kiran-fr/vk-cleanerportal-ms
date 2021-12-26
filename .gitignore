@@ -9,6 +9,8 @@ dist/
 bin/
 test/
 
+*.js
+
 **/test
 # Ignore node_modules
 **/node_modules
