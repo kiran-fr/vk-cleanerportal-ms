@@ -9,6 +9,13 @@ dist/
 bin/
 test/
 
+!jest.config.js
+*.js
+*.js
+*/.js
+
+.js/
+
 **/test
 # Ignore node_modules
 **/node_modules
