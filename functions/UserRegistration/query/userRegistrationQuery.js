@@ -2,14 +2,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getUserRegistrationQuery = exports.UserRegistrationQuery = void 0;
 exports.UserRegistrationQuery = (userAttributes) => {
-    console.warn("watch" + userAttributes);
-    console.warn("watch1" + JSON.stringify(userAttributes));
-    return `INSERT INTO user_registration (cognito_userid,first_name,last_name,email, phone,date_of_birth ) 
-    VALUES ('${userAttributes.sub}','${userAttributes.given_name}','${userAttributes.family_name}','${userAttributes.email}','${userAttributes.phone_number}','${userAttributes.birthdate}')
-    `;
+    return `INSERT INTO worksman (cognito_userid,first_name,last_name,email, phone,date_of_birth ) 
+         VALUES ('${userAttributes.sub}','${userAttributes.given_name}','${userAttributes.family_name}','${userAttributes.email}','${userAttributes.phone_number}','${userAttributes.birthdate}')
+       `;
 };
 exports.getUserRegistrationQuery = () => {
     return `
-        SELECT * FROM user_registration 
+        SELECT * FROM worksman 
     `;
 };
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidXNlclJlZ2lzdHJhdGlvblF1ZXJ5LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsidXNlclJlZ2lzdHJhdGlvblF1ZXJ5LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUFhLFFBQUEscUJBQXFCLEdBQUcsQ0FBQyxjQUFrQixFQUFFLEVBQUU7SUFDcEQsT0FBTztvQkFDSyxjQUFjLENBQUMsR0FBRyxNQUFNLGNBQWMsQ0FBQyxVQUFVLE1BQU0sY0FBYyxDQUFDLFdBQVcsTUFBTSxjQUFjLENBQUMsS0FBSyxNQUFNLGNBQWMsQ0FBQyxZQUFZLE1BQU0sY0FBYyxDQUFDLFNBQVM7UUFDdEwsQ0FBQTtBQUNSLENBQUMsQ0FBQTtBQUdZLFFBQUEsd0JBQXdCLEdBQUcsR0FBRyxFQUFFO0lBQ3pDLE9BQU87O0tBRU4sQ0FBQTtBQUNMLENBQUMsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBjb25zdCBVc2VyUmVnaXN0cmF0aW9uUXVlcnkgPSAodXNlckF0dHJpYnV0ZXM6YW55KSA9PiB7XHJcbiAgICAgICAgcmV0dXJuIGBJTlNFUlQgSU5UTyB3b3Jrc21hbiAoY29nbml0b191c2VyaWQsZmlyc3RfbmFtZSxsYXN0X25hbWUsZW1haWwsIHBob25lLGRhdGVfb2ZfYmlydGggKSBcclxuICAgICAgICAgVkFMVUVTICgnJHt1c2VyQXR0cmlidXRlcy5zdWJ9JywnJHt1c2VyQXR0cmlidXRlcy5naXZlbl9uYW1lfScsJyR7dXNlckF0dHJpYnV0ZXMuZmFtaWx5X25hbWV9JywnJHt1c2VyQXR0cmlidXRlcy5lbWFpbH0nLCcke3VzZXJBdHRyaWJ1dGVzLnBob25lX251bWJlcn0nLCcke3VzZXJBdHRyaWJ1dGVzLmJpcnRoZGF0ZX0nKVxyXG4gICAgICAgYCAgICBcclxufVxyXG5cclxuXHJcbmV4cG9ydCBjb25zdCBnZXRVc2VyUmVnaXN0cmF0aW9uUXVlcnkgPSAoKSA9PntcclxuICAgIHJldHVybiBgXHJcbiAgICAgICAgU0VMRUNUICogRlJPTSB3b3Jrc21hbiBcclxuICAgIGBcclxufVxyXG4iXX0=
