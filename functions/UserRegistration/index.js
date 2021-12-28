@@ -3,7 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const UserRegistrationServices_1 = require("./services/UserRegistrationServices");
 const EmailConfirmation_1 = require("./helpers/EmailConfirmation");
 exports.UserRegistrationHanlder = async (event, context, callback) => {
-    // console.log('step 0', event.request.userAttributes)
     console.warn("step1" + event.request.userAttributes);
     console.warn("This is event", JSON.stringify(event.request.userAttributes.email));
     const data = await UserRegistrationServices_1.UserRegistrationServices(event.request.userAttributes);
