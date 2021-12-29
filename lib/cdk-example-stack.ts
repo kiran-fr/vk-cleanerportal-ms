@@ -1,12 +1,11 @@
 import * as cdk from '@aws-cdk/core';
-// import * as ec2 from '@aws-cdk/aws-ec2';
-// import * as rds from '@aws-cdk/aws-rds';
 import * as lambda from '@aws-cdk/aws-lambda';
-import { UserRegistrationLambda, userEmailConfirm } from './resources/lambda/allLambda';
+import { UserRegistrationLambda, userEmailConfirm, WorksManTermsAndConditionLambda, WorksManExperienceLambda, WorksmanEligibilityLambda } from './resources/lambda/allLambda';
 import * as sfn from "@aws-cdk/aws-stepfunctions";
 import * as tasks from "@aws-cdk/aws-stepfunctions-tasks";
 import * as apigateway from "@aws-cdk/aws-apigateway"
-import { ApigatewayDataConstants, ApiGateWayResponseMethod } from '../constants/ApiGatewayConstant';
+import { ApigatewayDataConstants } from '../constants/ApiGatewayConstant';
+import { worksmanEligibilityApiGateway,worksmanExperienceApiGateway,WorksmanAddressApiGateway,WorksmanTermsAndConditionsApiGateway} from "./resources/ApiGateway/AllApiGateWays"
 
 export class CdkExampleStack extends cdk.Stack {
   public Machine: sfn.StateMachine;
@@ -15,6 +14,9 @@ export class CdkExampleStack extends cdk.Stack {
 
     const userRegistration = new lambda.Function(this, 'UserRegistration', UserRegistrationLambda())
     const UserEmailConfirm = new lambda.Function(this, 'UserEmailConfirm', userEmailConfirm())
+    const WorksManTermsAndCondition = new lambda.Function(this, 'WorksManTermsAndCondition', WorksManTermsAndConditionLambda())
+    const WorksManExperience = new lambda.Function(this, 'WorksManExperience', WorksManExperienceLambda())
+    const WorksmanEligibility = new lambda.Function(this, 'WorksmanEligibility', WorksmanEligibilityLambda())
 
     const definition = new tasks.LambdaInvoke(this, 'User Registration', {
       lambdaFunction: userRegistration,
@@ -31,31 +33,14 @@ export class CdkExampleStack extends cdk.Stack {
       definition,
     });
 
-
-    const api = new apigateway.RestApi(this, 'UserRegistrationApi', ApigatewayDataConstants());
+    const api = new apigateway.RestApi(this, 'WorksManApi', ApigatewayDataConstants());
 
     new cdk.CfnOutput(this, 'apiUrl', { value: api.url });
 
-    // 👇 add a /todos resource
-    const getcustomer = api.root.addResource('getcustomer');
 
-    // 👇 integrate GET /todos with getTodosLambda
-    getcustomer.addMethod(
-      'GET',
-      new apigateway.LambdaIntegration(UserEmailConfirm,
-        ApiGateWayResponseMethod()
-      ),
-      {
-        methodResponses: [
-          {
-            statusCode: '200',
-            responseParameters: {
-              'method.response.header.Access-Control-Allow-Origin': true,
-            },
-          },
-        ],
-      }
-    );
+    WorksmanTermsAndConditionsApiGateway(api,WorksManTermsAndCondition,'POST')
+    worksmanExperienceApiGateway(api,WorksManExperience,'POST')
+    worksmanEligibilityApiGateway(api,WorksmanEligibility,'POST')
 
   }
 }

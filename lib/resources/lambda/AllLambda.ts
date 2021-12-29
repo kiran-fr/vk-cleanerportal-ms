@@ -25,3 +25,36 @@ export const userEmailConfirm = () =>{
     timeout: cdk.Duration.seconds(15)
   }
 }
+
+export const WorksManTermsAndConditionLambda = () => {
+  return {
+    code:lambda.Code.fromAsset('./functions/WorksManTermsAndCondition'),
+    functionName:'WorksManTermsAndCondition',
+    handler:'index.WorksManTermsAndConditionHandler',
+    memorySize:1024,
+    runtime:lambda.Runtime.NODEJS_14_X,
+    timeout:cdk.Duration.seconds(15)
+  }
+} 
+
+export const WorksManExperienceLambda = () => {
+  return {
+    code:lambda.Code.fromAsset('./functions/WorksManExperience'),
+    functionName:'WorksManExperience',
+    handler:'index.WorksManExperienceHandler',
+    memorySize:1024,
+    runtime:lambda.Runtime.NODEJS_14_X,
+    timeout:cdk.Duration.seconds(15)
+  }
+}
+
+export const WorksmanEligibilityLambda = () => {
+  return {
+    code:lambda.Code.fromAsset('./functions/WorksmanEligibility'),
+    functionName:'WorksmanEligibility',
+    handler:'index.WorksmanEligibilityHandler',
+    memorySize:1024,
+    runtime:lambda.Runtime.NODEJS_14_X,
+    timeout:cdk.Duration.seconds(15)
+  }
+}

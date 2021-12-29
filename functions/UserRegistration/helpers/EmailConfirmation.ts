@@ -1,15 +1,15 @@
 var aws = require("aws-sdk");
 var ses = new aws.SES({ region: "us-east-1" });
 
-export const EmailConfirmation= (toAddress:any) =>{
+export const EmailConfirmation= (emailConfirm:any) =>{
     
         const params = {
             Destination: {
-              ToAddresses: [toAddress],
+              ToAddresses: [emailConfirm.email],
             },
             Message: {
               Body: {
-                Text: { Data: "Test" },
+                Text: { Data: `${emailConfirm.family_name} you succesfully registered` },
               },
         
               Subject: { Data: "Test Email" },
