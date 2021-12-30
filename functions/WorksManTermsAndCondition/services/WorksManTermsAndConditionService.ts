@@ -1,6 +1,6 @@
 import { QueryTypes } from "sequelize/dist";
 import { connectDB, sequelizeConnection } from "../helpers/DbConnectionHelpers"
-import { getUserRegistrationQuery, getWorksManTermsIdQuery, WorksManTermsAndConditionQuery } from "../query/WorksManTermsAndConditionQuery"
+import { getWorksManTermsIdQuery, WorksManTermsAndConditionQuery } from "../query/WorksManTermsAndConditionQuery"
 
 export const WorksManTermsAndConditionService = async(event:any, Worksman_id:any) => {
     try {
