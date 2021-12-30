@@ -1,8 +1,9 @@
 import { WorksManTermsAndConditionService } from "./services/WorksManTermsAndConditionService"
 
-exports.WorksManTermsAndConditionHandler = async() =>{
+exports.WorksManTermsAndConditionHandler = async(event:any) =>{
    try {
-       await WorksManTermsAndConditionService()
+       console.log('This is worksman terms and conditions',event)
+       await WorksManTermsAndConditionService(event)
        console.log('Data inserted succesfulle')
 
    } catch (exception) {
