@@ -36,11 +36,7 @@ export const ApiGateWayResponseMethod = () => {
         statusCode: '200',
       },
     ],
-    proxy: false,
-    requestTemplates: {
-      'application/json': JSON.stringify({
-        input: 'this is the input',
-      }),
-    },
+    proxy: false
+ 
   }
 }
