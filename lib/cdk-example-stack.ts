@@ -1,6 +1,6 @@
 import * as cdk from '@aws-cdk/core';
 import * as lambda from '@aws-cdk/aws-lambda';
-import { UserRegistrationLambda, userEmailConfirm, WorksManTermsAndConditionLambda, WorksManExperienceLambda, WorksmanEligibilityLambda } from './resources/lambda/allLambda';
+import { UserRegistrationLambda, userEmailConfirm, WorksManTermsAndConditionLambda, WorksManExperienceLambda, WorksmanEligibilityLambda, WorksManAddressLambda } from './resources/lambda/allLambda';
 import * as sfn from "@aws-cdk/aws-stepfunctions";
 import * as tasks from "@aws-cdk/aws-stepfunctions-tasks";
 import * as apigateway from "@aws-cdk/aws-apigateway"
@@ -17,6 +17,7 @@ export class CdkExampleStack extends cdk.Stack {
     const WorksManTermsAndCondition = new lambda.Function(this, 'WorksManTermsAndCondition', WorksManTermsAndConditionLambda())
     const WorksManExperience = new lambda.Function(this, 'WorksManExperience', WorksManExperienceLambda())
     const WorksmanEligibility = new lambda.Function(this, 'WorksmanEligibility', WorksmanEligibilityLambda())
+    const WorksManAddress = new lambda.Function(this,'WorksManAddress',WorksManAddressLambda())
 
     const definition = new tasks.LambdaInvoke(this, 'User Registration', {
       lambdaFunction: userRegistration,
@@ -41,6 +42,7 @@ export class CdkExampleStack extends cdk.Stack {
     WorksmanTermsAndConditionsApiGateway(api,WorksManTermsAndCondition,'POST')
     worksmanExperienceApiGateway(api,WorksManExperience,'POST')
     worksmanEligibilityApiGateway(api,WorksmanEligibility,'POST')
+    WorksmanAddressApiGateway(api,WorksManAddress,'POST')
 
   }
 }

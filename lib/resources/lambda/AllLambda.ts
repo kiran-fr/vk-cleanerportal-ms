@@ -58,3 +58,14 @@ export const WorksmanEligibilityLambda = () => {
     timeout:cdk.Duration.seconds(15)
   }
 }
+
+export const WorksManAddressLambda  = () => {
+  return {
+    code:lambda.Code.fromAsset('./functions/WorksManAddress'),
+    functionName:'WorksManAddress',
+    handler:'index.WorksManAddressHandler',
+    memorySize:1024,
+    runtime:lambda.Runtime.NODEJS_14_X,
+    timeout:cdk.Duration.seconds(15)
+  }
+}
