@@ -48,17 +48,6 @@ export const WorksManExperienceLambda = () => {
   }
 }
 
-export const WorksmanEligibilityLambda = () => {
-  return {
-    code:lambda.Code.fromAsset('./functions/WorksmanEligibility'),
-    functionName:'WorksmanEligibility',
-    handler:'index.WorksmanEligibilityHandler',
-    memorySize:1024,
-    runtime:lambda.Runtime.NODEJS_14_X,
-    timeout:cdk.Duration.seconds(15)
-  }
-}
-
 export const WorksManAddressLambda  = () => {
   return {
     code:lambda.Code.fromAsset('./functions/WorksManAddress'),

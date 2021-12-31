@@ -10,5 +10,8 @@
         "Have_hotel_cleaning_exp":true,
         "Have_hospital_cleaning_exp":true,
         "Have_retail_cleaning_exp":true,
-        "other_cleaning":true
+        "other_cleaning":true,
+        "Have_Right_to_Work":true,
+        "Have_UK_BankAccount":true,
+        "Have_Criminal_Records":false
 }

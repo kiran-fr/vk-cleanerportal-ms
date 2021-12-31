@@ -23,5 +23,15 @@ export const WorksManExperienceQuery = (event:any) => {
 } 
 
 
+export const WorksmanEligibilityQuery = (event:any) => {
+    return `
+        INSERT INTO worksman_eligibility_table (
+        worksman_id ,
+        Have_Right_to_Work,
+        Have_UK_BankAccount,
+        Have_Criminal_Records
+        ) VALUES('${event.worksman_id}','${event.Have_Right_to_Work}','${event.Have_UK_BankAccount}','${event.Have_Criminal_Records}')
+    `
+}
 
 // delete from  worksman_experience_table
