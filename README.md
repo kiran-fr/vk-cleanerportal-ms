@@ -21,3 +21,6 @@ npm run build
 cdk synth --no-staging > template.yaml 
 sam local invoke getcustomer --no-event
 sam local invoke UserRegistration -e  functions/UserRegistration/mock.json
+sam local invoke WorksManTermsAndCondition66F1F295 -e functions/WorksManTermsAndCondition/mock.json
+sam local invoke WorksManExperience -e functions/WorksManExperience/mock.json
+

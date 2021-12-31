@@ -2,11 +2,11 @@ import { QueryTypes } from "sequelize/dist";
 import { connectDB, sequelizeConnection } from "../helpers/DbConnectionHelpers"
 import { getWorksManTermsIdQuery, WorksManTermsAndConditionQuery } from "../query/WorksManTermsAndConditionQuery"
 
-export const WorksManTermsAndConditionService = async(event:any, Worksman_id:any) => {
+export const WorksManTermsAndConditionService = async(event:any) => {
     try {
         console.log('WorksManTermsAndConditionService',event)
         connectDB();
-       const data = await sequelizeConnection.query(WorksManTermsAndConditionQuery(event, Worksman_id), {
+       const data = await sequelizeConnection.query(WorksManTermsAndConditionQuery(event), {
             type: QueryTypes.INSERT
         })
         console.log('db connections WorksManTermsAndConditionService',data)
@@ -14,16 +14,16 @@ export const WorksManTermsAndConditionService = async(event:any, Worksman_id:any
         console.log(`Works Man Terms And Condition Service Error ${exception}`)
     }
 }
-
+ 
 export const getWorksManIdService = async(email:any) => {
     try {
         console.log('WorksManTermsAndConditionService in getWorksManIdService',email)
         connectDB();
        const data = await sequelizeConnection.query(getWorksManTermsIdQuery(email), {
-            type: QueryTypes.INSERT
+            type: QueryTypes.SELECT
         })
-        console.log('db connections WorksManTermsAndConditionService getWorksManIdService',data)
+        console.log('db connections  getWorksManIdService',data)
     } catch (exception) {
-        console.log(`Works Man Terms And Condition Service Error ${exception}`)
+        console.log(`Get Works Man Terms And Condition Service Error ${exception}`)
     }
 }

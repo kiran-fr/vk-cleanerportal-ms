@@ -130,7 +130,7 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameterse9dafdbf831f372c7bc722616535b265081f1ce282323f0bc4a831fa880fa3c9S3Bucket2368B197
+          Ref: AssetParameters75bd91dea5271359c2bf801c1d420765dfb8fd709acd80e7473ade95ae9e7573S3Bucket1A6896B5
         S3Key:
           Fn::Join:
             - ""
@@ -138,12 +138,12 @@ Resources:
                   - 0
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameterse9dafdbf831f372c7bc722616535b265081f1ce282323f0bc4a831fa880fa3c9S3VersionKey6473F752
+                      - Ref: AssetParameters75bd91dea5271359c2bf801c1d420765dfb8fd709acd80e7473ade95ae9e7573S3VersionKey43472C61
               - Fn::Select:
                   - 1
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameterse9dafdbf831f372c7bc722616535b265081f1ce282323f0bc4a831fa880fa3c9S3VersionKey6473F752
+                      - Ref: AssetParameters75bd91dea5271359c2bf801c1d420765dfb8fd709acd80e7473ade95ae9e7573S3VersionKey43472C61
       Role:
         Fn::GetAtt:
           - WorksManTermsAndConditionServiceRole06AE84AC
@@ -427,7 +427,7 @@ Resources:
       - WorksManApi8007FB09
     Metadata:
       aws:cdk:path: CdkExampleStack/WorksManApi/Account
-  WorksManApiDeployment495969A922755bbaf4de9c5333a205d5d497a06c:
+  WorksManApiDeployment495969A97164ed4b87ff484fb09c6409d007cd8f:
     Type: AWS::ApiGateway::Deployment
     Properties:
       RestApiId:
@@ -455,7 +455,7 @@ Resources:
       RestApiId:
         Ref: WorksManApi8007FB09
       DeploymentId:
-        Ref: WorksManApiDeployment495969A922755bbaf4de9c5333a205d5d497a06c
+        Ref: WorksManApiDeployment495969A97164ed4b87ff484fb09c6409d007cd8f
       StageName: dev
     Metadata:
       aws:cdk:path: CdkExampleStack/WorksManApi/DeploymentStage.dev/Resource
@@ -600,8 +600,6 @@ Resources:
             ResponseTemplates:
               application/json: '{"message":"$util.parseJson($input.body)","state":"ok"}'
             StatusCode: "200"
-        RequestTemplates:
-          application/json: '{"body":"$input.body"}'
         Type: AWS
         Uri:
           Fn::Join:
@@ -729,8 +727,6 @@ Resources:
             ResponseTemplates:
               application/json: '{"message":"$util.parseJson($input.body)","state":"ok"}'
             StatusCode: "200"
-        RequestTemplates:
-          application/json: '{"body":"$input.body"}'
         Type: AWS
         Uri:
           Fn::Join:
@@ -858,8 +854,6 @@ Resources:
             ResponseTemplates:
               application/json: '{"message":"$util.parseJson($input.body)","state":"ok"}'
             StatusCode: "200"
-        RequestTemplates:
-          application/json: '{"body":"$input.body"}'
         Type: AWS
         Uri:
           Fn::Join:
@@ -987,8 +981,6 @@ Resources:
             ResponseTemplates:
               application/json: '{"message":"$util.parseJson($input.body)","state":"ok"}'
             StatusCode: "200"
-        RequestTemplates:
-          application/json: '{"body":"$input.body"}'
         Type: AWS
         Uri:
           Fn::Join:
@@ -1034,15 +1026,15 @@ Parameters:
   AssetParameters00b1cc23bd7b5e2aab5f5dab78fb80ff42f837c583cdb5728c83237b5302459eArtifactHashE2C17498:
     Type: String
     Description: Artifact hash for asset "00b1cc23bd7b5e2aab5f5dab78fb80ff42f837c583cdb5728c83237b5302459e"
-  AssetParameterse9dafdbf831f372c7bc722616535b265081f1ce282323f0bc4a831fa880fa3c9S3Bucket2368B197:
+  AssetParameters75bd91dea5271359c2bf801c1d420765dfb8fd709acd80e7473ade95ae9e7573S3Bucket1A6896B5:
     Type: String
-    Description: S3 bucket for asset "e9dafdbf831f372c7bc722616535b265081f1ce282323f0bc4a831fa880fa3c9"
-  AssetParameterse9dafdbf831f372c7bc722616535b265081f1ce282323f0bc4a831fa880fa3c9S3VersionKey6473F752:
+    Description: S3 bucket for asset "75bd91dea5271359c2bf801c1d420765dfb8fd709acd80e7473ade95ae9e7573"
+  AssetParameters75bd91dea5271359c2bf801c1d420765dfb8fd709acd80e7473ade95ae9e7573S3VersionKey43472C61:
     Type: String
-    Description: S3 key for asset version "e9dafdbf831f372c7bc722616535b265081f1ce282323f0bc4a831fa880fa3c9"
-  AssetParameterse9dafdbf831f372c7bc722616535b265081f1ce282323f0bc4a831fa880fa3c9ArtifactHashEC3ACDD2:
+    Description: S3 key for asset version "75bd91dea5271359c2bf801c1d420765dfb8fd709acd80e7473ade95ae9e7573"
+  AssetParameters75bd91dea5271359c2bf801c1d420765dfb8fd709acd80e7473ade95ae9e7573ArtifactHashFCA457B9:
     Type: String
-    Description: Artifact hash for asset "e9dafdbf831f372c7bc722616535b265081f1ce282323f0bc4a831fa880fa3c9"
+    Description: Artifact hash for asset "75bd91dea5271359c2bf801c1d420765dfb8fd709acd80e7473ade95ae9e7573"
   AssetParameters707c154691e672584a4c13350756f3c733b5b75fa9fe9f47ef6b6be45cb4bc8fS3Bucket4E185CDA:
     Type: String
     Description: S3 bucket for asset "707c154691e672584a4c13350756f3c733b5b75fa9fe9f47ef6b6be45cb4bc8f"

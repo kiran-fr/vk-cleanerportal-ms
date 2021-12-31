@@ -21,7 +21,7 @@ const worksman_Table = () =>{
 
         CREATE TABLE worksman_table (
         worksman_id SERIAL PRIMARY KEY,
-        cognito_id  VARCHAR (255),
+        cognito_id  VARCHAR (255) NOT NULL,
         first_name VARCHAR(255) NOT NULL,
         last_name VARCHAR(255) NOT NULL,
         email VARCHAR(255) UNIQUE NOT NULL,
@@ -40,7 +40,7 @@ const Worksman_terms_and_conditions_table = () =>{
 
         CREATE TABLE worksman_terms_and_conditions_table (
                 terms_and_conditions_id SERIAL PRIMARY KEY,
-                worksman_id INT NOT NULL,
+                worksman_id VARCHAR(255) UNIQUE NOT NULL,
                 isWatched_howVrishkar_Works VARCHAR(255) NOT NULL,
                 isUnderstand_Worksman_Will_SelfEmployeed VARCHAR(255) NOT NULL,
                 isUnderstand_Vrishkar_isnot_responsible VARCHAR(255) NOT NULL,
@@ -55,7 +55,8 @@ const worksman_experience_table = () => {
 
         CREATE TABLE worksman_experience_table (
         worksman_exp_id SERIAL PRIMARY KEY,
-        worksman_id  VARCHAR (255),
+        worksman_id  VARCHAR (255) UNIQUE NOT NULL,
+        years_of_cleaning_exp VARCHAR(255) NOT NULL,
         Have_house_cleaning_exp VARCHAR(255) NOT NULL,
         Have_deep_cleaning_exp VARCHAR(255) NOT NULL,
         Have_office_cleaning_exp VARCHAR(255) NOT NULL,
@@ -63,7 +64,8 @@ const worksman_experience_table = () => {
         Have_gardening_exp VARCHAR(255) NOT NULL,
         Have_building_cleaning_exp VARCHAR(255) NOT NULL,
         Have_hotel_cleaning_exp VARCHAR(255) NOT NULL,
-        Have_hospital_cleaning_exp VARCHAR(255),
+        Have_hospital_cleaning_exp VARCHAR(255) NOT NULL,
+        Have_retail_cleaning_exp VARCHAR(255) NOT NULL,
         other_cleaning VARCHAR(255) NOT NULL,
         created_on DATE not null default CURRENT_DATE
         )
