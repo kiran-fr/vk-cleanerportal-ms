@@ -27,12 +27,7 @@ export const ApiGateWayResponseMethod = () => {
         responseParameters: {
           'method.response.header.Access-Control-Allow-Origin': "'*'",
         },
-        responseTemplates: {
-          'application/json': JSON.stringify({
-            message: '$util.parseJson($input.body)',
-            state: 'ok',
-          }),
-        },
+     
         statusCode: '200',
       },
     ],
