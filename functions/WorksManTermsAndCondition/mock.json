@@ -1,6 +1,6 @@
 {
-    "worksman_id": "kiran@gmail.com",
-    "isWatched_howVrishkar_Works":"thisis sample id",
-    "isUnderstand_Worksman_Will_SelfEmployeed":"this understand worksmand",
-    "isUnderstand_Vrishkar_isnot_responsible":"vriskar is not responsible"
+    "worksman_email": "venki.suragani@vrishkar.com",
+    "isWatched_howVrishkar_Works":true,
+    "isUnderstand_Worksman_Will_SelfEmployeed":true,
+    "isUnderstand_Vrishkar_isnot_responsible":true
   }

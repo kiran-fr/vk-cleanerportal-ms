@@ -13,6 +13,7 @@ test/
 *.js
 *.js
 */.js
+**/.js
 
 .js/
 
