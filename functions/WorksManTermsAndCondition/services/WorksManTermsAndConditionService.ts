@@ -12,18 +12,16 @@ export const WorksManTermsAndConditionService = async(event:any, Worksman_id: an
         console.log('db connections WorksManTermsAndConditionService',data)
     } catch (exception) {
         console.log(`Works Man Terms And Condition Service Error ${exception}`)
+        throw exception;
     }
 }
  
-export const getWorksManIdService = async(email:any) => {
-    try {
-        console.log('WorksManTermsAndConditionService in getWorksManIdService',email)
-        connectDB();
-       const data = await sequelizeConnection.query(getWorksManTermsIdQuery(email), {
+export const getWorksManIdService = (email:any) => {
+    try { 
+       connectDB();
+       return sequelizeConnection.query(getWorksManTermsIdQuery(email), {
             type: QueryTypes.SELECT
         })
-        console.log('db connections  getWorksManIdService',data)
-        return data;
     } catch (exception) {
         console.log(`Get Works Man Terms And Condition Service Error ${exception}`)
         return exception;
