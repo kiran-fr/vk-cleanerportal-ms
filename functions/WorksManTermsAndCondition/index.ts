@@ -3,20 +3,19 @@ import { getWorksManIdService, WorksManTermsAndConditionService } from "./servic
 
 exports.WorksManTermsAndConditionHandler = async (event: any) => {
    try {
-      const eventBody = JSON.parse(event.body);
-      const Worksman: any = await getWorksManIdService(eventBody.worksman_email)
-      await WorksManTermsAndConditionService(eventBody, Worksman[0].worksman_id)
+      const Worksman: any = await getWorksManIdService(event.worksman_email);
+      await WorksManTermsAndConditionService(event, Worksman[0].worksman_id)
       return {
          statusCode: 200,
            headers: {},
-           body: JSON.stringify('Sucesss')
+           body: JSON.stringify('Sucesss' +  event)
        }
 
    } catch (exception) {
       console.log(`WorksManTermsAndConditionHandler Error ${exception}`)
-      console.log(`WorksManTermsAndConditionHandler Error ${event}`)
+      console.log(`WorksManTermsAndConditionHandler Error ${JSON.stringify(event)}`)
       return {
-         statusCode: 400,
+         statusCode: 500,
            headers: {},
            body: JSON.stringify(exception)
        }
