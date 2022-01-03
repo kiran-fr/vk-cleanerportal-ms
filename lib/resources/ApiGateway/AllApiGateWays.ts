@@ -1,5 +1,5 @@
 import * as apigateway from "@aws-cdk/aws-apigateway"
-// import {  ApiGateWayResponseMethod } from "../../../constants/ApiGatewayConstant";
+import {  ApiGateWayResponseMethod } from "../../../constants/ApiGatewayConstant";
 
 export const getCustomerApiGateway = (api: any,lambdaFunctionName:any, methodType:string) => {
   
@@ -11,7 +11,7 @@ export const getCustomerApiGateway = (api: any,lambdaFunctionName:any, methodTyp
     getcustomer.addMethod(
         methodType,
       new apigateway.LambdaIntegration(lambdaFunctionName,
-        // ApiGateWayResponseMethod()
+        ApiGateWayResponseMethod()
       ),
       {
         methodResponses: [
@@ -35,8 +35,8 @@ export const WorksmanTermsAndConditionsApiGateway = (api: any,lambdaFunctionName
     // 👇 integrate GET /todos with getTodosLambda
     WorksmanTermsAndConditions.addMethod(
         methodType,
-      new apigateway.LambdaIntegration(lambdaFunctionName
-        // ApiGateWayResponseMethod()
+      new apigateway.LambdaIntegration(lambdaFunctionName,
+        ApiGateWayResponseMethod()
       ),
       {
         methodResponses: [
@@ -61,7 +61,7 @@ export const worksmanExperienceApiGateway = (api: any,lambdaFunctionName:any, me
     worksmanExperience.addMethod(
         methodType,
       new apigateway.LambdaIntegration(lambdaFunctionName,
-        // ApiGateWayResponseMethod()
+        ApiGateWayResponseMethod()
       ),
       {
         methodResponses: [
@@ -86,7 +86,7 @@ export const worksmanEligibilityApiGateway = (api: any,lambdaFunctionName:any, m
     worksmanEligibility.addMethod(
         methodType,
       new apigateway.LambdaIntegration(lambdaFunctionName,
-        // ApiGateWayResponseMethod()
+        ApiGateWayResponseMethod()
       ),
       {
         methodResponses: [
@@ -111,7 +111,7 @@ export const WorksmanAddressApiGateway = (api: any,lambdaFunctionName:any, metho
     WorksmanAddress.addMethod(
         methodType,
       new apigateway.LambdaIntegration(lambdaFunctionName,
-        // ApiGateWayResponseMethod()
+        ApiGateWayResponseMethod()
       ),
       {
         methodResponses: [

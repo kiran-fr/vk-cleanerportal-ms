@@ -20,18 +20,18 @@ return {
 }
 
 
-// export const ApiGateWayResponseMethod = () => {
-//  return {
-//     integrationResponses: [
-//       {
-//         responseParameters: {
-//           'method.response.header.Access-Control-Allow-Origin': "'*'",
-//         },
+export const ApiGateWayResponseMethod = () => {
+ return {
+    integrationResponses: [
+      {
+        responseParameters: {
+          'method.response.header.Access-Control-Allow-Origin': "'*'",
+        },
      
-//         statusCode: '200',
-//       },
-//     ],
-//     proxy: false
+        statusCode: '200',
+      },
+    ],
+    proxy: false
  
-//   }
-// }
+  }
+}
