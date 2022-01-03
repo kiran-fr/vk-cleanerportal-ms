@@ -12,7 +12,7 @@ exports.WorksManTermsAndConditionHandler = async (event: any) => {
        }
 
    } catch (exception) {
-      console.log(`WorksManTermsAndConditionHandler Error ${exception}`)
+      console.log(`WorksManTermsAndConditionHandler Error ${JSON.stringify(exception)}`)
       console.log(`WorksManTermsAndConditionHandler Error ${JSON.stringify(event)}`)
       return {
          statusCode: 500,
