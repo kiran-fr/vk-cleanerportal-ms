@@ -24,6 +24,6 @@ export const getWorksManIdService = (email:any) => {
         })
     } catch (exception) {
         console.log(`Get Works Man Terms And Condition Service Error ${exception}`)
-        return exception;
+        throw exception;
     }
 }
