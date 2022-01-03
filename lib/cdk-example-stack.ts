@@ -16,14 +16,7 @@ export class CdkExampleStack extends cdk.Stack {
     const WorksManTermsAndCondition = new lambda.Function(this, 'WorksManTermsAndCondition', WorksManTermsAndConditionLambda())
     const WorksManExperience = new lambda.Function(this, 'WorksManExperience', WorksManExperienceLambda())
     
-    const Test = new lambda.Function(this, 'Test', {
-      code:lambda.Code.fromAsset('./functions/Test'),
-      functionName:'WorksManExperience',
-      handler:'index.testHandler',
-      memorySize:1024,
-      runtime:lambda.Runtime.NODEJS_14_X,
-      timeout:cdk.Duration.seconds(15)
-    })
+
 
     const definition = new tasks.LambdaInvoke(this, 'User Registration', {
       lambdaFunction: userRegistration,
