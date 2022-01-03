@@ -15,17 +15,6 @@ export const UserRegistrationLambda = () =>{
   }
 }
 
-export const userEmailConfirm = () =>{
-  return {
-    code:lambda.Code.fromAsset('./functions/UserEmailConfirm'),
-    functionName:'userEmail',
-    handler:'index.handler',
-    memorySize:1024,
-    runtime:lambda.Runtime.NODEJS_14_X,
-    timeout: cdk.Duration.seconds(15)
-  }
-}
-
 export const WorksManTermsAndConditionLambda = () => {
   return {
     code:lambda.Code.fromAsset('./functions/WorksManTermsAndCondition'),
