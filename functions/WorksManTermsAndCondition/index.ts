@@ -4,7 +4,10 @@ import { getWorksManIdService, WorksManTermsAndConditionService } from "./servic
 exports.WorksManTermsAndConditionHandler = async (event: any) => {
    try {
       const Worksman: any = await getWorksManIdService(event.worksman_email);
+      console.log('step1 worksman ',Worksman)
       await WorksManTermsAndConditionService(event, Worksman[0].worksman_id)
+      
+      console.log(Worksman,"This is WorksManTermsAndConditionHandler")
       return {
          statusCode: 200,
            headers: {},

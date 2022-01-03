@@ -26,7 +26,7 @@ const worksman_Table = () =>{
         last_name VARCHAR(255) NOT NULL,
         email VARCHAR(255) UNIQUE NOT NULL,
         phone VARCHAR(255) UNIQUE NOT NULL,
-        date_of_birth DATE NOT NULL,
+        date_of_birth VARCHAR(255) NOT NULL,
         current_step VARCHAR(255),
         iscompleted_registration_process VARCHAR(255),
         created_on DATE not null default CURRENT_DATE
