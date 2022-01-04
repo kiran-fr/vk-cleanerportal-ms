@@ -12,5 +12,6 @@ export const connectDB = async () => {
 
     } catch (exception) {
         console.log("Connection error",exception)
+        throw exception
     }
 }

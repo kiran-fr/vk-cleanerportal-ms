@@ -1,4 +1,4 @@
-import { UserRegistrationServices } from "./services/UserRegistrationServices";
+import { UserRegistrationServices,getWorksManAddressService } from "./services/UserRegistrationServices";
 import { EmailConfirmation } from "./helpers/EmailConfirmation"
 
 
@@ -6,11 +6,12 @@ exports.UserRegistrationHanlder = async(event:any,context:any) =>{
     try {    
     const data = await UserRegistrationServices(event.request.userAttributes)
     await EmailConfirmation(event.request.userAttributes) 
+    await getWorksManAddressService(event.request.userAttributes)
     context.succeed(event)
     return {
         statusCode: 200,
           headers: {},
-          body: JSON.stringify('Success'+event)
+          body: JSON.stringify('Success'+ event)
       }
     }
     catch(exception){

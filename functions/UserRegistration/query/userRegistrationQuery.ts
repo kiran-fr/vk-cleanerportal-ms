@@ -4,13 +4,8 @@ export const UserRegistrationQuery = (userAttributes:any) => {
        `    
 }
 
-export const getUserRegistrationQuery = () =>{
-    return `
-        SELECT * FROM worksman_table 
-    `
-}
-
 export const WorksManAddressQuery = (event:any) => {
+  console.log('address query 1',event.address)
     return `INSERT INTO Worksman_Address_Table  (
         worksman_id,
         first_line,
@@ -19,4 +14,9 @@ export const WorksManAddressQuery = (event:any) => {
         city ,
         postcode 
         ) VALUES('${event.worksman_id}','${event.first_line}','${event.second_line}','${event.county}','${event.city}','${event.postcode}')`
+}
+
+
+export const getWorksmanAddressQuery = () => {
+
 }
