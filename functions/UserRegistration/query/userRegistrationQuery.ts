@@ -4,7 +4,7 @@ export const UserRegistrationQuery = (userAttributes:any) => {
        `    
 }
 
-export const WorksManAddressQuery = (event:any) => {
+export const WorksManAddressQuery = (event:any,worksman_id:any) => {
   console.log('address query 1',event.address)
     return `INSERT INTO Worksman_Address_Table  (
         worksman_id,
@@ -13,10 +13,10 @@ export const WorksManAddressQuery = (event:any) => {
         county ,
         city ,
         postcode 
-        ) VALUES('${event.worksman_id}','${event.first_line}','${event.second_line}','${event.county}','${event.city}','${event.postcode}')`
+        ) VALUES('${worksman_id}','${event.first_line}','${event.second_line}','${event.county}','${event.city}','${event.postcode}')`
 }
 
 
-export const getWorksmanAddressQuery = () => {
-
+export const getWorksmanAddressIdQuery = (email:any) => {
+    return `SELECT worksman_id from worksman_table WHERE email='${email}`
 }
