@@ -1,30 +1,38 @@
-import { getWorksmanAddressIdService, UserRegistrationServices,WorksManAddressService } from "./services/UserRegistrationServices";
+import { getWorksmanAddressIdService, UserRegistrationServices, WorksManAddressService } from "./services/UserRegistrationServices";
 import { EmailConfirmation } from "./helpers/EmailConfirmation"
 
 
-exports.UserRegistrationHanlder = async(event:any,context:any) =>{
-    try {    
+exports.UserRegistrationHanlder = async (event: any, context: any) => {
+  try {
     const data = await UserRegistrationServices(event.request.userAttributes)
-    await EmailConfirmation(event.request.userAttributes) 
+    await EmailConfirmation(event.request.userAttributes)
+    console.warn("This is post data", data)
 
-    const worksmanId:any = await getWorksmanAddressIdService(event.request.userAttributes.email)
-    console.log('user registrtion handler id ',worksmanId)
-    await WorksManAddressService(event.request.userAttributes,worksmanId[0].worksman_id)
+    // setTimeout(async () => {
+      const worksmanId: any = await getWorksmanAddressIdService(event.request.userAttributes.email)
+      
+      console.warn('user registrtion handler id ', worksmanId)
+      console.warn('event.request.userAttributes.address', event.request.userAttributes.address)
+      await WorksManAddressService(event.request.userAttributes, worksmanId[0].worksman_id)
+    // }, 1000);
+
+    
     context.succeed(event)
     return {
-        statusCode: 200,
-          headers: {},
-          body: JSON.stringify('Success'+ event)
-      }
+      statusCode: 200,
+      headers: {},
+      body: JSON.stringify('Success' + event)
     }
-    catch(exception){
-        console.log('Error is at UserRegistrationHanlder' + JSON.stringify(exception));
-        return {
-            statusCode: 500,
-              headers: {},
-              body: JSON.stringify(exception)
-          }
+
+  }
+  catch (exception) {
+    console.warn('Error is at UserRegistrationHanlder' + JSON.stringify(exception));
+    return {
+      statusCode: 500,
+      headers: {},
+      body: JSON.stringify(exception)
     }
-   }
+  }
+}
 
 

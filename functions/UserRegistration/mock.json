@@ -19,12 +19,10 @@
       "phone_number_verified": "false",
       "given_name": "kiran",
       "family_name": "kiranreddy",
+      "phone":"7075478244",
       "email": "kiran.reddy@vrishkar.com",
-      "address":"Flat 4, Watkin Court, Watkin Terrace, , , Northampton, Northamptonshire",
-      "second_line":"main street",
-      "county":"India" ,
-      "city":"Vijayawada" ,
-      "postcode":"521228" 
+      "address":"Flat 4, Watkin Court, Watkin Terrace,Northampton, Northamptonshire,2ew jse"
+     
     }
   },
   "response": {}

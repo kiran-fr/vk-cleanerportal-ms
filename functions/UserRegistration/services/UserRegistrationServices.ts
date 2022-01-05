@@ -5,10 +5,11 @@ import { getWorksmanAddressIdQuery, UserRegistrationQuery, WorksManAddressQuery 
 export const UserRegistrationServices = async (userAttributes: any) => {
   try {
     connectDB();
-    await sequelizeConnection.query(UserRegistrationQuery(userAttributes), {
+    const data = await sequelizeConnection.query(UserRegistrationQuery(userAttributes), {
       type: QueryTypes.INSERT
     })
-
+    console.log("user registration services",data)
+    return data;
   } catch (exception) {
     console.log(`User Registration Service Error ${exception}`)
     throw exception
@@ -19,10 +20,10 @@ export const WorksManAddressService = async (userAttributes: any,worksman_id:any
   try {
     connectDB();
     console.log('This is works man address services',userAttributes)
-    await sequelizeConnection.query(WorksManAddressQuery(userAttributes,worksman_id),{
+   const data = await sequelizeConnection.query(WorksManAddressQuery(userAttributes,worksman_id),{
       type:QueryTypes.INSERT
     })
-
+    return data
   } catch (exception) {
     console.log(`User Registration Service Error ${exception}`)
     throw exception
@@ -32,9 +33,11 @@ export const WorksManAddressService = async (userAttributes: any,worksman_id:any
 export const getWorksmanAddressIdService = async(email:any) => {
   try {
     connectDB()
-    await sequelizeConnection.query(getWorksmanAddressIdQuery(email),{
+    console.warn('This is worksman address id email', email)
+    const data = await sequelizeConnection.query(getWorksmanAddressIdQuery(email),{
       type:QueryTypes.SELECT
     })
+    return data
   } catch (exception) {
     console.log('Get works man address id service Error',exception)
     throw exception
