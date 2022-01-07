@@ -5,6 +5,7 @@ exports.WorksManTermsAndConditionHandler = async (event: any) => {
    try {
       const Worksman: any = await getWorksManIdService(event.worksman_email);
       await WorksManTermsAndConditionService(event, Worksman[0].worksman_id)
+      // updateWorksmanRegistrationStatus(Worksman[0].worksman_id)
 
       console.log(Worksman, "This is WorksManTermsAndConditionHandler")
       return {

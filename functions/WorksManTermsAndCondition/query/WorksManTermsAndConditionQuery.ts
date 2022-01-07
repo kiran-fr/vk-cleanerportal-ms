@@ -16,3 +16,6 @@ export const getWorksManTermsIdQuery = (email:any) =>{
 }
 
 
+// export const updateWorksmanRegistrationStatus = () = >{
+//     return `update worksman_table current_step = 'terms & condtion where worksman_Id="1"`
+// }
