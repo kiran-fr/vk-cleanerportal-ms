@@ -15,6 +15,10 @@ export const getWorksManTermsIdQuery = (email:any) =>{
     `
 }
 
+export const WorksmanTermsAndConditionStepQuery  = (worksmanId:any) => {
+    console.warn(worksmanId)
+    return ` UPDATE worksman_table SET current_step='worksman-T&C' WHERE worksman_id = ${worksmanId}; `
+  }
 
 // export const updateWorksmanRegistrationStatus = () = >{
 //     return `update worksman_table current_step = 'terms & condtion where worksman_Id="1"`

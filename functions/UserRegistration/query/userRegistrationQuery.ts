@@ -1,7 +1,7 @@
 export const UserRegistrationQuery = (userAttributes:any) => {
   console.log('user registration query',userAttributes)
         return `INSERT INTO worksman_table (cognito_id,first_name,last_name,email, phone,date_of_birth, current_step ) 
-         VALUES ('${userAttributes.sub}','${userAttributes.given_name}','${userAttributes.family_name}','${userAttributes.email}','${userAttributes.phone_number}','${userAttributes.birthdate}','user_registration')
+         VALUES ('${userAttributes.sub}','${userAttributes.given_name}','${userAttributes.family_name}','${userAttributes.email}','${userAttributes.phone_number}','${userAttributes.birthdate}','worksmanRegistration')
        `    
 }
 
@@ -20,7 +20,7 @@ export const WorksManAddressQuery = (event:any,worksman_id:any) => {
         county ,
         city ,
         postcode 
-        ) VALUES('${worksman_id}','${worksmanAdd[0]}','${worksmanAdd[1]}','${worksmanAdd[2]}','${worksmanAdd[3]}','${worksmanAdd[4]}')`
+        ) VALUES('${worksman_id}','${worksmanAdd[0]} ${worksmanAdd[1]}','${worksmanAdd[2]}','${worksmanAdd[3]}','${worksmanAdd[4]}','${worksmanAdd[5]}')`
 }
 
 

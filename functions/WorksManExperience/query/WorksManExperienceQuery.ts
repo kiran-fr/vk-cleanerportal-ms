@@ -25,3 +25,9 @@ export const getWorksManExperienceIdQuery = (email:any) =>{
         SELECT worksman_id from worksman_table WHERE email='${email}'
     `
 }
+
+
+export const WorksmanExperienceStepQuery  = (worksmanId:any) => {
+    console.warn(worksmanId)
+    return ` UPDATE worksman_table SET current_step ='worksmanexperience' WHERE worksman_id = ${worksmanId}; `
+  }

@@ -1,6 +1,6 @@
 import { QueryTypes } from "sequelize/dist";
 import { connectDB, sequelizeConnection } from "../helpers/DbConnection"
-import { WorksmanEligibilityQuery, WorksManExperienceQuery, getWorksManExperienceIdQuery } from "../query/WorksManExperienceQuery";
+import { WorksmanEligibilityQuery, WorksManExperienceQuery, getWorksManExperienceIdQuery, WorksmanExperienceStepQuery } from "../query/WorksManExperienceQuery";
 
 export const WorksManExperienceServices = async (event: any, worksman_id: any) => {
     try {
@@ -38,3 +38,18 @@ export const getWorkManIdService = async (email: any) => {
         throw exception
     }
 }
+
+export const WorksmanExperienceStepService = async(worksmanId:any) => {
+    try {
+        
+        console.log("This is event",worksmanId)
+        connectDB();
+       return await sequelizeConnection.query(WorksmanExperienceStepQuery(worksmanId),{
+            type:QueryTypes.UPDATE
+        })
+        
+    } catch (exception) {
+        console.log("Error in getStepRegistrationService",exception)
+        throw exception
+    }
+  }
