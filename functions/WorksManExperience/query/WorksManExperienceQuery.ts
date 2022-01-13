@@ -20,6 +20,7 @@ export const WorksmanEligibilityQuery = (event:any,worksman_id:any) => {
 }
 
 
+
 export const getWorksManExperienceIdQuery = (email:any) =>{  
     return `
         SELECT worksman_id from worksman_table WHERE email='${email}'
