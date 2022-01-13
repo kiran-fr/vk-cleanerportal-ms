@@ -2,15 +2,16 @@ import { GetWorksmanAccountRegistartionStatusService, getWorksManAccountStatusSe
 
 exports.GetWorksmanAccountRegistartionStatusHandler  = async(event:any) => {
     try {
-
-        console.log(event.headers.email)
-        const Worksman: any = await getWorksManAccountStatusService(event.headers.email)
+        console.warn("This status event",event)
+        // console.log(event.headers.email)
+        const Worksman: any = await getWorksManAccountStatusService(event.worksman_email)
         
-        // const data:any = await GetWorksmanAccountRegistartionStatusService(Worksman[0].worksman_id)
+        console.warn("This is worksmand id",Worksman)
+        const data:any = await GetWorksmanAccountRegistartionStatusService(Worksman[0].worksman_id)
          
-        const data:any = await GetWorksmanAccountRegistartionStatusService(Worksman[0].worksman_id) 
+        // const data:any = await GetWorksmanAccountRegistartionStatusService(Worksman[0].worksman_id) 
 
-        console.log("This is status",data)
+        console.warn("This is status",data)
 
          console.log(event)
          return {
@@ -18,6 +19,7 @@ exports.GetWorksmanAccountRegistartionStatusHandler  = async(event:any) => {
              body: data
          }
     } catch (exception) {
+        console.log("step error",exception)
         return {
             statusCode: 500,
             headers: {},

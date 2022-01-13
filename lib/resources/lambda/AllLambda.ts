@@ -41,6 +41,6 @@ export const GetWorksmanAccountRegistartionStatusLambda = () => {
     handler:'index.GetWorksmanAccountRegistartionStatusHandler',
     memorySize: 1024,
     runtime: lambda.Runtime.NODEJS_14_X,
-    timeout: cdk.Duration.seconds(15)
+    timeout: cdk.Duration.seconds(35)
   }
 }

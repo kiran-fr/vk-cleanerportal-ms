@@ -11,6 +11,7 @@ return {
         'X-Amz-Date',
         'Authorization',
         'X-Api-Key',
+        'email'
       ],
       allowMethods: ['OPTIONS', 'GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
       allowCredentials: true,

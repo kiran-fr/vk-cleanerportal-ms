@@ -32,7 +32,7 @@ export class CdkExampleStack extends cdk.Stack {
 
     WorksmanTermsAndConditionsApiGateway(api, WorksManTermsAndCondition, 'POST')
     worksmanExperienceApiGateway(api, WorksManExperience, 'POST')
-    GetWorksmanAccountRegistartionStatusApiGateway(api,GetWorksmanAccountRegistartionStatus,'GET')
+    GetWorksmanAccountRegistartionStatusApiGateway(api,GetWorksmanAccountRegistartionStatus,'POST')
 
   }
 }
