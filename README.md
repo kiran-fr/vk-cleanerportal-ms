@@ -23,5 +23,5 @@ sam local invoke getcustomer --no-event
 sam local invoke UserRegistration -e  functions/UserRegistration/mock.json
 sam local invoke WorksManTermsAndCondition66F1F295 -e functions/WorksManTermsAndCondition/mock.json
 sam local invoke WorksManExperience -e functions/WorksManExperience/mock.json
-sam local invoke GetWorksmanCurrentStatus0E2959B9 -e functions/GetWorksmanCurrentStatus/mock.json
+sam local invoke GetWorksmanAccountRegistartionStatusA28FB6DA -e functions/GetWorksmanAccountRegistartionStatus/mock.json
 

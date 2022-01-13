@@ -52,26 +52,31 @@ export const worksmanExperienceApiGateway = (api: any, lambdaFunctionName: any, 
   );
 }
 
+
 // Works man current step api gateway
+export const GetWorksmanAccountRegistartionStatusApiGateway = (api: any, lambdaFunctionName: any, methodType: string) => {
 
-export const worksmandCurrentStatusApiGateway = (api: any, lambdaFunctionName: any, methodType: string) => {
-  
-   // 👇 add a /todos resource
-  const worksmanCurrentstep = api.root.addResource('worksmanCurrentStep');
+  // 👇 add a /todos resource
+  const GetWorksmanAccountRegistartionStatus = api.root.addResource('GetWorksmanAccountRegistartionStatus');
 
-   // 👇 integrate GET /todos with getTodosLambda
-  worksmanCurrentstep.addMethod(
+  // 👇 integrate GET /todos with getTodosLambda
+  GetWorksmanAccountRegistartionStatus.addMethod(
     methodType,
-    new apigateway.LambdaIntegration(lambdaFunctionName, ApiGateWayResponseMethod()),
+    new apigateway.LambdaIntegration(lambdaFunctionName,
+      ApiGateWayResponseMethod()
+    ),
     {
       methodResponses: [
         {
-          statusCode: "200",
+          statusCode: '200',
           responseParameters: {
             'method.response.header.Access-Control-Allow-Origin': true,
-          }
-        }
-      ]
+          },
+        },
+      ],
     }
-  )
+  );
 }
+
+
+

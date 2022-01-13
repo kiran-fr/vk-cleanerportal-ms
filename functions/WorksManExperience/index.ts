@@ -6,12 +6,12 @@ exports.WorksManExperienceHandler = async (event: any) => {
         console.log('worms mand id', Worksman)
         await WorksManExperienceServices(event, Worksman[0].worksman_id)
         await WorksManEligibilityServices(event,Worksman[0].worksman_id)
-        await WorksmanExperienceStepService(Worksman[0].worksman_id)
+        const status = await WorksmanExperienceStepService(Worksman[0].worksman_id)
         console.warn(event)
         return {
             statusCode: 200,
             headers: {},
-            body: JSON.stringify('Success' + event)
+            body: JSON.stringify(status)
         }
     } catch (exception) {
         console.log(`work man experience handler Error 1 ${exception}`)

@@ -40,8 +40,7 @@ export const getWorkManIdService = async (email: any) => {
 }
 
 export const WorksmanExperienceStepService = async(worksmanId:any) => {
-    try {
-        
+    try {        
         console.log("This is event",worksmanId)
         connectDB();
        return await sequelizeConnection.query(WorksmanExperienceStepQuery(worksmanId),{

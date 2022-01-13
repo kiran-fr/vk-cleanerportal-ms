@@ -34,11 +34,11 @@ export const WorksManExperienceLambda = () => {
   }
 }
 
-export const GetWorksmanCurrentStatusLambda = () => {
+export const GetWorksmanAccountRegistartionStatusLambda = () => {
   return {
-    code:lambda.Code.fromAsset('./functions/GetWorksmanCurrentStatus'),
-    functionName:'GetWorksmanCurrentStatus',
-    handler:'index.GetWorksmanCurrentStatusHandler',
+    code:lambda.Code.fromAsset('./functions/GetWorksmanAccountRegistartionStatus'),
+    functionName:'GetWorksmanAccountRegistartionStatus',
+    handler:'index.GetWorksmanAccountRegistartionStatusHandler',
     memorySize: 1024,
     runtime: lambda.Runtime.NODEJS_14_X,
     timeout: cdk.Duration.seconds(15)
