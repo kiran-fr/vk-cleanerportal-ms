@@ -1,5 +1,6 @@
 import * as apigateway from "@aws-cdk/aws-apigateway"
 import { ApiGateWayResponseMethod } from "../../../constants/ApiGatewayConstant";
+import {  responseMethods } from "./ResponseModel";
 
 
 // Works man terms and condition api gateway
@@ -95,9 +96,9 @@ export const GetTestUserApiGateway = (api: any, lambdaFunctionName: any, methodT
     },
     allowTestInvoke: true,
     requestTemplates: {
-      // You can define a mapping that will build a payload for your integration, based
-      //  on the integration parameters that you have specified
-      // Check: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html
+    //   // You can define a mapping that will build a payload for your integration, based
+    //   //  on the integration parameters that you have specified
+    //   // Check: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html
       'application/json': JSON.stringify({ action: 'sayHello', pollId: "$util.escapeJavaScript($input.params('who'))" })
     },
     // This parameter defines the behavior of the engine is no suitable response template is found
@@ -118,7 +119,7 @@ export const GetTestUserApiGateway = (api: any, lambdaFunctionName: any, methodT
           // - Destination parameters (the key) are the response parameters (used in mappings)
           // - Source parameters (the value) are the integration response parameters or expressions
           'method.response.header.Content-Type': "'application/json'",
-          'method.response.header.Access-Control-Allow-Origin': "'*'",
+          'method.response.header.Access-Control-Allow-Origin': "'http://localhost:3000'",
           'method.response.header.Access-Control-Allow-Credentials': "'true'"
         }
       },
@@ -139,35 +140,7 @@ export const GetTestUserApiGateway = (api: any, lambdaFunctionName: any, methodT
     ]
   });
 
-  const responseModel = api.addModel('ResponseModel', {
-    contentType: 'application/json',
-    modelName: 'ResponseModel',
-    schema: {
-      schema: apigateway.JsonSchemaVersion.DRAFT4,
-      title: 'pollResponse',
-      type: apigateway.JsonSchemaType.OBJECT,
-      properties: {
-        state: { type: apigateway.JsonSchemaType.STRING },
-        greeting: { type: apigateway.JsonSchemaType.STRING }
-      }
-    }
-  });
-  
-  // We define the JSON Schema for the transformed error response
-  const errorResponseModel = api.addModel('ErrorResponseModel', {
-    contentType: 'application/json',
-    modelName: 'ErrorResponseModel',
-    schema: {
-      schema: apigateway.JsonSchemaVersion.DRAFT4,
-      title: 'errorResponse',
-      type: apigateway.JsonSchemaType.OBJECT,
-      properties: {
-        state: { type: apigateway.JsonSchemaType.STRING },
-        message: { type: apigateway.JsonSchemaType.STRING }
-      }
-    }
-  });
-
+ 
 
   GetTestUser.addMethod('GET', integration, {
     // We can mark the parameters as required
@@ -180,33 +153,6 @@ export const GetTestUserApiGateway = (api: any, lambdaFunctionName: any, methodT
     //   validateRequestBody: true,
     //   validateRequestParameters: false
     // },
-    methodResponses: [
-      {
-        // Successful response from the integration
-        statusCode: '200',
-        // Define what parameters are allowed or not
-        responseParameters: {
-          'method.response.header.Content-Type': true,
-          'method.response.header.Access-Control-Allow-Origin': true,
-          'method.response.header.Access-Control-Allow-Credentials': true
-        },
-        // Validate the schema on the response
-        responseModels: {
-          'application/json': responseModel
-        }
-      },
-      {
-        // Same thing for the error responses
-        statusCode: '400',
-        responseParameters: {
-          'method.response.header.Content-Type': true,
-          'method.response.header.Access-Control-Allow-Origin': true,
-          'method.response.header.Access-Control-Allow-Credentials': true
-        },
-        responseModels: {
-          'application/json': errorResponseModel
-        }
-      }
-    ]
+    methodResponses: responseMethods(api)
   });
   }
