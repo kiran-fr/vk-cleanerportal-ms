@@ -90,6 +90,7 @@ export const GetTestUserApiGateway = (api: any, lambdaFunctionName: any, methodT
       // - Destination parameters (the key) are the integration parameters (used in mappings)
       // - Source parameters (the value) are the source request parameters or expressions
       // @see: https://docs.aws.amazon.com/apigateway/latest/developerguide/request-response-data-mappings.html
+      // 'integration.request.querystring.who': 'method.request.querystring.who'
       'integration.request.querystring.who': 'method.request.querystring.who'
     },
     allowTestInvoke: true,
@@ -208,78 +209,4 @@ export const GetTestUserApiGateway = (api: any, lambdaFunctionName: any, methodT
       }
     ]
   });
-
-  // 👇 integrate GET /todos with getTodosLambda
-  // GetTestUser.addMethod(
-  //   methodType,
-  //   new apigateway.LambdaIntegration(lambdaFunctionName,{
-  //     methodResponses: [
-  //       {
-  //         // Successful response from the integration
-  //         statusCode: '200',
-  //         // Define what parameters are allowed or not
-  //         responseParameters: {
-  //           'method.response.header.Content-Type': true,
-  //           'method.response.header.Access-Control-Allow-Origin': true,
-  //           'method.response.header.Access-Control-Allow-Credentials': true
-  //         },
-  //         // Validate the schema on the response
-  //         responseModels: {
-  //           'application/json': responseModel
-  //         }
-  //       },
-  //       {
-  //         // Same thing for the error responses
-  //         statusCode: '400',
-  //         responseParameters: {
-  //           'method.response.header.Content-Type': true,
-  //           'method.response.header.Access-Control-Allow-Origin': true,
-  //           'method.response.header.Access-Control-Allow-Credentials': true
-  //         },
-  //         responseModels: {
-  //           'application/json': errorResponseModel
-  //         }
-  //       }
-  //     ]
-  //   }));
   }
-
-      // {
-      //   integrationResponses: [{
-      //     statusCode: '200',
-      //     responseParameters: {
-      //       'method.response.header.Access-Control-Allow-Headers': "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
-      //       'method.response.header.Access-Control-Allow-Origin': "'*'",
-      //       'method.response.header.Access-Control-Allow-Credentials': "'false'",
-      //       'method.response.header.Access-Control-Allow-Methods': "'OPTIONS,GET,PUT,POST,DELETE'",
-      //     },
-      //   }],
-      //   passthroughBehavior: apigateway.PassthroughBehavior.NEVER,
-      //   requestTemplates: {
-      //     "application/json": "{\"statusCode\": 200}"
-      //   },
-    //   }), {
-    // methodResponses: [{
-    //   statusCode: '200',
-    //   responseParameters: {
-    //     'method.response.header.Access-Control-Allow-Headers': true,
-    //     'method.response.header.Access-Control-Allow-Methods': true,
-    //     'method.response.header.Access-Control-Allow-Credentials': true,
-    //     'method.response.header.Access-Control-Allow-Origin': true,
-    //   },
-    // }]
-  // }
-  // );
-// }
-  // {
-  //   methodResponses: [
-  //     {
-  //       statusCode: '200',
-  //       responseParameters: {
-  //         'method.response.header.Access-Control-Allow-Origin': true,
-  //       },
-  //     },
-  //   ],
-  // }
-  // );
-// }
