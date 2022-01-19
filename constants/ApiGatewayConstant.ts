@@ -3,20 +3,18 @@ export const ApigatewayDataConstants = (apigateway:any) => {
     description: 'User Registration api gateway',
     deployOptions: {
       stageName: 'dev',
+    },
+    defaultCorsPreflightOptions: {
+      allowOrigins: apigateway.Cors.ALL_ORIGINS,
+      allowMethods: apigateway.Cors.ALL_METHODS, // this is also the default
+      allowHeaders: [
+        'Content-Type',
+        'X-Amz-Date',
+        'Authorization',
+        'X-Api-Key',
+        'worksmanIdHeader'
+      ] 
     }
-    // defaultCorsPreflightOptions: {
-    //   allowOrigins: apigateway.Cors.ALL_ORIGINS,
-    //   allowMethods: apigateway.Cors.ALL_METHODS // this is also the default
-    // },
-    // 👇 enable CORS
-    
-      // allowHeaders: [
-      //   '*'
-      // ],
-      // allowMethods: ['*'],
-      // allowCredentials: true,
-      // allowOrigins: ['*']
-    
   }
 }
 

@@ -41,7 +41,8 @@ export const responseMethods = (api: any) => {
           responseParameters: {
             'method.response.header.Content-Type': true,
             'method.response.header.Access-Control-Allow-Origin': true,
-            'method.response.header.Access-Control-Allow-Credentials': true
+            'method.response.header.Access-Control-Allow-Credentials': true,
+            'method.response.header.Access-Control-Allow-Headers': true
           },
           // Validate the schema on the response
           responseModels: {
@@ -54,7 +55,8 @@ export const responseMethods = (api: any) => {
           responseParameters: {
             'method.response.header.Content-Type': true,
             'method.response.header.Access-Control-Allow-Origin': true,
-            'method.response.header.Access-Control-Allow-Credentials': true
+            'method.response.header.Access-Control-Allow-Credentials': true,
+            'method.response.header.Access-Control-Allow-Headers': true
           },
           responseModels: {
             'application/json': errorResponseModel(api)
