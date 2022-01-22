@@ -16,8 +16,8 @@ export class CdkExampleStack extends cdk.Stack {
     const WorksManTermsAndCondition = new lambda.Function(this, 'WorksManTermsAndCondition', WorksManTermsAndConditionLambda())
     const WorksManExperience = new lambda.Function(this, 'WorksManExperience', WorksManExperienceLambda())
     const GetWorksmanAccountRegistartionStatus = new lambda.Function(this,"GetWorksmanAccountRegistartionStatus",GetWorksmanAccountRegistartionStatusLambda())
-    // const GetTestUser = new lambda.Function(this,"GetTestUser",GetTestUserLambda())
-    // const PostTestUser = new lambda.Function(this,"PostTestUser",PostTestUserLambda())
+    const GetTestUser = new lambda.Function(this,"GetTestUser",GetTestUserLambda())
+    const PostTestUser = new lambda.Function(this,"PostTestUser",PostTestUserLambda())
 
     
     // const definition = new tasks.LambdaInvoke(this, 'User Registration', {
@@ -36,8 +36,8 @@ export class CdkExampleStack extends cdk.Stack {
     WorksmanTermsAndConditionsApiGateway(api, WorksManTermsAndCondition, 'POST')
     worksmanExperienceApiGateway(api, WorksManExperience, 'POST')
     GetWorksmanAccountRegistartionStatusApiGateway(api,GetWorksmanAccountRegistartionStatus,'GET')
-    // GetTestUserApiGateway(api,GetTestUser, 'GET')
-    // PostUserApiGateway(api,PostTestUser, 'POST')
+    GetTestUserApiGateway(api,GetTestUser, 'GET')
+    PostUserApiGateway(api,PostTestUser, 'POST')
   
   }
 }

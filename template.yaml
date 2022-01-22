@@ -22,7 +22,7 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameters0a0427e814379955e6117178f60aec1c17af514d409affa955127c6bfc2a0f42S3Bucket6EE0F7E6
+          Ref: AssetParametersfd8b881101293bf4815b09edccd956d1c88f75096bd000eccbcd938c613ca8adS3Bucket8BE9F9BC
         S3Key:
           Fn::Join:
             - ""
@@ -30,12 +30,12 @@ Resources:
                   - 0
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters0a0427e814379955e6117178f60aec1c17af514d409affa955127c6bfc2a0f42S3VersionKeyBCB9686A
+                      - Ref: AssetParametersfd8b881101293bf4815b09edccd956d1c88f75096bd000eccbcd938c613ca8adS3VersionKey741FED07
               - Fn::Select:
                   - 1
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters0a0427e814379955e6117178f60aec1c17af514d409affa955127c6bfc2a0f42S3VersionKeyBCB9686A
+                      - Ref: AssetParametersfd8b881101293bf4815b09edccd956d1c88f75096bd000eccbcd938c613ca8adS3VersionKey741FED07
       Role:
         Fn::GetAtt:
           - UserRegistrationServiceRoleBCB3F31D
@@ -49,8 +49,8 @@ Resources:
       - UserRegistrationServiceRoleBCB3F31D
     Metadata:
       aws:cdk:path: VrishkarServicesDevStack/UserRegistration/Resource
-      aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\UserRegistration
-      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\UserRegistration
+      aws:asset:path: /Users/ramya/Desktop/vrishkarprojects/vk-cleanerportal-ms/functions/UserRegistration
+      aws:asset:original-path: /Users/ramya/Desktop/vrishkarprojects/vk-cleanerportal-ms/functions/UserRegistration
       aws:asset:is-bundled: false
       aws:asset:property: Code
   WorksManTermsAndConditionServiceRole06AE84AC:
@@ -76,7 +76,7 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParametersed6ab09e487e78c2c2403f2289a9af5af53cd25bd4d565afee63ff97cd3c04ccS3BucketE5823A65
+          Ref: AssetParameters7af9e6f86b214051673bfbb53c0ffd707fc2a99c381a7917c4ada80e9ab5acadS3BucketAE8E1AB2
         S3Key:
           Fn::Join:
             - ""
@@ -84,12 +84,12 @@ Resources:
                   - 0
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParametersed6ab09e487e78c2c2403f2289a9af5af53cd25bd4d565afee63ff97cd3c04ccS3VersionKeyD24C8684
+                      - Ref: AssetParameters7af9e6f86b214051673bfbb53c0ffd707fc2a99c381a7917c4ada80e9ab5acadS3VersionKey4A28CE50
               - Fn::Select:
                   - 1
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParametersed6ab09e487e78c2c2403f2289a9af5af53cd25bd4d565afee63ff97cd3c04ccS3VersionKeyD24C8684
+                      - Ref: AssetParameters7af9e6f86b214051673bfbb53c0ffd707fc2a99c381a7917c4ada80e9ab5acadS3VersionKey4A28CE50
       Role:
         Fn::GetAtt:
           - WorksManTermsAndConditionServiceRole06AE84AC
@@ -103,8 +103,8 @@ Resources:
       - WorksManTermsAndConditionServiceRole06AE84AC
     Metadata:
       aws:cdk:path: VrishkarServicesDevStack/WorksManTermsAndCondition/Resource
-      aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\WorksManTermsAndCondition
-      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\WorksManTermsAndCondition
+      aws:asset:path: /Users/ramya/Desktop/vrishkarprojects/vk-cleanerportal-ms/functions/WorksManTermsAndCondition
+      aws:asset:original-path: /Users/ramya/Desktop/vrishkarprojects/vk-cleanerportal-ms/functions/WorksManTermsAndCondition
       aws:asset:is-bundled: false
       aws:asset:property: Code
   WorksManExperienceServiceRoleE9A759F2:
@@ -130,7 +130,7 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameters2f4ca60710fddb8324d3bc88bae5d05acd9b52d82af23c9ce337239fb0570250S3Bucket64045F88
+          Ref: AssetParameterscd29d4b50cec56404201501fc0f8c2a8f571f7c3321bfa6705c24e0449fa5304S3BucketBCBCE5EA
         S3Key:
           Fn::Join:
             - ""
@@ -138,12 +138,12 @@ Resources:
                   - 0
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters2f4ca60710fddb8324d3bc88bae5d05acd9b52d82af23c9ce337239fb0570250S3VersionKeyDE1FE1CB
+                      - Ref: AssetParameterscd29d4b50cec56404201501fc0f8c2a8f571f7c3321bfa6705c24e0449fa5304S3VersionKey7E7AE932
               - Fn::Select:
                   - 1
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters2f4ca60710fddb8324d3bc88bae5d05acd9b52d82af23c9ce337239fb0570250S3VersionKeyDE1FE1CB
+                      - Ref: AssetParameterscd29d4b50cec56404201501fc0f8c2a8f571f7c3321bfa6705c24e0449fa5304S3VersionKey7E7AE932
       Role:
         Fn::GetAtt:
           - WorksManExperienceServiceRoleE9A759F2
@@ -157,8 +157,8 @@ Resources:
       - WorksManExperienceServiceRoleE9A759F2
     Metadata:
       aws:cdk:path: VrishkarServicesDevStack/WorksManExperience/Resource
-      aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\WorksManExperience
-      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\WorksManExperience
+      aws:asset:path: /Users/ramya/Desktop/vrishkarprojects/vk-cleanerportal-ms/functions/WorksManExperience
+      aws:asset:original-path: /Users/ramya/Desktop/vrishkarprojects/vk-cleanerportal-ms/functions/WorksManExperience
       aws:asset:is-bundled: false
       aws:asset:property: Code
   GetWorksmanAccountRegistartionStatusServiceRole6BD0E8C2:
@@ -184,7 +184,7 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameters96e2ef54e907327d535ea36eae66494af1f93d8a9a5da75f7846d8cb2af94ffcS3Bucket33F82CB6
+          Ref: AssetParameters4cc7c8070a9efcc20b112d5974ef7e8032aa3e8d4e2fff7e39a5cb8a25ea009fS3Bucket7545C619
         S3Key:
           Fn::Join:
             - ""
@@ -192,12 +192,12 @@ Resources:
                   - 0
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters96e2ef54e907327d535ea36eae66494af1f93d8a9a5da75f7846d8cb2af94ffcS3VersionKeyF3F5A7E3
+                      - Ref: AssetParameters4cc7c8070a9efcc20b112d5974ef7e8032aa3e8d4e2fff7e39a5cb8a25ea009fS3VersionKeyE85A2494
               - Fn::Select:
                   - 1
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters96e2ef54e907327d535ea36eae66494af1f93d8a9a5da75f7846d8cb2af94ffcS3VersionKeyF3F5A7E3
+                      - Ref: AssetParameters4cc7c8070a9efcc20b112d5974ef7e8032aa3e8d4e2fff7e39a5cb8a25ea009fS3VersionKeyE85A2494
       Role:
         Fn::GetAtt:
           - GetWorksmanAccountRegistartionStatusServiceRole6BD0E8C2
@@ -211,8 +211,8 @@ Resources:
       - GetWorksmanAccountRegistartionStatusServiceRole6BD0E8C2
     Metadata:
       aws:cdk:path: VrishkarServicesDevStack/GetWorksmanAccountRegistartionStatus/Resource
-      aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetWorksmanAccountRegistartionStatus
-      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetWorksmanAccountRegistartionStatus
+      aws:asset:path: /Users/ramya/Desktop/vrishkarprojects/vk-cleanerportal-ms/functions/GetWorksmanAccountRegistartionStatus
+      aws:asset:original-path: /Users/ramya/Desktop/vrishkarprojects/vk-cleanerportal-ms/functions/GetWorksmanAccountRegistartionStatus
       aws:asset:is-bundled: false
       aws:asset:property: Code
   WorksManApi8007FB09:
@@ -753,47 +753,47 @@ Resources:
   CDKMetadata:
     Type: AWS::CDK::Metadata
     Properties:
-      Analytics: v2:deflate64:H4sIAAAAAAAA/02QwW7DIAyGn6V3Qhd12nlpp92qVdkTeOBlNAEibFZVEe8+oO2Ukz8b+/dvWtnunuXT5hUu1Cg9bhflA8rlk0GNoiNCzjgYN4iDd8QhKhaHb3eCABYZQ0k+Is+xlnskH4PCwrlfGzbeJVHElwnslwa5vEenSrn0rPmEwRqiOmDAyqX3UxUqMQnaNVDskKyuci73UY3IeyAUMJsBGC9wzXNI3M3m7ueBnVI+OhZvOE/+atFVw6us3Fn33eBxSpU/Iv94XR7vtD70n49e41SbCqSUhMsgz7T9bV/yR8t2cyZjmpB9GIuyv8U/N6tnroQBAAA=
+      Analytics: v2:deflate64:H4sIAAAAAAAA/02P0W7CMAxFv4X3YFaB9rzCxBsa6r7AS70utEmq2BlCVf99SYCpTz7XuXauK6i2O3hZveGV17rtN5P2gWD6FNS9qplJEnbGdergHUuIWtTh250xoCWhkMVHlDGWdkPsY9CUOflbI8a7WeXl04D2q0WYjtHp3M6eJZ8pWMNcBgxamBo/lEW5zoq3a8xxGEqqpGEfdU+yRyaFo+lQ6Iq3NEcs9WgeeZ5Ya+2jE/VO4+BvllwJvFD5zvLfHZ6nlPUnkh/f5scHLQ/955NvaSimDPM8K5cALrz5rXZQvUK1urAx65ByGEvQ3OsfzWZcm4QBAAA=
     Metadata:
       aws:cdk:path: VrishkarServicesDevStack/CDKMetadata/Default
     Condition: CDKMetadataAvailable
 Parameters:
-  AssetParameters0a0427e814379955e6117178f60aec1c17af514d409affa955127c6bfc2a0f42S3Bucket6EE0F7E6:
+  AssetParametersfd8b881101293bf4815b09edccd956d1c88f75096bd000eccbcd938c613ca8adS3Bucket8BE9F9BC:
     Type: String
-    Description: S3 bucket for asset "0a0427e814379955e6117178f60aec1c17af514d409affa955127c6bfc2a0f42"
-  AssetParameters0a0427e814379955e6117178f60aec1c17af514d409affa955127c6bfc2a0f42S3VersionKeyBCB9686A:
+    Description: S3 bucket for asset "fd8b881101293bf4815b09edccd956d1c88f75096bd000eccbcd938c613ca8ad"
+  AssetParametersfd8b881101293bf4815b09edccd956d1c88f75096bd000eccbcd938c613ca8adS3VersionKey741FED07:
     Type: String
-    Description: S3 key for asset version "0a0427e814379955e6117178f60aec1c17af514d409affa955127c6bfc2a0f42"
-  AssetParameters0a0427e814379955e6117178f60aec1c17af514d409affa955127c6bfc2a0f42ArtifactHash1F236BC8:
+    Description: S3 key for asset version "fd8b881101293bf4815b09edccd956d1c88f75096bd000eccbcd938c613ca8ad"
+  AssetParametersfd8b881101293bf4815b09edccd956d1c88f75096bd000eccbcd938c613ca8adArtifactHash94AD9E58:
     Type: String
-    Description: Artifact hash for asset "0a0427e814379955e6117178f60aec1c17af514d409affa955127c6bfc2a0f42"
-  AssetParametersed6ab09e487e78c2c2403f2289a9af5af53cd25bd4d565afee63ff97cd3c04ccS3BucketE5823A65:
+    Description: Artifact hash for asset "fd8b881101293bf4815b09edccd956d1c88f75096bd000eccbcd938c613ca8ad"
+  AssetParameters7af9e6f86b214051673bfbb53c0ffd707fc2a99c381a7917c4ada80e9ab5acadS3BucketAE8E1AB2:
     Type: String
-    Description: S3 bucket for asset "ed6ab09e487e78c2c2403f2289a9af5af53cd25bd4d565afee63ff97cd3c04cc"
-  AssetParametersed6ab09e487e78c2c2403f2289a9af5af53cd25bd4d565afee63ff97cd3c04ccS3VersionKeyD24C8684:
+    Description: S3 bucket for asset "7af9e6f86b214051673bfbb53c0ffd707fc2a99c381a7917c4ada80e9ab5acad"
+  AssetParameters7af9e6f86b214051673bfbb53c0ffd707fc2a99c381a7917c4ada80e9ab5acadS3VersionKey4A28CE50:
     Type: String
-    Description: S3 key for asset version "ed6ab09e487e78c2c2403f2289a9af5af53cd25bd4d565afee63ff97cd3c04cc"
-  AssetParametersed6ab09e487e78c2c2403f2289a9af5af53cd25bd4d565afee63ff97cd3c04ccArtifactHash5D02EC78:
+    Description: S3 key for asset version "7af9e6f86b214051673bfbb53c0ffd707fc2a99c381a7917c4ada80e9ab5acad"
+  AssetParameters7af9e6f86b214051673bfbb53c0ffd707fc2a99c381a7917c4ada80e9ab5acadArtifactHash19377D05:
     Type: String
-    Description: Artifact hash for asset "ed6ab09e487e78c2c2403f2289a9af5af53cd25bd4d565afee63ff97cd3c04cc"
-  AssetParameters2f4ca60710fddb8324d3bc88bae5d05acd9b52d82af23c9ce337239fb0570250S3Bucket64045F88:
+    Description: Artifact hash for asset "7af9e6f86b214051673bfbb53c0ffd707fc2a99c381a7917c4ada80e9ab5acad"
+  AssetParameterscd29d4b50cec56404201501fc0f8c2a8f571f7c3321bfa6705c24e0449fa5304S3BucketBCBCE5EA:
     Type: String
-    Description: S3 bucket for asset "2f4ca60710fddb8324d3bc88bae5d05acd9b52d82af23c9ce337239fb0570250"
-  AssetParameters2f4ca60710fddb8324d3bc88bae5d05acd9b52d82af23c9ce337239fb0570250S3VersionKeyDE1FE1CB:
+    Description: S3 bucket for asset "cd29d4b50cec56404201501fc0f8c2a8f571f7c3321bfa6705c24e0449fa5304"
+  AssetParameterscd29d4b50cec56404201501fc0f8c2a8f571f7c3321bfa6705c24e0449fa5304S3VersionKey7E7AE932:
     Type: String
-    Description: S3 key for asset version "2f4ca60710fddb8324d3bc88bae5d05acd9b52d82af23c9ce337239fb0570250"
-  AssetParameters2f4ca60710fddb8324d3bc88bae5d05acd9b52d82af23c9ce337239fb0570250ArtifactHash18681DDD:
+    Description: S3 key for asset version "cd29d4b50cec56404201501fc0f8c2a8f571f7c3321bfa6705c24e0449fa5304"
+  AssetParameterscd29d4b50cec56404201501fc0f8c2a8f571f7c3321bfa6705c24e0449fa5304ArtifactHash981B9C45:
     Type: String
-    Description: Artifact hash for asset "2f4ca60710fddb8324d3bc88bae5d05acd9b52d82af23c9ce337239fb0570250"
-  AssetParameters96e2ef54e907327d535ea36eae66494af1f93d8a9a5da75f7846d8cb2af94ffcS3Bucket33F82CB6:
+    Description: Artifact hash for asset "cd29d4b50cec56404201501fc0f8c2a8f571f7c3321bfa6705c24e0449fa5304"
+  AssetParameters4cc7c8070a9efcc20b112d5974ef7e8032aa3e8d4e2fff7e39a5cb8a25ea009fS3Bucket7545C619:
     Type: String
-    Description: S3 bucket for asset "96e2ef54e907327d535ea36eae66494af1f93d8a9a5da75f7846d8cb2af94ffc"
-  AssetParameters96e2ef54e907327d535ea36eae66494af1f93d8a9a5da75f7846d8cb2af94ffcS3VersionKeyF3F5A7E3:
+    Description: S3 bucket for asset "4cc7c8070a9efcc20b112d5974ef7e8032aa3e8d4e2fff7e39a5cb8a25ea009f"
+  AssetParameters4cc7c8070a9efcc20b112d5974ef7e8032aa3e8d4e2fff7e39a5cb8a25ea009fS3VersionKeyE85A2494:
     Type: String
-    Description: S3 key for asset version "96e2ef54e907327d535ea36eae66494af1f93d8a9a5da75f7846d8cb2af94ffc"
-  AssetParameters96e2ef54e907327d535ea36eae66494af1f93d8a9a5da75f7846d8cb2af94ffcArtifactHash6040F836:
+    Description: S3 key for asset version "4cc7c8070a9efcc20b112d5974ef7e8032aa3e8d4e2fff7e39a5cb8a25ea009f"
+  AssetParameters4cc7c8070a9efcc20b112d5974ef7e8032aa3e8d4e2fff7e39a5cb8a25ea009fArtifactHash2C5FA7AD:
     Type: String
-    Description: Artifact hash for asset "96e2ef54e907327d535ea36eae66494af1f93d8a9a5da75f7846d8cb2af94ffc"
+    Description: Artifact hash for asset "4cc7c8070a9efcc20b112d5974ef7e8032aa3e8d4e2fff7e39a5cb8a25ea009f"
 Outputs:
   WorksManApiEndpoint06A24561:
     Value:
