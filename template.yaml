@@ -1,5 +1,5 @@
 Resources:
-  signupServiceRole22DA917C:
+  UserRegistrationServiceRoleBCB3F31D:
     Type: AWS::IAM::Role
     Properties:
       AssumeRolePolicyDocument:
@@ -16,13 +16,13 @@ Resources:
               - Ref: AWS::Partition
               - :iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
     Metadata:
-      aws:cdk:path: VkCleanerportalMsStack/signup/ServiceRole/Resource
-  signup3542BA4E:
+      aws:cdk:path: VrishkarServicesDevStack/UserRegistration/ServiceRole/Resource
+  UserRegistration1E985772:
     Type: AWS::Lambda::Function
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameters160912c2ec02c01e4cac81aaa236dcd6da233b9cfbb1835a66580ddd3e96c8b6S3Bucket4754CF09
+          Ref: AssetParametersfd8b881101293bf4815b09edccd956d1c88f75096bd000eccbcd938c613ca8adS3Bucket8BE9F9BC
         S3Key:
           Fn::Join:
             - ""
@@ -30,44 +30,797 @@ Resources:
                   - 0
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters160912c2ec02c01e4cac81aaa236dcd6da233b9cfbb1835a66580ddd3e96c8b6S3VersionKey772C7BF9
+                      - Ref: AssetParametersfd8b881101293bf4815b09edccd956d1c88f75096bd000eccbcd938c613ca8adS3VersionKey741FED07
               - Fn::Select:
                   - 1
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters160912c2ec02c01e4cac81aaa236dcd6da233b9cfbb1835a66580ddd3e96c8b6S3VersionKey772C7BF9
+                      - Ref: AssetParametersfd8b881101293bf4815b09edccd956d1c88f75096bd000eccbcd938c613ca8adS3VersionKey741FED07
       Role:
         Fn::GetAtt:
-          - signupServiceRole22DA917C
+          - UserRegistrationServiceRoleBCB3F31D
           - Arn
-      FunctionName: signup
-      Handler: index.handler
+      FunctionName: UserRegistration
+      Handler: index.UserRegistrationHanlder
       MemorySize: 1024
       Runtime: nodejs14.x
+      Timeout: 15
     DependsOn:
-      - signupServiceRole22DA917C
+      - UserRegistrationServiceRoleBCB3F31D
     Metadata:
-      aws:cdk:path: VkCleanerportalMsStack/signup/Resource
-      aws:asset:path: C:\Users\kiran\vrishkar\vk-cleanerportal-ms\function
+      aws:cdk:path: VrishkarServicesDevStack/UserRegistration/Resource
+      aws:asset:path: /Users/ramya/Desktop/vrishkarprojects/vk-cleanerportal-ms/functions/UserRegistration
+      aws:asset:original-path: /Users/ramya/Desktop/vrishkarprojects/vk-cleanerportal-ms/functions/UserRegistration
       aws:asset:is-bundled: false
       aws:asset:property: Code
+  WorksManTermsAndConditionServiceRole06AE84AC:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Action: sts:AssumeRole
+            Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+        Version: "2012-10-17"
+      ManagedPolicyArns:
+        - Fn::Join:
+            - ""
+            - - "arn:"
+              - Ref: AWS::Partition
+              - :iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManTermsAndCondition/ServiceRole/Resource
+  WorksManTermsAndCondition66F1F295:
+    Type: AWS::Lambda::Function
+    Properties:
+      Code:
+        S3Bucket:
+          Ref: AssetParameters7af9e6f86b214051673bfbb53c0ffd707fc2a99c381a7917c4ada80e9ab5acadS3BucketAE8E1AB2
+        S3Key:
+          Fn::Join:
+            - ""
+            - - Fn::Select:
+                  - 0
+                  - Fn::Split:
+                      - "||"
+                      - Ref: AssetParameters7af9e6f86b214051673bfbb53c0ffd707fc2a99c381a7917c4ada80e9ab5acadS3VersionKey4A28CE50
+              - Fn::Select:
+                  - 1
+                  - Fn::Split:
+                      - "||"
+                      - Ref: AssetParameters7af9e6f86b214051673bfbb53c0ffd707fc2a99c381a7917c4ada80e9ab5acadS3VersionKey4A28CE50
+      Role:
+        Fn::GetAtt:
+          - WorksManTermsAndConditionServiceRole06AE84AC
+          - Arn
+      FunctionName: WorksManTermsAndCondition
+      Handler: index.WorksManTermsAndConditionHandler
+      MemorySize: 1024
+      Runtime: nodejs14.x
+      Timeout: 15
+    DependsOn:
+      - WorksManTermsAndConditionServiceRole06AE84AC
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManTermsAndCondition/Resource
+      aws:asset:path: /Users/ramya/Desktop/vrishkarprojects/vk-cleanerportal-ms/functions/WorksManTermsAndCondition
+      aws:asset:original-path: /Users/ramya/Desktop/vrishkarprojects/vk-cleanerportal-ms/functions/WorksManTermsAndCondition
+      aws:asset:is-bundled: false
+      aws:asset:property: Code
+  WorksManExperienceServiceRoleE9A759F2:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Action: sts:AssumeRole
+            Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+        Version: "2012-10-17"
+      ManagedPolicyArns:
+        - Fn::Join:
+            - ""
+            - - "arn:"
+              - Ref: AWS::Partition
+              - :iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManExperience/ServiceRole/Resource
+  WorksManExperienceAB1A1501:
+    Type: AWS::Lambda::Function
+    Properties:
+      Code:
+        S3Bucket:
+          Ref: AssetParameterscd29d4b50cec56404201501fc0f8c2a8f571f7c3321bfa6705c24e0449fa5304S3BucketBCBCE5EA
+        S3Key:
+          Fn::Join:
+            - ""
+            - - Fn::Select:
+                  - 0
+                  - Fn::Split:
+                      - "||"
+                      - Ref: AssetParameterscd29d4b50cec56404201501fc0f8c2a8f571f7c3321bfa6705c24e0449fa5304S3VersionKey7E7AE932
+              - Fn::Select:
+                  - 1
+                  - Fn::Split:
+                      - "||"
+                      - Ref: AssetParameterscd29d4b50cec56404201501fc0f8c2a8f571f7c3321bfa6705c24e0449fa5304S3VersionKey7E7AE932
+      Role:
+        Fn::GetAtt:
+          - WorksManExperienceServiceRoleE9A759F2
+          - Arn
+      FunctionName: WorksManExperience
+      Handler: index.WorksManExperienceHandler
+      MemorySize: 1024
+      Runtime: nodejs14.x
+      Timeout: 15
+    DependsOn:
+      - WorksManExperienceServiceRoleE9A759F2
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManExperience/Resource
+      aws:asset:path: /Users/ramya/Desktop/vrishkarprojects/vk-cleanerportal-ms/functions/WorksManExperience
+      aws:asset:original-path: /Users/ramya/Desktop/vrishkarprojects/vk-cleanerportal-ms/functions/WorksManExperience
+      aws:asset:is-bundled: false
+      aws:asset:property: Code
+  GetWorksmanAccountRegistartionStatusServiceRole6BD0E8C2:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Action: sts:AssumeRole
+            Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+        Version: "2012-10-17"
+      ManagedPolicyArns:
+        - Fn::Join:
+            - ""
+            - - "arn:"
+              - Ref: AWS::Partition
+              - :iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/GetWorksmanAccountRegistartionStatus/ServiceRole/Resource
+  GetWorksmanAccountRegistartionStatusA28FB6DA:
+    Type: AWS::Lambda::Function
+    Properties:
+      Code:
+        S3Bucket:
+          Ref: AssetParameters4cc7c8070a9efcc20b112d5974ef7e8032aa3e8d4e2fff7e39a5cb8a25ea009fS3Bucket7545C619
+        S3Key:
+          Fn::Join:
+            - ""
+            - - Fn::Select:
+                  - 0
+                  - Fn::Split:
+                      - "||"
+                      - Ref: AssetParameters4cc7c8070a9efcc20b112d5974ef7e8032aa3e8d4e2fff7e39a5cb8a25ea009fS3VersionKeyE85A2494
+              - Fn::Select:
+                  - 1
+                  - Fn::Split:
+                      - "||"
+                      - Ref: AssetParameters4cc7c8070a9efcc20b112d5974ef7e8032aa3e8d4e2fff7e39a5cb8a25ea009fS3VersionKeyE85A2494
+      Role:
+        Fn::GetAtt:
+          - GetWorksmanAccountRegistartionStatusServiceRole6BD0E8C2
+          - Arn
+      FunctionName: GetWorksmanAccountRegistartionStatus
+      Handler: index.GetWorksmanAccountRegistartionStatusHandler
+      MemorySize: 1024
+      Runtime: nodejs14.x
+      Timeout: 35
+    DependsOn:
+      - GetWorksmanAccountRegistartionStatusServiceRole6BD0E8C2
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/GetWorksmanAccountRegistartionStatus/Resource
+      aws:asset:path: /Users/ramya/Desktop/vrishkarprojects/vk-cleanerportal-ms/functions/GetWorksmanAccountRegistartionStatus
+      aws:asset:original-path: /Users/ramya/Desktop/vrishkarprojects/vk-cleanerportal-ms/functions/GetWorksmanAccountRegistartionStatus
+      aws:asset:is-bundled: false
+      aws:asset:property: Code
+  WorksManApi8007FB09:
+    Type: AWS::ApiGateway::RestApi
+    Properties:
+      Description: User Registration api gateway
+      Name: WorksManApi
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Resource
+  WorksManApiCloudWatchRole56A20485:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Action: sts:AssumeRole
+            Effect: Allow
+            Principal:
+              Service: apigateway.amazonaws.com
+        Version: "2012-10-17"
+      ManagedPolicyArns:
+        - Fn::Join:
+            - ""
+            - - "arn:"
+              - Ref: AWS::Partition
+              - :iam::aws:policy/service-role/AmazonAPIGatewayPushToCloudWatchLogs
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/CloudWatchRole/Resource
+  WorksManApiAccount378EFED6:
+    Type: AWS::ApiGateway::Account
+    Properties:
+      CloudWatchRoleArn:
+        Fn::GetAtt:
+          - WorksManApiCloudWatchRole56A20485
+          - Arn
+    DependsOn:
+      - WorksManApi8007FB09
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Account
+  WorksManApiDeployment495969A97f030b29b489cb73cb8d26b1fbc28d81:
+    Type: AWS::ApiGateway::Deployment
+    Properties:
+      RestApiId:
+        Ref: WorksManApi8007FB09
+      Description: Automatically created by the RestApi construct
+    DependsOn:
+      - WorksManApiGetWorksmanAccountRegistartionStatusGET88BE1ED8
+      - WorksManApiGetWorksmanAccountRegistartionStatusOPTIONSDC172552
+      - WorksManApiGetWorksmanAccountRegistartionStatus10A258AF
+      - WorksManApiOPTIONS0DEE16A2
+      - WorksManApiworksmanExperienceOPTIONSB18854EB
+      - WorksManApiworksmanExperiencePOST6823FA26
+      - WorksManApiworksmanExperience3919F320
+      - WorksManApiWorksmanTermsAndConditionsOPTIONS7A4ACDF9
+      - WorksManApiWorksmanTermsAndConditionsPOST661B87E2
+      - WorksManApiWorksmanTermsAndConditionsE2AE3179
+      - WorksManApiErrorResponseModelB8540664
+      - WorksManApiResponseModelAA7D6EB5
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Deployment/Resource
+  WorksManApiDeploymentStagedev92FAAB21:
+    Type: AWS::ApiGateway::Stage
+    Properties:
+      RestApiId:
+        Ref: WorksManApi8007FB09
+      DeploymentId:
+        Ref: WorksManApiDeployment495969A97f030b29b489cb73cb8d26b1fbc28d81
+      StageName: dev
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/DeploymentStage.dev/Resource
+  WorksManApiOPTIONS0DEE16A2:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      HttpMethod: OPTIONS
+      ResourceId:
+        Fn::GetAtt:
+          - WorksManApi8007FB09
+          - RootResourceId
+      RestApiId:
+        Ref: WorksManApi8007FB09
+      AuthorizationType: NONE
+      Integration:
+        IntegrationResponses:
+          - ResponseParameters:
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
+            StatusCode: "204"
+        RequestTemplates:
+          application/json: "{ statusCode: 200 }"
+        Type: MOCK
+      MethodResponses:
+        - ResponseParameters:
+            method.response.header.Access-Control-Allow-Headers: true
+            method.response.header.Access-Control-Allow-Origin: true
+            method.response.header.Access-Control-Allow-Methods: true
+          StatusCode: "204"
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/OPTIONS/Resource
+  WorksManApiWorksmanTermsAndConditionsE2AE3179:
+    Type: AWS::ApiGateway::Resource
+    Properties:
+      ParentId:
+        Fn::GetAtt:
+          - WorksManApi8007FB09
+          - RootResourceId
+      PathPart: WorksmanTermsAndConditions
+      RestApiId:
+        Ref: WorksManApi8007FB09
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/WorksmanTermsAndConditions/Resource
+  WorksManApiWorksmanTermsAndConditionsOPTIONS7A4ACDF9:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      HttpMethod: OPTIONS
+      ResourceId:
+        Ref: WorksManApiWorksmanTermsAndConditionsE2AE3179
+      RestApiId:
+        Ref: WorksManApi8007FB09
+      AuthorizationType: NONE
+      Integration:
+        IntegrationResponses:
+          - ResponseParameters:
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
+            StatusCode: "204"
+        RequestTemplates:
+          application/json: "{ statusCode: 200 }"
+        Type: MOCK
+      MethodResponses:
+        - ResponseParameters:
+            method.response.header.Access-Control-Allow-Headers: true
+            method.response.header.Access-Control-Allow-Origin: true
+            method.response.header.Access-Control-Allow-Methods: true
+          StatusCode: "204"
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/WorksmanTermsAndConditions/OPTIONS/Resource
+  WorksManApiWorksmanTermsAndConditionsPOSTApiPermissionVrishkarServicesDevStackWorksManApi5F03F3C1POSTWorksmanTermsAndConditions5D26E080:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName:
+        Fn::GetAtt:
+          - WorksManTermsAndCondition66F1F295
+          - Arn
+      Principal: apigateway.amazonaws.com
+      SourceArn:
+        Fn::Join:
+          - ""
+          - - "arn:"
+            - Ref: AWS::Partition
+            - ":execute-api:"
+            - Ref: AWS::Region
+            - ":"
+            - Ref: AWS::AccountId
+            - ":"
+            - Ref: WorksManApi8007FB09
+            - /
+            - Ref: WorksManApiDeploymentStagedev92FAAB21
+            - /POST/WorksmanTermsAndConditions
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/WorksmanTermsAndConditions/POST/ApiPermission.VrishkarServicesDevStackWorksManApi5F03F3C1.POST..WorksmanTermsAndConditions
+  WorksManApiWorksmanTermsAndConditionsPOSTApiPermissionTestVrishkarServicesDevStackWorksManApi5F03F3C1POSTWorksmanTermsAndConditionsFEC34F37:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName:
+        Fn::GetAtt:
+          - WorksManTermsAndCondition66F1F295
+          - Arn
+      Principal: apigateway.amazonaws.com
+      SourceArn:
+        Fn::Join:
+          - ""
+          - - "arn:"
+            - Ref: AWS::Partition
+            - ":execute-api:"
+            - Ref: AWS::Region
+            - ":"
+            - Ref: AWS::AccountId
+            - ":"
+            - Ref: WorksManApi8007FB09
+            - /test-invoke-stage/POST/WorksmanTermsAndConditions
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/WorksmanTermsAndConditions/POST/ApiPermission.Test.VrishkarServicesDevStackWorksManApi5F03F3C1.POST..WorksmanTermsAndConditions
+  WorksManApiWorksmanTermsAndConditionsPOST661B87E2:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      HttpMethod: POST
+      ResourceId:
+        Ref: WorksManApiWorksmanTermsAndConditionsE2AE3179
+      RestApiId:
+        Ref: WorksManApi8007FB09
+      AuthorizationType: NONE
+      Integration:
+        IntegrationHttpMethod: POST
+        IntegrationResponses:
+          - ResponseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            StatusCode: "200"
+        Type: AWS
+        Uri:
+          Fn::Join:
+            - ""
+            - - "arn:"
+              - Ref: AWS::Partition
+              - ":apigateway:"
+              - Ref: AWS::Region
+              - :lambda:path/2015-03-31/functions/
+              - Fn::GetAtt:
+                  - WorksManTermsAndCondition66F1F295
+                  - Arn
+              - /invocations
+      MethodResponses:
+        - ResponseParameters:
+            method.response.header.Access-Control-Allow-Origin: true
+          StatusCode: "200"
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/WorksmanTermsAndConditions/POST/Resource
+  WorksManApiworksmanExperience3919F320:
+    Type: AWS::ApiGateway::Resource
+    Properties:
+      ParentId:
+        Fn::GetAtt:
+          - WorksManApi8007FB09
+          - RootResourceId
+      PathPart: worksmanExperience
+      RestApiId:
+        Ref: WorksManApi8007FB09
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/worksmanExperience/Resource
+  WorksManApiworksmanExperienceOPTIONSB18854EB:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      HttpMethod: OPTIONS
+      ResourceId:
+        Ref: WorksManApiworksmanExperience3919F320
+      RestApiId:
+        Ref: WorksManApi8007FB09
+      AuthorizationType: NONE
+      Integration:
+        IntegrationResponses:
+          - ResponseParameters:
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
+            StatusCode: "204"
+        RequestTemplates:
+          application/json: "{ statusCode: 200 }"
+        Type: MOCK
+      MethodResponses:
+        - ResponseParameters:
+            method.response.header.Access-Control-Allow-Headers: true
+            method.response.header.Access-Control-Allow-Origin: true
+            method.response.header.Access-Control-Allow-Methods: true
+          StatusCode: "204"
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/worksmanExperience/OPTIONS/Resource
+  WorksManApiworksmanExperiencePOSTApiPermissionVrishkarServicesDevStackWorksManApi5F03F3C1POSTworksmanExperience7748F5FE:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName:
+        Fn::GetAtt:
+          - WorksManExperienceAB1A1501
+          - Arn
+      Principal: apigateway.amazonaws.com
+      SourceArn:
+        Fn::Join:
+          - ""
+          - - "arn:"
+            - Ref: AWS::Partition
+            - ":execute-api:"
+            - Ref: AWS::Region
+            - ":"
+            - Ref: AWS::AccountId
+            - ":"
+            - Ref: WorksManApi8007FB09
+            - /
+            - Ref: WorksManApiDeploymentStagedev92FAAB21
+            - /POST/worksmanExperience
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/worksmanExperience/POST/ApiPermission.VrishkarServicesDevStackWorksManApi5F03F3C1.POST..worksmanExperience
+  WorksManApiworksmanExperiencePOSTApiPermissionTestVrishkarServicesDevStackWorksManApi5F03F3C1POSTworksmanExperience1C3399F8:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName:
+        Fn::GetAtt:
+          - WorksManExperienceAB1A1501
+          - Arn
+      Principal: apigateway.amazonaws.com
+      SourceArn:
+        Fn::Join:
+          - ""
+          - - "arn:"
+            - Ref: AWS::Partition
+            - ":execute-api:"
+            - Ref: AWS::Region
+            - ":"
+            - Ref: AWS::AccountId
+            - ":"
+            - Ref: WorksManApi8007FB09
+            - /test-invoke-stage/POST/worksmanExperience
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/worksmanExperience/POST/ApiPermission.Test.VrishkarServicesDevStackWorksManApi5F03F3C1.POST..worksmanExperience
+  WorksManApiworksmanExperiencePOST6823FA26:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      HttpMethod: POST
+      ResourceId:
+        Ref: WorksManApiworksmanExperience3919F320
+      RestApiId:
+        Ref: WorksManApi8007FB09
+      AuthorizationType: NONE
+      Integration:
+        IntegrationHttpMethod: POST
+        IntegrationResponses:
+          - ResponseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            StatusCode: "200"
+        Type: AWS
+        Uri:
+          Fn::Join:
+            - ""
+            - - "arn:"
+              - Ref: AWS::Partition
+              - ":apigateway:"
+              - Ref: AWS::Region
+              - :lambda:path/2015-03-31/functions/
+              - Fn::GetAtt:
+                  - WorksManExperienceAB1A1501
+                  - Arn
+              - /invocations
+      MethodResponses:
+        - ResponseParameters:
+            method.response.header.Access-Control-Allow-Origin: true
+          StatusCode: "200"
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/worksmanExperience/POST/Resource
+  WorksManApiGetWorksmanAccountRegistartionStatus10A258AF:
+    Type: AWS::ApiGateway::Resource
+    Properties:
+      ParentId:
+        Fn::GetAtt:
+          - WorksManApi8007FB09
+          - RootResourceId
+      PathPart: GetWorksmanAccountRegistartionStatus
+      RestApiId:
+        Ref: WorksManApi8007FB09
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/GetWorksmanAccountRegistartionStatus/Resource
+  WorksManApiGetWorksmanAccountRegistartionStatusOPTIONSDC172552:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      HttpMethod: OPTIONS
+      ResourceId:
+        Ref: WorksManApiGetWorksmanAccountRegistartionStatus10A258AF
+      RestApiId:
+        Ref: WorksManApi8007FB09
+      AuthorizationType: NONE
+      Integration:
+        IntegrationResponses:
+          - ResponseParameters:
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
+            StatusCode: "204"
+        RequestTemplates:
+          application/json: "{ statusCode: 200 }"
+        Type: MOCK
+      MethodResponses:
+        - ResponseParameters:
+            method.response.header.Access-Control-Allow-Headers: true
+            method.response.header.Access-Control-Allow-Origin: true
+            method.response.header.Access-Control-Allow-Methods: true
+          StatusCode: "204"
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/GetWorksmanAccountRegistartionStatus/OPTIONS/Resource
+  WorksManApiGetWorksmanAccountRegistartionStatusGETApiPermissionVrishkarServicesDevStackWorksManApi5F03F3C1GETGetWorksmanAccountRegistartionStatus8CB4BA12:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName:
+        Fn::GetAtt:
+          - GetWorksmanAccountRegistartionStatusA28FB6DA
+          - Arn
+      Principal: apigateway.amazonaws.com
+      SourceArn:
+        Fn::Join:
+          - ""
+          - - "arn:"
+            - Ref: AWS::Partition
+            - ":execute-api:"
+            - Ref: AWS::Region
+            - ":"
+            - Ref: AWS::AccountId
+            - ":"
+            - Ref: WorksManApi8007FB09
+            - /
+            - Ref: WorksManApiDeploymentStagedev92FAAB21
+            - /GET/GetWorksmanAccountRegistartionStatus
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/GetWorksmanAccountRegistartionStatus/GET/ApiPermission.VrishkarServicesDevStackWorksManApi5F03F3C1.GET..GetWorksmanAccountRegistartionStatus
+  WorksManApiGetWorksmanAccountRegistartionStatusGETApiPermissionTestVrishkarServicesDevStackWorksManApi5F03F3C1GETGetWorksmanAccountRegistartionStatusC6E1D7E7:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName:
+        Fn::GetAtt:
+          - GetWorksmanAccountRegistartionStatusA28FB6DA
+          - Arn
+      Principal: apigateway.amazonaws.com
+      SourceArn:
+        Fn::Join:
+          - ""
+          - - "arn:"
+            - Ref: AWS::Partition
+            - ":execute-api:"
+            - Ref: AWS::Region
+            - ":"
+            - Ref: AWS::AccountId
+            - ":"
+            - Ref: WorksManApi8007FB09
+            - /test-invoke-stage/GET/GetWorksmanAccountRegistartionStatus
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/GetWorksmanAccountRegistartionStatus/GET/ApiPermission.Test.VrishkarServicesDevStackWorksManApi5F03F3C1.GET..GetWorksmanAccountRegistartionStatus
+  WorksManApiGetWorksmanAccountRegistartionStatusGET88BE1ED8:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      HttpMethod: GET
+      ResourceId:
+        Ref: WorksManApiGetWorksmanAccountRegistartionStatus10A258AF
+      RestApiId:
+        Ref: WorksManApi8007FB09
+      AuthorizationType: NONE
+      Integration:
+        IntegrationHttpMethod: POST
+        IntegrationResponses:
+          - ResponseParameters:
+              method.response.header.Content-Type: "'application/json'"
+              method.response.header.Access-Control-Allow-Origin: "'http://localhost:3000'"
+              method.response.header.Access-Control-Allow-Credentials: "'true'"
+              method.response.header.Access-Control-Allow-Headers: "'*'"
+            ResponseTemplates:
+              application/json: '{"state":"ok","data":"$util.escapeJavaScript($input.body)"}'
+            StatusCode: "200"
+          - ResponseParameters:
+              method.response.header.Content-Type: "'application/json'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Credentials: "'true'"
+              method.response.header.Access-Control-Allow-Headers: "'*'"
+            ResponseTemplates:
+              application/json: "{\"state\":\"error\",\"message\":\"$util.escapeJavaScript($input.path('$.errorMessage'))\"}"
+            SelectionPattern: |-
+              (
+              |.)+
+            StatusCode: "400"
+        PassthroughBehavior: NEVER
+        RequestParameters:
+          integration.request.querystring.worksmanId: method.request.querystring.worksmanId
+          integration.request.header.worksmanIdHeader: method.request.header.worksmanIdHeader
+        RequestTemplates:
+          application/json: "{\"worksmanId\":\"$util.escapeJavaScript($input.params('worksmanId'))\",\"worksmanIdHeader\":\"$util.escapeJavaScript($input.params('worksmanIdHeader'))\"}"
+        Type: AWS
+        Uri:
+          Fn::Join:
+            - ""
+            - - "arn:"
+              - Ref: AWS::Partition
+              - ":apigateway:"
+              - Ref: AWS::Region
+              - :lambda:path/2015-03-31/functions/
+              - Fn::GetAtt:
+                  - GetWorksmanAccountRegistartionStatusA28FB6DA
+                  - Arn
+              - /invocations
+      MethodResponses:
+        - ResponseModels:
+            application/json:
+              Ref: WorksManApiResponseModelAA7D6EB5
+          ResponseParameters:
+            method.response.header.Content-Type: true
+            method.response.header.Access-Control-Allow-Origin: true
+            method.response.header.Access-Control-Allow-Credentials: true
+            method.response.header.Access-Control-Allow-Headers: true
+          StatusCode: "200"
+        - ResponseModels:
+            application/json:
+              Ref: WorksManApiErrorResponseModelB8540664
+          ResponseParameters:
+            method.response.header.Content-Type: true
+            method.response.header.Access-Control-Allow-Origin: true
+            method.response.header.Access-Control-Allow-Credentials: true
+            method.response.header.Access-Control-Allow-Headers: true
+          StatusCode: "400"
+      RequestParameters:
+        method.request.querystring.worksmanId: true
+        method.request.header.worksmanIdHeader: true
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/GetWorksmanAccountRegistartionStatus/GET/Resource
+  WorksManApiResponseModelAA7D6EB5:
+    Type: AWS::ApiGateway::Model
+    Properties:
+      RestApiId:
+        Ref: WorksManApi8007FB09
+      ContentType: application/json
+      Name: ResponseModel
+      Schema:
+        $schema: http://json-schema.org/draft-04/schema#
+        title: pollResponse
+        type: object
+        properties:
+          state:
+            type: string
+          greeting:
+            type: string
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/ResponseModel/Resource
+  WorksManApiErrorResponseModelB8540664:
+    Type: AWS::ApiGateway::Model
+    Properties:
+      RestApiId:
+        Ref: WorksManApi8007FB09
+      ContentType: application/json
+      Name: ErrorResponseModel
+      Schema:
+        $schema: http://json-schema.org/draft-04/schema#
+        title: errorResponse
+        type: object
+        properties:
+          state:
+            type: string
+          message:
+            type: string
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/ErrorResponseModel/Resource
   CDKMetadata:
     Type: AWS::CDK::Metadata
     Properties:
-      Analytics: v2:deflate64:H4sIAAAAAAAA/zWOwQ7CIBBEv6V3urVp9Kw18WzqF6ywNrQFEhb0QPh3ocbTvNnM7mwP/XCEQ3PGD7dSrV2SzhOkR0C5igszhYKztrO4OsvBRxnE9WXv6NFQIF/NROyil1S5pJQO2tks6sm0oXkqhHSLVtZxzfw5C40G0uS2fbVqFjy0WGsZ9vbiYYxypTAiU87COkWwcPfuT+V36JuFtW59tEEbgumnXwg13o7XAAAA
+      Analytics: v2:deflate64:H4sIAAAAAAAA/02P0W7CMAxFv4X3YFaB9rzCxBsa6r7AS70utEmq2BlCVf99SYCpTz7XuXauK6i2O3hZveGV17rtN5P2gWD6FNS9qplJEnbGdergHUuIWtTh250xoCWhkMVHlDGWdkPsY9CUOflbI8a7WeXl04D2q0WYjtHp3M6eJZ8pWMNcBgxamBo/lEW5zoq3a8xxGEqqpGEfdU+yRyaFo+lQ6Iq3NEcs9WgeeZ5Ya+2jE/VO4+BvllwJvFD5zvLfHZ6nlPUnkh/f5scHLQ/955NvaSimDPM8K5cALrz5rXZQvUK1urAx65ByGEvQ3OsfzWZcm4QBAAA=
     Metadata:
-      aws:cdk:path: VkCleanerportalMsStack/CDKMetadata/Default
+      aws:cdk:path: VrishkarServicesDevStack/CDKMetadata/Default
     Condition: CDKMetadataAvailable
 Parameters:
-  AssetParameters160912c2ec02c01e4cac81aaa236dcd6da233b9cfbb1835a66580ddd3e96c8b6S3Bucket4754CF09:
+  AssetParametersfd8b881101293bf4815b09edccd956d1c88f75096bd000eccbcd938c613ca8adS3Bucket8BE9F9BC:
     Type: String
-    Description: S3 bucket for asset "160912c2ec02c01e4cac81aaa236dcd6da233b9cfbb1835a66580ddd3e96c8b6"
-  AssetParameters160912c2ec02c01e4cac81aaa236dcd6da233b9cfbb1835a66580ddd3e96c8b6S3VersionKey772C7BF9:
+    Description: S3 bucket for asset "fd8b881101293bf4815b09edccd956d1c88f75096bd000eccbcd938c613ca8ad"
+  AssetParametersfd8b881101293bf4815b09edccd956d1c88f75096bd000eccbcd938c613ca8adS3VersionKey741FED07:
     Type: String
-    Description: S3 key for asset version "160912c2ec02c01e4cac81aaa236dcd6da233b9cfbb1835a66580ddd3e96c8b6"
-  AssetParameters160912c2ec02c01e4cac81aaa236dcd6da233b9cfbb1835a66580ddd3e96c8b6ArtifactHash5751A808:
+    Description: S3 key for asset version "fd8b881101293bf4815b09edccd956d1c88f75096bd000eccbcd938c613ca8ad"
+  AssetParametersfd8b881101293bf4815b09edccd956d1c88f75096bd000eccbcd938c613ca8adArtifactHash94AD9E58:
     Type: String
-    Description: Artifact hash for asset "160912c2ec02c01e4cac81aaa236dcd6da233b9cfbb1835a66580ddd3e96c8b6"
+    Description: Artifact hash for asset "fd8b881101293bf4815b09edccd956d1c88f75096bd000eccbcd938c613ca8ad"
+  AssetParameters7af9e6f86b214051673bfbb53c0ffd707fc2a99c381a7917c4ada80e9ab5acadS3BucketAE8E1AB2:
+    Type: String
+    Description: S3 bucket for asset "7af9e6f86b214051673bfbb53c0ffd707fc2a99c381a7917c4ada80e9ab5acad"
+  AssetParameters7af9e6f86b214051673bfbb53c0ffd707fc2a99c381a7917c4ada80e9ab5acadS3VersionKey4A28CE50:
+    Type: String
+    Description: S3 key for asset version "7af9e6f86b214051673bfbb53c0ffd707fc2a99c381a7917c4ada80e9ab5acad"
+  AssetParameters7af9e6f86b214051673bfbb53c0ffd707fc2a99c381a7917c4ada80e9ab5acadArtifactHash19377D05:
+    Type: String
+    Description: Artifact hash for asset "7af9e6f86b214051673bfbb53c0ffd707fc2a99c381a7917c4ada80e9ab5acad"
+  AssetParameterscd29d4b50cec56404201501fc0f8c2a8f571f7c3321bfa6705c24e0449fa5304S3BucketBCBCE5EA:
+    Type: String
+    Description: S3 bucket for asset "cd29d4b50cec56404201501fc0f8c2a8f571f7c3321bfa6705c24e0449fa5304"
+  AssetParameterscd29d4b50cec56404201501fc0f8c2a8f571f7c3321bfa6705c24e0449fa5304S3VersionKey7E7AE932:
+    Type: String
+    Description: S3 key for asset version "cd29d4b50cec56404201501fc0f8c2a8f571f7c3321bfa6705c24e0449fa5304"
+  AssetParameterscd29d4b50cec56404201501fc0f8c2a8f571f7c3321bfa6705c24e0449fa5304ArtifactHash981B9C45:
+    Type: String
+    Description: Artifact hash for asset "cd29d4b50cec56404201501fc0f8c2a8f571f7c3321bfa6705c24e0449fa5304"
+  AssetParameters4cc7c8070a9efcc20b112d5974ef7e8032aa3e8d4e2fff7e39a5cb8a25ea009fS3Bucket7545C619:
+    Type: String
+    Description: S3 bucket for asset "4cc7c8070a9efcc20b112d5974ef7e8032aa3e8d4e2fff7e39a5cb8a25ea009f"
+  AssetParameters4cc7c8070a9efcc20b112d5974ef7e8032aa3e8d4e2fff7e39a5cb8a25ea009fS3VersionKeyE85A2494:
+    Type: String
+    Description: S3 key for asset version "4cc7c8070a9efcc20b112d5974ef7e8032aa3e8d4e2fff7e39a5cb8a25ea009f"
+  AssetParameters4cc7c8070a9efcc20b112d5974ef7e8032aa3e8d4e2fff7e39a5cb8a25ea009fArtifactHash2C5FA7AD:
+    Type: String
+    Description: Artifact hash for asset "4cc7c8070a9efcc20b112d5974ef7e8032aa3e8d4e2fff7e39a5cb8a25ea009f"
+Outputs:
+  WorksManApiEndpoint06A24561:
+    Value:
+      Fn::Join:
+        - ""
+        - - https://
+          - Ref: WorksManApi8007FB09
+          - .execute-api.
+          - Ref: AWS::Region
+          - "."
+          - Ref: AWS::URLSuffix
+          - /
+          - Ref: WorksManApiDeploymentStagedev92FAAB21
+          - /
+  apiUrl:
+    Value:
+      Fn::Join:
+        - ""
+        - - https://
+          - Ref: WorksManApi8007FB09
+          - .execute-api.
+          - Ref: AWS::Region
+          - "."
+          - Ref: AWS::URLSuffix
+          - /
+          - Ref: WorksManApiDeploymentStagedev92FAAB21
+          - /
 Conditions:
   CDKMetadataAvailable:
     Fn::Or:

@@ -1,0 +1,29 @@
+{
+  "version": "1",
+  "region": "us-east-1",
+  "userPoolId": "us-east-1_HuK1dGq6C",
+  "userName": "e0c272bb-610e-4dc1-9a70-d4eeea904efa",
+  "callerContext": {
+    "awsSdkVersion": "aws-sdk-unknown-unknown",
+    "clientId": "6m4d8jvp481bo589ogpi4c651f"
+  },
+  "triggerSource": "PostConfirmation_ConfirmSignUp",
+  "request": {
+    "userAttributes": {
+      "sub": "e0c272bb-610e-4dc1-9a70-d4eeea904efa",
+      "email_verified": "true",
+      "birthdate": "2013-05-09",
+      "cognito:user_status": "CONFIRMED",
+      "cognito:email_alias": "kiran.budipi@vrishkar.com",
+      "gender": "female",
+      "phone_number_verified": "false",
+      "given_name": "kiran",
+      "family_name": "kiranreddy",
+      "phone_number":"987744251",
+      "email": "kiran.b@vrishkar.com",
+      "address":"10, Watkin, Terrace,Northampton, Northamptonshire,2ew jse"
+     
+    }
+  },
+  "response": {}
+}
