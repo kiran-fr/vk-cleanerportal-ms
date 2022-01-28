@@ -8,7 +8,7 @@ exports.getAllMobileNumbersHanlder = async () => {
     return {
       statusCode: 200,
       headers: {},
-      body: JSON.stringify('Success'+  JSON.stringify(data))
+      body: data
     }
 
   }
