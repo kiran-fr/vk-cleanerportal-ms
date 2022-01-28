@@ -1,9 +1,9 @@
 import * as apigateway from "@aws-cdk/aws-apigateway"
 
-const successResponseModel = (api:any) => {
-  return api.addModel('ResponseModel', {
+const successResponseModel = (api:any,success:any) => {
+  return api.addModel(success, {
     contentType: 'application/json',
-    modelName: 'ResponseModel',
+    modelName: success,
     schema: {
       schema: apigateway.JsonSchemaVersion.DRAFT4,
       title: 'pollResponse',
@@ -16,10 +16,10 @@ const successResponseModel = (api:any) => {
   });
 }
 
-const errorResponseModel = (api: any) => {
-   return api.addModel('ErrorResponseModel', {
+const errorResponseModel = (api: any,error:any) => {
+   return api.addModel(error, {
     contentType: 'application/json',
-    modelName: 'ErrorResponseModel',
+    modelName: error,
     schema: {
       schema: apigateway.JsonSchemaVersion.DRAFT4,
       title: 'errorResponse',
@@ -32,7 +32,7 @@ const errorResponseModel = (api: any) => {
   });
 }
 
-export const responseMethods = (api: any) => {
+export const responseMethods = (api: any,success:any,error:any) => {
     return [
         {
           // Successful response from the integration
@@ -46,7 +46,7 @@ export const responseMethods = (api: any) => {
           },
           // Validate the schema on the response
           responseModels: {
-            'application/json': successResponseModel(api)
+            'application/json': successResponseModel(api,success)
           }
         },
         {
@@ -59,7 +59,7 @@ export const responseMethods = (api: any) => {
             'method.response.header.Access-Control-Allow-Headers': true
           },
           responseModels: {
-            'application/json': errorResponseModel(api)
+            'application/json': errorResponseModel(api,error)
           }
         }
       ]

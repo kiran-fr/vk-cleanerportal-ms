@@ -4,10 +4,13 @@ import { getWorksManIdService, WorksManTermsAndConditionService, WorksmanTermsAn
 exports.WorksManTermsAndConditionHandler = async (event: any) => {
    try {
       const Worksman: any = await getWorksManIdService(event.worksman_email);
+
+      
+      console.log("This is WorksManTermsAndConditionHandler",Worksman)
+
       await WorksManTermsAndConditionService(event, Worksman[0].worksman_id)
       // updateWorksmanRegistrationStatus(Worksman[0].worksman_id)
       await WorksmanTermsAndConditionStepService(Worksman[0].worksman_id)
-      console.log(Worksman, "This is WorksManTermsAndConditionHandler")
       return {
          statusCode: 200,
          headers: {},

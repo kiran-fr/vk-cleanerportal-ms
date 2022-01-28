@@ -3,6 +3,7 @@ import { EmailConfirmation } from "./helpers/EmailConfirmation";
 
 
 exports.UserRegistrationHanlder = async (event: any, context: any) => {
+  console.warn("This is user registration",event)
   try {
     const data = await UserRegistrationServices(event.request.userAttributes)
     await EmailConfirmation(event.request.userAttributes)

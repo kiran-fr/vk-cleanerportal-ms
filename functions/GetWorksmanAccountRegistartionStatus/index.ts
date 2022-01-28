@@ -4,7 +4,7 @@ exports.GetWorksmanAccountRegistartionStatusHandler  = async(event:any) => {
     try {
         console.warn("This status event",event)
         // console.log(event.headers.email)
-        const Worksman: any = await getWorksManAccountStatusService(event.worksman_email)
+        const Worksman: any = await getWorksManAccountStatusService(event.email)
         
         console.warn("This is worksmand id",Worksman)
         const data:any = await GetWorksmanAccountRegistartionStatusService(Worksman[0].worksman_id)

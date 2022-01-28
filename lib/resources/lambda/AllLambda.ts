@@ -67,3 +67,15 @@ export const PostTestUserLambda = () => {
     timeout: cdk.Duration.seconds(35)
   }
 }
+
+
+export const getAllMobileNumberLambda = () => {
+  return {
+    code:lambda.Code.fromAsset('./functions/userEmailError'),
+    functionName:'getAllMobileNumbers',
+    handler:'index.getAllMobileNumbersHanlder',
+    memorySize: 1024,
+    runtime: lambda.Runtime.NODEJS_14_X,
+    timeout: cdk.Duration.seconds(35)
+  }
+}
