@@ -5,11 +5,9 @@ exports.WorksManTermsAndConditionHandler = async (event: any) => {
    try {
 
       const data = JSON.parse(event)
-      const Worksman: any = await getWorksManIdService(data.worksman_email);
+      await WorksManTermsAndConditionService(data)
 
-      await WorksManTermsAndConditionService(data, Worksman[0].worksman_id)
-
-      await WorksmanTermsAndConditionStepService(Worksman[0].worksman_id)
+      await WorksmanTermsAndConditionStepService(data.worksman_id)
       return {
          statusCode: 200,
          headers: {},
