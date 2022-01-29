@@ -1,6 +1,6 @@
 
 export const WorksManTermsAndConditionQuery = (event:any, Worksman_id: any) => {
-    console.log('this is event',event)
+    console.log('this is event query',event)
     // console.log('this is EMAIL',email)
     return `
         INSERT INTO worksman_terms_and_conditions_table (worksman_id,isWatched_howVrishkar_Works,isUnderstand_Worksman_Will_SelfEmployeed,isUnderstand_Vrishkar_isnot_responsible)
@@ -20,6 +20,3 @@ export const WorksmanTermsAndConditionStepQuery  = (worksmanId:any) => {
     return ` UPDATE worksman_table SET current_step='worksman-T&C' WHERE worksman_id = ${worksmanId}; `
   }
 
-// export const updateWorksmanRegistrationStatus = () = >{
-//     return `update worksman_table current_step = 'terms & condtion where worksman_Id="1"`
-// }

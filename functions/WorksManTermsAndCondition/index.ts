@@ -3,13 +3,12 @@ import { getWorksManIdService, WorksManTermsAndConditionService, WorksmanTermsAn
 
 exports.WorksManTermsAndConditionHandler = async (event: any) => {
    try {
-      const Worksman: any = await getWorksManIdService(event.worksman_email);
 
-      
-      console.log("This is WorksManTermsAndConditionHandler",Worksman)
+      const data = JSON.parse(event)
+      const Worksman: any = await getWorksManIdService(data.worksman_email);
 
-      await WorksManTermsAndConditionService(event, Worksman[0].worksman_id)
-      // updateWorksmanRegistrationStatus(Worksman[0].worksman_id)
+      await WorksManTermsAndConditionService(data, Worksman[0].worksman_id)
+
       await WorksmanTermsAndConditionStepService(Worksman[0].worksman_id)
       return {
          statusCode: 200,
@@ -18,8 +17,12 @@ exports.WorksManTermsAndConditionHandler = async (event: any) => {
       }
 
    } catch (exception) {
-      console.log(`WorksManTermsAndConditionHandler Error ${JSON.stringify(exception)}`)
-      console.log(`WorksManTermsAndConditionHandler Error ${JSON.stringify(event)}`)
+      console.warn(`WorksManTermsAndConditionHandler Error ${JSON.stringify(exception)}`)
+      console.warn(`WorksManTermsAndConditionHandler Error ${JSON.stringify(event)}`)
+      console.warn("This 1",JSON.parse(event))
+      
+      const data = JSON.parse(event)
+      console.warn("Step2",data)
       return {
          statusCode: 500,
          headers: {},

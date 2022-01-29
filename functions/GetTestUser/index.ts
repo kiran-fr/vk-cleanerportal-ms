@@ -3,7 +3,7 @@ exports.handler = async (event: any) => {
     console.log('step 1' +  JSON.stringify(event))
     const response = {
         statusCode: 200,
-        body: JSON.stringify(event)
+        body: JSON.stringify({"id":"1","name":"kiran"})
     };
     return response;
 }catch (exception) {

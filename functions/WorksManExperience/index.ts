@@ -2,12 +2,13 @@ import { WorksManExperienceServices, getWorkManIdService, WorksManEligibilitySer
 
 exports.WorksManExperienceHandler = async (event: any) => {
     try {
-        const Worksman: any = await getWorkManIdService(event.worksman_email)
+        const data = JSON.parse(event)
+        const Worksman: any = await getWorkManIdService(data.worksman_email)
         console.log('worms mand id', Worksman)
-        await WorksManExperienceServices(event, Worksman[0].worksman_id)
-        await WorksManEligibilityServices(event,Worksman[0].worksman_id)
+        await WorksManExperienceServices(data, Worksman[0].worksman_id)
+        await WorksManEligibilityServices(data,Worksman[0].worksman_id)
         const status = await WorksmanExperienceStepService(Worksman[0].worksman_id)
-        console.warn(event)
+        console.warn(data)
         return {
             statusCode: 200,
             headers: {},

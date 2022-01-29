@@ -65,7 +65,7 @@ export const responseMethods = (api: any,success:any,error:any) => {
       ]
 }
 
-export const postresponseMethods = (api: any) => {
+export const postresponseMethods = (api: any,respModal:any,errorModal:any) => {
   return [
       {
         // Successful response from the integration
@@ -79,18 +79,18 @@ export const postresponseMethods = (api: any) => {
         },
         // Validate the schema on the response
         responseModels: {
-          'application/json': api.addModel('ResponseModel23', {
+          'application/json': api.addModel(respModal, {
             contentType: 'application/json',
-            modelName: 'ResponseModel23',
+            modelName: respModal,
             schema: {
               schema: apigateway.JsonSchemaVersion.DRAFT4,
-              title: 'pollResponse12',
+              title:respModal,
               type: apigateway.JsonSchemaType.OBJECT,
               properties: {
                 state: { type: apigateway.JsonSchemaType.STRING },
                 greeting: { type: apigateway.JsonSchemaType.STRING }
               }
-            }
+            },
           })
 
 
@@ -107,12 +107,12 @@ export const postresponseMethods = (api: any) => {
           'method.response.header.Access-Control-Allow-Headers': true
         },
         responseModels: {
-          'application/json': api.addModel('ErrorResponseModel23', {
+          'application/json': api.addModel(errorModal, {
             contentType: 'application/json',
-            modelName: 'ErrorResponseModel23',
+            modelName: errorModal,
             schema: {
               schema: apigateway.JsonSchemaVersion.DRAFT4,
-              title: 'errorResponse23',
+              title: errorModal,
               type: apigateway.JsonSchemaType.OBJECT,
               properties: {
                 state: { type: apigateway.JsonSchemaType.STRING },

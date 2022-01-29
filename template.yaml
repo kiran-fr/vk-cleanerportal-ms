@@ -76,7 +76,7 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameters0650e1155c134f28c80b03fab51186a1d24f5c2397785797f0483a80f809a9eaS3BucketBEAA06E9
+          Ref: AssetParametersc4d98eb9b6adf84c8085940d7083cc548a86e0eb37aaaf9a3625039cb9bb108dS3Bucket031EA7C5
         S3Key:
           Fn::Join:
             - ""
@@ -84,12 +84,12 @@ Resources:
                   - 0
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters0650e1155c134f28c80b03fab51186a1d24f5c2397785797f0483a80f809a9eaS3VersionKey68140FB0
+                      - Ref: AssetParametersc4d98eb9b6adf84c8085940d7083cc548a86e0eb37aaaf9a3625039cb9bb108dS3VersionKey146916EB
               - Fn::Select:
                   - 1
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters0650e1155c134f28c80b03fab51186a1d24f5c2397785797f0483a80f809a9eaS3VersionKey68140FB0
+                      - Ref: AssetParametersc4d98eb9b6adf84c8085940d7083cc548a86e0eb37aaaf9a3625039cb9bb108dS3VersionKey146916EB
       Role:
         Fn::GetAtt:
           - WorksManTermsAndConditionServiceRole06AE84AC
@@ -130,7 +130,7 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameters2f4ca60710fddb8324d3bc88bae5d05acd9b52d82af23c9ce337239fb0570250S3Bucket64045F88
+          Ref: AssetParameters7869f8a345de2ed992745023c137cbae3c6f022e8fc7ff701b69d90c7e156477S3BucketE79BCC32
         S3Key:
           Fn::Join:
             - ""
@@ -138,12 +138,12 @@ Resources:
                   - 0
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters2f4ca60710fddb8324d3bc88bae5d05acd9b52d82af23c9ce337239fb0570250S3VersionKeyDE1FE1CB
+                      - Ref: AssetParameters7869f8a345de2ed992745023c137cbae3c6f022e8fc7ff701b69d90c7e156477S3VersionKeyD5FFA140
               - Fn::Select:
                   - 1
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters2f4ca60710fddb8324d3bc88bae5d05acd9b52d82af23c9ce337239fb0570250S3VersionKeyDE1FE1CB
+                      - Ref: AssetParameters7869f8a345de2ed992745023c137cbae3c6f022e8fc7ff701b69d90c7e156477S3VersionKeyD5FFA140
       Role:
         Fn::GetAtt:
           - WorksManExperienceServiceRoleE9A759F2
@@ -238,7 +238,7 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameters380251841887a864fc089aa778767c205dbb1064ae01de0a989e9d9ce4171af8S3BucketA5D4ABCD
+          Ref: AssetParameters9cb30c2e9f898e5f6a50b07d5ae5d7edbcb4ff6075ef881b6c10b92509c1e2f0S3BucketFA52C3C7
         S3Key:
           Fn::Join:
             - ""
@@ -246,12 +246,12 @@ Resources:
                   - 0
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters380251841887a864fc089aa778767c205dbb1064ae01de0a989e9d9ce4171af8S3VersionKey71AC1508
+                      - Ref: AssetParameters9cb30c2e9f898e5f6a50b07d5ae5d7edbcb4ff6075ef881b6c10b92509c1e2f0S3VersionKey796ED790
               - Fn::Select:
                   - 1
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters380251841887a864fc089aa778767c205dbb1064ae01de0a989e9d9ce4171af8S3VersionKey71AC1508
+                      - Ref: AssetParameters9cb30c2e9f898e5f6a50b07d5ae5d7edbcb4ff6075ef881b6c10b92509c1e2f0S3VersionKey796ED790
       Role:
         Fn::GetAtt:
           - GetTestUserServiceRole01730EC6
@@ -413,7 +413,7 @@ Resources:
       - WorksManApi8007FB09
     Metadata:
       aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Account
-  WorksManApiDeployment495969A9f84fd9fcc7d18be1f863370417084ff2:
+  WorksManApiDeployment495969A9b616bf9ba59b79e45d6cb5ae48a27680:
     Type: AWS::ApiGateway::Deployment
     Properties:
       RestApiId:
@@ -423,20 +423,38 @@ Resources:
       - WorksManApigetAllMobileNumbereApiGatewayGET425E3CF0
       - WorksManApigetAllMobileNumbereApiGatewayOPTIONSED5EDF1A
       - WorksManApigetAllMobileNumbereApiGatewayBD625C83
+      - WorksManApiGetTestUserGET5306C5B2
+      - WorksManApiGetTestUserOPTIONS8B16962F
+      - WorksManApiGetTestUser4A9C3C0F
       - WorksManApiGetWorksmanAccountRegistartionStatusGET88BE1ED8
       - WorksManApiGetWorksmanAccountRegistartionStatusOPTIONSDC172552
       - WorksManApiGetWorksmanAccountRegistartionStatus10A258AF
       - WorksManApiOPTIONS0DEE16A2
-      - WorksManApiworksmanExperienceOPTIONSB18854EB
-      - WorksManApiworksmanExperiencePOST6823FA26
-      - WorksManApiworksmanExperience3919F320
+      - WorksManApiPostTestUserOPTIONSC4203EC4
+      - WorksManApiPostTestUserPOST1DFB6999
+      - WorksManApiPostTestUserDDD680E2
+      - WorksManApiworksmanExperienceapiOPTIONS510B6DDE
+      - WorksManApiworksmanExperienceapiPOSTAAACC6BD
+      - WorksManApiworksmanExperienceapiDEC4F2E2
       - WorksManApiWorksmanTermsAndConditionsOPTIONS7A4ACDF9
       - WorksManApiWorksmanTermsAndConditionsPOST661B87E2
       - WorksManApiWorksmanTermsAndConditionsE2AE3179
-      - WorksManApiGetAllMobileNumber463F4357
-      - WorksManApiGetAllMobileNumberError332208E9
+      - WorksManApierrorGetTestUser9D439F3F
+      - WorksManApiErrorpworksmanExperienceMethodsA7975B29
+      - WorksManApiErrorpWorksmanTermsAndConditionsMethod7293DFE1
+      - WorksManApigetAllMobileNumberB2BB75B5
+      - WorksManApigetAllMobileNumberErrorD8ACCB10
+      - WorksManApiGetTestUserErrorAFFB91DF
+      - WorksManApiGetTestUseResp2142FEFC
+      - WorksManApiresGetTestUserAB036556
+      - WorksManApiRespworksmanExperienceMethods5F78B1D6
+      - WorksManApiRespWorksmanTermsAndConditionsMethod09A8EC4F
+      - WorksManApiUserModelF7B9A289
+      - WorksManApivalidator36FD7B86
       - WorksManApiWorkmanStatus50343F60
       - WorksManApiWorkmanStatusError5C163A96
+      - WorksManApiworksmanExperienceModel152E2DE2
+      - WorksManApiWorksmanTermsAndConditionsModel0BCAF9B4
     Metadata:
       aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Deployment/Resource
   WorksManApiDeploymentStagedev92FAAB21:
@@ -445,7 +463,7 @@ Resources:
       RestApiId:
         Ref: WorksManApi8007FB09
       DeploymentId:
-        Ref: WorksManApiDeployment495969A9f84fd9fcc7d18be1f863370417084ff2
+        Ref: WorksManApiDeployment495969A9b616bf9ba59b79e45d6cb5ae48a27680
       StageName: dev
     Metadata:
       aws:cdk:path: VrishkarServicesDevStack/WorksManApi/DeploymentStage.dev/Resource
@@ -578,8 +596,29 @@ Resources:
         IntegrationHttpMethod: POST
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Content-Type: "'application/json'"
+              method.response.header.Access-Control-Allow-Origin: "'http://localhost:3000'"
+              method.response.header.Access-Control-Allow-Credentials: "'true'"
+              method.response.header.Access-Control-Allow-Headers: "'*'"
+            ResponseTemplates:
+              application/json: '{"state":"ok","data":"$util.escapeJavaScript($input.body)"}'
             StatusCode: "200"
+          - ResponseParameters:
+              method.response.header.Content-Type: "'application/json'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Credentials: "'true'"
+              method.response.header.Access-Control-Allow-Headers: "'*'"
+            ResponseTemplates:
+              application/json: "{\"state\":\"error\",\"message\":\"$util.escapeJavaScript($input.path('$.errorMessage'))\"}"
+            SelectionPattern: |-
+              (
+              |.)+
+            StatusCode: "400"
+        PassthroughBehavior: NEVER
+        RequestParameters:
+          integration.request.header.Authorization: method.request.header.Authorization
+        RequestTemplates:
+          application/json: '"$util.escapeJavaScript($input.body)"'
         Type: AWS
         Uri:
           Fn::Join:
@@ -594,29 +633,49 @@ Resources:
                   - Arn
               - /invocations
       MethodResponses:
-        - ResponseParameters:
+        - ResponseModels:
+            application/json:
+              Ref: WorksManApiRespWorksmanTermsAndConditionsMethod09A8EC4F
+          ResponseParameters:
+            method.response.header.Content-Type: true
             method.response.header.Access-Control-Allow-Origin: true
+            method.response.header.Access-Control-Allow-Credentials: true
+            method.response.header.Access-Control-Allow-Headers: true
           StatusCode: "200"
+        - ResponseModels:
+            application/json:
+              Ref: WorksManApiErrorpWorksmanTermsAndConditionsMethod7293DFE1
+          ResponseParameters:
+            method.response.header.Content-Type: true
+            method.response.header.Access-Control-Allow-Origin: true
+            method.response.header.Access-Control-Allow-Credentials: true
+            method.response.header.Access-Control-Allow-Headers: true
+          StatusCode: "400"
+      RequestModels:
+        application/json:
+          Ref: WorksManApiWorksmanTermsAndConditionsModel0BCAF9B4
+      RequestParameters:
+        method.request.header.Authorization: true
     Metadata:
       aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/WorksmanTermsAndConditions/POST/Resource
-  WorksManApiworksmanExperience3919F320:
+  WorksManApiworksmanExperienceapiDEC4F2E2:
     Type: AWS::ApiGateway::Resource
     Properties:
       ParentId:
         Fn::GetAtt:
           - WorksManApi8007FB09
           - RootResourceId
-      PathPart: worksmanExperience
+      PathPart: worksmanExperienceapi
       RestApiId:
         Ref: WorksManApi8007FB09
     Metadata:
-      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/worksmanExperience/Resource
-  WorksManApiworksmanExperienceOPTIONSB18854EB:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/worksmanExperienceapi/Resource
+  WorksManApiworksmanExperienceapiOPTIONS510B6DDE:
     Type: AWS::ApiGateway::Method
     Properties:
       HttpMethod: OPTIONS
       ResourceId:
-        Ref: WorksManApiworksmanExperience3919F320
+        Ref: WorksManApiworksmanExperienceapiDEC4F2E2
       RestApiId:
         Ref: WorksManApi8007FB09
       AuthorizationType: NONE
@@ -637,8 +696,8 @@ Resources:
             method.response.header.Access-Control-Allow-Methods: true
           StatusCode: "204"
     Metadata:
-      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/worksmanExperience/OPTIONS/Resource
-  WorksManApiworksmanExperiencePOSTApiPermissionVrishkarServicesDevStackWorksManApi5F03F3C1POSTworksmanExperience7748F5FE:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/worksmanExperienceapi/OPTIONS/Resource
+  WorksManApiworksmanExperienceapiPOSTApiPermissionVrishkarServicesDevStackWorksManApi5F03F3C1POSTworksmanExperienceapi3C8B95AC:
     Type: AWS::Lambda::Permission
     Properties:
       Action: lambda:InvokeFunction
@@ -660,10 +719,10 @@ Resources:
             - Ref: WorksManApi8007FB09
             - /
             - Ref: WorksManApiDeploymentStagedev92FAAB21
-            - /POST/worksmanExperience
+            - /POST/worksmanExperienceapi
     Metadata:
-      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/worksmanExperience/POST/ApiPermission.VrishkarServicesDevStackWorksManApi5F03F3C1.POST..worksmanExperience
-  WorksManApiworksmanExperiencePOSTApiPermissionTestVrishkarServicesDevStackWorksManApi5F03F3C1POSTworksmanExperience1C3399F8:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/worksmanExperienceapi/POST/ApiPermission.VrishkarServicesDevStackWorksManApi5F03F3C1.POST..worksmanExperienceapi
+  WorksManApiworksmanExperienceapiPOSTApiPermissionTestVrishkarServicesDevStackWorksManApi5F03F3C1POSTworksmanExperienceapi89DA9BEB:
     Type: AWS::Lambda::Permission
     Properties:
       Action: lambda:InvokeFunction
@@ -683,15 +742,15 @@ Resources:
             - Ref: AWS::AccountId
             - ":"
             - Ref: WorksManApi8007FB09
-            - /test-invoke-stage/POST/worksmanExperience
+            - /test-invoke-stage/POST/worksmanExperienceapi
     Metadata:
-      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/worksmanExperience/POST/ApiPermission.Test.VrishkarServicesDevStackWorksManApi5F03F3C1.POST..worksmanExperience
-  WorksManApiworksmanExperiencePOST6823FA26:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/worksmanExperienceapi/POST/ApiPermission.Test.VrishkarServicesDevStackWorksManApi5F03F3C1.POST..worksmanExperienceapi
+  WorksManApiworksmanExperienceapiPOSTAAACC6BD:
     Type: AWS::ApiGateway::Method
     Properties:
       HttpMethod: POST
       ResourceId:
-        Ref: WorksManApiworksmanExperience3919F320
+        Ref: WorksManApiworksmanExperienceapiDEC4F2E2
       RestApiId:
         Ref: WorksManApi8007FB09
       AuthorizationType: NONE
@@ -699,8 +758,29 @@ Resources:
         IntegrationHttpMethod: POST
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Content-Type: "'application/json'"
+              method.response.header.Access-Control-Allow-Origin: "'http://localhost:3000'"
+              method.response.header.Access-Control-Allow-Credentials: "'true'"
+              method.response.header.Access-Control-Allow-Headers: "'*'"
+            ResponseTemplates:
+              application/json: '{"state":"ok","data":"$util.escapeJavaScript($input.body)"}'
             StatusCode: "200"
+          - ResponseParameters:
+              method.response.header.Content-Type: "'application/json'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Credentials: "'true'"
+              method.response.header.Access-Control-Allow-Headers: "'*'"
+            ResponseTemplates:
+              application/json: "{\"state\":\"error\",\"message\":\"$util.escapeJavaScript($input.path('$.errorMessage'))\"}"
+            SelectionPattern: |-
+              (
+              |.)+
+            StatusCode: "400"
+        PassthroughBehavior: NEVER
+        RequestParameters:
+          integration.request.header.Authorization: method.request.header.Authorization
+        RequestTemplates:
+          application/json: '"$util.escapeJavaScript($input.body)"'
         Type: AWS
         Uri:
           Fn::Join:
@@ -715,11 +795,31 @@ Resources:
                   - Arn
               - /invocations
       MethodResponses:
-        - ResponseParameters:
+        - ResponseModels:
+            application/json:
+              Ref: WorksManApiRespworksmanExperienceMethods5F78B1D6
+          ResponseParameters:
+            method.response.header.Content-Type: true
             method.response.header.Access-Control-Allow-Origin: true
+            method.response.header.Access-Control-Allow-Credentials: true
+            method.response.header.Access-Control-Allow-Headers: true
           StatusCode: "200"
+        - ResponseModels:
+            application/json:
+              Ref: WorksManApiErrorpworksmanExperienceMethodsA7975B29
+          ResponseParameters:
+            method.response.header.Content-Type: true
+            method.response.header.Access-Control-Allow-Origin: true
+            method.response.header.Access-Control-Allow-Credentials: true
+            method.response.header.Access-Control-Allow-Headers: true
+          StatusCode: "400"
+      RequestModels:
+        application/json:
+          Ref: WorksManApiworksmanExperienceModel152E2DE2
+      RequestParameters:
+        method.request.header.Authorization: true
     Metadata:
-      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/worksmanExperience/POST/Resource
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/worksmanExperienceapi/POST/Resource
   WorksManApiGetWorksmanAccountRegistartionStatus10A258AF:
     Type: AWS::ApiGateway::Resource
     Properties:
@@ -881,8 +981,333 @@ Resources:
         method.request.querystring.worksmanId: true
         method.request.header.worksmanIdHeader: true
         method.request.header.email: true
+      RequestValidatorId:
+        Ref: WorksManApivalidator36FD7B86
     Metadata:
       aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/GetWorksmanAccountRegistartionStatus/GET/Resource
+  WorksManApiGetTestUser4A9C3C0F:
+    Type: AWS::ApiGateway::Resource
+    Properties:
+      ParentId:
+        Fn::GetAtt:
+          - WorksManApi8007FB09
+          - RootResourceId
+      PathPart: GetTestUser
+      RestApiId:
+        Ref: WorksManApi8007FB09
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/GetTestUser/Resource
+  WorksManApiGetTestUserOPTIONS8B16962F:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      HttpMethod: OPTIONS
+      ResourceId:
+        Ref: WorksManApiGetTestUser4A9C3C0F
+      RestApiId:
+        Ref: WorksManApi8007FB09
+      AuthorizationType: NONE
+      Integration:
+        IntegrationResponses:
+          - ResponseParameters:
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
+            StatusCode: "204"
+        RequestTemplates:
+          application/json: "{ statusCode: 200 }"
+        Type: MOCK
+      MethodResponses:
+        - ResponseParameters:
+            method.response.header.Access-Control-Allow-Headers: true
+            method.response.header.Access-Control-Allow-Origin: true
+            method.response.header.Access-Control-Allow-Methods: true
+          StatusCode: "204"
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/GetTestUser/OPTIONS/Resource
+  WorksManApiGetTestUserGETApiPermissionVrishkarServicesDevStackWorksManApi5F03F3C1GETGetTestUser95CA257C:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName:
+        Fn::GetAtt:
+          - GetTestUser4654379B
+          - Arn
+      Principal: apigateway.amazonaws.com
+      SourceArn:
+        Fn::Join:
+          - ""
+          - - "arn:"
+            - Ref: AWS::Partition
+            - ":execute-api:"
+            - Ref: AWS::Region
+            - ":"
+            - Ref: AWS::AccountId
+            - ":"
+            - Ref: WorksManApi8007FB09
+            - /
+            - Ref: WorksManApiDeploymentStagedev92FAAB21
+            - /GET/GetTestUser
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/GetTestUser/GET/ApiPermission.VrishkarServicesDevStackWorksManApi5F03F3C1.GET..GetTestUser
+  WorksManApiGetTestUserGETApiPermissionTestVrishkarServicesDevStackWorksManApi5F03F3C1GETGetTestUser43B61FBD:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName:
+        Fn::GetAtt:
+          - GetTestUser4654379B
+          - Arn
+      Principal: apigateway.amazonaws.com
+      SourceArn:
+        Fn::Join:
+          - ""
+          - - "arn:"
+            - Ref: AWS::Partition
+            - ":execute-api:"
+            - Ref: AWS::Region
+            - ":"
+            - Ref: AWS::AccountId
+            - ":"
+            - Ref: WorksManApi8007FB09
+            - /test-invoke-stage/GET/GetTestUser
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/GetTestUser/GET/ApiPermission.Test.VrishkarServicesDevStackWorksManApi5F03F3C1.GET..GetTestUser
+  WorksManApiGetTestUserGET5306C5B2:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      HttpMethod: GET
+      ResourceId:
+        Ref: WorksManApiGetTestUser4A9C3C0F
+      RestApiId:
+        Ref: WorksManApi8007FB09
+      AuthorizationType: NONE
+      Integration:
+        IntegrationHttpMethod: POST
+        IntegrationResponses:
+          - ResponseParameters:
+              method.response.header.Content-Type: "'application/json'"
+              method.response.header.Access-Control-Allow-Origin: "'http://localhost:3000'"
+              method.response.header.Access-Control-Allow-Credentials: "'true'"
+              method.response.header.Access-Control-Allow-Headers: "'*'"
+            ResponseTemplates:
+              application/json: '{"state":"ok","data":"$util.escapeJavaScript($input.body)"}'
+            StatusCode: "200"
+          - ResponseParameters:
+              method.response.header.Content-Type: "'application/json'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Credentials: "'true'"
+              method.response.header.Access-Control-Allow-Headers: "'*'"
+            ResponseTemplates:
+              application/json: "{\"state\":\"error\",\"message\":\"$util.escapeJavaScript($input.path('$.errorMessage'))\"}"
+            SelectionPattern: |-
+              (
+              |.)+
+            StatusCode: "400"
+        PassthroughBehavior: NEVER
+        RequestParameters:
+          integration.request.querystring.worksmanId: method.request.querystring.worksmanId
+          integration.request.header.worksmanIdHeader: method.request.header.worksmanIdHeader
+        RequestTemplates:
+          application/json: "{\"worksmanId\":\"$util.escapeJavaScript($input.params('worksmanId'))\",\"worksmanIdHeader\":\"$util.escapeJavaScript($input.params('worksmanIdHeader'))\"}"
+        Type: AWS
+        Uri:
+          Fn::Join:
+            - ""
+            - - "arn:"
+              - Ref: AWS::Partition
+              - ":apigateway:"
+              - Ref: AWS::Region
+              - :lambda:path/2015-03-31/functions/
+              - Fn::GetAtt:
+                  - GetTestUser4654379B
+                  - Arn
+              - /invocations
+      MethodResponses:
+        - ResponseModels:
+            application/json:
+              Ref: WorksManApiGetTestUseResp2142FEFC
+          ResponseParameters:
+            method.response.header.Content-Type: true
+            method.response.header.Access-Control-Allow-Origin: true
+            method.response.header.Access-Control-Allow-Credentials: true
+            method.response.header.Access-Control-Allow-Headers: true
+          StatusCode: "200"
+        - ResponseModels:
+            application/json:
+              Ref: WorksManApiGetTestUserErrorAFFB91DF
+          ResponseParameters:
+            method.response.header.Content-Type: true
+            method.response.header.Access-Control-Allow-Origin: true
+            method.response.header.Access-Control-Allow-Credentials: true
+            method.response.header.Access-Control-Allow-Headers: true
+          StatusCode: "400"
+      RequestParameters:
+        method.request.querystring.worksmanId: true
+        method.request.header.worksmanIdHeader: true
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/GetTestUser/GET/Resource
+  WorksManApiPostTestUserDDD680E2:
+    Type: AWS::ApiGateway::Resource
+    Properties:
+      ParentId:
+        Fn::GetAtt:
+          - WorksManApi8007FB09
+          - RootResourceId
+      PathPart: PostTestUser
+      RestApiId:
+        Ref: WorksManApi8007FB09
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/PostTestUser/Resource
+  WorksManApiPostTestUserOPTIONSC4203EC4:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      HttpMethod: OPTIONS
+      ResourceId:
+        Ref: WorksManApiPostTestUserDDD680E2
+      RestApiId:
+        Ref: WorksManApi8007FB09
+      AuthorizationType: NONE
+      Integration:
+        IntegrationResponses:
+          - ResponseParameters:
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
+            StatusCode: "204"
+        RequestTemplates:
+          application/json: "{ statusCode: 200 }"
+        Type: MOCK
+      MethodResponses:
+        - ResponseParameters:
+            method.response.header.Access-Control-Allow-Headers: true
+            method.response.header.Access-Control-Allow-Origin: true
+            method.response.header.Access-Control-Allow-Methods: true
+          StatusCode: "204"
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/PostTestUser/OPTIONS/Resource
+  WorksManApiPostTestUserPOSTApiPermissionVrishkarServicesDevStackWorksManApi5F03F3C1POSTPostTestUser0FA475F7:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName:
+        Fn::GetAtt:
+          - PostTestUser4E6E6D03
+          - Arn
+      Principal: apigateway.amazonaws.com
+      SourceArn:
+        Fn::Join:
+          - ""
+          - - "arn:"
+            - Ref: AWS::Partition
+            - ":execute-api:"
+            - Ref: AWS::Region
+            - ":"
+            - Ref: AWS::AccountId
+            - ":"
+            - Ref: WorksManApi8007FB09
+            - /
+            - Ref: WorksManApiDeploymentStagedev92FAAB21
+            - /POST/PostTestUser
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/PostTestUser/POST/ApiPermission.VrishkarServicesDevStackWorksManApi5F03F3C1.POST..PostTestUser
+  WorksManApiPostTestUserPOSTApiPermissionTestVrishkarServicesDevStackWorksManApi5F03F3C1POSTPostTestUser8804355E:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName:
+        Fn::GetAtt:
+          - PostTestUser4E6E6D03
+          - Arn
+      Principal: apigateway.amazonaws.com
+      SourceArn:
+        Fn::Join:
+          - ""
+          - - "arn:"
+            - Ref: AWS::Partition
+            - ":execute-api:"
+            - Ref: AWS::Region
+            - ":"
+            - Ref: AWS::AccountId
+            - ":"
+            - Ref: WorksManApi8007FB09
+            - /test-invoke-stage/POST/PostTestUser
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/PostTestUser/POST/ApiPermission.Test.VrishkarServicesDevStackWorksManApi5F03F3C1.POST..PostTestUser
+  WorksManApiPostTestUserPOST1DFB6999:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      HttpMethod: POST
+      ResourceId:
+        Ref: WorksManApiPostTestUserDDD680E2
+      RestApiId:
+        Ref: WorksManApi8007FB09
+      AuthorizationType: NONE
+      Integration:
+        IntegrationHttpMethod: POST
+        IntegrationResponses:
+          - ResponseParameters:
+              method.response.header.Content-Type: "'application/json'"
+              method.response.header.Access-Control-Allow-Origin: "'http://localhost:3000'"
+              method.response.header.Access-Control-Allow-Credentials: "'true'"
+              method.response.header.Access-Control-Allow-Headers: "'*'"
+            ResponseTemplates:
+              application/json: '{"state":"ok","data":"$util.escapeJavaScript($input.body)"}'
+            StatusCode: "200"
+          - ResponseParameters:
+              method.response.header.Content-Type: "'application/json'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Credentials: "'true'"
+              method.response.header.Access-Control-Allow-Headers: "'*'"
+            ResponseTemplates:
+              application/json: "{\"state\":\"error\",\"message\":\"$util.escapeJavaScript($input.path('$.errorMessage'))\"}"
+            SelectionPattern: |-
+              (
+              |.)+
+            StatusCode: "400"
+        PassthroughBehavior: NEVER
+        RequestParameters:
+          integration.request.header.Authorization: method.request.header.Authorization
+        RequestTemplates:
+          application/json: '{"worksmanId":"$util.escapeJavaScript($input.body)"}'
+        Type: AWS
+        Uri:
+          Fn::Join:
+            - ""
+            - - "arn:"
+              - Ref: AWS::Partition
+              - ":apigateway:"
+              - Ref: AWS::Region
+              - :lambda:path/2015-03-31/functions/
+              - Fn::GetAtt:
+                  - PostTestUser4E6E6D03
+                  - Arn
+              - /invocations
+      MethodResponses:
+        - ResponseModels:
+            application/json:
+              Ref: WorksManApiresGetTestUserAB036556
+          ResponseParameters:
+            method.response.header.Content-Type: true
+            method.response.header.Access-Control-Allow-Origin: true
+            method.response.header.Access-Control-Allow-Credentials: true
+            method.response.header.Access-Control-Allow-Headers: true
+          StatusCode: "200"
+        - ResponseModels:
+            application/json:
+              Ref: WorksManApierrorGetTestUser9D439F3F
+          ResponseParameters:
+            method.response.header.Content-Type: true
+            method.response.header.Access-Control-Allow-Origin: true
+            method.response.header.Access-Control-Allow-Credentials: true
+            method.response.header.Access-Control-Allow-Headers: true
+          StatusCode: "400"
+      RequestModels:
+        application/json:
+          Ref: WorksManApiUserModelF7B9A289
+      RequestParameters:
+        method.request.header.Authorization: true
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/PostTestUser/POST/Resource
   WorksManApigetAllMobileNumbereApiGatewayBD625C83:
     Type: AWS::ApiGateway::Resource
     Properties:
@@ -1024,7 +1449,7 @@ Resources:
       MethodResponses:
         - ResponseModels:
             application/json:
-              Ref: WorksManApiGetAllMobileNumber463F4357
+              Ref: WorksManApigetAllMobileNumberB2BB75B5
           ResponseParameters:
             method.response.header.Content-Type: true
             method.response.header.Access-Control-Allow-Origin: true
@@ -1033,7 +1458,7 @@ Resources:
           StatusCode: "200"
         - ResponseModels:
             application/json:
-              Ref: WorksManApiGetAllMobileNumberError332208E9
+              Ref: WorksManApigetAllMobileNumberErrorD8ACCB10
           ResponseParameters:
             method.response.header.Content-Type: true
             method.response.header.Access-Control-Allow-Origin: true
@@ -1046,6 +1471,136 @@ Resources:
         method.request.header.email: true
     Metadata:
       aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/getAllMobileNumbereApiGateway/GET/Resource
+  WorksManApiWorksmanTermsAndConditionsModel0BCAF9B4:
+    Type: AWS::ApiGateway::Model
+    Properties:
+      RestApiId:
+        Ref: WorksManApi8007FB09
+      ContentType: application/json
+      Schema:
+        type: object
+        properties:
+          worksman_id:
+            type: string
+          isWatched_howVrishkar_Works:
+            type: string
+          isUnderstand_Worksman_Will_SelfEmployeed:
+            type: string
+          isUnderstand_Vrishkar_isnot_responsible:
+            type: string
+        required:
+          - worksman_id
+        $schema: http://json-schema.org/draft-04/schema#
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/WorksmanTermsAndConditionsModel/Resource
+  WorksManApiRespWorksmanTermsAndConditionsMethod09A8EC4F:
+    Type: AWS::ApiGateway::Model
+    Properties:
+      RestApiId:
+        Ref: WorksManApi8007FB09
+      ContentType: application/json
+      Name: RespWorksmanTermsAndConditionsMethod
+      Schema:
+        $schema: http://json-schema.org/draft-04/schema#
+        title: RespWorksmanTermsAndConditionsMethod
+        type: object
+        properties:
+          state:
+            type: string
+          greeting:
+            type: string
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/RespWorksmanTermsAndConditionsMethod/Resource
+  WorksManApiErrorpWorksmanTermsAndConditionsMethod7293DFE1:
+    Type: AWS::ApiGateway::Model
+    Properties:
+      RestApiId:
+        Ref: WorksManApi8007FB09
+      ContentType: application/json
+      Name: ErrorpWorksmanTermsAndConditionsMethod
+      Schema:
+        $schema: http://json-schema.org/draft-04/schema#
+        title: ErrorpWorksmanTermsAndConditionsMethod
+        type: object
+        properties:
+          state:
+            type: string
+          message:
+            type: string
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/ErrorpWorksmanTermsAndConditionsMethod/Resource
+  WorksManApiworksmanExperienceModel152E2DE2:
+    Type: AWS::ApiGateway::Model
+    Properties:
+      RestApiId:
+        Ref: WorksManApi8007FB09
+      ContentType: application/json
+      Schema:
+        type: object
+        properties:
+          worksman_id:
+            type: string
+          years_of_cleaning_exp:
+            type: string
+          Have_house_cleaning_exp:
+            type: string
+          Have_deep_cleaning_exp:
+            type: string
+          Have_office_cleaning_exp:
+            type: string
+          Have_oven_cleaning_exp:
+            type: string
+          Have_gardening_exp:
+            type: string
+          Have_building_cleaning_exp:
+            type: string
+          Have_hotel_cleaning_exp:
+            type: string
+          Have_hospital_cleaning_exp:
+            type: string
+          Have_retail_cleaning_exp:
+            type: string
+          other_cleaning:
+            type: string
+        $schema: http://json-schema.org/draft-04/schema#
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/worksmanExperienceModel/Resource
+  WorksManApiRespworksmanExperienceMethods5F78B1D6:
+    Type: AWS::ApiGateway::Model
+    Properties:
+      RestApiId:
+        Ref: WorksManApi8007FB09
+      ContentType: application/json
+      Name: RespworksmanExperienceMethods
+      Schema:
+        $schema: http://json-schema.org/draft-04/schema#
+        title: RespworksmanExperienceMethods
+        type: object
+        properties:
+          state:
+            type: string
+          greeting:
+            type: string
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/RespworksmanExperienceMethods/Resource
+  WorksManApiErrorpworksmanExperienceMethodsA7975B29:
+    Type: AWS::ApiGateway::Model
+    Properties:
+      RestApiId:
+        Ref: WorksManApi8007FB09
+      ContentType: application/json
+      Name: ErrorpworksmanExperienceMethods
+      Schema:
+        $schema: http://json-schema.org/draft-04/schema#
+        title: ErrorpworksmanExperienceMethods
+        type: object
+        properties:
+          state:
+            type: string
+          message:
+            type: string
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/ErrorpworksmanExperienceMethods/Resource
   WorksManApiWorkmanStatus50343F60:
     Type: AWS::ApiGateway::Model
     Properties:
@@ -1082,13 +1637,21 @@ Resources:
             type: string
     Metadata:
       aws:cdk:path: VrishkarServicesDevStack/WorksManApi/WorkmanStatusError/Resource
-  WorksManApiGetAllMobileNumber463F4357:
+  WorksManApivalidator36FD7B86:
+    Type: AWS::ApiGateway::RequestValidator
+    Properties:
+      RestApiId:
+        Ref: WorksManApi8007FB09
+      Name: parameters-validator
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/validator/Resource
+  WorksManApiGetTestUseResp2142FEFC:
     Type: AWS::ApiGateway::Model
     Properties:
       RestApiId:
         Ref: WorksManApi8007FB09
       ContentType: application/json
-      Name: GetAllMobileNumber
+      Name: GetTestUseResp
       Schema:
         $schema: http://json-schema.org/draft-04/schema#
         title: pollResponse
@@ -1099,14 +1662,14 @@ Resources:
           greeting:
             type: string
     Metadata:
-      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/GetAllMobileNumber/Resource
-  WorksManApiGetAllMobileNumberError332208E9:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/GetTestUseResp/Resource
+  WorksManApiGetTestUserErrorAFFB91DF:
     Type: AWS::ApiGateway::Model
     Properties:
       RestApiId:
         Ref: WorksManApi8007FB09
       ContentType: application/json
-      Name: GetAllMobileNumberError
+      Name: GetTestUserError
       Schema:
         $schema: http://json-schema.org/draft-04/schema#
         title: errorResponse
@@ -1117,11 +1680,101 @@ Resources:
           message:
             type: string
     Metadata:
-      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/GetAllMobileNumberError/Resource
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/GetTestUserError/Resource
+  WorksManApiUserModelF7B9A289:
+    Type: AWS::ApiGateway::Model
+    Properties:
+      RestApiId:
+        Ref: WorksManApi8007FB09
+      ContentType: application/json
+      Schema:
+        type: object
+        properties:
+          userId:
+            type: string
+          name:
+            type: string
+        required:
+          - userId
+        $schema: http://json-schema.org/draft-04/schema#
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/UserModel/Resource
+  WorksManApiresGetTestUserAB036556:
+    Type: AWS::ApiGateway::Model
+    Properties:
+      RestApiId:
+        Ref: WorksManApi8007FB09
+      ContentType: application/json
+      Name: resGetTestUser
+      Schema:
+        $schema: http://json-schema.org/draft-04/schema#
+        title: resGetTestUser
+        type: object
+        properties:
+          state:
+            type: string
+          greeting:
+            type: string
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/resGetTestUser/Resource
+  WorksManApierrorGetTestUser9D439F3F:
+    Type: AWS::ApiGateway::Model
+    Properties:
+      RestApiId:
+        Ref: WorksManApi8007FB09
+      ContentType: application/json
+      Name: errorGetTestUser
+      Schema:
+        $schema: http://json-schema.org/draft-04/schema#
+        title: errorGetTestUser
+        type: object
+        properties:
+          state:
+            type: string
+          message:
+            type: string
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/errorGetTestUser/Resource
+  WorksManApigetAllMobileNumberB2BB75B5:
+    Type: AWS::ApiGateway::Model
+    Properties:
+      RestApiId:
+        Ref: WorksManApi8007FB09
+      ContentType: application/json
+      Name: getAllMobileNumber
+      Schema:
+        $schema: http://json-schema.org/draft-04/schema#
+        title: pollResponse
+        type: object
+        properties:
+          state:
+            type: string
+          greeting:
+            type: string
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/getAllMobileNumber/Resource
+  WorksManApigetAllMobileNumberErrorD8ACCB10:
+    Type: AWS::ApiGateway::Model
+    Properties:
+      RestApiId:
+        Ref: WorksManApi8007FB09
+      ContentType: application/json
+      Name: getAllMobileNumberError
+      Schema:
+        $schema: http://json-schema.org/draft-04/schema#
+        title: errorResponse
+        type: object
+        properties:
+          state:
+            type: string
+          message:
+            type: string
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/getAllMobileNumberError/Resource
   CDKMetadata:
     Type: AWS::CDK::Metadata
     Properties:
-      Analytics: v2:deflate64:H4sIAAAAAAAA/02QwW7DIAyGn6V3Qhd12nlpp92qVdkTeOBlNAEibFZVEe8+oO2Ukz8b+/dvWtnunuXT5hUu1Cg9bhflA8rlk0GNoiNCzjgYN4iDd8QhKhaHb3eCABYZQ0k+Is+xlnskH4PCwrlfGzbeJVHElwnslwa5vEenSrn0rPmEwRqiOmDAyqX3UxUqMQnaNVDskKyuci73UY3IeyAUMJsBGC9wzXNI3M3m7ueBnVI+OhZvOE/+atFVw6us3Fn33eBxSpU/Iv94XR7vtD70n49e41SbCqSUhMsgz7T9bV/yR8t2cyZjmpB9GIuyv8U/N6tnroQBAAA=
+      Analytics: v2:deflate64:H4sIAAAAAAAA/1WRwU7DMAyGn2X3LKMa4kw3tNvEVCTuJjEla5OU2GGaqr47SbqhcvJn57f9W6lktX2UD6tnuNBa6W4zKh9Qjm8MqhM1EXLC1rhW7L0jDlGx2H+6EwSwyBhy8hp5iKXcIPkYFGZOem3YeDeJPHzswX5okOMhOpXLWbPkEwZriEqDASvHxvdlUI6ToO0ash2SxVXK5S6qDnkHhAIG0wLjBa6pD4nrwdz83LFWykfH4gWH3l8tumJ4keU7y74Z7qeU8UfkL6/z442Wh/7x0Wvsi6hAg98x7X+H3mhgH2bt/9o0TcIltTzT5qd6Sr8hq9WZjFmHZNZYlM0cfwEKNlvTqQEAAA==
     Metadata:
       aws:cdk:path: VrishkarServicesDevStack/CDKMetadata/Default
     Condition: CDKMetadataAvailable
@@ -1135,24 +1788,24 @@ Parameters:
   AssetParameters27dadf74d097d314ae9358baaba1cbbec5ea45b8ba870d20600fdc89a424d287ArtifactHash36B2EB06:
     Type: String
     Description: Artifact hash for asset "27dadf74d097d314ae9358baaba1cbbec5ea45b8ba870d20600fdc89a424d287"
-  AssetParameters0650e1155c134f28c80b03fab51186a1d24f5c2397785797f0483a80f809a9eaS3BucketBEAA06E9:
+  AssetParametersc4d98eb9b6adf84c8085940d7083cc548a86e0eb37aaaf9a3625039cb9bb108dS3Bucket031EA7C5:
     Type: String
-    Description: S3 bucket for asset "0650e1155c134f28c80b03fab51186a1d24f5c2397785797f0483a80f809a9ea"
-  AssetParameters0650e1155c134f28c80b03fab51186a1d24f5c2397785797f0483a80f809a9eaS3VersionKey68140FB0:
+    Description: S3 bucket for asset "c4d98eb9b6adf84c8085940d7083cc548a86e0eb37aaaf9a3625039cb9bb108d"
+  AssetParametersc4d98eb9b6adf84c8085940d7083cc548a86e0eb37aaaf9a3625039cb9bb108dS3VersionKey146916EB:
     Type: String
-    Description: S3 key for asset version "0650e1155c134f28c80b03fab51186a1d24f5c2397785797f0483a80f809a9ea"
-  AssetParameters0650e1155c134f28c80b03fab51186a1d24f5c2397785797f0483a80f809a9eaArtifactHash08421434:
+    Description: S3 key for asset version "c4d98eb9b6adf84c8085940d7083cc548a86e0eb37aaaf9a3625039cb9bb108d"
+  AssetParametersc4d98eb9b6adf84c8085940d7083cc548a86e0eb37aaaf9a3625039cb9bb108dArtifactHash48C13440:
     Type: String
-    Description: Artifact hash for asset "0650e1155c134f28c80b03fab51186a1d24f5c2397785797f0483a80f809a9ea"
-  AssetParameters2f4ca60710fddb8324d3bc88bae5d05acd9b52d82af23c9ce337239fb0570250S3Bucket64045F88:
+    Description: Artifact hash for asset "c4d98eb9b6adf84c8085940d7083cc548a86e0eb37aaaf9a3625039cb9bb108d"
+  AssetParameters7869f8a345de2ed992745023c137cbae3c6f022e8fc7ff701b69d90c7e156477S3BucketE79BCC32:
     Type: String
-    Description: S3 bucket for asset "2f4ca60710fddb8324d3bc88bae5d05acd9b52d82af23c9ce337239fb0570250"
-  AssetParameters2f4ca60710fddb8324d3bc88bae5d05acd9b52d82af23c9ce337239fb0570250S3VersionKeyDE1FE1CB:
+    Description: S3 bucket for asset "7869f8a345de2ed992745023c137cbae3c6f022e8fc7ff701b69d90c7e156477"
+  AssetParameters7869f8a345de2ed992745023c137cbae3c6f022e8fc7ff701b69d90c7e156477S3VersionKeyD5FFA140:
     Type: String
-    Description: S3 key for asset version "2f4ca60710fddb8324d3bc88bae5d05acd9b52d82af23c9ce337239fb0570250"
-  AssetParameters2f4ca60710fddb8324d3bc88bae5d05acd9b52d82af23c9ce337239fb0570250ArtifactHash18681DDD:
+    Description: S3 key for asset version "7869f8a345de2ed992745023c137cbae3c6f022e8fc7ff701b69d90c7e156477"
+  AssetParameters7869f8a345de2ed992745023c137cbae3c6f022e8fc7ff701b69d90c7e156477ArtifactHash4DA3D65A:
     Type: String
-    Description: Artifact hash for asset "2f4ca60710fddb8324d3bc88bae5d05acd9b52d82af23c9ce337239fb0570250"
+    Description: Artifact hash for asset "7869f8a345de2ed992745023c137cbae3c6f022e8fc7ff701b69d90c7e156477"
   AssetParameters44245703dcc59e9c94cc2bc53c9e95cfe4a76c649f4f8c6438177dd52084cc95S3BucketCF83EF7F:
     Type: String
     Description: S3 bucket for asset "44245703dcc59e9c94cc2bc53c9e95cfe4a76c649f4f8c6438177dd52084cc95"
@@ -1162,6 +1815,15 @@ Parameters:
   AssetParameters44245703dcc59e9c94cc2bc53c9e95cfe4a76c649f4f8c6438177dd52084cc95ArtifactHashBC0A7A2A:
     Type: String
     Description: Artifact hash for asset "44245703dcc59e9c94cc2bc53c9e95cfe4a76c649f4f8c6438177dd52084cc95"
+  AssetParameters9cb30c2e9f898e5f6a50b07d5ae5d7edbcb4ff6075ef881b6c10b92509c1e2f0S3BucketFA52C3C7:
+    Type: String
+    Description: S3 bucket for asset "9cb30c2e9f898e5f6a50b07d5ae5d7edbcb4ff6075ef881b6c10b92509c1e2f0"
+  AssetParameters9cb30c2e9f898e5f6a50b07d5ae5d7edbcb4ff6075ef881b6c10b92509c1e2f0S3VersionKey796ED790:
+    Type: String
+    Description: S3 key for asset version "9cb30c2e9f898e5f6a50b07d5ae5d7edbcb4ff6075ef881b6c10b92509c1e2f0"
+  AssetParameters9cb30c2e9f898e5f6a50b07d5ae5d7edbcb4ff6075ef881b6c10b92509c1e2f0ArtifactHashB5871201:
+    Type: String
+    Description: Artifact hash for asset "9cb30c2e9f898e5f6a50b07d5ae5d7edbcb4ff6075ef881b6c10b92509c1e2f0"
   AssetParameters380251841887a864fc089aa778767c205dbb1064ae01de0a989e9d9ce4171af8S3BucketA5D4ABCD:
     Type: String
     Description: S3 bucket for asset "380251841887a864fc089aa778767c205dbb1064ae01de0a989e9d9ce4171af8"
