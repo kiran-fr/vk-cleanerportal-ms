@@ -436,7 +436,7 @@ export const GetWorksmanAccountRegistartionStatusApiGateway = (api: any, lambdaF
 
 
 
-  GetWorksmanAccountRegistartionStatus.addMethod('GET', integration, {
+  GetWorksmanAccountRegistartionStatus.addMethod(methodType, integration, {
     // We can mark the parameters as required
     requestParameters: {
       'method.request.querystring.worksmanId': true,
