@@ -49,8 +49,8 @@ Resources:
       - UserRegistrationServiceRoleBCB3F31D
     Metadata:
       aws:cdk:path: VrishkarServicesDevStack/UserRegistration/Resource
-      aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanprt-ms\vk-cleanerportal-ms\functions\UserRegistration
-      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanprt-ms\vk-cleanerportal-ms\functions\UserRegistration
+      aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\UserRegistration
+      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\UserRegistration
       aws:asset:is-bundled: false
       aws:asset:property: Code
   WorksManTermsAndConditionServiceRole06AE84AC:
@@ -103,8 +103,8 @@ Resources:
       - WorksManTermsAndConditionServiceRole06AE84AC
     Metadata:
       aws:cdk:path: VrishkarServicesDevStack/WorksManTermsAndCondition/Resource
-      aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanprt-ms\vk-cleanerportal-ms\functions\WorksManTermsAndCondition
-      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanprt-ms\vk-cleanerportal-ms\functions\WorksManTermsAndCondition
+      aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\WorksManTermsAndCondition
+      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\WorksManTermsAndCondition
       aws:asset:is-bundled: false
       aws:asset:property: Code
   WorksManExperienceServiceRoleE9A759F2:
@@ -157,8 +157,8 @@ Resources:
       - WorksManExperienceServiceRoleE9A759F2
     Metadata:
       aws:cdk:path: VrishkarServicesDevStack/WorksManExperience/Resource
-      aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanprt-ms\vk-cleanerportal-ms\functions\WorksManExperience
-      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanprt-ms\vk-cleanerportal-ms\functions\WorksManExperience
+      aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\WorksManExperience
+      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\WorksManExperience
       aws:asset:is-bundled: false
       aws:asset:property: Code
   GetWorksmanAccountRegistartionStatusServiceRole6BD0E8C2:
@@ -211,8 +211,8 @@ Resources:
       - GetWorksmanAccountRegistartionStatusServiceRole6BD0E8C2
     Metadata:
       aws:cdk:path: VrishkarServicesDevStack/GetWorksmanAccountRegistartionStatus/Resource
-      aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanprt-ms\vk-cleanerportal-ms\functions\GetWorksmanAccountRegistartionStatus
-      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanprt-ms\vk-cleanerportal-ms\functions\GetWorksmanAccountRegistartionStatus
+      aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetWorksmanAccountRegistartionStatus
+      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetWorksmanAccountRegistartionStatus
       aws:asset:is-bundled: false
       aws:asset:property: Code
   GetTestUserServiceRole01730EC6:
@@ -265,8 +265,8 @@ Resources:
       - GetTestUserServiceRole01730EC6
     Metadata:
       aws:cdk:path: VrishkarServicesDevStack/GetTestUser/Resource
-      aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanprt-ms\vk-cleanerportal-ms\functions\GetTestUser
-      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanprt-ms\vk-cleanerportal-ms\functions\GetTestUser
+      aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetTestUser
+      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetTestUser
       aws:asset:is-bundled: false
       aws:asset:property: Code
   PostTestUserServiceRoleC6DDD923:
@@ -319,8 +319,8 @@ Resources:
       - PostTestUserServiceRoleC6DDD923
     Metadata:
       aws:cdk:path: VrishkarServicesDevStack/PostTestUser/Resource
-      aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanprt-ms\vk-cleanerportal-ms\functions\GetPostTestUser
-      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanprt-ms\vk-cleanerportal-ms\functions\GetPostTestUser
+      aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetPostTestUser
+      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetPostTestUser
       aws:asset:is-bundled: false
       aws:asset:property: Code
   getAllMobileNumberServiceRoleD38739BC:
@@ -373,8 +373,8 @@ Resources:
       - getAllMobileNumberServiceRoleD38739BC
     Metadata:
       aws:cdk:path: VrishkarServicesDevStack/getAllMobileNumber/Resource
-      aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanprt-ms\vk-cleanerportal-ms\functions\userEmailError
-      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanprt-ms\vk-cleanerportal-ms\functions\userEmailError
+      aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\userEmailError
+      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\userEmailError
       aws:asset:is-bundled: false
       aws:asset:property: Code
   WorksManApi8007FB09:
