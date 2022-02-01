@@ -1,11 +1,17 @@
 import * as cdk from '@aws-cdk/core';
 import * as lambda from '@aws-cdk/aws-lambda';
-import { UserRegistrationLambda, WorksManTermsAndConditionLambda, WorksManExperienceLambda, GetWorksmanAccountRegistartionStatusLambda, GetTestUserLambda, PostTestUserLambda, getAllMobileNumberLambda } from './resources/lambda/allLambda';
+import { UserRegistrationLambda, WorksManTermsAndConditionLambda, WorksManExperienceLambda,
+   GetWorksmanAccountRegistartionStatusLambda, GetTestUserLambda, PostTestUserLambda, getAllMobileNumberLambda,
+   GetWorkmanDetailsLambda, 
+   UpdateWorksmanDetailsLambda} from './resources/lambda/allLambda';
 import * as sfn from "@aws-cdk/aws-stepfunctions";
 import * as tasks from "@aws-cdk/aws-stepfunctions-tasks";
 import * as apigateway from "@aws-cdk/aws-apigateway"
 import { ApigatewayDataConstants } from '../constants/ApiGatewayConstant';
-import { WorksmanTermsAndConditionsApiGateway, PostUserApiGateway, getAllMobileNumbereApiGateway, worksmanExperienceApiGateway, GetWorksmanAccountRegistartionStatusApiGateway, GetTestUserApiGateway } from "./resources/ApiGateway/AllApiGateWays"
+import { WorksmanTermsAndConditionsApiGateway, PostUserApiGateway, getAllMobileNumbersApiGateway, 
+  worksmanExperienceApiGateway, GetWorksmanAccountRegistartionStatusApiGateway, GetTestUserApiGateway,
+  GetWorkmanDetailsApiGateway, 
+  UpdateWorksmanDetailsApi} from "./resources/ApiGateway/AllApiGateWays"
 
 export class CdkExampleStack extends cdk.Stack {
   public Machine: sfn.StateMachine;
@@ -19,6 +25,8 @@ export class CdkExampleStack extends cdk.Stack {
     const GetTestUser = new lambda.Function(this, "GetTestUser", GetTestUserLambda())
     const PostTestUser = new lambda.Function(this, "PostTestUser", PostTestUserLambda())
     const getAllMobileNumbersDemo = new lambda.Function(this, "getAllMobileNumber", getAllMobileNumberLambda())
+    const GetWorkmanDetailLambda = new lambda.Function(this, "GetWorkmanDetails", GetWorkmanDetailsLambda())
+    const UpdateWorksmanDetailLambda = new lambda.Function(this, "UpdateWorksmanDetail", UpdateWorksmanDetailsLambda())
 
 
     // const definition = new tasks.LambdaInvoke(this, 'User Registration', {
@@ -39,7 +47,9 @@ export class CdkExampleStack extends cdk.Stack {
     GetWorksmanAccountRegistartionStatusApiGateway(api, GetWorksmanAccountRegistartionStatus, 'GET')
     GetTestUserApiGateway(api, GetTestUser, 'GET')
     PostUserApiGateway(api, PostTestUser, 'POST')
-    getAllMobileNumbereApiGateway(api, getAllMobileNumbersDemo, 'GET')
+    getAllMobileNumbersApiGateway(api, getAllMobileNumbersDemo, 'GET')
+    GetWorkmanDetailsApiGateway(api, GetWorkmanDetailLambda, 'GET')
+    UpdateWorksmanDetailsApi(api, UpdateWorksmanDetailLambda, 'PUT')
 
   }
 }

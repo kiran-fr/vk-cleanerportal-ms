@@ -24,4 +24,6 @@ sam local invoke UserRegistration -e  functions/UserRegistration/mock.json
 sam local invoke WorksManTermsAndCondition66F1F295 -e functions/WorksManTermsAndCondition/mock.json
 sam local invoke WorksManExperience -e functions/WorksManExperience/mock.json
 sam local invoke GetWorksmanAccountRegistartionStatusA28FB6DA -e functions/GetWorksmanAccountRegistartionStatus/mock.json
+sam local invoke GetWorkmanDetails839D982B -e functions/GetWorksmanDetails/mock.json
+sam local invoke UpdateWorksmanDetail764C9F8C -e functions/UpdateWorksmanDetails/mock.json
 

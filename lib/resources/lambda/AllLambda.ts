@@ -79,3 +79,24 @@ export const getAllMobileNumberLambda = () => {
     timeout: cdk.Duration.seconds(35)
   }
 }
+
+export const GetWorkmanDetailsLambda = () => {
+  return {
+    code:lambda.Code.fromAsset('./functions/GetWorksmanDetails'),
+    functionName:'GetWorkmanDetailsFun',
+    handler:'index.GetWorksmanDetailsHandler',
+    memorySize: 1024,
+    runtime: lambda.Runtime.NODEJS_14_X,
+    timeout: cdk.Duration.seconds(35)
+  }
+}
+export const UpdateWorksmanDetailsLambda = () => {
+  return {
+    code:lambda.Code.fromAsset('./functions/UpdateWorksmanDetails'),
+    functionName:'UpdateWorksmanDetailsFun',
+    handler:'index.UpdateWorksmanDetailsHandler',
+    memorySize: 1024,
+    runtime: lambda.Runtime.NODEJS_14_X,
+    timeout: cdk.Duration.seconds(35)
+  }
+}
