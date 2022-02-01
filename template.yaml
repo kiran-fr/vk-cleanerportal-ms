@@ -184,7 +184,7 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameters44245703dcc59e9c94cc2bc53c9e95cfe4a76c649f4f8c6438177dd52084cc95S3BucketCF83EF7F
+          Ref: AssetParameters1ca39137ddf94a1e70ec3bf709cf7e1ef04ab0254ca999301254c53f1d3d838bS3Bucket59CAE5A0
         S3Key:
           Fn::Join:
             - ""
@@ -192,12 +192,12 @@ Resources:
                   - 0
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters44245703dcc59e9c94cc2bc53c9e95cfe4a76c649f4f8c6438177dd52084cc95S3VersionKeyD60B3A01
+                      - Ref: AssetParameters1ca39137ddf94a1e70ec3bf709cf7e1ef04ab0254ca999301254c53f1d3d838bS3VersionKeyF412B624
               - Fn::Select:
                   - 1
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters44245703dcc59e9c94cc2bc53c9e95cfe4a76c649f4f8c6438177dd52084cc95S3VersionKeyD60B3A01
+                      - Ref: AssetParameters1ca39137ddf94a1e70ec3bf709cf7e1ef04ab0254ca999301254c53f1d3d838bS3VersionKeyF412B624
       Role:
         Fn::GetAtt:
           - GetWorksmanAccountRegistartionStatusServiceRole6BD0E8C2
@@ -400,7 +400,7 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameters53c71ee9e1a2985e73c27b9278301fecf04f0abf56a6883ba5329dc82c27d293S3Bucket7B62528C
+          Ref: AssetParametersca36152c02e0d14fb372f65d090ba6ff8cc89f2283adb72eb04d81807c64502eS3Bucket14B359A9
         S3Key:
           Fn::Join:
             - ""
@@ -408,12 +408,12 @@ Resources:
                   - 0
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters53c71ee9e1a2985e73c27b9278301fecf04f0abf56a6883ba5329dc82c27d293S3VersionKey1E695D99
+                      - Ref: AssetParametersca36152c02e0d14fb372f65d090ba6ff8cc89f2283adb72eb04d81807c64502eS3VersionKeyD97CA4EC
               - Fn::Select:
                   - 1
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters53c71ee9e1a2985e73c27b9278301fecf04f0abf56a6883ba5329dc82c27d293S3VersionKey1E695D99
+                      - Ref: AssetParametersca36152c02e0d14fb372f65d090ba6ff8cc89f2283adb72eb04d81807c64502eS3VersionKeyD97CA4EC
       Role:
         Fn::GetAtt:
           - GetWorkmanDetailsServiceRole7D7C7A93
@@ -521,7 +521,7 @@ Resources:
       - WorksManApi8007FB09
     Metadata:
       aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Account
-  WorksManApiDeployment495969A9d9def7d9b663b5ca05c7731c3e2de389:
+  WorksManApiDeployment495969A90db719d78ae43a2c6e780d957b6bdddb:
     Type: AWS::ApiGateway::Deployment
     Properties:
       RestApiId:
@@ -537,9 +537,9 @@ Resources:
       - WorksManApiGetWorkmanDetailsApiGETBCB8C0D1
       - WorksManApiGetWorkmanDetailsApiOPTIONS864F071F
       - WorksManApiGetWorkmanDetailsApiBE59A359
-      - WorksManApiGetWorksmanAccountRegistartionStatusGET88BE1ED8
-      - WorksManApiGetWorksmanAccountRegistartionStatusOPTIONSDC172552
-      - WorksManApiGetWorksmanAccountRegistartionStatus10A258AF
+      - WorksManApiGetWorksmanAccountRegistartionStatusApiGET201C8264
+      - WorksManApiGetWorksmanAccountRegistartionStatusApiOPTIONSE6057347
+      - WorksManApiGetWorksmanAccountRegistartionStatusApi4590A845
       - WorksManApiOPTIONS0DEE16A2
       - WorksManApiPostTestUserOPTIONSC4203EC4
       - WorksManApiPostTestUserPOST1DFB6999
@@ -568,8 +568,8 @@ Resources:
       - WorksManApiUpdateWorksmanDetailsError8D77E5BC
       - WorksManApiUpdateWorksmanDetailssucees79E571EC
       - WorksManApiUserModelF7B9A289
-      - WorksManApiWorkmanStatus50343F60
       - WorksManApiWorkmanStatusError5C163A96
+      - WorksManApiWorkmanStatusSuccess86C094BB
       - WorksManApiworksmanExperienceModel152E2DE2
       - WorksManApiWorksmanTermsAndConditionsModel0BCAF9B4
     Metadata:
@@ -580,7 +580,7 @@ Resources:
       RestApiId:
         Ref: WorksManApi8007FB09
       DeploymentId:
-        Ref: WorksManApiDeployment495969A9d9def7d9b663b5ca05c7731c3e2de389
+        Ref: WorksManApiDeployment495969A90db719d78ae43a2c6e780d957b6bdddb
       StageName: dev
     Metadata:
       aws:cdk:path: VrishkarServicesDevStack/WorksManApi/DeploymentStage.dev/Resource
@@ -937,24 +937,24 @@ Resources:
         method.request.header.Authorization: true
     Metadata:
       aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/worksmanExperienceapi/POST/Resource
-  WorksManApiGetWorksmanAccountRegistartionStatus10A258AF:
+  WorksManApiGetWorksmanAccountRegistartionStatusApi4590A845:
     Type: AWS::ApiGateway::Resource
     Properties:
       ParentId:
         Fn::GetAtt:
           - WorksManApi8007FB09
           - RootResourceId
-      PathPart: GetWorksmanAccountRegistartionStatus
+      PathPart: GetWorksmanAccountRegistartionStatusApi
       RestApiId:
         Ref: WorksManApi8007FB09
     Metadata:
-      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/GetWorksmanAccountRegistartionStatus/Resource
-  WorksManApiGetWorksmanAccountRegistartionStatusOPTIONSDC172552:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/GetWorksmanAccountRegistartionStatusApi/Resource
+  WorksManApiGetWorksmanAccountRegistartionStatusApiOPTIONSE6057347:
     Type: AWS::ApiGateway::Method
     Properties:
       HttpMethod: OPTIONS
       ResourceId:
-        Ref: WorksManApiGetWorksmanAccountRegistartionStatus10A258AF
+        Ref: WorksManApiGetWorksmanAccountRegistartionStatusApi4590A845
       RestApiId:
         Ref: WorksManApi8007FB09
       AuthorizationType: NONE
@@ -975,8 +975,8 @@ Resources:
             method.response.header.Access-Control-Allow-Methods: true
           StatusCode: "204"
     Metadata:
-      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/GetWorksmanAccountRegistartionStatus/OPTIONS/Resource
-  WorksManApiGetWorksmanAccountRegistartionStatusGETApiPermissionVrishkarServicesDevStackWorksManApi5F03F3C1GETGetWorksmanAccountRegistartionStatus8CB4BA12:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/GetWorksmanAccountRegistartionStatusApi/OPTIONS/Resource
+  WorksManApiGetWorksmanAccountRegistartionStatusApiGETApiPermissionVrishkarServicesDevStackWorksManApi5F03F3C1GETGetWorksmanAccountRegistartionStatusApi3FA39DC0:
     Type: AWS::Lambda::Permission
     Properties:
       Action: lambda:InvokeFunction
@@ -998,10 +998,10 @@ Resources:
             - Ref: WorksManApi8007FB09
             - /
             - Ref: WorksManApiDeploymentStagedev92FAAB21
-            - /GET/GetWorksmanAccountRegistartionStatus
+            - /GET/GetWorksmanAccountRegistartionStatusApi
     Metadata:
-      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/GetWorksmanAccountRegistartionStatus/GET/ApiPermission.VrishkarServicesDevStackWorksManApi5F03F3C1.GET..GetWorksmanAccountRegistartionStatus
-  WorksManApiGetWorksmanAccountRegistartionStatusGETApiPermissionTestVrishkarServicesDevStackWorksManApi5F03F3C1GETGetWorksmanAccountRegistartionStatusC6E1D7E7:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/GetWorksmanAccountRegistartionStatusApi/GET/ApiPermission.VrishkarServicesDevStackWorksManApi5F03F3C1.GET..GetWorksmanAccountRegistartionStatusApi
+  WorksManApiGetWorksmanAccountRegistartionStatusApiGETApiPermissionTestVrishkarServicesDevStackWorksManApi5F03F3C1GETGetWorksmanAccountRegistartionStatusApi386A8FCA:
     Type: AWS::Lambda::Permission
     Properties:
       Action: lambda:InvokeFunction
@@ -1021,15 +1021,15 @@ Resources:
             - Ref: AWS::AccountId
             - ":"
             - Ref: WorksManApi8007FB09
-            - /test-invoke-stage/GET/GetWorksmanAccountRegistartionStatus
+            - /test-invoke-stage/GET/GetWorksmanAccountRegistartionStatusApi
     Metadata:
-      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/GetWorksmanAccountRegistartionStatus/GET/ApiPermission.Test.VrishkarServicesDevStackWorksManApi5F03F3C1.GET..GetWorksmanAccountRegistartionStatus
-  WorksManApiGetWorksmanAccountRegistartionStatusGET88BE1ED8:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/GetWorksmanAccountRegistartionStatusApi/GET/ApiPermission.Test.VrishkarServicesDevStackWorksManApi5F03F3C1.GET..GetWorksmanAccountRegistartionStatusApi
+  WorksManApiGetWorksmanAccountRegistartionStatusApiGET201C8264:
     Type: AWS::ApiGateway::Method
     Properties:
       HttpMethod: GET
       ResourceId:
-        Ref: WorksManApiGetWorksmanAccountRegistartionStatus10A258AF
+        Ref: WorksManApiGetWorksmanAccountRegistartionStatusApi4590A845
       RestApiId:
         Ref: WorksManApi8007FB09
       AuthorizationType: NONE
@@ -1078,7 +1078,7 @@ Resources:
       MethodResponses:
         - ResponseModels:
             application/json:
-              Ref: WorksManApiWorkmanStatus50343F60
+              Ref: WorksManApiWorkmanStatusSuccess86C094BB
           ResponseParameters:
             method.response.header.Content-Type: true
             method.response.header.Access-Control-Allow-Origin: true
@@ -1099,7 +1099,7 @@ Resources:
         method.request.header.worksmanIdHeader: true
         method.request.header.email: true
     Metadata:
-      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/GetWorksmanAccountRegistartionStatus/GET/Resource
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/GetWorksmanAccountRegistartionStatusApi/GET/Resource
   WorksManApiGetTestUser4A9C3C0F:
     Type: AWS::ApiGateway::Resource
     Properties:
@@ -1544,10 +1544,8 @@ Resources:
         PassthroughBehavior: NEVER
         RequestParameters:
           integration.request.querystring.worksmanId: method.request.querystring.worksmanId
-          integration.request.header.worksmanIdHeader: method.request.header.worksmanIdHeader
-          integration.request.header.email: method.request.header.email
         RequestTemplates:
-          application/json: "{\"worksmanId\":\"$util.escapeJavaScript($input.params('worksmanId'))\",\"worksmanIdHeader\":\"$util.escapeJavaScript($input.params('worksmanIdHeader'))\",\"email\":\"$util.escapeJavaScript($input.params('email'))\"}"
+          application/json: "{\"worksmanId\":\"$util.escapeJavaScript($input.params('worksmanId'))\"}"
         Type: AWS
         Uri:
           Fn::Join:
@@ -1582,8 +1580,6 @@ Resources:
           StatusCode: "400"
       RequestParameters:
         method.request.querystring.worksmanId: true
-        method.request.header.worksmanIdHeader: true
-        method.request.header.email: true
     Metadata:
       aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/getAllMobileNumbereApiGateway/GET/Resource
   WorksManApiGetWorkmanDetailsApiBE59A359:
@@ -2042,13 +2038,13 @@ Resources:
             type: string
     Metadata:
       aws:cdk:path: VrishkarServicesDevStack/WorksManApi/ErrorpworksmanExperienceMethods/Resource
-  WorksManApiWorkmanStatus50343F60:
+  WorksManApiWorkmanStatusSuccess86C094BB:
     Type: AWS::ApiGateway::Model
     Properties:
       RestApiId:
         Ref: WorksManApi8007FB09
       ContentType: application/json
-      Name: WorkmanStatus
+      Name: WorkmanStatusSuccess
       Schema:
         $schema: http://json-schema.org/draft-04/schema#
         title: pollResponse
@@ -2059,7 +2055,7 @@ Resources:
           greeting:
             type: string
     Metadata:
-      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/WorkmanStatus/Resource
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/WorkmanStatusSuccess/Resource
   WorksManApiWorkmanStatusError5C163A96:
     Type: AWS::ApiGateway::Model
     Properties:
@@ -2311,15 +2307,15 @@ Parameters:
   AssetParameters3e6aefaa1e2f2da3f0be171b40930f29f7843d3dfaf624ecf1775348f2d0864eArtifactHash8A67D209:
     Type: String
     Description: Artifact hash for asset "3e6aefaa1e2f2da3f0be171b40930f29f7843d3dfaf624ecf1775348f2d0864e"
-  AssetParameters44245703dcc59e9c94cc2bc53c9e95cfe4a76c649f4f8c6438177dd52084cc95S3BucketCF83EF7F:
+  AssetParameters1ca39137ddf94a1e70ec3bf709cf7e1ef04ab0254ca999301254c53f1d3d838bS3Bucket59CAE5A0:
     Type: String
-    Description: S3 bucket for asset "44245703dcc59e9c94cc2bc53c9e95cfe4a76c649f4f8c6438177dd52084cc95"
-  AssetParameters44245703dcc59e9c94cc2bc53c9e95cfe4a76c649f4f8c6438177dd52084cc95S3VersionKeyD60B3A01:
+    Description: S3 bucket for asset "1ca39137ddf94a1e70ec3bf709cf7e1ef04ab0254ca999301254c53f1d3d838b"
+  AssetParameters1ca39137ddf94a1e70ec3bf709cf7e1ef04ab0254ca999301254c53f1d3d838bS3VersionKeyF412B624:
     Type: String
-    Description: S3 key for asset version "44245703dcc59e9c94cc2bc53c9e95cfe4a76c649f4f8c6438177dd52084cc95"
-  AssetParameters44245703dcc59e9c94cc2bc53c9e95cfe4a76c649f4f8c6438177dd52084cc95ArtifactHashBC0A7A2A:
+    Description: S3 key for asset version "1ca39137ddf94a1e70ec3bf709cf7e1ef04ab0254ca999301254c53f1d3d838b"
+  AssetParameters1ca39137ddf94a1e70ec3bf709cf7e1ef04ab0254ca999301254c53f1d3d838bArtifactHashAEF64515:
     Type: String
-    Description: Artifact hash for asset "44245703dcc59e9c94cc2bc53c9e95cfe4a76c649f4f8c6438177dd52084cc95"
+    Description: Artifact hash for asset "1ca39137ddf94a1e70ec3bf709cf7e1ef04ab0254ca999301254c53f1d3d838b"
   AssetParameters9cb30c2e9f898e5f6a50b07d5ae5d7edbcb4ff6075ef881b6c10b92509c1e2f0S3BucketFA52C3C7:
     Type: String
     Description: S3 bucket for asset "9cb30c2e9f898e5f6a50b07d5ae5d7edbcb4ff6075ef881b6c10b92509c1e2f0"
@@ -2347,15 +2343,15 @@ Parameters:
   AssetParameters1bb2a2cbc29488b3ac5b4c8ebfba7e27208c09a7977c208dd3e574f330f08d5aArtifactHashF0E10762:
     Type: String
     Description: Artifact hash for asset "1bb2a2cbc29488b3ac5b4c8ebfba7e27208c09a7977c208dd3e574f330f08d5a"
-  AssetParameters53c71ee9e1a2985e73c27b9278301fecf04f0abf56a6883ba5329dc82c27d293S3Bucket7B62528C:
+  AssetParametersca36152c02e0d14fb372f65d090ba6ff8cc89f2283adb72eb04d81807c64502eS3Bucket14B359A9:
     Type: String
-    Description: S3 bucket for asset "53c71ee9e1a2985e73c27b9278301fecf04f0abf56a6883ba5329dc82c27d293"
-  AssetParameters53c71ee9e1a2985e73c27b9278301fecf04f0abf56a6883ba5329dc82c27d293S3VersionKey1E695D99:
+    Description: S3 bucket for asset "ca36152c02e0d14fb372f65d090ba6ff8cc89f2283adb72eb04d81807c64502e"
+  AssetParametersca36152c02e0d14fb372f65d090ba6ff8cc89f2283adb72eb04d81807c64502eS3VersionKeyD97CA4EC:
     Type: String
-    Description: S3 key for asset version "53c71ee9e1a2985e73c27b9278301fecf04f0abf56a6883ba5329dc82c27d293"
-  AssetParameters53c71ee9e1a2985e73c27b9278301fecf04f0abf56a6883ba5329dc82c27d293ArtifactHash43AD02B5:
+    Description: S3 key for asset version "ca36152c02e0d14fb372f65d090ba6ff8cc89f2283adb72eb04d81807c64502e"
+  AssetParametersca36152c02e0d14fb372f65d090ba6ff8cc89f2283adb72eb04d81807c64502eArtifactHash5E2170DF:
     Type: String
-    Description: Artifact hash for asset "53c71ee9e1a2985e73c27b9278301fecf04f0abf56a6883ba5329dc82c27d293"
+    Description: Artifact hash for asset "ca36152c02e0d14fb372f65d090ba6ff8cc89f2283adb72eb04d81807c64502e"
   AssetParameters68bca73adf51904e6f689d0d692e954d1df7aead022a905805bcffc288083bffS3BucketF04AAD10:
     Type: String
     Description: S3 bucket for asset "68bca73adf51904e6f689d0d692e954d1df7aead022a905805bcffc288083bff"

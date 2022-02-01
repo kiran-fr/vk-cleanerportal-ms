@@ -389,8 +389,7 @@ export const getAllMobileNumbersApiGateway = (api: any, lambdaFunctionName: any,
       // @see: https://docs.aws.amazon.com/apigateway/latest/developerguide/request-response-data-mappings.html
       // 'integration.request.querystring.worksmanId': 'method.request.querystring.worksmanId'
       'integration.request.querystring.worksmanId': 'method.request.querystring.worksmanId',
-      'integration.request.header.worksmanIdHeader': 'method.request.header.worksmanIdHeader',
-      'integration.request.header.email': 'method.request.header.email'
+      // 'integration.request.header.worksmanIdHeader': 'method.request.header.worksmanIdHeader',
 
 
       // method.request.header.PARAM_NAME
@@ -403,8 +402,7 @@ export const getAllMobileNumbersApiGateway = (api: any, lambdaFunctionName: any,
       //   // Check: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html
       'application/json': JSON.stringify({
         worksmanId: "$util.escapeJavaScript($input.params('worksmanId'))",
-        worksmanIdHeader: "$util.escapeJavaScript($input.params('worksmanIdHeader'))",
-        email: "$util.escapeJavaScript($input.params('email'))",
+        // worksmanIdHeader: "$util.escapeJavaScript($input.params('worksmanIdHeader'))"
       })
     },
 
@@ -457,8 +455,7 @@ export const getAllMobileNumbersApiGateway = (api: any, lambdaFunctionName: any,
     // We can mark the parameters as required
     requestParameters: {
       'method.request.querystring.worksmanId': true,
-      'method.request.header.worksmanIdHeader': true,
-      'method.request.header.email': true,
+      // 'method.request.header.worksmanIdHeader': true
 
 
     },
@@ -475,7 +472,7 @@ export const getAllMobileNumbersApiGateway = (api: any, lambdaFunctionName: any,
 export const GetWorksmanAccountRegistartionStatusApiGateway = (api: any, lambdaFunctionName: any, methodType: string) => {
 
   // 👇 add a /todos resource
-  const GetWorksmanAccountRegistartionStatus = api.root.addResource('GetWorksmanAccountRegistartionStatus');
+  const GetWorksmanAccountRegistartionStatus = api.root.addResource('GetWorksmanAccountRegistartionStatusApi');
 
   const integration = new apigateway.LambdaIntegration(lambdaFunctionName, {
     proxy: false,
@@ -565,7 +562,7 @@ export const GetWorksmanAccountRegistartionStatusApiGateway = (api: any, lambdaF
     //   // validateRequestBody: true,
     //   // validateRequestParameters: true
     // },
-    methodResponses: responseMethods(api, 'WorkmanStatus', "WorkmanStatusError")
+    methodResponses: responseMethods(api, 'WorkmanStatusSuccess', "WorkmanStatusError")
   });
 }
 
