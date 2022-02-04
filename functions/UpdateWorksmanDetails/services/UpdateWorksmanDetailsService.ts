@@ -1,20 +1,37 @@
 import { QueryTypes } from "sequelize/dist";
 import { connectDB, sequelizeConnection } from "../helpers/DbConnectionHelpers";
-import { getCurrentAccountStatusId, UpdateWorksmanDetailsQuery } from "../query/UpdateWorksmanDetailsQuery";
+import { UpdateWorksmanEmailQuery, UpdateWorksmanPhoneQuery } from "../query/UpdateWorksmanDetailsQuery";
 
-export const UpdateWorksmanDetailsService = async(event:any) => {
+export const UpdateWorksmanEmailService = async (event: any) => {
     try {
-        
-        console.log("This is event",event)
+
+        console.log("This is event", event)
         connectDB();
-        return await sequelizeConnection.query(UpdateWorksmanDetailsQuery(event),{
-            type:QueryTypes.UPDATE
+        return await sequelizeConnection.query(UpdateWorksmanEmailQuery(event), {
+            type: QueryTypes.UPDATE
         })
         // console.log("this is some data",data)
         // return data
-        
+
     } catch (exception) {
-        console.log("Error in getStepRegistrationService",exception)
+        console.log("Error in getStepRegistrationService", exception)
+        return exception
+    }
+}
+
+export const UpdateWorksmanPhoneService = async (event: any) => {
+    try {
+
+        console.log("This is event", event)
+        connectDB();
+        return await sequelizeConnection.query(UpdateWorksmanPhoneQuery(event), {
+            type: QueryTypes.UPDATE
+        })
+        // console.log("this is some data",data)
+        // return data
+
+    } catch (exception) {
+        console.log("Error in getStepRegistrationService", exception)
         return exception
     }
 }

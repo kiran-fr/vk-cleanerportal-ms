@@ -11,7 +11,7 @@ import { ApigatewayDataConstants } from '../constants/ApiGatewayConstant';
 import { WorksmanTermsAndConditionsApiGateway, PostUserApiGateway, getAllMobileNumbersApiGateway, 
   worksmanExperienceApiGateway, GetWorksmanAccountRegistartionStatusApiGateway, GetTestUserApiGateway,
   GetWorkmanDetailsApiGateway, 
-  UpdateWorksmanDetailsApi} from "./resources/ApiGateway/AllApiGateWays"
+  UpdateWorksmanDetailsApiGateway} from "./resources/ApiGateway/AllApiGateWays"
 
 export class CdkExampleStack extends cdk.Stack {
   public Machine: sfn.StateMachine;
@@ -39,7 +39,7 @@ export class CdkExampleStack extends cdk.Stack {
     // });
     const api = new apigateway.RestApi(this, 'WorksManApi', ApigatewayDataConstants(apigateway));
 
-
+   
     new cdk.CfnOutput(this, 'apiUrl', { value: api.url });
 
     WorksmanTermsAndConditionsApiGateway(api, WorksManTermsAndCondition, 'POST')
@@ -49,7 +49,7 @@ export class CdkExampleStack extends cdk.Stack {
     PostUserApiGateway(api, PostTestUser, 'POST')
     getAllMobileNumbersApiGateway(api, getAllMobileNumbersDemo, 'GET')
     GetWorkmanDetailsApiGateway(api, GetWorkmanDetailLambda, 'GET')
-    UpdateWorksmanDetailsApi(api, UpdateWorksmanDetailLambda, 'PUT')
+    UpdateWorksmanDetailsApiGateway(api, UpdateWorksmanDetailLambda, 'PUT')
 
   }
 }

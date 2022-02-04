@@ -400,7 +400,7 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParametersca36152c02e0d14fb372f65d090ba6ff8cc89f2283adb72eb04d81807c64502eS3Bucket14B359A9
+          Ref: AssetParameters95f733485a56d8f94fce2a77baf2f9f649e0005c9d9dd1d9d8d9b1d8e610ab9fS3BucketDC5D7806
         S3Key:
           Fn::Join:
             - ""
@@ -408,12 +408,12 @@ Resources:
                   - 0
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParametersca36152c02e0d14fb372f65d090ba6ff8cc89f2283adb72eb04d81807c64502eS3VersionKeyD97CA4EC
+                      - Ref: AssetParameters95f733485a56d8f94fce2a77baf2f9f649e0005c9d9dd1d9d8d9b1d8e610ab9fS3VersionKey8A633071
               - Fn::Select:
                   - 1
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParametersca36152c02e0d14fb372f65d090ba6ff8cc89f2283adb72eb04d81807c64502eS3VersionKeyD97CA4EC
+                      - Ref: AssetParameters95f733485a56d8f94fce2a77baf2f9f649e0005c9d9dd1d9d8d9b1d8e610ab9fS3VersionKey8A633071
       Role:
         Fn::GetAtt:
           - GetWorkmanDetailsServiceRole7D7C7A93
@@ -454,7 +454,7 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameters68bca73adf51904e6f689d0d692e954d1df7aead022a905805bcffc288083bffS3BucketF04AAD10
+          Ref: AssetParameters454acb2c2c4e5e2f7931f9198cf7f9a8a8a6b70adb77b3f5fb6cd55a7af742a6S3BucketAAFB0949
         S3Key:
           Fn::Join:
             - ""
@@ -462,12 +462,12 @@ Resources:
                   - 0
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters68bca73adf51904e6f689d0d692e954d1df7aead022a905805bcffc288083bffS3VersionKeyEF0B7D45
+                      - Ref: AssetParameters454acb2c2c4e5e2f7931f9198cf7f9a8a8a6b70adb77b3f5fb6cd55a7af742a6S3VersionKeyFAC4B3F5
               - Fn::Select:
                   - 1
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters68bca73adf51904e6f689d0d692e954d1df7aead022a905805bcffc288083bffS3VersionKeyEF0B7D45
+                      - Ref: AssetParameters454acb2c2c4e5e2f7931f9198cf7f9a8a8a6b70adb77b3f5fb6cd55a7af742a6S3VersionKeyFAC4B3F5
       Role:
         Fn::GetAtt:
           - UpdateWorksmanDetailServiceRole84747935
@@ -521,7 +521,7 @@ Resources:
       - WorksManApi8007FB09
     Metadata:
       aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Account
-  WorksManApiDeployment495969A90db719d78ae43a2c6e780d957b6bdddb:
+  WorksManApiDeployment495969A976533d170c8abdbd1d45d4cad0948d94:
     Type: AWS::ApiGateway::Deployment
     Properties:
       RestApiId:
@@ -566,7 +566,8 @@ Resources:
       - WorksManApiRespworksmanExperienceMethods5F78B1D6
       - WorksManApiRespWorksmanTermsAndConditionsMethod09A8EC4F
       - WorksManApiUpdateWorksmanDetailsError8D77E5BC
-      - WorksManApiUpdateWorksmanDetailssucees79E571EC
+      - WorksManApiUpdateWorksmanDetailsModel8033598A
+      - WorksManApiUpdateWorksmanDetailsResEC357A30
       - WorksManApiUserModelF7B9A289
       - WorksManApiWorkmanStatusError5C163A96
       - WorksManApiWorkmanStatusSuccess86C094BB
@@ -580,7 +581,7 @@ Resources:
       RestApiId:
         Ref: WorksManApi8007FB09
       DeploymentId:
-        Ref: WorksManApiDeployment495969A90db719d78ae43a2c6e780d957b6bdddb
+        Ref: WorksManApiDeployment495969A976533d170c8abdbd1d45d4cad0948d94
       StageName: dev
     Metadata:
       aws:cdk:path: VrishkarServicesDevStack/WorksManApi/DeploymentStage.dev/Resource
@@ -1865,11 +1866,9 @@ Resources:
             StatusCode: "400"
         PassthroughBehavior: NEVER
         RequestParameters:
-          integration.request.querystring.worksmanId: method.request.querystring.worksmanId
-          integration.request.header.worksmanIdHeader: method.request.header.worksmanIdHeader
-          integration.request.header.email: method.request.header.email
+          integration.request.header.Authorization: method.request.header.Authorization
         RequestTemplates:
-          application/json: "{\"worksmanId\":\"$util.escapeJavaScript($input.params('worksmanId'))\",\"worksmanIdHeader\":\"$util.escapeJavaScript($input.params('worksmanIdHeader'))\",\"email\":\"$util.escapeJavaScript($input.params('email'))\"}"
+          application/json: '"$util.escapeJavaScript($input.body)"'
         Type: AWS
         Uri:
           Fn::Join:
@@ -1886,7 +1885,7 @@ Resources:
       MethodResponses:
         - ResponseModels:
             application/json:
-              Ref: WorksManApiUpdateWorksmanDetailssucees79E571EC
+              Ref: WorksManApiUpdateWorksmanDetailsResEC357A30
           ResponseParameters:
             method.response.header.Content-Type: true
             method.response.header.Access-Control-Allow-Origin: true
@@ -1902,10 +1901,11 @@ Resources:
             method.response.header.Access-Control-Allow-Credentials: true
             method.response.header.Access-Control-Allow-Headers: true
           StatusCode: "400"
+      RequestModels:
+        application/json:
+          Ref: WorksManApiUpdateWorksmanDetailsModel8033598A
       RequestParameters:
-        method.request.querystring.worksmanId: true
-        method.request.header.worksmanIdHeader: true
-        method.request.header.email: true
+        method.request.header.Authorization: true
     Metadata:
       aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/UpdateWorksmanDetailsApi/PUT/Resource
   WorksManApiWorksmanTermsAndConditionsModel0BCAF9B4:
@@ -2236,16 +2236,36 @@ Resources:
             type: string
     Metadata:
       aws:cdk:path: VrishkarServicesDevStack/WorksManApi/GetWorkmanDetailsError/Resource
-  WorksManApiUpdateWorksmanDetailssucees79E571EC:
+  WorksManApiUpdateWorksmanDetailsModel8033598A:
     Type: AWS::ApiGateway::Model
     Properties:
       RestApiId:
         Ref: WorksManApi8007FB09
       ContentType: application/json
-      Name: UpdateWorksmanDetailssucees
+      Schema:
+        type: object
+        properties:
+          worksman_id:
+            type: string
+          email:
+            type: string
+          phone:
+            type: string
+        required:
+          - worksman_id
+        $schema: http://json-schema.org/draft-04/schema#
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/UpdateWorksmanDetailsModel/Resource
+  WorksManApiUpdateWorksmanDetailsResEC357A30:
+    Type: AWS::ApiGateway::Model
+    Properties:
+      RestApiId:
+        Ref: WorksManApi8007FB09
+      ContentType: application/json
+      Name: UpdateWorksmanDetailsRes
       Schema:
         $schema: http://json-schema.org/draft-04/schema#
-        title: pollResponse
+        title: UpdateWorksmanDetailsRes
         type: object
         properties:
           state:
@@ -2253,7 +2273,7 @@ Resources:
           greeting:
             type: string
     Metadata:
-      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/UpdateWorksmanDetailssucees/Resource
+      aws:cdk:path: VrishkarServicesDevStack/WorksManApi/UpdateWorksmanDetailsRes/Resource
   WorksManApiUpdateWorksmanDetailsError8D77E5BC:
     Type: AWS::ApiGateway::Model
     Properties:
@@ -2263,7 +2283,7 @@ Resources:
       Name: UpdateWorksmanDetailsError
       Schema:
         $schema: http://json-schema.org/draft-04/schema#
-        title: errorResponse
+        title: UpdateWorksmanDetailsError
         type: object
         properties:
           state:
@@ -2343,24 +2363,24 @@ Parameters:
   AssetParameters1bb2a2cbc29488b3ac5b4c8ebfba7e27208c09a7977c208dd3e574f330f08d5aArtifactHashF0E10762:
     Type: String
     Description: Artifact hash for asset "1bb2a2cbc29488b3ac5b4c8ebfba7e27208c09a7977c208dd3e574f330f08d5a"
-  AssetParametersca36152c02e0d14fb372f65d090ba6ff8cc89f2283adb72eb04d81807c64502eS3Bucket14B359A9:
+  AssetParameters95f733485a56d8f94fce2a77baf2f9f649e0005c9d9dd1d9d8d9b1d8e610ab9fS3BucketDC5D7806:
     Type: String
-    Description: S3 bucket for asset "ca36152c02e0d14fb372f65d090ba6ff8cc89f2283adb72eb04d81807c64502e"
-  AssetParametersca36152c02e0d14fb372f65d090ba6ff8cc89f2283adb72eb04d81807c64502eS3VersionKeyD97CA4EC:
+    Description: S3 bucket for asset "95f733485a56d8f94fce2a77baf2f9f649e0005c9d9dd1d9d8d9b1d8e610ab9f"
+  AssetParameters95f733485a56d8f94fce2a77baf2f9f649e0005c9d9dd1d9d8d9b1d8e610ab9fS3VersionKey8A633071:
     Type: String
-    Description: S3 key for asset version "ca36152c02e0d14fb372f65d090ba6ff8cc89f2283adb72eb04d81807c64502e"
-  AssetParametersca36152c02e0d14fb372f65d090ba6ff8cc89f2283adb72eb04d81807c64502eArtifactHash5E2170DF:
+    Description: S3 key for asset version "95f733485a56d8f94fce2a77baf2f9f649e0005c9d9dd1d9d8d9b1d8e610ab9f"
+  AssetParameters95f733485a56d8f94fce2a77baf2f9f649e0005c9d9dd1d9d8d9b1d8e610ab9fArtifactHash82A76D26:
     Type: String
-    Description: Artifact hash for asset "ca36152c02e0d14fb372f65d090ba6ff8cc89f2283adb72eb04d81807c64502e"
-  AssetParameters68bca73adf51904e6f689d0d692e954d1df7aead022a905805bcffc288083bffS3BucketF04AAD10:
+    Description: Artifact hash for asset "95f733485a56d8f94fce2a77baf2f9f649e0005c9d9dd1d9d8d9b1d8e610ab9f"
+  AssetParameters454acb2c2c4e5e2f7931f9198cf7f9a8a8a6b70adb77b3f5fb6cd55a7af742a6S3BucketAAFB0949:
     Type: String
-    Description: S3 bucket for asset "68bca73adf51904e6f689d0d692e954d1df7aead022a905805bcffc288083bff"
-  AssetParameters68bca73adf51904e6f689d0d692e954d1df7aead022a905805bcffc288083bffS3VersionKeyEF0B7D45:
+    Description: S3 bucket for asset "454acb2c2c4e5e2f7931f9198cf7f9a8a8a6b70adb77b3f5fb6cd55a7af742a6"
+  AssetParameters454acb2c2c4e5e2f7931f9198cf7f9a8a8a6b70adb77b3f5fb6cd55a7af742a6S3VersionKeyFAC4B3F5:
     Type: String
-    Description: S3 key for asset version "68bca73adf51904e6f689d0d692e954d1df7aead022a905805bcffc288083bff"
-  AssetParameters68bca73adf51904e6f689d0d692e954d1df7aead022a905805bcffc288083bffArtifactHash1C608FFF:
+    Description: S3 key for asset version "454acb2c2c4e5e2f7931f9198cf7f9a8a8a6b70adb77b3f5fb6cd55a7af742a6"
+  AssetParameters454acb2c2c4e5e2f7931f9198cf7f9a8a8a6b70adb77b3f5fb6cd55a7af742a6ArtifactHashC6DB59D1:
     Type: String
-    Description: Artifact hash for asset "68bca73adf51904e6f689d0d692e954d1df7aead022a905805bcffc288083bff"
+    Description: Artifact hash for asset "454acb2c2c4e5e2f7931f9198cf7f9a8a8a6b70adb77b3f5fb6cd55a7af742a6"
 Outputs:
   WorksManApiEndpoint06A24561:
     Value:
