@@ -44,7 +44,6 @@ export class CdkExampleStack extends cdk.Stack {
 
     WorksmanTermsAndConditionsApiGateway(api, WorksManTermsAndCondition, 'POST')
     worksmanExperienceApiGateway(api, WorksManExperience, 'POST')
-<<<<<<< HEAD
     GetWorksmanAccountRegistartionStatusApiGateway(api, GetWorksmanAccountRegistartionStatus, 'GET')
     GetTestUserApiGateway(api, GetTestUser, 'GET')
     PostUserApiGateway(api, PostTestUser, 'POST')
@@ -52,11 +51,5 @@ export class CdkExampleStack extends cdk.Stack {
     GetWorkmanDetailsApiGateway(api, GetWorkmanDetailLambda, 'GET')
     UpdateWorksmanDetailsApiGateway(api, UpdateWorksmanDetailLambda, 'PUT')
 
-=======
-    GetWorksmanAccountRegistartionStatusApiGateway(api,GetWorksmanAccountRegistartionStatus,'GET')
-    GetTestUserApiGateway(api,GetTestUser, 'GET')
-    PostUserApiGateway(api,PostTestUser, 'POST')
-  
->>>>>>> 6f4c0ffdf4595db889e67a2f29141606ad223643
   }
 }
