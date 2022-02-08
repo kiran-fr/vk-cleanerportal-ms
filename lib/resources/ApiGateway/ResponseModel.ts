@@ -6,7 +6,6 @@ const successResponseModel = (api:any,success:any) => {
     modelName: success,
     schema: {
       schema: apigateway.JsonSchemaVersion.DRAFT4,
-      // title: title,
       type: apigateway.JsonSchemaType.OBJECT,
       properties: {
         state: { type: apigateway.JsonSchemaType.STRING },
@@ -22,7 +21,6 @@ const errorResponseModel = (api: any,error:any) => {
     modelName: error,
     schema: {
       schema: apigateway.JsonSchemaVersion.DRAFT4,
-      // title: title,
       type: apigateway.JsonSchemaType.OBJECT,
       properties: {
         state: { type: apigateway.JsonSchemaType.STRING },

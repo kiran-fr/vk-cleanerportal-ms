@@ -14,7 +14,8 @@ export const ApigatewayDataConstants = (apigateway:any) => {
         'X-Api-Key',
         'worksmanIdHeader',
         'email',
-        'worksman_id'
+        'worksman_id',
+        'postcodes'
       ] 
     }
   }

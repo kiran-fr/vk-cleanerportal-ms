@@ -22,7 +22,7 @@ export const WorksManAddressQuery = (event:any,worksman_id:any) => {
         county ,
         city ,
         postcode 
-        ) VALUES('${worksman_id}','${worksmanAdd[0]}', '${worksmanAdd[1]}','${worksmanAdd[2]}','${worksmanAdd[3]}','${worksmanAdd[4]}','${worksmanAdd[5]}')`
+        ) VALUES('${worksman_id}','${worksmanAdd[0]} ${worksmanAdd[1]}','${worksmanAdd[2]}','${worksmanAdd[3]}','${worksmanAdd[4]}','${worksmanAdd[5]}')`
 }
 
 

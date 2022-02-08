@@ -107,6 +107,15 @@ const Worksman_Address_Table = () => {
         )
         `
 }
+const worksman_postcodes = () => {
+        return `        
+        DROP TABLE IF EXISTS worksman_postcodes ;
 
+        CREATE TABLE worksman_postcodes (
+                postcodes_id int PRIMARY KEY,
+                worksman_id  VARCHAR (255) NOT NULL,
+                postcodes VARCHAR(255) NOT NULL
+             );
+        `
+}
 
-// select * from worksman_table where email='kiran.budipi@vrishkar.com';

@@ -100,3 +100,33 @@ export const UpdateWorksmanDetailsLambda = () => {
     timeout: cdk.Duration.seconds(35)
   }
 }
+export const UserPostCodesLambda = () => {
+  return {
+    code:lambda.Code.fromAsset('./functions/UserPostCodes'),
+    functionName:'UserPostCodesFun',
+    handler:'index.UserPostCodesHandler',
+    memorySize: 1024,
+    runtime: lambda.Runtime.NODEJS_14_X,
+    timeout: cdk.Duration.seconds(35)
+  }
+}
+export const GetAllPostcodesLambda = () => {
+  return {
+    code:lambda.Code.fromAsset('./functions/GetAllPostcodes'),
+    functionName:'GetAllPostcodesFun',
+    handler:'index.GetAllPostcodesHandler',
+    memorySize: 1024,
+    runtime: lambda.Runtime.NODEJS_14_X,
+    timeout: cdk.Duration.seconds(35)
+  }
+}
+export const DeletePostcodesLambda = () => {
+  return {
+    code:lambda.Code.fromAsset('./functions/DeletePostcodes'),
+    functionName:'DeletePostcodesFun',
+    handler:'index.DeletePostcodesHandler',
+    memorySize: 1024,
+    runtime: lambda.Runtime.NODEJS_14_X,
+    timeout: cdk.Duration.seconds(35)
+  }
+}

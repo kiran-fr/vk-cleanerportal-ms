@@ -3,7 +3,10 @@ import * as lambda from '@aws-cdk/aws-lambda';
 import { UserRegistrationLambda, WorksManTermsAndConditionLambda, WorksManExperienceLambda,
    GetWorksmanAccountRegistartionStatusLambda, GetTestUserLambda, PostTestUserLambda, getAllMobileNumberLambda,
    GetWorkmanDetailsLambda, 
-   UpdateWorksmanDetailsLambda} from './resources/lambda/allLambda';
+   UpdateWorksmanDetailsLambda,
+   UserPostCodesLambda,
+   GetAllPostcodesLambda,
+   DeletePostcodesLambda} from './resources/lambda/allLambda';
 import * as sfn from "@aws-cdk/aws-stepfunctions";
 import * as tasks from "@aws-cdk/aws-stepfunctions-tasks";
 import * as apigateway from "@aws-cdk/aws-apigateway"
@@ -11,7 +14,10 @@ import { ApigatewayDataConstants } from '../constants/ApiGatewayConstant';
 import { WorksmanTermsAndConditionsApiGateway, PostUserApiGateway, getAllMobileNumbersApiGateway, 
   worksmanExperienceApiGateway, GetWorksmanAccountRegistartionStatusApiGateway, GetTestUserApiGateway,
   GetWorkmanDetailsApiGateway, 
-  UpdateWorksmanDetailsApiGateway} from "./resources/ApiGateway/AllApiGateWays"
+  UpdateWorksmanDetailsApiGateway,
+  UserPostCodesApiGateway,
+  GetAllPostcodesApiGateway,
+  DeletePostcodesApiGateway} from "./resources/ApiGateway/AllApiGateWays"
 
 export class CdkExampleStack extends cdk.Stack {
   public Machine: sfn.StateMachine;
@@ -27,16 +33,10 @@ export class CdkExampleStack extends cdk.Stack {
     const getAllMobileNumbersDemo = new lambda.Function(this, "getAllMobileNumber", getAllMobileNumberLambda())
     const GetWorkmanDetailLambda = new lambda.Function(this, "GetWorkmanDetails", GetWorkmanDetailsLambda())
     const UpdateWorksmanDetailLambda = new lambda.Function(this, "UpdateWorksmanDetail", UpdateWorksmanDetailsLambda())
+    const UserPostCodeLambdaApi = new lambda.Function(this, "UserPostCodes", UserPostCodesLambda())
+    const GetAllPostcodesLambdaApi = new lambda.Function(this, "GetAllPostcodes", GetAllPostcodesLambda())
+    const DeletePostcodesLambdaApi = new lambda.Function(this, "DeletePostcodes", DeletePostcodesLambda())
 
-
-    // const definition = new tasks.LambdaInvoke(this, 'User Registration', {
-    //   lambdaFunction: userRegistration,
-    //   outputPath: "$.Payload"
-    // })
-
-    // this.Machine = new sfn.StateMachine(this, "StateMachine", {
-    //   definition,
-    // });
     const api = new apigateway.RestApi(this, 'WorksManApi', ApigatewayDataConstants(apigateway));
 
    
@@ -50,6 +50,9 @@ export class CdkExampleStack extends cdk.Stack {
     getAllMobileNumbersApiGateway(api, getAllMobileNumbersDemo, 'GET')
     GetWorkmanDetailsApiGateway(api, GetWorkmanDetailLambda, 'GET')
     UpdateWorksmanDetailsApiGateway(api, UpdateWorksmanDetailLambda, 'PUT')
+    UserPostCodesApiGateway(api, UserPostCodeLambdaApi, 'POST')
+    GetAllPostcodesApiGateway(api, GetAllPostcodesLambdaApi, 'GET')
+    DeletePostcodesApiGateway(api, DeletePostcodesLambdaApi, 'DELETE')
 
   }
 }
