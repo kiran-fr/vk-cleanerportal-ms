@@ -9,10 +9,9 @@ export const GetAllPostcodesServices = async (event: any) => {
             type: QueryTypes.SELECT
         })
         
-        console.log("This is getall postcodes",data)
         return data
     } catch (exception) {
-        console.log(`work man experience service Error ${exception}`)
+        console.log(`GetAllPostcodesServices ${exception}`)
         throw exception
     }
 }

@@ -10,7 +10,7 @@ export const DeletePostcodesService = async (event: any) => {
         })
         return data
     } catch (exception) {
-        console.log(`work man experience service Error ${exception}`)
+        console.log(`DeletePostcodesService Error ${exception}`)
         throw exception
     }
 }

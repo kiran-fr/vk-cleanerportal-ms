@@ -9,7 +9,7 @@ export const UserPostCodesServices = async (event: any) => {
             type: QueryTypes.INSERT
         })
     } catch (exception) {
-        console.log(`work man experience service Error ${exception}`)
+        console.log(`UserPostCodesServices Error ${exception}`)
         throw exception
     }
 }
