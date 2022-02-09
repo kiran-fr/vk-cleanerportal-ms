@@ -3,3 +3,7 @@ export const UserPostCodesQuery = (event:any) => {
                  VALUES('${event.worksman_id}','${event.postcodes}')
     `
 } 
+
+export const getAllPostcodes = () => {
+    return `SELECT * FROM worksman_postcodes`
+}

@@ -865,6 +865,7 @@ export const DeletePostcodesApiGateway = (api: any, lambdaFunctionName: any, met
       // @see: https://docs.aws.amazon.com/apigateway/latest/developerguide/request-response-data-mappings.html
       // 'integration.request.querystring.worksmanId': 'method.request.querystring.worksmanId'
       'integration.request.querystring.worksmanId': 'method.request.querystring.worksmanId',
+      'integration.request.header.worksman_id': 'method.request.header.worksman_id',      
       'integration.request.header.postcodes': 'method.request.header.postcodes'
 
 
@@ -878,7 +879,8 @@ export const DeletePostcodesApiGateway = (api: any, lambdaFunctionName: any, met
       //   // Check: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html
       'application/json': JSON.stringify({
         worksmanId: "$util.escapeJavaScript($input.params('worksmanId'))",
-        postcodes: "$util.escapeJavaScript($input.params('postcodes'))"
+        postcodes: "$util.escapeJavaScript($input.params('postcodes'))",
+        worksman_id: "$util.escapeJavaScript($input.params('worksman_id'))"
       })
     },
 
@@ -932,6 +934,7 @@ export const DeletePostcodesApiGateway = (api: any, lambdaFunctionName: any, met
     requestParameters: {
       'method.request.querystring.worksmanId': true,
       'method.request.header.postcodes': true,
+      'method.request.header.worksman_id': true,
 
 
     },

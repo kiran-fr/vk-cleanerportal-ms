@@ -1,4 +1,3 @@
 export const DeletePostcodesQuery = (event:any) => {
-    return ` DELETE FROM worksman_postcodes
-    WHERE postcodes = '${event.postcodes}'`
+    return ` delete from worksman_postcodes where worksman_id ='${event.worksman_id}' and postcodes='${event.postcodes}'`
 } 

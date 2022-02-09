@@ -508,7 +508,7 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameters0a41cec1d77f6354f785412e55a6190bbc1265dbb7540c9c5cbf9c78c3aa2026S3Bucket2B3B0F4B
+          Ref: AssetParameters736bb4ee1458653f301d6d0ba672fa6142bd47dbec1d1132cd42682f1b827685S3Bucket4E9F395C
         S3Key:
           Fn::Join:
             - ""
@@ -516,12 +516,12 @@ Resources:
                   - 0
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters0a41cec1d77f6354f785412e55a6190bbc1265dbb7540c9c5cbf9c78c3aa2026S3VersionKey88D87A28
+                      - Ref: AssetParameters736bb4ee1458653f301d6d0ba672fa6142bd47dbec1d1132cd42682f1b827685S3VersionKey321A253B
               - Fn::Select:
                   - 1
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters0a41cec1d77f6354f785412e55a6190bbc1265dbb7540c9c5cbf9c78c3aa2026S3VersionKey88D87A28
+                      - Ref: AssetParameters736bb4ee1458653f301d6d0ba672fa6142bd47dbec1d1132cd42682f1b827685S3VersionKey321A253B
       Role:
         Fn::GetAtt:
           - UserPostCodesServiceRoleCB809F91
@@ -562,7 +562,7 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameters05e5e3938519639e9dff534e92331f84098e94deb30b171020f5d63d97e594dfS3BucketF1AEE0CF
+          Ref: AssetParameterse0c1ebeea56f61b659db98f8c3ecbf71ccedc876e63ee7f4a9c15972874915d3S3BucketDA50687D
         S3Key:
           Fn::Join:
             - ""
@@ -570,12 +570,12 @@ Resources:
                   - 0
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters05e5e3938519639e9dff534e92331f84098e94deb30b171020f5d63d97e594dfS3VersionKey7CAFA21D
+                      - Ref: AssetParameterse0c1ebeea56f61b659db98f8c3ecbf71ccedc876e63ee7f4a9c15972874915d3S3VersionKeyE2DA0481
               - Fn::Select:
                   - 1
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters05e5e3938519639e9dff534e92331f84098e94deb30b171020f5d63d97e594dfS3VersionKey7CAFA21D
+                      - Ref: AssetParameterse0c1ebeea56f61b659db98f8c3ecbf71ccedc876e63ee7f4a9c15972874915d3S3VersionKeyE2DA0481
       Role:
         Fn::GetAtt:
           - GetAllPostcodesServiceRoleBD916F10
@@ -616,7 +616,7 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParametersc16a36328f9b289642db73a66b446c1be88a7a44220963641866a6cc4b1a8109S3Bucket29A60523
+          Ref: AssetParameters1b07510780d2525dc2d91b302d26520257d7e238bd930841d328dc194c408ae2S3Bucket2F3C6E08
         S3Key:
           Fn::Join:
             - ""
@@ -624,12 +624,12 @@ Resources:
                   - 0
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParametersc16a36328f9b289642db73a66b446c1be88a7a44220963641866a6cc4b1a8109S3VersionKeyAB2FA762
+                      - Ref: AssetParameters1b07510780d2525dc2d91b302d26520257d7e238bd930841d328dc194c408ae2S3VersionKey2D4C545D
               - Fn::Select:
                   - 1
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParametersc16a36328f9b289642db73a66b446c1be88a7a44220963641866a6cc4b1a8109S3VersionKeyAB2FA762
+                      - Ref: AssetParameters1b07510780d2525dc2d91b302d26520257d7e238bd930841d328dc194c408ae2S3VersionKey2D4C545D
       Role:
         Fn::GetAtt:
           - DeletePostcodesServiceRole4286E553
@@ -683,7 +683,7 @@ Resources:
       - WorksManApi8007FB09
     Metadata:
       aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Account
-  WorksManApiDeployment495969A9a20c7e5b90de0d9d1c32b22d3e4bcb48:
+  WorksManApiDeployment495969A9711ab05ce2dbc8becc12e0dc879c2fc1:
     Type: AWS::ApiGateway::Deployment
     Properties:
       RestApiId:
@@ -759,7 +759,7 @@ Resources:
       RestApiId:
         Ref: WorksManApi8007FB09
       DeploymentId:
-        Ref: WorksManApiDeployment495969A9a20c7e5b90de0d9d1c32b22d3e4bcb48
+        Ref: WorksManApiDeployment495969A9711ab05ce2dbc8becc12e0dc879c2fc1
       StageName: dev
     Metadata:
       aws:cdk:path: VrishkarServicesDevStack/WorksManApi/DeploymentStage.dev/Resource
@@ -777,7 +777,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes_id'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -816,7 +816,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes_id'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -978,7 +978,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes_id'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -1140,7 +1140,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes_id'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -1303,7 +1303,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes_id'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -1464,7 +1464,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes_id'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -1626,7 +1626,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes_id'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -1785,7 +1785,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes_id'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -1948,7 +1948,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes_id'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -2110,7 +2110,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes_id'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -2272,7 +2272,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes_id'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -2435,7 +2435,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes_id'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -2532,9 +2532,10 @@ Resources:
         PassthroughBehavior: NEVER
         RequestParameters:
           integration.request.querystring.worksmanId: method.request.querystring.worksmanId
-          integration.request.header.postcodes_id: method.request.header.postcodes_id
+          integration.request.header.worksman_id: method.request.header.worksman_id
+          integration.request.header.postcodes: method.request.header.postcodes
         RequestTemplates:
-          application/json: "{\"worksmanId\":\"$util.escapeJavaScript($input.params('worksmanId'))\",\"postcodes_id\":\"$util.escapeJavaScript($input.params('postcodes_id'))\"}"
+          application/json: "{\"worksmanId\":\"$util.escapeJavaScript($input.params('worksmanId'))\",\"postcodes\":\"$util.escapeJavaScript($input.params('postcodes'))\",\"worksman_id\":\"$util.escapeJavaScript($input.params('worksman_id'))\"}"
         Type: AWS
         Uri:
           Fn::Join:
@@ -2569,7 +2570,8 @@ Resources:
           StatusCode: "400"
       RequestParameters:
         method.request.querystring.worksmanId: true
-        method.request.header.postcodes_id: true
+        method.request.header.postcodes: true
+        method.request.header.worksman_id: true
     Metadata:
       aws:cdk:path: VrishkarServicesDevStack/WorksManApi/Default/DeletePostcodesApi/DELETE/Resource
   WorksManApiWorksmanTermsAndConditionsModel0BCAF9B4:
@@ -3159,33 +3161,33 @@ Parameters:
   AssetParameters454acb2c2c4e5e2f7931f9198cf7f9a8a8a6b70adb77b3f5fb6cd55a7af742a6ArtifactHashC6DB59D1:
     Type: String
     Description: Artifact hash for asset "454acb2c2c4e5e2f7931f9198cf7f9a8a8a6b70adb77b3f5fb6cd55a7af742a6"
-  AssetParameters0a41cec1d77f6354f785412e55a6190bbc1265dbb7540c9c5cbf9c78c3aa2026S3Bucket2B3B0F4B:
+  AssetParameters736bb4ee1458653f301d6d0ba672fa6142bd47dbec1d1132cd42682f1b827685S3Bucket4E9F395C:
     Type: String
-    Description: S3 bucket for asset "0a41cec1d77f6354f785412e55a6190bbc1265dbb7540c9c5cbf9c78c3aa2026"
-  AssetParameters0a41cec1d77f6354f785412e55a6190bbc1265dbb7540c9c5cbf9c78c3aa2026S3VersionKey88D87A28:
+    Description: S3 bucket for asset "736bb4ee1458653f301d6d0ba672fa6142bd47dbec1d1132cd42682f1b827685"
+  AssetParameters736bb4ee1458653f301d6d0ba672fa6142bd47dbec1d1132cd42682f1b827685S3VersionKey321A253B:
     Type: String
-    Description: S3 key for asset version "0a41cec1d77f6354f785412e55a6190bbc1265dbb7540c9c5cbf9c78c3aa2026"
-  AssetParameters0a41cec1d77f6354f785412e55a6190bbc1265dbb7540c9c5cbf9c78c3aa2026ArtifactHash3CCF9132:
+    Description: S3 key for asset version "736bb4ee1458653f301d6d0ba672fa6142bd47dbec1d1132cd42682f1b827685"
+  AssetParameters736bb4ee1458653f301d6d0ba672fa6142bd47dbec1d1132cd42682f1b827685ArtifactHashD1593C14:
     Type: String
-    Description: Artifact hash for asset "0a41cec1d77f6354f785412e55a6190bbc1265dbb7540c9c5cbf9c78c3aa2026"
-  AssetParameters05e5e3938519639e9dff534e92331f84098e94deb30b171020f5d63d97e594dfS3BucketF1AEE0CF:
+    Description: Artifact hash for asset "736bb4ee1458653f301d6d0ba672fa6142bd47dbec1d1132cd42682f1b827685"
+  AssetParameterse0c1ebeea56f61b659db98f8c3ecbf71ccedc876e63ee7f4a9c15972874915d3S3BucketDA50687D:
     Type: String
-    Description: S3 bucket for asset "05e5e3938519639e9dff534e92331f84098e94deb30b171020f5d63d97e594df"
-  AssetParameters05e5e3938519639e9dff534e92331f84098e94deb30b171020f5d63d97e594dfS3VersionKey7CAFA21D:
+    Description: S3 bucket for asset "e0c1ebeea56f61b659db98f8c3ecbf71ccedc876e63ee7f4a9c15972874915d3"
+  AssetParameterse0c1ebeea56f61b659db98f8c3ecbf71ccedc876e63ee7f4a9c15972874915d3S3VersionKeyE2DA0481:
     Type: String
-    Description: S3 key for asset version "05e5e3938519639e9dff534e92331f84098e94deb30b171020f5d63d97e594df"
-  AssetParameters05e5e3938519639e9dff534e92331f84098e94deb30b171020f5d63d97e594dfArtifactHashA223FF79:
+    Description: S3 key for asset version "e0c1ebeea56f61b659db98f8c3ecbf71ccedc876e63ee7f4a9c15972874915d3"
+  AssetParameterse0c1ebeea56f61b659db98f8c3ecbf71ccedc876e63ee7f4a9c15972874915d3ArtifactHash6988C248:
     Type: String
-    Description: Artifact hash for asset "05e5e3938519639e9dff534e92331f84098e94deb30b171020f5d63d97e594df"
-  AssetParametersc16a36328f9b289642db73a66b446c1be88a7a44220963641866a6cc4b1a8109S3Bucket29A60523:
+    Description: Artifact hash for asset "e0c1ebeea56f61b659db98f8c3ecbf71ccedc876e63ee7f4a9c15972874915d3"
+  AssetParameters1b07510780d2525dc2d91b302d26520257d7e238bd930841d328dc194c408ae2S3Bucket2F3C6E08:
     Type: String
-    Description: S3 bucket for asset "c16a36328f9b289642db73a66b446c1be88a7a44220963641866a6cc4b1a8109"
-  AssetParametersc16a36328f9b289642db73a66b446c1be88a7a44220963641866a6cc4b1a8109S3VersionKeyAB2FA762:
+    Description: S3 bucket for asset "1b07510780d2525dc2d91b302d26520257d7e238bd930841d328dc194c408ae2"
+  AssetParameters1b07510780d2525dc2d91b302d26520257d7e238bd930841d328dc194c408ae2S3VersionKey2D4C545D:
     Type: String
-    Description: S3 key for asset version "c16a36328f9b289642db73a66b446c1be88a7a44220963641866a6cc4b1a8109"
-  AssetParametersc16a36328f9b289642db73a66b446c1be88a7a44220963641866a6cc4b1a8109ArtifactHashEB0F88B4:
+    Description: S3 key for asset version "1b07510780d2525dc2d91b302d26520257d7e238bd930841d328dc194c408ae2"
+  AssetParameters1b07510780d2525dc2d91b302d26520257d7e238bd930841d328dc194c408ae2ArtifactHash66121F7E:
     Type: String
-    Description: Artifact hash for asset "c16a36328f9b289642db73a66b446c1be88a7a44220963641866a6cc4b1a8109"
+    Description: Artifact hash for asset "1b07510780d2525dc2d91b302d26520257d7e238bd930841d328dc194c408ae2"
 Outputs:
   WorksManApiEndpoint06A24561:
     Value:
