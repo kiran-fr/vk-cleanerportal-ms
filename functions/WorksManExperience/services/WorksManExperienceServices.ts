@@ -1,11 +1,11 @@
 import { QueryTypes } from "sequelize/dist";
 import { connectDB, sequelizeConnection } from "../helpers/DbConnection"
-import { WorksmanEligibilityQuery, WorksManExperienceQuery, getWorksManExperienceIdQuery, WorksmanExperienceStepQuery } from "../query/WorksManExperienceQuery";
+import { WorksmanEligibilityQuery, WorksManExperienceQuery, WorksmanExperienceStepQuery } from "../query/WorksManExperienceQuery";
 
-export const WorksManExperienceServices = async (event: any, worksman_id: any) => {
+export const WorksManExperienceServices = async (event: any) => {
     try {
         connectDB();
-        const data = await sequelizeConnection.query(WorksManExperienceQuery(event, worksman_id), {
+        const data = await sequelizeConnection.query(WorksManExperienceQuery(event), {
             type: QueryTypes.INSERT
         })
     } catch (exception) {
@@ -14,10 +14,10 @@ export const WorksManExperienceServices = async (event: any, worksman_id: any) =
     }
 }
 
-export const WorksManEligibilityServices = async (event: any, worksman_id: any) => {
+export const WorksManEligibilityServices = async (event: any) => {
     try {
         connectDB();
-        const eligibility = await sequelizeConnection.query(WorksmanEligibilityQuery(event, worksman_id), {
+        const eligibility = await sequelizeConnection.query(WorksmanEligibilityQuery(event), {
             type: QueryTypes.INSERT
         })
 
@@ -27,28 +27,17 @@ export const WorksManEligibilityServices = async (event: any, worksman_id: any) 
     }
 }
 
-export const getWorkManIdService = async (email: any) => {
+
+export const WorksmanExperienceStepService = async (worksmanId: any) => {
     try {
-        connectDB()
-        return sequelizeConnection.query(getWorksManExperienceIdQuery(email), {
-            type: QueryTypes.SELECT
+        console.log("This is event", worksmanId)
+        connectDB();
+        return await sequelizeConnection.query(WorksmanExperienceStepQuery(worksmanId), {
+            type: QueryTypes.UPDATE
         })
+
     } catch (exception) {
-        console.log('Get work man Experience Service error', exception)
+        console.log("Error in getStepRegistrationService", exception)
         throw exception
     }
 }
-
-export const WorksmanExperienceStepService = async(worksmanId:any) => {
-    try {        
-        console.log("This is event",worksmanId)
-        connectDB();
-       return await sequelizeConnection.query(WorksmanExperienceStepQuery(worksmanId),{
-            type:QueryTypes.UPDATE
-        })
-        
-    } catch (exception) {
-        console.log("Error in getStepRegistrationService",exception)
-        throw exception
-    }
-  }

@@ -27,9 +27,11 @@ const worksman_Table = () =>{
         email VARCHAR(255) UNIQUE NOT NULL,
         phone VARCHAR(255) UNIQUE NOT NULL,
         date_of_birth VARCHAR(255) NOT NULL,
+        gender VARCHAR(255) NOT NULL,
+        nationality VARCHAR(255) NOT NULL,
         current_step VARCHAR(255),
         iscompleted_registration_process VARCHAR(255),
-        created_on DATE not null default CURRENT_DATE
+        created_on DATETIME DEFAULT CURRENT_TIMESTAMP
         )
         `
 }
@@ -105,6 +107,15 @@ const Worksman_Address_Table = () => {
         )
         `
 }
+const worksman_postcodes = () => {
+        return `        
+        DROP TABLE IF EXISTS worksman_postcodes ;
 
+        CREATE TABLE worksman_postcodes (
+                postcodes_id int PRIMARY KEY,
+                worksman_id  VARCHAR (255) NOT NULL,
+                postcodes VARCHAR(255) NOT NULL
+             );
+        `
+}
 
-// select * from worksman_table where email='kiran.budipi@vrishkar.com';

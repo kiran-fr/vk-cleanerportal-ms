@@ -12,7 +12,10 @@ export const ApigatewayDataConstants = (apigateway:any) => {
         'X-Amz-Date',
         'Authorization',
         'X-Api-Key',
-        'worksmanIdHeader'
+        'worksmanIdHeader',
+        'email',
+        'worksman_id',
+        'postcodes'
       ] 
     }
   }

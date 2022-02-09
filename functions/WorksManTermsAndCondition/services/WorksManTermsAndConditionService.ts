@@ -2,10 +2,10 @@ import { QueryTypes } from "sequelize/dist";
 import { connectDB, sequelizeConnection } from "../helpers/DbConnectionHelpers"
 import { getWorksManTermsIdQuery, WorksManTermsAndConditionQuery, WorksmanTermsAndConditionStepQuery } from "../query/WorksManTermsAndConditionQuery"
 
-export const WorksManTermsAndConditionService = async (event: any, Worksman_id: any) => {
+export const WorksManTermsAndConditionService = async (event: any) => {
     try {
         connectDB();
-        const data = await sequelizeConnection.query(WorksManTermsAndConditionQuery(event, Worksman_id), {
+        const data = await sequelizeConnection.query(WorksManTermsAndConditionQuery(event), {
             type: QueryTypes.INSERT
         })
 
