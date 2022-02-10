@@ -6,7 +6,10 @@ import { UserRegistrationLambda, WorksManTermsAndConditionLambda, WorksManExperi
    UpdateWorksmanDetailsLambda,
    UserPostCodesLambda,
    GetAllPostcodesLambda,
-   DeletePostcodesLambda} from './resources/lambda/allLambda';
+   DeletePostcodesLambda,
+   WorksmnaScheduleLambda,
+   DeleteWorkmanScheduleLambda,
+   GetWorksmanSchedulesLambda} from './resources/lambda/allLambda';
 import * as sfn from "@aws-cdk/aws-stepfunctions";
 import * as tasks from "@aws-cdk/aws-stepfunctions-tasks";
 import * as apigateway from "@aws-cdk/aws-apigateway"
@@ -17,7 +20,10 @@ import { WorksmanTermsAndConditionsApiGateway, PostUserApiGateway, getAllMobileN
   UpdateWorksmanDetailsApiGateway,
   UserPostCodesApiGateway,
   GetAllPostcodesApiGateway,
-  DeletePostcodesApiGateway} from "./resources/ApiGateway/AllApiGateWays"
+  DeletePostcodesApiGateway,
+  WorksmnaScheduleApiGateway,
+  DeleteWorkmanScheduleApiGateway,
+  GetWorksmanScheduleApiGateway} from "./resources/ApiGateway/AllApiGateWays"
 
 export class CdkExampleStack extends cdk.Stack {
   public Machine: sfn.StateMachine;
@@ -36,23 +42,36 @@ export class CdkExampleStack extends cdk.Stack {
     const UserPostCodeLambdaApi = new lambda.Function(this, "UserPostCodes", UserPostCodesLambda())
     const GetAllPostcodesLambdaApi = new lambda.Function(this, "GetAllPostcodes", GetAllPostcodesLambda())
     const DeletePostcodesLambdaApi = new lambda.Function(this, "DeletePostcodes", DeletePostcodesLambda())
+    const WorksmnaScheduleLambdaApi = new lambda.Function(this, "WorksmnaScheduletcodes", WorksmnaScheduleLambda())
+    const DeleteWorkmanScheduleLambdaApi = new lambda.Function(this, "DeleteWorkmanSchedule", DeleteWorkmanScheduleLambda())
+    const GetWorksmanScheduleLambdaApi = new lambda.Function(this, "GetWorksmanSchedule", GetWorksmanSchedulesLambda())
 
     const api = new apigateway.RestApi(this, 'WorksManApi', ApigatewayDataConstants(apigateway));
 
    
     new cdk.CfnOutput(this, 'apiUrl', { value: api.url });
 
+    // POST APIS
     WorksmanTermsAndConditionsApiGateway(api, WorksManTermsAndCondition, 'POST')
     worksmanExperienceApiGateway(api, WorksManExperience, 'POST')
+    PostUserApiGateway(api, PostTestUser, 'POST')
+    UserPostCodesApiGateway(api, UserPostCodeLambdaApi, 'POST')
+    WorksmnaScheduleApiGateway(api, WorksmnaScheduleLambdaApi, 'POST')
+
+    // GET APIS
     GetWorksmanAccountRegistartionStatusApiGateway(api, GetWorksmanAccountRegistartionStatus, 'GET')
     GetTestUserApiGateway(api, GetTestUser, 'GET')
-    PostUserApiGateway(api, PostTestUser, 'POST')
     getAllMobileNumbersApiGateway(api, getAllMobileNumbersDemo, 'GET')
     GetWorkmanDetailsApiGateway(api, GetWorkmanDetailLambda, 'GET')
-    UpdateWorksmanDetailsApiGateway(api, UpdateWorksmanDetailLambda, 'PUT')
-    UserPostCodesApiGateway(api, UserPostCodeLambdaApi, 'POST')
     GetAllPostcodesApiGateway(api, GetAllPostcodesLambdaApi, 'GET')
+    GetWorksmanScheduleApiGateway(api, GetWorksmanScheduleLambdaApi, 'GET')
+
+    // DELETE APIS
     DeletePostcodesApiGateway(api, DeletePostcodesLambdaApi, 'DELETE')
+    DeleteWorkmanScheduleApiGateway(api, DeleteWorkmanScheduleLambdaApi, 'DELETE')
+
+    // UPDATE APIS
+    UpdateWorksmanDetailsApiGateway(api, UpdateWorksmanDetailLambda, 'PUT')
 
   }
 }

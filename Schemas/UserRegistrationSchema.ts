@@ -112,10 +112,22 @@ const worksman_postcodes = () => {
         DROP TABLE IF EXISTS worksman_postcodes ;
 
         CREATE TABLE worksman_postcodes (
-                postcodes_id int PRIMARY KEY,
+                postcodes_id SERIAL PRIMARY KEY,
                 worksman_id  VARCHAR (255) NOT NULL,
                 postcodes VARCHAR(255) NOT NULL
              );
+        `
+}
+const worksman_schedule = () => {
+        return `        
+        DROP TABLE IF EXISTS worksman_schedule ;
+
+          CREATE TABLE worksman_schedule (
+                                  worksman_schedule_id SERIAL PRIMARY KEY,
+                          worksman_id  VARCHAR (255) NOT NULL,
+                          schedule_day VARCHAR(255) NOT NULL,
+                				schedule_time VARCHAR(255) NOT NULL
+                              );
         `
 }
 
