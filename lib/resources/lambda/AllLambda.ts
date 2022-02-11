@@ -130,3 +130,33 @@ export const DeletePostcodesLambda = () => {
     timeout: cdk.Duration.seconds(35)
   }
 }
+export const WorksmnaScheduleLambda = () => {
+  return {
+    code:lambda.Code.fromAsset('./functions/WorksmnaSchedule'),
+    functionName:'WorksmnaScheduleFun',
+    handler:'index.WorksmnaScheduleHandler',
+    memorySize: 1024,
+    runtime: lambda.Runtime.NODEJS_14_X,
+    timeout: cdk.Duration.seconds(35)
+  }
+}
+export const DeleteWorkmanScheduleLambda = () => {
+  return {
+    code:lambda.Code.fromAsset('./functions/DeleteWorkmanSchedule'),
+    functionName:'DeleteWorkmanScheduleFun',
+    handler:'index.DeleteWorkmanScheduleHandler',
+    memorySize: 1024,
+    runtime: lambda.Runtime.NODEJS_14_X,
+    timeout: cdk.Duration.seconds(35)
+  }
+}
+export const GetWorksmanSchedulesLambda = () => {
+  return {
+    code:lambda.Code.fromAsset('./functions/GetWorksmanSchedules'),
+    functionName:'GetWorksmanSchedulesFun',
+    handler:'index.GetWorksmanSchedulesHandler',
+    memorySize: 1024,
+    runtime: lambda.Runtime.NODEJS_14_X,
+    timeout: cdk.Duration.seconds(35)
+  }
+}
