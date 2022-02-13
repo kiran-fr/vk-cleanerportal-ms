@@ -46,7 +46,7 @@ export class CdkExampleStack extends cdk.Stack {
     const DeleteWorkmanScheduleLambdaApi = new lambda.Function(this, "DeleteWorkmanSchedule", DeleteWorkmanScheduleLambda())
     const GetWorksmanScheduleLambdaApi = new lambda.Function(this, "GetWorksmanSchedule", GetWorksmanSchedulesLambda())
 
-    const api = new apigateway.RestApi(this, 'WorksManApi', ApigatewayDataConstants(apigateway));
+    const api = new apigateway.RestApi(this, 'WorksManApiData', ApigatewayDataConstants(apigateway));
 
    
     new cdk.CfnOutput(this, 'apiUrl', { value: api.url });
