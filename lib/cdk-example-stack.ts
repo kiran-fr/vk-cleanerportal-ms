@@ -62,7 +62,7 @@ export class CdkExampleStack extends cdk.Stack {
 
     // GET APIS
     GetWorksmanAccountRegistartionStatusApiGateway(api, GetWorksmanAccountRegistartionStatus, 'GET')
-    // GetTestUserApiGateway(api, GetTestUser, 'GET')
+    GetTestUserApiGateway(api, GetTestUser, 'GET')
     getAllMobileNumbersApiGateway(api, getAllMobileNumbersDemo, 'GET')
     GetWorkmanDetailsApiGateway(api, GetWorkmanDetailLambda, 'GET')
     GetAllPostcodesApiGateway(api, GetAllPostcodesLambdaApi, 'GET')
