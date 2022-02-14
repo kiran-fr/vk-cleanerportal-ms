@@ -9,7 +9,7 @@ import { UserRegistrationLambda, WorksManTermsAndConditionLambda, WorksManExperi
    DeletePostcodesLambda,
    WorksmnaScheduleLambda,
    DeleteWorkmanScheduleLambda,
-   GetWorksmanSchedulesLambda} from './resources/lambda/allLambda';
+   GetWorksmanSchedulesLambda} from './resources/lambda/alllambda';
 import * as sfn from "@aws-cdk/aws-stepfunctions";
 import * as tasks from "@aws-cdk/aws-stepfunctions-tasks";
 import * as apigateway from "@aws-cdk/aws-apigateway"
