@@ -1,7 +1,7 @@
 
 export const GetWorkmanTableDetailsQuery  = (worksmanId:any) => {
     console.warn(worksmanId)
-    return ` SELECT first_name,last_name,email,date_of_birth,nationality,gender FROM worksman_table WHERE worksman_id = ${worksmanId}`
+    return ` SELECT first_name,last_name,email,date_of_birth,nationality,gender,phone FROM worksman_table WHERE worksman_id = ${worksmanId}`
 }
 export const GetWorksmanAddressDetailsQuery  = (worksmanId:any) => {
     console.warn("GetWorksmanAddressDetailsQuery",worksmanId)
