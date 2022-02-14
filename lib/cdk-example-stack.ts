@@ -9,7 +9,7 @@ import { UserRegistrationLambda, WorksManTermsAndConditionLambda, WorksManExperi
    DeletePostcodesLambda,
    WorksmnaScheduleLambda,
    DeleteWorkmanScheduleLambda,
-   GetWorksmanSchedulesLambda} from './resources/lambda/allLambda';
+   GetWorksmanSchedulesLambda} from './alllambda';
 import * as sfn from "@aws-cdk/aws-stepfunctions";
 import * as tasks from "@aws-cdk/aws-stepfunctions-tasks";
 import * as apigateway from "@aws-cdk/aws-apigateway"
@@ -24,9 +24,11 @@ import { WorksmanTermsAndConditionsApiGateway, PostUserApiGateway, getAllMobileN
   WorksmnaScheduleApiGateway,
   DeleteWorkmanScheduleApiGateway,
   GetWorksmanScheduleApiGateway} from "./resources/ApiGateway/AllApiGateWays"
+import { CfnOutput } from '@aws-cdk/core';
 
 export class CdkExampleStack extends cdk.Stack {
   public Machine: sfn.StateMachine;
+  public readonly urlOutput: CfnOutput;
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
@@ -49,7 +51,7 @@ export class CdkExampleStack extends cdk.Stack {
     const api = new apigateway.RestApi(this, 'WorksManApiData', ApigatewayDataConstants(apigateway));
 
    
-    new cdk.CfnOutput(this, 'apiUrl', { value: api.url });
+    this.urlOutput =  new cdk.CfnOutput(this, 'apiUrl', { value: api.url });
 
     // POST APIS
     WorksmanTermsAndConditionsApiGateway(api, WorksManTermsAndCondition, 'POST')
