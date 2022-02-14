@@ -36,8 +36,6 @@ export class CdkExampleStack extends cdk.Stack {
     const WorksManTermsAndCondition = new lambda.Function(this, 'WorksManTermsAndCondition', WorksManTermsAndConditionLambda())
     const WorksManExperience = new lambda.Function(this, 'WorksManExperience', WorksManExperienceLambda())
     const GetWorksmanAccountRegistartionStatus = new lambda.Function(this, "GetWorksmanAccountRegistartionStatus", GetWorksmanAccountRegistartionStatusLambda())
-    const GetTestUser = new lambda.Function(this, "GetTestUser", GetTestUserLambda())
-    const PostTestUser = new lambda.Function(this, "PostTestUser", PostTestUserLambda())
     const getAllMobileNumbersDemo = new lambda.Function(this, "getAllMobileNumber", getAllMobileNumberLambda())
     const GetWorkmanDetailLambda = new lambda.Function(this, "GetWorkmanDetails", GetWorkmanDetailsLambda())
     const UpdateWorksmanDetailLambda = new lambda.Function(this, "UpdateWorksmanDetail", UpdateWorksmanDetailsLambda())
@@ -56,13 +54,11 @@ export class CdkExampleStack extends cdk.Stack {
     // POST APIS
     WorksmanTermsAndConditionsApiGateway(api, WorksManTermsAndCondition, 'POST')
     worksmanExperienceApiGateway(api, WorksManExperience, 'POST')
-    PostUserApiGateway(api, PostTestUser, 'POST')
     UserPostCodesApiGateway(api, UserPostCodeLambdaApi, 'POST')
     WorksmnaScheduleApiGateway(api, WorksmnaScheduleLambdaApi, 'POST')
 
     // GET APIS
     GetWorksmanAccountRegistartionStatusApiGateway(api, GetWorksmanAccountRegistartionStatus, 'GET')
-    GetTestUserApiGateway(api, GetTestUser, 'GET')
     getAllMobileNumbersApiGateway(api, getAllMobileNumbersDemo, 'GET')
     GetWorkmanDetailsApiGateway(api, GetWorkmanDetailLambda, 'GET')
     GetAllPostcodesApiGateway(api, GetAllPostcodesLambdaApi, 'GET')
