@@ -17,7 +17,7 @@ export class CdkpipelinesDemoPipelineStack extends Stack {
        synth: new ShellStep('Synth', {
        
       input: CodePipelineSource.connection('vrishkarservices/VK-CLEANERPORTAL-MS', 'cdk-pipeline', {
-             connectionArn: 'arn:aws:codestar-connections:us-east-2:278937816757:connection/5f9ea885-99d4-4039-933b-de7b4a16a1b9', // Created using the AWS console
+             connectionArn: 'arn:aws:codestar-connections:us-east-1:278937816757:connection/043c78f4-9d75-423f-987c-62559867adbf', // Created using the AWS console
       }),
       // Install dependencies, build and run cdk synth
       commands: [
@@ -30,7 +30,7 @@ export class CdkpipelinesDemoPipelineStack extends Stack {
 
     // This is where we add the application stages
 pipeline.addStage(new CdkpipelinesDemoStage(this, 'vkcleanerdevportalms', {
-  env: { account: '278937816757', region: 'us-east-2' }
+  env: { account: '278937816757', region: 'us-east-1' }
 }));
 
   }
