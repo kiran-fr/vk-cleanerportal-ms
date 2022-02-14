@@ -16,7 +16,7 @@ export class CdkpipelinesDemoPipelineStack extends Stack {
        // How it will be built and synthesized
        synth: new ShellStep('Synth', {
        
-      input: CodePipelineSource.connection('vrishkarservices/VK-CLEANERPORTAL-MS', 'cdk-pipeline', {
+      input: CodePipelineSource.connection('vrishkarservices/VK-CLEANERPORTAL-MS', 'master', {
              connectionArn: 'arn:aws:codestar-connections:us-east-1:278937816757:connection/043c78f4-9d75-423f-987c-62559867adbf', // Created using the AWS console
       }),
       // Install dependencies, build and run cdk synth
