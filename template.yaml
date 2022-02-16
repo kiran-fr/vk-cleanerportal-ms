@@ -130,7 +130,7 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameters3e6aefaa1e2f2da3f0be171b40930f29f7843d3dfaf624ecf1775348f2d0864eS3Bucket5084FBCF
+          Ref: AssetParametersd31724bbea5f11c2d31a57e3a0ef0c7aad11ca51288a4b477497ec26fd41e6c8S3BucketCF599D67
         S3Key:
           Fn::Join:
             - ""
@@ -138,12 +138,12 @@ Resources:
                   - 0
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters3e6aefaa1e2f2da3f0be171b40930f29f7843d3dfaf624ecf1775348f2d0864eS3VersionKeyBD0D6315
+                      - Ref: AssetParametersd31724bbea5f11c2d31a57e3a0ef0c7aad11ca51288a4b477497ec26fd41e6c8S3VersionKey382EE34B
               - Fn::Select:
                   - 1
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters3e6aefaa1e2f2da3f0be171b40930f29f7843d3dfaf624ecf1775348f2d0864eS3VersionKeyBD0D6315
+                      - Ref: AssetParametersd31724bbea5f11c2d31a57e3a0ef0c7aad11ca51288a4b477497ec26fd41e6c8S3VersionKey382EE34B
       Role:
         Fn::GetAtt:
           - WorksManExperienceServiceRoleE9A759F2
@@ -400,7 +400,7 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameters95f733485a56d8f94fce2a77baf2f9f649e0005c9d9dd1d9d8d9b1d8e610ab9fS3BucketDC5D7806
+          Ref: AssetParametersd0e1ceb4da11738be01b57a4bdba45fa5719d8dbf442d3ad1ce126f0b81f111eS3BucketA3236123
         S3Key:
           Fn::Join:
             - ""
@@ -408,12 +408,12 @@ Resources:
                   - 0
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters95f733485a56d8f94fce2a77baf2f9f649e0005c9d9dd1d9d8d9b1d8e610ab9fS3VersionKey8A633071
+                      - Ref: AssetParametersd0e1ceb4da11738be01b57a4bdba45fa5719d8dbf442d3ad1ce126f0b81f111eS3VersionKey1FF14054
               - Fn::Select:
                   - 1
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters95f733485a56d8f94fce2a77baf2f9f649e0005c9d9dd1d9d8d9b1d8e610ab9fS3VersionKey8A633071
+                      - Ref: AssetParametersd0e1ceb4da11738be01b57a4bdba45fa5719d8dbf442d3ad1ce126f0b81f111eS3VersionKey1FF14054
       Role:
         Fn::GetAtt:
           - GetWorkmanDetailsServiceRole7D7C7A93
@@ -845,7 +845,7 @@ Resources:
       - WorksManApiData3DE65042
     Metadata:
       aws:cdk:path: VrishkarServicesDevStack/WorksManApiData/Account
-  WorksManApiDataDeploymentAC486F79857f9103d2a022ff15f8a93e072ba5f6:
+  WorksManApiDataDeploymentAC486F79c3de00f8f1348f287886a0984efe9243:
     Type: AWS::ApiGateway::Deployment
     Properties:
       RestApiId:
@@ -937,7 +937,7 @@ Resources:
       RestApiId:
         Ref: WorksManApiData3DE65042
       DeploymentId:
-        Ref: WorksManApiDataDeploymentAC486F79857f9103d2a022ff15f8a93e072ba5f6
+        Ref: WorksManApiDataDeploymentAC486F79c3de00f8f1348f287886a0984efe9243
       StageName: dev
     Metadata:
       aws:cdk:path: VrishkarServicesDevStack/WorksManApiData/DeploymentStage.dev/Resource
@@ -1071,7 +1071,7 @@ Resources:
         IntegrationResponses:
           - ResponseParameters:
               method.response.header.Content-Type: "'application/json'"
-              method.response.header.Access-Control-Allow-Origin: "'http://localhost:3000'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Credentials: "'true'"
               method.response.header.Access-Control-Allow-Headers: "'*'"
             ResponseTemplates:
@@ -1233,7 +1233,7 @@ Resources:
         IntegrationResponses:
           - ResponseParameters:
               method.response.header.Content-Type: "'application/json'"
-              method.response.header.Access-Control-Allow-Origin: "'http://localhost:3000'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Credentials: "'true'"
               method.response.header.Access-Control-Allow-Headers: "'*'"
             ResponseTemplates:
@@ -1395,7 +1395,7 @@ Resources:
         IntegrationResponses:
           - ResponseParameters:
               method.response.header.Content-Type: "'application/json'"
-              method.response.header.Access-Control-Allow-Origin: "'http://localhost:3000'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Credentials: "'true'"
               method.response.header.Access-Control-Allow-Headers: "'*'"
             ResponseTemplates:
@@ -1557,7 +1557,7 @@ Resources:
         IntegrationResponses:
           - ResponseParameters:
               method.response.header.Content-Type: "'application/json'"
-              method.response.header.Access-Control-Allow-Origin: "'http://localhost:3000'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Credentials: "'true'"
               method.response.header.Access-Control-Allow-Headers: "'*'"
             ResponseTemplates:
@@ -1719,7 +1719,7 @@ Resources:
         IntegrationResponses:
           - ResponseParameters:
               method.response.header.Content-Type: "'application/json'"
-              method.response.header.Access-Control-Allow-Origin: "'http://localhost:3000'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Credentials: "'true'"
               method.response.header.Access-Control-Allow-Headers: "'*'"
             ResponseTemplates:
@@ -1881,7 +1881,7 @@ Resources:
         IntegrationResponses:
           - ResponseParameters:
               method.response.header.Content-Type: "'application/json'"
-              method.response.header.Access-Control-Allow-Origin: "'http://localhost:3000'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Credentials: "'true'"
               method.response.header.Access-Control-Allow-Headers: "'*'"
             ResponseTemplates:
@@ -2044,7 +2044,7 @@ Resources:
         IntegrationResponses:
           - ResponseParameters:
               method.response.header.Content-Type: "'application/json'"
-              method.response.header.Access-Control-Allow-Origin: "'http://localhost:3000'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Credentials: "'true'"
               method.response.header.Access-Control-Allow-Headers: "'*'"
             ResponseTemplates:
@@ -2205,7 +2205,7 @@ Resources:
         IntegrationResponses:
           - ResponseParameters:
               method.response.header.Content-Type: "'application/json'"
-              method.response.header.Access-Control-Allow-Origin: "'http://localhost:3000'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Credentials: "'true'"
               method.response.header.Access-Control-Allow-Headers: "'*'"
             ResponseTemplates:
@@ -2364,7 +2364,7 @@ Resources:
         IntegrationResponses:
           - ResponseParameters:
               method.response.header.Content-Type: "'application/json'"
-              method.response.header.Access-Control-Allow-Origin: "'http://localhost:3000'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Credentials: "'true'"
               method.response.header.Access-Control-Allow-Headers: "'*'"
             ResponseTemplates:
@@ -2527,7 +2527,7 @@ Resources:
         IntegrationResponses:
           - ResponseParameters:
               method.response.header.Content-Type: "'application/json'"
-              method.response.header.Access-Control-Allow-Origin: "'http://localhost:3000'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Credentials: "'true'"
               method.response.header.Access-Control-Allow-Headers: "'*'"
             ResponseTemplates:
@@ -2686,7 +2686,7 @@ Resources:
         IntegrationResponses:
           - ResponseParameters:
               method.response.header.Content-Type: "'application/json'"
-              method.response.header.Access-Control-Allow-Origin: "'http://localhost:3000'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Credentials: "'true'"
               method.response.header.Access-Control-Allow-Headers: "'*'"
             ResponseTemplates:
@@ -2851,7 +2851,7 @@ Resources:
         IntegrationResponses:
           - ResponseParameters:
               method.response.header.Content-Type: "'application/json'"
-              method.response.header.Access-Control-Allow-Origin: "'http://localhost:3000'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Credentials: "'true'"
               method.response.header.Access-Control-Allow-Headers: "'*'"
             ResponseTemplates:
@@ -3014,7 +3014,7 @@ Resources:
         IntegrationResponses:
           - ResponseParameters:
               method.response.header.Content-Type: "'application/json'"
-              method.response.header.Access-Control-Allow-Origin: "'http://localhost:3000'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Credentials: "'true'"
               method.response.header.Access-Control-Allow-Headers: "'*'"
             ResponseTemplates:
@@ -3179,7 +3179,7 @@ Resources:
         IntegrationResponses:
           - ResponseParameters:
               method.response.header.Content-Type: "'application/json'"
-              method.response.header.Access-Control-Allow-Origin: "'http://localhost:3000'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Credentials: "'true'"
               method.response.header.Access-Control-Allow-Headers: "'*'"
             ResponseTemplates:
@@ -3888,15 +3888,15 @@ Parameters:
   AssetParametersf39de0c0495b0fe3f368b789feac80be04f04d4ebcbbc154d2632f9619e5c7efArtifactHashB2213832:
     Type: String
     Description: Artifact hash for asset "f39de0c0495b0fe3f368b789feac80be04f04d4ebcbbc154d2632f9619e5c7ef"
-  AssetParameters3e6aefaa1e2f2da3f0be171b40930f29f7843d3dfaf624ecf1775348f2d0864eS3Bucket5084FBCF:
+  AssetParametersd31724bbea5f11c2d31a57e3a0ef0c7aad11ca51288a4b477497ec26fd41e6c8S3BucketCF599D67:
     Type: String
-    Description: S3 bucket for asset "3e6aefaa1e2f2da3f0be171b40930f29f7843d3dfaf624ecf1775348f2d0864e"
-  AssetParameters3e6aefaa1e2f2da3f0be171b40930f29f7843d3dfaf624ecf1775348f2d0864eS3VersionKeyBD0D6315:
+    Description: S3 bucket for asset "d31724bbea5f11c2d31a57e3a0ef0c7aad11ca51288a4b477497ec26fd41e6c8"
+  AssetParametersd31724bbea5f11c2d31a57e3a0ef0c7aad11ca51288a4b477497ec26fd41e6c8S3VersionKey382EE34B:
     Type: String
-    Description: S3 key for asset version "3e6aefaa1e2f2da3f0be171b40930f29f7843d3dfaf624ecf1775348f2d0864e"
-  AssetParameters3e6aefaa1e2f2da3f0be171b40930f29f7843d3dfaf624ecf1775348f2d0864eArtifactHash8A67D209:
+    Description: S3 key for asset version "d31724bbea5f11c2d31a57e3a0ef0c7aad11ca51288a4b477497ec26fd41e6c8"
+  AssetParametersd31724bbea5f11c2d31a57e3a0ef0c7aad11ca51288a4b477497ec26fd41e6c8ArtifactHash338DB4E1:
     Type: String
-    Description: Artifact hash for asset "3e6aefaa1e2f2da3f0be171b40930f29f7843d3dfaf624ecf1775348f2d0864e"
+    Description: Artifact hash for asset "d31724bbea5f11c2d31a57e3a0ef0c7aad11ca51288a4b477497ec26fd41e6c8"
   AssetParameters3d10d72ea15766a6a9f120d8f12cf47876c8599c699b775a5d8ff45dcece2e8bS3Bucket28095C9C:
     Type: String
     Description: S3 bucket for asset "3d10d72ea15766a6a9f120d8f12cf47876c8599c699b775a5d8ff45dcece2e8b"
@@ -3933,15 +3933,15 @@ Parameters:
   AssetParametersa7960ad56c8b041965d08884b00c5922944b29996fcecb7ee6e05641743f188cArtifactHash2BEDBD74:
     Type: String
     Description: Artifact hash for asset "a7960ad56c8b041965d08884b00c5922944b29996fcecb7ee6e05641743f188c"
-  AssetParameters95f733485a56d8f94fce2a77baf2f9f649e0005c9d9dd1d9d8d9b1d8e610ab9fS3BucketDC5D7806:
+  AssetParametersd0e1ceb4da11738be01b57a4bdba45fa5719d8dbf442d3ad1ce126f0b81f111eS3BucketA3236123:
     Type: String
-    Description: S3 bucket for asset "95f733485a56d8f94fce2a77baf2f9f649e0005c9d9dd1d9d8d9b1d8e610ab9f"
-  AssetParameters95f733485a56d8f94fce2a77baf2f9f649e0005c9d9dd1d9d8d9b1d8e610ab9fS3VersionKey8A633071:
+    Description: S3 bucket for asset "d0e1ceb4da11738be01b57a4bdba45fa5719d8dbf442d3ad1ce126f0b81f111e"
+  AssetParametersd0e1ceb4da11738be01b57a4bdba45fa5719d8dbf442d3ad1ce126f0b81f111eS3VersionKey1FF14054:
     Type: String
-    Description: S3 key for asset version "95f733485a56d8f94fce2a77baf2f9f649e0005c9d9dd1d9d8d9b1d8e610ab9f"
-  AssetParameters95f733485a56d8f94fce2a77baf2f9f649e0005c9d9dd1d9d8d9b1d8e610ab9fArtifactHash82A76D26:
+    Description: S3 key for asset version "d0e1ceb4da11738be01b57a4bdba45fa5719d8dbf442d3ad1ce126f0b81f111e"
+  AssetParametersd0e1ceb4da11738be01b57a4bdba45fa5719d8dbf442d3ad1ce126f0b81f111eArtifactHashAAAF55B3:
     Type: String
-    Description: Artifact hash for asset "95f733485a56d8f94fce2a77baf2f9f649e0005c9d9dd1d9d8d9b1d8e610ab9f"
+    Description: Artifact hash for asset "d0e1ceb4da11738be01b57a4bdba45fa5719d8dbf442d3ad1ce126f0b81f111e"
   AssetParameters454acb2c2c4e5e2f7931f9198cf7f9a8a8a6b70adb77b3f5fb6cd55a7af742a6S3BucketAAFB0949:
     Type: String
     Description: S3 bucket for asset "454acb2c2c4e5e2f7931f9198cf7f9a8a8a6b70adb77b3f5fb6cd55a7af742a6"

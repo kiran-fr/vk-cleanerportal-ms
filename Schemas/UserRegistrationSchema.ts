@@ -59,16 +59,15 @@ const worksman_experience_table = () => {
         worksman_exp_id SERIAL PRIMARY KEY,
         worksman_id  VARCHAR (255) UNIQUE NOT NULL,
         years_of_cleaning_exp VARCHAR(255) NOT NULL,
-        Have_house_cleaning_exp VARCHAR(255) NOT NULL,
-        Have_deep_cleaning_exp VARCHAR(255) NOT NULL,
-        Have_office_cleaning_exp VARCHAR(255) NOT NULL,
-        Have_oven_cleaning_exp VARCHAR(255) NOT NULL,
-        Have_gardening_exp VARCHAR(255) NOT NULL,
-        Have_building_cleaning_exp VARCHAR(255) NOT NULL,
-        Have_hotel_cleaning_exp VARCHAR(255) NOT NULL,
-        Have_hospital_cleaning_exp VARCHAR(255) NOT NULL,
-        Have_retail_cleaning_exp VARCHAR(255) NOT NULL,
-        other_cleaning VARCHAR(255) NOT NULL,
+        Have_end_of_tendency VARCHAR(255) NOT NULL,
+        Have_hotel_cleaning VARCHAR(255) NOT NULL,
+        Have_house_cleaning VARCHAR(255) NOT NULL,
+        Have_hospital_cleaning VARCHAR(255) NOT NULL,
+        Have_office_cleaning VARCHAR(255) NOT NULL,
+        Have_other_cleaning VARCHAR(255) NOT NULL,
+        Have_Right_to_Work VARCHAR(255) NOT NULL,
+        Have_UK_BankAccount VARCHAR(255) NOT NULL,
+        Have_Criminal_Records VARCHAR(255) NOT NULL,
         created_on DATE not null default CURRENT_DATE
         )
         
@@ -123,10 +122,10 @@ const worksman_schedule = () => {
         DROP TABLE IF EXISTS worksman_schedule ;
 
           CREATE TABLE worksman_schedule (
-                                  worksman_schedule_id SERIAL PRIMARY KEY,
+                          worksman_schedule_id SERIAL PRIMARY KEY,
                           worksman_id  VARCHAR (255) NOT NULL,
                           schedule_day VARCHAR(255) NOT NULL,
-                				schedule_time VARCHAR(255) NOT NULL
+                	  schedule_time VARCHAR(255) NOT NULL
                               );
         `
 }

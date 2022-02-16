@@ -74,7 +74,7 @@ export const WorksmanTermsAndConditionsApiGateway = (api: any, lambdaFunctionNam
           // - Destination parameters (the key) are the response parameters (used in mappings)
           // - Source parameters (the value) are the integration response parameters or expressions
           'method.response.header.Content-Type': "'application/json'",
-          'method.response.header.Access-Control-Allow-Origin': "'http://localhost:3000'",
+          'method.response.header.Access-Control-Allow-Origin': "'*'",
           'method.response.header.Access-Control-Allow-Credentials': "'true'",
           'method.response.header.Access-Control-Allow-Headers': "'*'"
 
@@ -212,7 +212,7 @@ export const worksmanExperienceApiGateway = (api: any, lambdaFunctionName: any, 
           // - Destination parameters (the key) are the response parameters (used in mappings)
           // - Source parameters (the value) are the integration response parameters or expressions
           'method.response.header.Content-Type': "'application/json'",
-          'method.response.header.Access-Control-Allow-Origin': "'http://localhost:3000'",
+          'method.response.header.Access-Control-Allow-Origin': "'*'",
           'method.response.header.Access-Control-Allow-Credentials': "'true'",
           'method.response.header.Access-Control-Allow-Headers': "'*'"
 
@@ -324,7 +324,7 @@ export const PostUserApiGateway = (api: any, lambdaFunctionName: any, methodType
           // - Destination parameters (the key) are the response parameters (used in mappings)
           // - Source parameters (the value) are the integration response parameters or expressions
           'method.response.header.Content-Type': "'application/json'",
-          'method.response.header.Access-Control-Allow-Origin': "'http://localhost:3000'",
+          'method.response.header.Access-Control-Allow-Origin': "'*'",
           'method.response.header.Access-Control-Allow-Credentials': "'true'",
           'method.response.header.Access-Control-Allow-Headers': "'*'"
 
@@ -435,7 +435,7 @@ export const WorksmnaScheduleApiGateway = (api: any, lambdaFunctionName: any, me
           // - Destination parameters (the key) are the response parameters (used in mappings)
           // - Source parameters (the value) are the integration response parameters or expressions
           'method.response.header.Content-Type': "'application/json'",
-          'method.response.header.Access-Control-Allow-Origin': "'http://localhost:3000'",
+          'method.response.header.Access-Control-Allow-Origin': "'*'",
           'method.response.header.Access-Control-Allow-Credentials': "'true'",
           'method.response.header.Access-Control-Allow-Headers': "'*'"
 
@@ -543,7 +543,7 @@ export const UserPostCodesApiGateway = (api: any, lambdaFunctionName: any, metho
           // - Destination parameters (the key) are the response parameters (used in mappings)
           // - Source parameters (the value) are the integration response parameters or expressions
           'method.response.header.Content-Type': "'application/json'",
-          'method.response.header.Access-Control-Allow-Origin': "'http://localhost:3000'",
+          'method.response.header.Access-Control-Allow-Origin': "'*'",
           'method.response.header.Access-Control-Allow-Credentials': "'true'",
           'method.response.header.Access-Control-Allow-Headers': "'*'"
 
@@ -642,7 +642,7 @@ export const getAllMobileNumbersApiGateway = (api: any, lambdaFunctionName: any,
           // - Destination parameters (the key) are the response parameters (used in mappings)
           // - Source parameters (the value) are the integration response parameters or expressions
           'method.response.header.Content-Type': "'application/json'",
-          'method.response.header.Access-Control-Allow-Origin': "'http://localhost:3000'",
+          'method.response.header.Access-Control-Allow-Origin': "'*'",
           'method.response.header.Access-Control-Allow-Credentials': "'true'",
           'method.response.header.Access-Control-Allow-Headers': "'*'"
 
@@ -738,7 +738,7 @@ export const GetWorksmanAccountRegistartionStatusApiGateway = (api: any, lambdaF
           // - Destination parameters (the key) are the response parameters (used in mappings)
           // - Source parameters (the value) are the integration response parameters or expressions
           'method.response.header.Content-Type': "'application/json'",
-          'method.response.header.Access-Control-Allow-Origin': "'http://localhost:3000'",
+          'method.response.header.Access-Control-Allow-Origin': "'*'",
           'method.response.header.Access-Control-Allow-Credentials': "'true'",
           'method.response.header.Access-Control-Allow-Headers': "'*'"
 
@@ -834,7 +834,7 @@ export const GetWorkmanDetailsApiGateway = (api: any, lambdaFunctionName: any, m
           // - Destination parameters (the key) are the response parameters (used in mappings)
           // - Source parameters (the value) are the integration response parameters or expressions
           'method.response.header.Content-Type': "'application/json'",
-          'method.response.header.Access-Control-Allow-Origin': "'http://localhost:3000'",
+          'method.response.header.Access-Control-Allow-Origin': "'*'",
           'method.response.header.Access-Control-Allow-Credentials': "'true'",
           'method.response.header.Access-Control-Allow-Headers': "'*'"
 
@@ -927,7 +927,7 @@ export const GetTestUserApiGateway = (api: any, lambdaFunctionName: any, methodT
           // - Destination parameters (the key) are the response parameters (used in mappings)
           // - Source parameters (the value) are the integration response parameters or expressions
           'method.response.header.Content-Type': "'application/json'",
-          'method.response.header.Access-Control-Allow-Origin': "'http://localhost:3000'",
+          'method.response.header.Access-Control-Allow-Origin': "'*'",
           'method.response.header.Access-Control-Allow-Credentials': "'true'",
           'method.response.header.Access-Control-Allow-Headers': "'*'"
 
@@ -1022,7 +1022,7 @@ export const GetAllPostcodesApiGateway = (api: any, lambdaFunctionName: any, met
           // - Destination parameters (the key) are the response parameters (used in mappings)
           // - Source parameters (the value) are the integration response parameters or expressions
           'method.response.header.Content-Type': "'application/json'",
-          'method.response.header.Access-Control-Allow-Origin': "'http://localhost:3000'",
+          'method.response.header.Access-Control-Allow-Origin': "'*'",
           'method.response.header.Access-Control-Allow-Credentials': "'true'",
           'method.response.header.Access-Control-Allow-Headers': "'*'"
 
@@ -1120,7 +1120,7 @@ export const GetWorksmanScheduleApiGateway = (api: any, lambdaFunctionName: any,
           // - Destination parameters (the key) are the response parameters (used in mappings)
           // - Source parameters (the value) are the integration response parameters or expressions
           'method.response.header.Content-Type': "'application/json'",
-          'method.response.header.Access-Control-Allow-Origin': "'http://localhost:3000'",
+          'method.response.header.Access-Control-Allow-Origin': "'*'",
           'method.response.header.Access-Control-Allow-Credentials': "'true'",
           'method.response.header.Access-Control-Allow-Headers': "'*'"
 
@@ -1221,7 +1221,7 @@ export const DeletePostcodesApiGateway = (api: any, lambdaFunctionName: any, met
           // - Destination parameters (the key) are the response parameters (used in mappings)
           // - Source parameters (the value) are the integration response parameters or expressions
           'method.response.header.Content-Type': "'application/json'",
-          'method.response.header.Access-Control-Allow-Origin': "'http://localhost:3000'",
+          'method.response.header.Access-Control-Allow-Origin': "'*'",
           'method.response.header.Access-Control-Allow-Credentials': "'true'",
           'method.response.header.Access-Control-Allow-Headers': "'*'"
 
@@ -1319,7 +1319,7 @@ export const DeleteWorkmanScheduleApiGateway = (api: any, lambdaFunctionName: an
           // - Destination parameters (the key) are the response parameters (used in mappings)
           // - Source parameters (the value) are the integration response parameters or expressions
           'method.response.header.Content-Type': "'application/json'",
-          'method.response.header.Access-Control-Allow-Origin': "'http://localhost:3000'",
+          'method.response.header.Access-Control-Allow-Origin': "'*'",
           'method.response.header.Access-Control-Allow-Credentials': "'true'",
           'method.response.header.Access-Control-Allow-Headers': "'*'"
 
@@ -1433,7 +1433,7 @@ export const UpdateWorksmanDetailsApiGateway = (api: any, lambdaFunctionName: an
           // - Destination parameters (the key) are the response parameters (used in mappings)
           // - Source parameters (the value) are the integration response parameters or expressions
           'method.response.header.Content-Type': "'application/json'",
-          'method.response.header.Access-Control-Allow-Origin': "'http://localhost:3000'",
+          'method.response.header.Access-Control-Allow-Origin': "'*'",
           'method.response.header.Access-Control-Allow-Credentials': "'true'",
           'method.response.header.Access-Control-Allow-Headers': "'*'"
 
