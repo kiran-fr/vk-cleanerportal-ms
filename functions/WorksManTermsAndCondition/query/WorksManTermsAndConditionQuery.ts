@@ -7,13 +7,6 @@ export const WorksManTermsAndConditionQuery = (event:any) => {
         VALUES ('${event.worksman_id}','${event.isWatched_howVrishkar_Works}','${event.isUnderstand_Worksman_Will_SelfEmployeed}','${event.isUnderstand_Vrishkar_isnot_responsible}')
     `
 }
- 
-export const getWorksManTermsIdQuery = (email:any) =>{
-  
-    return `
-        SELECT worksman_id from worksman_table WHERE email='${email}'
-    `
-}
 
 export const WorksmanTermsAndConditionStepQuery  = (worksmanId:any) => {
     console.warn(worksmanId)
