@@ -1,4 +1,4 @@
-export const ApigatewayDataConstants = (apigateway:any) => {
+export const ApigatewayDataConstants = (apigateway: any) => {
   return {
     description: 'User Registration api gateway',
     deployOptions: {
@@ -17,9 +17,10 @@ export const ApigatewayDataConstants = (apigateway:any) => {
         'worksman_id',
         'postcodes',
         'schedule_day',
-        'schedule_time'
+        'schedule_time',
+        'schedule_date'
 
-      ] 
+      ]
     }
   }
 }

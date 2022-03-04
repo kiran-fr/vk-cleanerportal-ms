@@ -130,3 +130,21 @@ const worksman_schedule = () => {
         `
 }
 
+const worksman_jobs = () => {
+        return `        
+        DROP TABLE IF EXISTS worksman_jobs ;
+
+          CREATE TABLE worksman_jobs (
+                          worksman_schedule_id SERIAL PRIMARY KEY,
+                          worksman_id  VARCHAR (255) NOT NULL,
+                          job_title VARCHAR(255) NOT NULL,
+                	  job_no_of_hours VARCHAR(255) NOT NULL,
+                	  job_time VARCHAR(255) NOT NULL,
+                          job_month VARCHAR(255) NOT NULL,
+                          job_year VARCHAR(255) NOT NULL,
+                	  customer_reviews VARCHAR(255) NOT NULL,
+                          created_on DATE not null default CURRENT_DATE
+                              );
+        `
+}
+

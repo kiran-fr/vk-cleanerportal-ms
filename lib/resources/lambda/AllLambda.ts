@@ -160,3 +160,23 @@ export const GetWorksmanSchedulesLambda = () => {
     timeout: cdk.Duration.seconds(35)
   }
 }
+export const WorksmanjobsCreateLambda = () => {
+  return {
+    code:lambda.Code.fromAsset('./functions/WorksmanjobsCreate'),
+    functionName:'WorksmanjobsCreateFun',
+    handler:'index.WorksmanjobsCreateHandler',
+    memorySize: 1024,
+    runtime: lambda.Runtime.NODEJS_14_X,
+    timeout: cdk.Duration.seconds(35)
+  }
+}
+export const GetWorksmanjobsLambda = () => {
+  return {
+    code:lambda.Code.fromAsset('./functions/GetWorksmanjobs'),
+    functionName:'GetWorksmanjobsFun',
+    handler:'index.GetWorksmanjobsHandler',
+    memorySize: 1024,
+    runtime: lambda.Runtime.NODEJS_14_X,
+    timeout: cdk.Duration.seconds(35)
+  }
+}

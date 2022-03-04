@@ -10,7 +10,9 @@ import {
   DeletePostcodesLambda,
   WorksmnaScheduleLambda,
   DeleteWorkmanScheduleLambda,
-  GetWorksmanSchedulesLambda
+  GetWorksmanSchedulesLambda,
+  GetWorksmanjobsLambda,
+  WorksmanjobsCreateLambda
 } from './resources/lambda/allLambda';
 import * as sfn from "@aws-cdk/aws-stepfunctions";
 import * as tasks from "@aws-cdk/aws-stepfunctions-tasks";
@@ -26,7 +28,9 @@ import {
   DeletePostcodesApiGateway,
   WorksmnaScheduleApiGateway,
   DeleteWorkmanScheduleApiGateway,
-  GetWorksmanScheduleApiGateway
+  GetWorksmanScheduleApiGateway,
+  GetWorksmanjobsApiGateway,
+  WorksmanjobsCreateApiGateway
 } from "./resources/ApiGateway/AllApiGateWays";
 import * as apiGatewayAuthorizers from '@aws-cdk/aws-apigatewayv2-authorizers';
 import * as apiGatewayIntegrations from '@aws-cdk/aws-apigatewayv2-integrations';
@@ -52,6 +56,8 @@ export class CdkExampleStack extends cdk.Stack {
     const WorksmnaScheduleLambdaApi = new lambda.Function(this, "WorksmnaScheduletcodes", WorksmnaScheduleLambda())
     const DeleteWorkmanScheduleLambdaApi = new lambda.Function(this, "DeleteWorkmanSchedule", DeleteWorkmanScheduleLambda())
     const GetWorksmanScheduleLambdaApi = new lambda.Function(this, "GetWorksmanSchedule", GetWorksmanSchedulesLambda())
+    const GetWorksmanjobsLambdaApi = new lambda.Function(this, "GetWorksmanjobs", GetWorksmanjobsLambda())
+    const WorksmanjobsCreateLambdaApi = new lambda.Function(this, "WorksmanjobsCreate", WorksmanjobsCreateLambda())
 
     const api = new apigateway.RestApi(this, 'WorksManApiDefault', ApigatewayDataConstants(apigateway));
 
@@ -168,6 +174,7 @@ export class CdkExampleStack extends cdk.Stack {
     PostUserApiGateway(api, PostTestUser, 'POST', auth)
     UserPostCodesApiGateway(api, UserPostCodeLambdaApi, 'POST', auth)
     WorksmnaScheduleApiGateway(api, WorksmnaScheduleLambdaApi, 'POST', auth)
+    // WorksmanjobsCreateApiGateway(api, WorksmanjobsCreateLambdaApi, 'POST', auth)
 
     // GET APIS
     GetWorksmanAccountRegistartionStatusApiGateway(api, GetWorksmanAccountRegistartionStatus, 'GET', auth)
@@ -176,6 +183,7 @@ export class CdkExampleStack extends cdk.Stack {
     GetWorkmanDetailsApiGateway(api, GetWorkmanDetailLambda, 'GET', auth)
     GetAllPostcodesApiGateway(api, GetAllPostcodesLambdaApi, 'GET', auth)
     GetWorksmanScheduleApiGateway(api, GetWorksmanScheduleLambdaApi, 'GET', auth)
+    GetWorksmanjobsApiGateway(api, GetWorksmanjobsLambdaApi, 'GET', auth)
 
     // DELETE APIS
     DeletePostcodesApiGateway(api, DeletePostcodesLambdaApi, 'DELETE', auth)

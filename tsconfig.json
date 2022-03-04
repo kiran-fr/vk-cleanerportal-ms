@@ -5,7 +5,9 @@
     "module": "commonjs",
     "noEmit": false,
     "lib": [
-      "es2018"
+      "es2018",
+    "esnext", "DOM",
+    "DOM.Iterable",
     ],
     "declaration": false,
     "strict": true,

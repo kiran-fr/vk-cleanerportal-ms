@@ -3,7 +3,7 @@ import { EmailConfirmation } from "./helpers/EmailConfirmation";
 
 
 exports.UserRegistrationHanlder = async (event: any, context: any) => {
-  console.warn("This is user registration",event)
+
   try {
     const data = await UserRegistrationServices(event.request.userAttributes)
     const worksmanId: any = await getWorksmanAddressIdService(event.request.userAttributes.email)
@@ -11,13 +11,14 @@ exports.UserRegistrationHanlder = async (event: any, context: any) => {
     await WorksManAddressService(event.request.userAttributes, worksmanId[0].worksman_id)
     await EmailConfirmation(event.request.userAttributes)
 
+  //  let d = await EmailConfirmation('kiran.budipi@vrishkar.com')
+
     context.succeed(event)
     return {
       statusCode: 200,
       headers: {},
-      body: JSON.stringify('Success' + event)
+      body: JSON.stringify('Success' + data)
     }
-
   }
   catch (exception) {
     console.warn('Error is at UserRegistrationHanlder' + JSON.stringify(exception));
