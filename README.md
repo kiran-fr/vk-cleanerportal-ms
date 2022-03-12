@@ -35,4 +35,8 @@ sam local invoke DeleteWorkmanSchedule22944F3C -e functions/DeleteWorkmanSchedul
 sam local invoke GetWorksmanScheduleC62DDBF7 -e functions/GetWorksmanSchedules/mock.json
 sam local invoke GetWorksmanjobsC1DF3F8D -e functions/GetWorksmanjobs/mock.json
 sam local invoke WorksmanjobsCreate9C217260 -e functions/GetWorksmanSchedules/mock.json
+sam local invoke CreateBankDetailsEF6B9549 -e functions/CreateBankDetails/mock.json
+sam local invoke GetBankDetails125327D9 -e functions/GetBankDetails/mock.json
+sam local invoke CreateMessages23E7B181 -e functions/GetBankDetails/mock.json
+sam local invoke CreateMessages23E7B181 -e functions/GetBankDetails/mock.json
 

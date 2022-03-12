@@ -180,3 +180,43 @@ export const GetWorksmanjobsLambda = () => {
     timeout: cdk.Duration.seconds(35)
   }
 }
+export const CreateBankDetailsLambda = () => {
+  return {
+    code:lambda.Code.fromAsset('./functions/CreateBankDetails'),
+    functionName:'CreateBankDetailsFun',
+    handler:'index.CreateBankDetailsHandler',
+    memorySize: 1024,
+    runtime: lambda.Runtime.NODEJS_14_X,
+    timeout: cdk.Duration.seconds(35)
+  }
+}
+export const GetBankDetailsLambda = () => {
+  return {
+    code:lambda.Code.fromAsset('./functions/GetBankDetails'),
+    functionName:'GetBankDetailsFun',
+    handler:'index.GetBankDetailsHandler',
+    memorySize: 1024,
+    runtime: lambda.Runtime.NODEJS_14_X,
+    timeout: cdk.Duration.seconds(35)
+  }
+}
+export const CreateMessagesLambda = () => {
+  return {
+    code:lambda.Code.fromAsset('./functions/CreateMessages'),
+    functionName:'CreateMessagesFun',
+    handler:'index.CreateMessagesHandler',
+    memorySize: 1024,
+    runtime: lambda.Runtime.NODEJS_14_X,
+    timeout: cdk.Duration.seconds(35)
+  }
+}
+export const GetMessagesLambda = () => {
+  return {
+    code:lambda.Code.fromAsset('./functions/GetMessages'),
+    functionName:'GetMessagesFun',
+    handler:'index.GetMessagesHandler',
+    memorySize: 1024,
+    runtime: lambda.Runtime.NODEJS_14_X,
+    timeout: cdk.Duration.seconds(35)
+  }
+}

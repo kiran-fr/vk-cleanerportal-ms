@@ -1,5 +1,5 @@
-export const Schema = () =>{
-    return `
+export const Schema = () => {
+        return `
                 DROP TABLE IF EXISTS user_registration;
 
                 CREATE TABLE user_registration (
@@ -15,7 +15,7 @@ export const Schema = () =>{
         `
 }
 
-const worksman_Table = () =>{
+const worksman_Table = () => {
         return `
         DROP TABLE IF EXISTS worksman_Table;
 
@@ -36,7 +36,7 @@ const worksman_Table = () =>{
         `
 }
 
-const Worksman_terms_and_conditions_table = () =>{
+const Worksman_terms_and_conditions_table = () => {
         return `
         DROP TABLE IF EXISTS worksman_terms_and_conditions_table;
 
@@ -136,15 +136,49 @@ const worksman_jobs = () => {
 
           CREATE TABLE worksman_jobs (
                           worksman_schedule_id SERIAL PRIMARY KEY,
-                          worksman_id  VARCHAR (255) NOT NULL,
+                          worksman_id VARCHAR(255) NOT NULL,
                           job_title VARCHAR(255) NOT NULL,
-                	  job_no_of_hours VARCHAR(255) NOT NULL,
-                	  job_time VARCHAR(255) NOT NULL,
+                          job_hours VARCHAR(255) NOT NULL,
+                          job_time VARCHAR(255) NOT NULL,
+                          job_date VARCHAR(255) NOT NULL,
                           job_month VARCHAR(255) NOT NULL,
                           job_year VARCHAR(255) NOT NULL,
-                	  customer_reviews VARCHAR(255) NOT NULL,
+                          job_status VARCHAR(255) NOT NULL,
+                          job_reg_date VARCHAR(255) NOT NULL,
+                          customer_reviews VARCHAR(255) NOT NULL,
+                          customer_ratings VARCHAR(255) NOT NULL
                           created_on DATE not null default CURRENT_DATE
                               );
+        `
+}
+const bank_details = () => {
+        return `        
+        DROP TABLE IF EXISTS bank_details_table ;
+
+        CREATE TABLE bank_details_table (
+                bank_detail_id SERIAL PRIMARY KEY,
+                worksman_id VARCHAR(255) NOT NULL,
+                account_name VARCHAR(255) NOT NULL,
+                sort_code VARCHAR(255) NOT NULL,
+                account_number VARCHAR(255) NOT NULL,
+                bank_name VARCHAR(255) NOT NULL,
+                created_on DATE not null default CURRENT_DATE
+                    );
+        `
+}
+const chatting_table = () => {
+        return `        
+        DROP TABLE IF EXISTS chatting_table ;
+
+        CREATE TABLE chatting_table (
+                chatting_id SERIAL PRIMARY KEY,
+                worksman_id VARCHAR(255) NOT NULL,
+                user_id VARCHAR(255) NOT NULL,
+                chatting_person VARCHAR(255) NOT NULL,
+                chatting_person_name VARCHAR(255) NOT NULL,
+	 	chat_message VARCHAR(255) NOT NULL,
+                created_on DATE not null default CURRENT_DATE
+                    );
         `
 }
 
