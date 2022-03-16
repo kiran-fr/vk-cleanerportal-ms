@@ -31,7 +31,7 @@ const worksman_Table = () => {
         nationality VARCHAR(255) NOT NULL,
         current_step VARCHAR(255),
         iscompleted_registration_process VARCHAR(255),
-        created_on DATETIME DEFAULT CURRENT_TIMESTAMP
+        created_on TIMESTAMP not null default current_timestamp
         )
         `
 }
@@ -46,7 +46,7 @@ const Worksman_terms_and_conditions_table = () => {
                 isWatched_howVrishkar_Works VARCHAR(255) NOT NULL,
                 isUnderstand_Worksman_Will_SelfEmployeed VARCHAR(255) NOT NULL,
                 isUnderstand_Vrishkar_isnot_responsible VARCHAR(255) NOT NULL,
-                created_on DATE not null default CURRENT_DATE
+                created_on TIMESTAMP not null default current_timestamp
                 )
         `
 }
@@ -68,7 +68,7 @@ const worksman_experience_table = () => {
         Have_Right_to_Work VARCHAR(255) NOT NULL,
         Have_UK_BankAccount VARCHAR(255) NOT NULL,
         Have_Criminal_Records VARCHAR(255) NOT NULL,
-        created_on DATE not null default CURRENT_DATE
+        created_on TIMESTAMP not null default current_timestamp
         )
         
         `
@@ -84,7 +84,7 @@ const worksman_eligibility_table = () => {
         Have_Right_to_Work VARCHAR(255) NOT NULL,
         Have_UK_BankAccount VARCHAR(255) NOT NULL,
         Have_Criminal_Records VARCHAR(255) NOT NULL,
-        created_on DATE not null default CURRENT_DATE
+        created_on TIMESTAMP not null default current_timestamp
         )
         `
 }
@@ -102,7 +102,7 @@ const Worksman_Address_Table = () => {
         county VARCHAR(255) NOT NULL,
         city VARCHAR(255) NOT NULL,
         postcode VARCHAR(255) NOT NULL,
-        created_on DATE not null default CURRENT_DATE
+        created_on TIMESTAMP not null default current_timestamp
         )
         `
 }
@@ -113,7 +113,8 @@ const worksman_postcodes = () => {
         CREATE TABLE worksman_postcodes (
                 postcodes_id SERIAL PRIMARY KEY,
                 worksman_id  VARCHAR (255) NOT NULL,
-                postcodes VARCHAR(255) NOT NULL
+                postcodes VARCHAR(255) NOT NULL,
+                created_on TIMESTAMP not null default current_timestamp
              );
         `
 }
@@ -125,7 +126,8 @@ const worksman_schedule = () => {
                           worksman_schedule_id SERIAL PRIMARY KEY,
                           worksman_id  VARCHAR (255) NOT NULL,
                           schedule_day VARCHAR(255) NOT NULL,
-                	  schedule_time VARCHAR(255) NOT NULL
+                	  schedule_time VARCHAR(255) NOT NULL,
+                          created_on TIMESTAMP not null default current_timestamp
                               );
         `
 }
@@ -147,7 +149,7 @@ const worksman_jobs = () => {
                           job_reg_date VARCHAR(255) NOT NULL,
                           customer_reviews VARCHAR(255) NOT NULL,
                           customer_ratings VARCHAR(255) NOT NULL
-                          created_on DATE not null default CURRENT_DATE
+                          created_on TIMESTAMP not null default current_timestamp
                               );
         `
 }
@@ -162,10 +164,11 @@ const bank_details = () => {
                 sort_code VARCHAR(255) NOT NULL,
                 account_number VARCHAR(255) NOT NULL,
                 bank_name VARCHAR(255) NOT NULL,
-                created_on DATE not null default CURRENT_DATE
+                created_on TIMESTAMP not null default current_timestamp
                     );
         `
 }
+
 const chatting_table = () => {
         return `        
         DROP TABLE IF EXISTS chatting_table ;
@@ -177,8 +180,37 @@ const chatting_table = () => {
                 chatting_person VARCHAR(255) NOT NULL,
                 chatting_person_name VARCHAR(255) NOT NULL,
 	 	chat_message VARCHAR(255) NOT NULL,
-                created_on DATE not null default CURRENT_DATE
+                 created_on TIMESTAMP not null default current_timestamp
                     );
+        `
+}
+
+const cutomer_table = () => {
+        return `        
+        DROP TABLE IF EXISTS cutomer_table ;
+
+        CREATE TABLE cutomer_table (
+                customer_id SERIAL PRIMARY KEY,
+                customer_name VARCHAR(255) NOT NULL,
+                customer_email VARCHAR(255) UNIQUE NOT NULL,
+                customer_phone_number VARCHAR(255) UNIQUE NOT NULL,
+                created_on TIMESTAMP not null default current_timestamp
+                )
+        `
+}
+const customer_address_table = () => {
+        return `        
+        DROP TABLE IF EXISTS customer_address_table ;
+
+        CREATE TABLE customer_address_table (
+                customer_address_id BIGSERIAL PRIMARY KEY,
+                customer_id VARCHAR(225) NOT NULL ,
+                street VARCHAR(225) NOT NULL ,
+                post_code VARCHAR(225) NOT NULL ,
+                country VARCHAR(225) NOT NULL,
+                created_on TIMESTAMP not null default current_timestamp
+        )
+				
         `
 }
 

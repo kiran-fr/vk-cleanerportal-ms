@@ -7,7 +7,7 @@ export const CreateBankDetailsQuery  = (event:any) => {
         sort_code,
         account_number ,
         bank_name 
-        ) VALUES('${event.worksman_id}','${event.account_name} ${event.sort_code}',
+        ) VALUES('${event.worksman_id}','${event.account_name}' ,'${event.sort_code}',
         '${event.account_number}','${event.bank_name}')`
 
 }

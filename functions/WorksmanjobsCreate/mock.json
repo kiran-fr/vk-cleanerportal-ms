@@ -1,5 +1,15 @@
 
 
 {
-    "email":"kiran.budipi@vrishkar.com"
+    "worksman_id":"42",
+    "job_title":"House Cleanaing",
+    "job_hours":"2",
+    "job_time" :"14:00-16:00",
+    "job_date":"12" ,
+    "job_month":"Apr" ,
+    "job_year":"2022",
+    "job_status":"Pending",
+    "job_reg_date":"12/Apr/2022",
+    "customer_reviews":"Nice cleaner",
+    "customer_ratings":"3.5"
 }

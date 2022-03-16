@@ -1,9 +1,9 @@
 
 
 {
-<<<<<<< HEAD
-    "email":"kiran.budipi@vrishkar.com"
-=======
-    "worksman_email":"kiran.budipi@vrishkar.com"
->>>>>>> 6f4c0ffdf4595db889e67a2f29141606ad223643
+    "worksman_id":"42",
+    "user_id":"32",
+    "chatting_person":"workman",
+    "chatting_person_name":"Kiran",
+    "chat_message":"I am availbe today evening 16:00 to 18:00" 
 }

@@ -130,7 +130,7 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameters5007bf1b2dd76915328c46c09d22bb40ea662d312188953b57075e0bbe5defdeS3BucketB9FEE481
+          Ref: AssetParameters2a027a52ab7a615b4d9607177d383d3b16b6833cbf57c112c1ec3f6dd558cc93S3BucketCC62F05C
         S3Key:
           Fn::Join:
             - ""
@@ -138,12 +138,12 @@ Resources:
                   - 0
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters5007bf1b2dd76915328c46c09d22bb40ea662d312188953b57075e0bbe5defdeS3VersionKey0E3AFC2D
+                      - Ref: AssetParameters2a027a52ab7a615b4d9607177d383d3b16b6833cbf57c112c1ec3f6dd558cc93S3VersionKey72398399
               - Fn::Select:
                   - 1
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters5007bf1b2dd76915328c46c09d22bb40ea662d312188953b57075e0bbe5defdeS3VersionKey0E3AFC2D
+                      - Ref: AssetParameters2a027a52ab7a615b4d9607177d383d3b16b6833cbf57c112c1ec3f6dd558cc93S3VersionKey72398399
       Role:
         Fn::GetAtt:
           - WorksManExperienceServiceRoleE9A759F2
@@ -184,7 +184,7 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameters3d10d72ea15766a6a9f120d8f12cf47876c8599c699b775a5d8ff45dcece2e8bS3Bucket28095C9C
+          Ref: AssetParameterse54ec9f2cd4dff27b1b4eef2951812c89d6885bc3ab0de74463a2610aa889ab1S3Bucket77669657
         S3Key:
           Fn::Join:
             - ""
@@ -192,12 +192,12 @@ Resources:
                   - 0
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters3d10d72ea15766a6a9f120d8f12cf47876c8599c699b775a5d8ff45dcece2e8bS3VersionKey539D6D86
+                      - Ref: AssetParameterse54ec9f2cd4dff27b1b4eef2951812c89d6885bc3ab0de74463a2610aa889ab1S3VersionKeyB2602FE8
               - Fn::Select:
                   - 1
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters3d10d72ea15766a6a9f120d8f12cf47876c8599c699b775a5d8ff45dcece2e8bS3VersionKey539D6D86
+                      - Ref: AssetParameterse54ec9f2cd4dff27b1b4eef2951812c89d6885bc3ab0de74463a2610aa889ab1S3VersionKeyB2602FE8
       Role:
         Fn::GetAtt:
           - GetWorksmanAccountRegistartionStatusServiceRole6BD0E8C2
@@ -886,7 +886,7 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParametersc42231d9b9cc80aa51c2f9ea04221a174f3a67dfd6619e7e6a5780f48ac403adS3Bucket5F6A98BE
+          Ref: AssetParametersd58b1302e3fe9ed2133887cc52526740aeed77c3f52dfdb5ddcd33a438e11506S3Bucket1A0DB899
         S3Key:
           Fn::Join:
             - ""
@@ -894,12 +894,12 @@ Resources:
                   - 0
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParametersc42231d9b9cc80aa51c2f9ea04221a174f3a67dfd6619e7e6a5780f48ac403adS3VersionKey2975F2E6
+                      - Ref: AssetParametersd58b1302e3fe9ed2133887cc52526740aeed77c3f52dfdb5ddcd33a438e11506S3VersionKey083EFA1F
               - Fn::Select:
                   - 1
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParametersc42231d9b9cc80aa51c2f9ea04221a174f3a67dfd6619e7e6a5780f48ac403adS3VersionKey2975F2E6
+                      - Ref: AssetParametersd58b1302e3fe9ed2133887cc52526740aeed77c3f52dfdb5ddcd33a438e11506S3VersionKey083EFA1F
       Role:
         Fn::GetAtt:
           - WorksmanjobsCreateServiceRole9BB86293
@@ -940,7 +940,7 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParametersa1368b4ea6280ff4cc0beceb060141d4af9a6606ef97a46d8737b91cef72b358S3Bucket71D07A3A
+          Ref: AssetParameters9f0636da98bb6e34332a73c955d911df6eaeadf2e524123b2ca8cd6c81ab4dd7S3Bucket08659E68
         S3Key:
           Fn::Join:
             - ""
@@ -948,12 +948,12 @@ Resources:
                   - 0
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParametersa1368b4ea6280ff4cc0beceb060141d4af9a6606ef97a46d8737b91cef72b358S3VersionKey81CE780F
+                      - Ref: AssetParameters9f0636da98bb6e34332a73c955d911df6eaeadf2e524123b2ca8cd6c81ab4dd7S3VersionKeyCCA9C399
               - Fn::Select:
                   - 1
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParametersa1368b4ea6280ff4cc0beceb060141d4af9a6606ef97a46d8737b91cef72b358S3VersionKey81CE780F
+                      - Ref: AssetParameters9f0636da98bb6e34332a73c955d911df6eaeadf2e524123b2ca8cd6c81ab4dd7S3VersionKeyCCA9C399
       Role:
         Fn::GetAtt:
           - CreateBankDetailsServiceRole0EDAB387
@@ -994,7 +994,7 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameterscbe1e6a972c9b82785c519ccec58a5401b48b0a36155fe4d2f5a19429e4b089eS3Bucket4A4E42BC
+          Ref: AssetParameterse5036dcf8d7859dc87fb61421910ab6221bf371ed57424923fd875c7902e99f7S3Bucket4A43C921
         S3Key:
           Fn::Join:
             - ""
@@ -1002,12 +1002,12 @@ Resources:
                   - 0
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameterscbe1e6a972c9b82785c519ccec58a5401b48b0a36155fe4d2f5a19429e4b089eS3VersionKeyAE2E6295
+                      - Ref: AssetParameterse5036dcf8d7859dc87fb61421910ab6221bf371ed57424923fd875c7902e99f7S3VersionKeyE6789BBE
               - Fn::Select:
                   - 1
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameterscbe1e6a972c9b82785c519ccec58a5401b48b0a36155fe4d2f5a19429e4b089eS3VersionKeyAE2E6295
+                      - Ref: AssetParameterse5036dcf8d7859dc87fb61421910ab6221bf371ed57424923fd875c7902e99f7S3VersionKeyE6789BBE
       Role:
         Fn::GetAtt:
           - GetBankDetailsServiceRoleEC4658D9
@@ -1048,7 +1048,7 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameters24e998b0ef783cf5865ddcb2aac6acb6ae9d3ae8943f2d4602d2bd73ffc4bd6aS3BucketBA0C78EE
+          Ref: AssetParametersa2756cf7c8d1f85e4a0e8ef0118515c9629bfdd1b00666882e8cc5704694faa0S3Bucket523F68FC
         S3Key:
           Fn::Join:
             - ""
@@ -1056,12 +1056,12 @@ Resources:
                   - 0
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters24e998b0ef783cf5865ddcb2aac6acb6ae9d3ae8943f2d4602d2bd73ffc4bd6aS3VersionKeyAA2080D2
+                      - Ref: AssetParametersa2756cf7c8d1f85e4a0e8ef0118515c9629bfdd1b00666882e8cc5704694faa0S3VersionKey0A5B1854
               - Fn::Select:
                   - 1
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters24e998b0ef783cf5865ddcb2aac6acb6ae9d3ae8943f2d4602d2bd73ffc4bd6aS3VersionKeyAA2080D2
+                      - Ref: AssetParametersa2756cf7c8d1f85e4a0e8ef0118515c9629bfdd1b00666882e8cc5704694faa0S3VersionKey0A5B1854
       Role:
         Fn::GetAtt:
           - CreateMessagesServiceRole51834501
@@ -1102,7 +1102,7 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParametersd240a4bc8a0e197fb5d6f22442def793964e158d9354c16255c0decf97857ab8S3Bucket05ED78A2
+          Ref: AssetParametersf1c98af167772b8a79b5e1e9319e42cc5d5a03e1f7ba18b82624bc60b639dbbcS3Bucket34C888D0
         S3Key:
           Fn::Join:
             - ""
@@ -1110,12 +1110,12 @@ Resources:
                   - 0
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParametersd240a4bc8a0e197fb5d6f22442def793964e158d9354c16255c0decf97857ab8S3VersionKey1E765FD5
+                      - Ref: AssetParametersf1c98af167772b8a79b5e1e9319e42cc5d5a03e1f7ba18b82624bc60b639dbbcS3VersionKeyC54907EB
               - Fn::Select:
                   - 1
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParametersd240a4bc8a0e197fb5d6f22442def793964e158d9354c16255c0decf97857ab8S3VersionKey1E765FD5
+                      - Ref: AssetParametersf1c98af167772b8a79b5e1e9319e42cc5d5a03e1f7ba18b82624bc60b639dbbcS3VersionKeyC54907EB
       Role:
         Fn::GetAtt:
           - GetMessagesServiceRole900FF734
@@ -1131,6 +1131,60 @@ Resources:
       aws:cdk:path: VrishkarServicesStacks/GetMessages/Resource
       aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetMessages
       aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetMessages
+      aws:asset:is-bundled: false
+      aws:asset:property: Code
+  CreateCustomerTableServiceRole779AF5B7:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Action: sts:AssumeRole
+            Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+        Version: "2012-10-17"
+      ManagedPolicyArns:
+        - Fn::Join:
+            - ""
+            - - "arn:"
+              - Ref: AWS::Partition
+              - :iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+    Metadata:
+      aws:cdk:path: VrishkarServicesStacks/CreateCustomerTable/ServiceRole/Resource
+  CreateCustomerTable11E80E27:
+    Type: AWS::Lambda::Function
+    Properties:
+      Code:
+        S3Bucket:
+          Ref: AssetParameters1332bae1055f6541cca5d67e8e654b1b60585b36147a50f1572ee5455661025bS3BucketC0ED09E3
+        S3Key:
+          Fn::Join:
+            - ""
+            - - Fn::Select:
+                  - 0
+                  - Fn::Split:
+                      - "||"
+                      - Ref: AssetParameters1332bae1055f6541cca5d67e8e654b1b60585b36147a50f1572ee5455661025bS3VersionKey99AACC87
+              - Fn::Select:
+                  - 1
+                  - Fn::Split:
+                      - "||"
+                      - Ref: AssetParameters1332bae1055f6541cca5d67e8e654b1b60585b36147a50f1572ee5455661025bS3VersionKey99AACC87
+      Role:
+        Fn::GetAtt:
+          - CreateCustomerTableServiceRole779AF5B7
+          - Arn
+      FunctionName: CreateCustomerTableFun
+      Handler: index.CreateCustomerTableHandler
+      MemorySize: 1024
+      Runtime: nodejs14.x
+      Timeout: 35
+    DependsOn:
+      - CreateCustomerTableServiceRole779AF5B7
+    Metadata:
+      aws:cdk:path: VrishkarServicesStacks/CreateCustomerTable/Resource
+      aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\CreateCustomerTable
+      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\CreateCustomerTable
       aws:asset:is-bundled: false
       aws:asset:property: Code
   WorksManApiDefault14BF881A:
@@ -1169,24 +1223,28 @@ Resources:
       - WorksManApiDefault14BF881A
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Account
-  WorksManApiDefaultDeployment59387D65f7cbf8d8ccb36237af1dcd06af95067e:
+  WorksManApiDefaultDeployment59387D65d0d99291e78c2ce023e3ca896c47c946:
     Type: AWS::ApiGateway::Deployment
     Properties:
       RestApiId:
         Ref: WorksManApiDefault14BF881A
       Description: Automatically created by the RestApi construct
     DependsOn:
-      - WorksManApiDefaultWorksmanjobsCreateErrorAE903458
-      - WorksManApiDefaultWorksmanjobsCreateResponse187852C8
       - WorksManApiDefaultCreateBankDetailsError785404B1
       - WorksManApiDefaultCreateBankDetailsModelF1967CC2
       - WorksManApiDefaultCreateBankDetailsResponse1882D570
+      - WorksManApiDefaultCreateCustomerTableErrorFC06FC44
+      - WorksManApiDefaultCreateCustomerTableModel90687F03
+      - WorksManApiDefaultCreateCustomerTableResponse11DF1F2E
       - WorksManApiDefaultCreateMessagesError5AEDF141
       - WorksManApiDefaultCreateMessagesModel0AB2AACF
       - WorksManApiDefaultCreateMessagesResponse7B730FE6
       - WorksManApiDefaultCreateBankDetailsApiOPTIONSF10D7477
       - WorksManApiDefaultCreateBankDetailsApiPOST223C7E63
       - WorksManApiDefaultCreateBankDetailsApi862077E4
+      - WorksManApiDefaultCreateCustomerTableApiOPTIONS3A5A5ABC
+      - WorksManApiDefaultCreateCustomerTableApiPOST68698F9B
+      - WorksManApiDefaultCreateCustomerTableApi10273255
       - WorksManApiDefaultCreateMessagesApiOPTIONS9A434022
       - WorksManApiDefaultCreateMessagesApiPOST508E6F71
       - WorksManApiDefaultCreateMessagesApi11B3B398
@@ -1284,7 +1342,9 @@ Resources:
       - WorksManApiDefaultWorkmanStatusErrorA0A7A00B
       - WorksManApiDefaultWorkmanStatusSuccess0764214A
       - WorksManApiDefaultworksmanExperienceModel1713CC85
+      - WorksManApiDefaultWorksmanjobsCreateError16EA4DD9
       - WorksManApiDefaultWorksmanjobsCreateModel67F5BBDD
+      - WorksManApiDefaultWorksmanjobsCreateResponse17727ACD
       - WorksManApiDefaultWorksmanTermsAndConditionsModel9FB864E9
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Deployment/Resource
@@ -1294,7 +1354,7 @@ Resources:
       RestApiId:
         Ref: WorksManApiDefault14BF881A
       DeploymentId:
-        Ref: WorksManApiDefaultDeployment59387D65f7cbf8d8ccb36237af1dcd06af95067e
+        Ref: WorksManApiDefaultDeployment59387D65d0d99291e78c2ce023e3ca896c47c946
       StageName: dev
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/DeploymentStage.dev/Resource
@@ -2275,7 +2335,7 @@ Resources:
       MethodResponses:
         - ResponseModels:
             application/json:
-              Ref: WorksManApiDefaultWorksmanjobsCreateResponse187852C8
+              Ref: WorksManApiDefaultWorksmanjobsCreateResponse17727ACD
           ResponseParameters:
             method.response.header.Content-Type: true
             method.response.header.Access-Control-Allow-Origin: true
@@ -2284,7 +2344,7 @@ Resources:
           StatusCode: "200"
         - ResponseModels:
             application/json:
-              Ref: WorksManApiDefaultWorksmanjobsCreateErrorAE903458
+              Ref: WorksManApiDefaultWorksmanjobsCreateError16EA4DD9
           ResponseParameters:
             method.response.header.Content-Type: true
             method.response.header.Access-Control-Allow-Origin: true
@@ -2621,6 +2681,168 @@ Resources:
       RequestParameters: {}
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/CreateMessagesApi/POST/Resource
+  WorksManApiDefaultCreateCustomerTableApi10273255:
+    Type: AWS::ApiGateway::Resource
+    Properties:
+      ParentId:
+        Fn::GetAtt:
+          - WorksManApiDefault14BF881A
+          - RootResourceId
+      PathPart: CreateCustomerTableApi
+      RestApiId:
+        Ref: WorksManApiDefault14BF881A
+    Metadata:
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/CreateCustomerTableApi/Resource
+  WorksManApiDefaultCreateCustomerTableApiOPTIONS3A5A5ABC:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      HttpMethod: OPTIONS
+      ResourceId:
+        Ref: WorksManApiDefaultCreateCustomerTableApi10273255
+      RestApiId:
+        Ref: WorksManApiDefault14BF881A
+      AuthorizationType: NONE
+      Integration:
+        IntegrationResponses:
+          - ResponseParameters:
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes,schedule_day,schedule_time,schedule_date,user_id'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
+            StatusCode: "204"
+        RequestTemplates:
+          application/json: "{ statusCode: 200 }"
+        Type: MOCK
+      MethodResponses:
+        - ResponseParameters:
+            method.response.header.Access-Control-Allow-Headers: true
+            method.response.header.Access-Control-Allow-Origin: true
+            method.response.header.Access-Control-Allow-Methods: true
+          StatusCode: "204"
+    Metadata:
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/CreateCustomerTableApi/OPTIONS/Resource
+  WorksManApiDefaultCreateCustomerTableApiPOSTApiPermissionVrishkarServicesStacksWorksManApiDefault6454A935POSTCreateCustomerTableApiEE277EE3:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName:
+        Fn::GetAtt:
+          - CreateCustomerTable11E80E27
+          - Arn
+      Principal: apigateway.amazonaws.com
+      SourceArn:
+        Fn::Join:
+          - ""
+          - - "arn:"
+            - Ref: AWS::Partition
+            - ":execute-api:"
+            - Ref: AWS::Region
+            - ":"
+            - Ref: AWS::AccountId
+            - ":"
+            - Ref: WorksManApiDefault14BF881A
+            - /
+            - Ref: WorksManApiDefaultDeploymentStagedev027FC376
+            - /POST/CreateCustomerTableApi
+    Metadata:
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/CreateCustomerTableApi/POST/ApiPermission.VrishkarServicesStacksWorksManApiDefault6454A935.POST..CreateCustomerTableApi
+  WorksManApiDefaultCreateCustomerTableApiPOSTApiPermissionTestVrishkarServicesStacksWorksManApiDefault6454A935POSTCreateCustomerTableApi0F3AF871:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName:
+        Fn::GetAtt:
+          - CreateCustomerTable11E80E27
+          - Arn
+      Principal: apigateway.amazonaws.com
+      SourceArn:
+        Fn::Join:
+          - ""
+          - - "arn:"
+            - Ref: AWS::Partition
+            - ":execute-api:"
+            - Ref: AWS::Region
+            - ":"
+            - Ref: AWS::AccountId
+            - ":"
+            - Ref: WorksManApiDefault14BF881A
+            - /test-invoke-stage/POST/CreateCustomerTableApi
+    Metadata:
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/CreateCustomerTableApi/POST/ApiPermission.Test.VrishkarServicesStacksWorksManApiDefault6454A935.POST..CreateCustomerTableApi
+  WorksManApiDefaultCreateCustomerTableApiPOST68698F9B:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      HttpMethod: POST
+      ResourceId:
+        Ref: WorksManApiDefaultCreateCustomerTableApi10273255
+      RestApiId:
+        Ref: WorksManApiDefault14BF881A
+      AuthorizationType: COGNITO_USER_POOLS
+      AuthorizerId:
+        Ref: AuthorizerBD825682
+      Integration:
+        IntegrationHttpMethod: POST
+        IntegrationResponses:
+          - ResponseParameters:
+              method.response.header.Content-Type: "'application/json'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Credentials: "'true'"
+              method.response.header.Access-Control-Allow-Headers: "'*'"
+            ResponseTemplates:
+              application/json: '{"state":"ok","data":"$util.escapeJavaScript($input.body)"}'
+            StatusCode: "200"
+          - ResponseParameters:
+              method.response.header.Content-Type: "'application/json'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Credentials: "'true'"
+              method.response.header.Access-Control-Allow-Headers: "'*'"
+            ResponseTemplates:
+              application/json: "{\"state\":\"error\",\"message\":\"$util.escapeJavaScript($input.path('$.errorMessage'))\"}"
+            SelectionPattern: |-
+              (
+              |.)+
+            StatusCode: "400"
+        PassthroughBehavior: NEVER
+        RequestParameters: {}
+        RequestTemplates:
+          application/json: '"$util.escapeJavaScript($input.body)"'
+        Type: AWS
+        Uri:
+          Fn::Join:
+            - ""
+            - - "arn:"
+              - Ref: AWS::Partition
+              - ":apigateway:"
+              - Ref: AWS::Region
+              - :lambda:path/2015-03-31/functions/
+              - Fn::GetAtt:
+                  - CreateCustomerTable11E80E27
+                  - Arn
+              - /invocations
+      MethodResponses:
+        - ResponseModels:
+            application/json:
+              Ref: WorksManApiDefaultCreateCustomerTableResponse11DF1F2E
+          ResponseParameters:
+            method.response.header.Content-Type: true
+            method.response.header.Access-Control-Allow-Origin: true
+            method.response.header.Access-Control-Allow-Credentials: true
+            method.response.header.Access-Control-Allow-Headers: true
+          StatusCode: "200"
+        - ResponseModels:
+            application/json:
+              Ref: WorksManApiDefaultCreateCustomerTableErrorFC06FC44
+          ResponseParameters:
+            method.response.header.Content-Type: true
+            method.response.header.Access-Control-Allow-Origin: true
+            method.response.header.Access-Control-Allow-Credentials: true
+            method.response.header.Access-Control-Allow-Headers: true
+          StatusCode: "400"
+      RequestModels:
+        application/json:
+          Ref: WorksManApiDefaultCreateCustomerTableModel90687F03
+      RequestParameters: {}
+    Metadata:
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/CreateCustomerTableApi/POST/Resource
   WorksManApiDefaultGetWorksmanAccountRegistartionStatusApiDEB51904:
     Type: AWS::ApiGateway::Resource
     Properties:
@@ -4885,19 +5107,25 @@ Resources:
         properties:
           worksman_id:
             type: string
+          user_id:
+            type: string
+          customer_name:
+            type: string
           job_title:
             type: string
           job_hours:
             type: string
           job_time:
             type: string
-          job_date:
+          address:
             type: string
-          job_month:
+          service:
             type: string
-          job_year:
+          sub_services:
             type: string
           job_status:
+            type: string
+          payment_status:
             type: string
           customer_reviews:
             type: string
@@ -4908,16 +5136,16 @@ Resources:
         $schema: http://json-schema.org/draft-04/schema#
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/WorksmanjobsCreateModel/Resource
-  WorksManApiDefaultWorksmanjobsCreateResponse187852C8:
+  WorksManApiDefaultWorksmanjobsCreateResponse17727ACD:
     Type: AWS::ApiGateway::Model
     Properties:
       RestApiId:
         Ref: WorksManApiDefault14BF881A
       ContentType: application/json
-      Name: " WorksmanjobsCreateResponse"
+      Name: WorksmanjobsCreateResponse
       Schema:
         $schema: http://json-schema.org/draft-04/schema#
-        title: " WorksmanjobsCreateResponse"
+        title: WorksmanjobsCreateResponse
         type: object
         properties:
           state:
@@ -4925,17 +5153,17 @@ Resources:
           greeting:
             type: string
     Metadata:
-      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/ WorksmanjobsCreateResponse/Resource
-  WorksManApiDefaultWorksmanjobsCreateErrorAE903458:
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/WorksmanjobsCreateResponse/Resource
+  WorksManApiDefaultWorksmanjobsCreateError16EA4DD9:
     Type: AWS::ApiGateway::Model
     Properties:
       RestApiId:
         Ref: WorksManApiDefault14BF881A
       ContentType: application/json
-      Name: " WorksmanjobsCreateError"
+      Name: WorksmanjobsCreateError
       Schema:
         $schema: http://json-schema.org/draft-04/schema#
-        title: " WorksmanjobsCreateError"
+        title: WorksmanjobsCreateError
         type: object
         properties:
           state:
@@ -4943,7 +5171,7 @@ Resources:
           message:
             type: string
     Metadata:
-      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/ WorksmanjobsCreateError/Resource
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/WorksmanjobsCreateError/Resource
   WorksManApiDefaultCreateBankDetailsModelF1967CC2:
     Type: AWS::ApiGateway::Model
     Properties:
@@ -5064,6 +5292,60 @@ Resources:
             type: string
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/CreateMessagesError/Resource
+  WorksManApiDefaultCreateCustomerTableModel90687F03:
+    Type: AWS::ApiGateway::Model
+    Properties:
+      RestApiId:
+        Ref: WorksManApiDefault14BF881A
+      ContentType: application/json
+      Schema:
+        type: object
+        properties:
+          customer_name:
+            type: string
+          customer_email:
+            type: string
+          customer_phone_number:
+            type: string
+        $schema: http://json-schema.org/draft-04/schema#
+    Metadata:
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/CreateCustomerTableModel/Resource
+  WorksManApiDefaultCreateCustomerTableResponse11DF1F2E:
+    Type: AWS::ApiGateway::Model
+    Properties:
+      RestApiId:
+        Ref: WorksManApiDefault14BF881A
+      ContentType: application/json
+      Name: CreateCustomerTableResponse
+      Schema:
+        $schema: http://json-schema.org/draft-04/schema#
+        title: CreateCustomerTableResponse
+        type: object
+        properties:
+          state:
+            type: string
+          greeting:
+            type: string
+    Metadata:
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/CreateCustomerTableResponse/Resource
+  WorksManApiDefaultCreateCustomerTableErrorFC06FC44:
+    Type: AWS::ApiGateway::Model
+    Properties:
+      RestApiId:
+        Ref: WorksManApiDefault14BF881A
+      ContentType: application/json
+      Name: CreateCustomerTableError
+      Schema:
+        $schema: http://json-schema.org/draft-04/schema#
+        title: CreateCustomerTableError
+        type: object
+        properties:
+          state:
+            type: string
+          message:
+            type: string
+    Metadata:
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/CreateCustomerTableError/Resource
   WorksManApiDefaultWorkmanStatusSuccess0764214A:
     Type: AWS::ApiGateway::Model
     Properties:
@@ -5667,24 +5949,24 @@ Parameters:
   AssetParameters599944c52abfaf95ad71390c17a991d86cda401edbb0b9cd294c93d0f5493e66ArtifactHash73B8C165:
     Type: String
     Description: Artifact hash for asset "599944c52abfaf95ad71390c17a991d86cda401edbb0b9cd294c93d0f5493e66"
-  AssetParameters5007bf1b2dd76915328c46c09d22bb40ea662d312188953b57075e0bbe5defdeS3BucketB9FEE481:
+  AssetParameters2a027a52ab7a615b4d9607177d383d3b16b6833cbf57c112c1ec3f6dd558cc93S3BucketCC62F05C:
     Type: String
-    Description: S3 bucket for asset "5007bf1b2dd76915328c46c09d22bb40ea662d312188953b57075e0bbe5defde"
-  AssetParameters5007bf1b2dd76915328c46c09d22bb40ea662d312188953b57075e0bbe5defdeS3VersionKey0E3AFC2D:
+    Description: S3 bucket for asset "2a027a52ab7a615b4d9607177d383d3b16b6833cbf57c112c1ec3f6dd558cc93"
+  AssetParameters2a027a52ab7a615b4d9607177d383d3b16b6833cbf57c112c1ec3f6dd558cc93S3VersionKey72398399:
     Type: String
-    Description: S3 key for asset version "5007bf1b2dd76915328c46c09d22bb40ea662d312188953b57075e0bbe5defde"
-  AssetParameters5007bf1b2dd76915328c46c09d22bb40ea662d312188953b57075e0bbe5defdeArtifactHashC750B723:
+    Description: S3 key for asset version "2a027a52ab7a615b4d9607177d383d3b16b6833cbf57c112c1ec3f6dd558cc93"
+  AssetParameters2a027a52ab7a615b4d9607177d383d3b16b6833cbf57c112c1ec3f6dd558cc93ArtifactHash6BF71A89:
     Type: String
-    Description: Artifact hash for asset "5007bf1b2dd76915328c46c09d22bb40ea662d312188953b57075e0bbe5defde"
-  AssetParameters3d10d72ea15766a6a9f120d8f12cf47876c8599c699b775a5d8ff45dcece2e8bS3Bucket28095C9C:
+    Description: Artifact hash for asset "2a027a52ab7a615b4d9607177d383d3b16b6833cbf57c112c1ec3f6dd558cc93"
+  AssetParameterse54ec9f2cd4dff27b1b4eef2951812c89d6885bc3ab0de74463a2610aa889ab1S3Bucket77669657:
     Type: String
-    Description: S3 bucket for asset "3d10d72ea15766a6a9f120d8f12cf47876c8599c699b775a5d8ff45dcece2e8b"
-  AssetParameters3d10d72ea15766a6a9f120d8f12cf47876c8599c699b775a5d8ff45dcece2e8bS3VersionKey539D6D86:
+    Description: S3 bucket for asset "e54ec9f2cd4dff27b1b4eef2951812c89d6885bc3ab0de74463a2610aa889ab1"
+  AssetParameterse54ec9f2cd4dff27b1b4eef2951812c89d6885bc3ab0de74463a2610aa889ab1S3VersionKeyB2602FE8:
     Type: String
-    Description: S3 key for asset version "3d10d72ea15766a6a9f120d8f12cf47876c8599c699b775a5d8ff45dcece2e8b"
-  AssetParameters3d10d72ea15766a6a9f120d8f12cf47876c8599c699b775a5d8ff45dcece2e8bArtifactHashBFA2FD49:
+    Description: S3 key for asset version "e54ec9f2cd4dff27b1b4eef2951812c89d6885bc3ab0de74463a2610aa889ab1"
+  AssetParameterse54ec9f2cd4dff27b1b4eef2951812c89d6885bc3ab0de74463a2610aa889ab1ArtifactHashFBAF716C:
     Type: String
-    Description: Artifact hash for asset "3d10d72ea15766a6a9f120d8f12cf47876c8599c699b775a5d8ff45dcece2e8b"
+    Description: Artifact hash for asset "e54ec9f2cd4dff27b1b4eef2951812c89d6885bc3ab0de74463a2610aa889ab1"
   AssetParameters9cb30c2e9f898e5f6a50b07d5ae5d7edbcb4ff6075ef881b6c10b92509c1e2f0S3BucketFA52C3C7:
     Type: String
     Description: S3 bucket for asset "9cb30c2e9f898e5f6a50b07d5ae5d7edbcb4ff6075ef881b6c10b92509c1e2f0"
@@ -5793,51 +6075,60 @@ Parameters:
   AssetParameters229dd06f81240fa399d29c6f8b9ae54e73a0958d410b18dbe8a8fe791e8b7747ArtifactHash26151C5E:
     Type: String
     Description: Artifact hash for asset "229dd06f81240fa399d29c6f8b9ae54e73a0958d410b18dbe8a8fe791e8b7747"
-  AssetParametersc42231d9b9cc80aa51c2f9ea04221a174f3a67dfd6619e7e6a5780f48ac403adS3Bucket5F6A98BE:
+  AssetParametersd58b1302e3fe9ed2133887cc52526740aeed77c3f52dfdb5ddcd33a438e11506S3Bucket1A0DB899:
     Type: String
-    Description: S3 bucket for asset "c42231d9b9cc80aa51c2f9ea04221a174f3a67dfd6619e7e6a5780f48ac403ad"
-  AssetParametersc42231d9b9cc80aa51c2f9ea04221a174f3a67dfd6619e7e6a5780f48ac403adS3VersionKey2975F2E6:
+    Description: S3 bucket for asset "d58b1302e3fe9ed2133887cc52526740aeed77c3f52dfdb5ddcd33a438e11506"
+  AssetParametersd58b1302e3fe9ed2133887cc52526740aeed77c3f52dfdb5ddcd33a438e11506S3VersionKey083EFA1F:
     Type: String
-    Description: S3 key for asset version "c42231d9b9cc80aa51c2f9ea04221a174f3a67dfd6619e7e6a5780f48ac403ad"
-  AssetParametersc42231d9b9cc80aa51c2f9ea04221a174f3a67dfd6619e7e6a5780f48ac403adArtifactHashC112E471:
+    Description: S3 key for asset version "d58b1302e3fe9ed2133887cc52526740aeed77c3f52dfdb5ddcd33a438e11506"
+  AssetParametersd58b1302e3fe9ed2133887cc52526740aeed77c3f52dfdb5ddcd33a438e11506ArtifactHash66E9102A:
     Type: String
-    Description: Artifact hash for asset "c42231d9b9cc80aa51c2f9ea04221a174f3a67dfd6619e7e6a5780f48ac403ad"
-  AssetParametersa1368b4ea6280ff4cc0beceb060141d4af9a6606ef97a46d8737b91cef72b358S3Bucket71D07A3A:
+    Description: Artifact hash for asset "d58b1302e3fe9ed2133887cc52526740aeed77c3f52dfdb5ddcd33a438e11506"
+  AssetParameters9f0636da98bb6e34332a73c955d911df6eaeadf2e524123b2ca8cd6c81ab4dd7S3Bucket08659E68:
     Type: String
-    Description: S3 bucket for asset "a1368b4ea6280ff4cc0beceb060141d4af9a6606ef97a46d8737b91cef72b358"
-  AssetParametersa1368b4ea6280ff4cc0beceb060141d4af9a6606ef97a46d8737b91cef72b358S3VersionKey81CE780F:
+    Description: S3 bucket for asset "9f0636da98bb6e34332a73c955d911df6eaeadf2e524123b2ca8cd6c81ab4dd7"
+  AssetParameters9f0636da98bb6e34332a73c955d911df6eaeadf2e524123b2ca8cd6c81ab4dd7S3VersionKeyCCA9C399:
     Type: String
-    Description: S3 key for asset version "a1368b4ea6280ff4cc0beceb060141d4af9a6606ef97a46d8737b91cef72b358"
-  AssetParametersa1368b4ea6280ff4cc0beceb060141d4af9a6606ef97a46d8737b91cef72b358ArtifactHash71CA8A7C:
+    Description: S3 key for asset version "9f0636da98bb6e34332a73c955d911df6eaeadf2e524123b2ca8cd6c81ab4dd7"
+  AssetParameters9f0636da98bb6e34332a73c955d911df6eaeadf2e524123b2ca8cd6c81ab4dd7ArtifactHashB9C6ED1D:
     Type: String
-    Description: Artifact hash for asset "a1368b4ea6280ff4cc0beceb060141d4af9a6606ef97a46d8737b91cef72b358"
-  AssetParameterscbe1e6a972c9b82785c519ccec58a5401b48b0a36155fe4d2f5a19429e4b089eS3Bucket4A4E42BC:
+    Description: Artifact hash for asset "9f0636da98bb6e34332a73c955d911df6eaeadf2e524123b2ca8cd6c81ab4dd7"
+  AssetParameterse5036dcf8d7859dc87fb61421910ab6221bf371ed57424923fd875c7902e99f7S3Bucket4A43C921:
     Type: String
-    Description: S3 bucket for asset "cbe1e6a972c9b82785c519ccec58a5401b48b0a36155fe4d2f5a19429e4b089e"
-  AssetParameterscbe1e6a972c9b82785c519ccec58a5401b48b0a36155fe4d2f5a19429e4b089eS3VersionKeyAE2E6295:
+    Description: S3 bucket for asset "e5036dcf8d7859dc87fb61421910ab6221bf371ed57424923fd875c7902e99f7"
+  AssetParameterse5036dcf8d7859dc87fb61421910ab6221bf371ed57424923fd875c7902e99f7S3VersionKeyE6789BBE:
     Type: String
-    Description: S3 key for asset version "cbe1e6a972c9b82785c519ccec58a5401b48b0a36155fe4d2f5a19429e4b089e"
-  AssetParameterscbe1e6a972c9b82785c519ccec58a5401b48b0a36155fe4d2f5a19429e4b089eArtifactHashAC2ACCAC:
+    Description: S3 key for asset version "e5036dcf8d7859dc87fb61421910ab6221bf371ed57424923fd875c7902e99f7"
+  AssetParameterse5036dcf8d7859dc87fb61421910ab6221bf371ed57424923fd875c7902e99f7ArtifactHash6113E688:
     Type: String
-    Description: Artifact hash for asset "cbe1e6a972c9b82785c519ccec58a5401b48b0a36155fe4d2f5a19429e4b089e"
-  AssetParameters24e998b0ef783cf5865ddcb2aac6acb6ae9d3ae8943f2d4602d2bd73ffc4bd6aS3BucketBA0C78EE:
+    Description: Artifact hash for asset "e5036dcf8d7859dc87fb61421910ab6221bf371ed57424923fd875c7902e99f7"
+  AssetParametersa2756cf7c8d1f85e4a0e8ef0118515c9629bfdd1b00666882e8cc5704694faa0S3Bucket523F68FC:
     Type: String
-    Description: S3 bucket for asset "24e998b0ef783cf5865ddcb2aac6acb6ae9d3ae8943f2d4602d2bd73ffc4bd6a"
-  AssetParameters24e998b0ef783cf5865ddcb2aac6acb6ae9d3ae8943f2d4602d2bd73ffc4bd6aS3VersionKeyAA2080D2:
+    Description: S3 bucket for asset "a2756cf7c8d1f85e4a0e8ef0118515c9629bfdd1b00666882e8cc5704694faa0"
+  AssetParametersa2756cf7c8d1f85e4a0e8ef0118515c9629bfdd1b00666882e8cc5704694faa0S3VersionKey0A5B1854:
     Type: String
-    Description: S3 key for asset version "24e998b0ef783cf5865ddcb2aac6acb6ae9d3ae8943f2d4602d2bd73ffc4bd6a"
-  AssetParameters24e998b0ef783cf5865ddcb2aac6acb6ae9d3ae8943f2d4602d2bd73ffc4bd6aArtifactHashA64E3C67:
+    Description: S3 key for asset version "a2756cf7c8d1f85e4a0e8ef0118515c9629bfdd1b00666882e8cc5704694faa0"
+  AssetParametersa2756cf7c8d1f85e4a0e8ef0118515c9629bfdd1b00666882e8cc5704694faa0ArtifactHash8F4621F2:
     Type: String
-    Description: Artifact hash for asset "24e998b0ef783cf5865ddcb2aac6acb6ae9d3ae8943f2d4602d2bd73ffc4bd6a"
-  AssetParametersd240a4bc8a0e197fb5d6f22442def793964e158d9354c16255c0decf97857ab8S3Bucket05ED78A2:
+    Description: Artifact hash for asset "a2756cf7c8d1f85e4a0e8ef0118515c9629bfdd1b00666882e8cc5704694faa0"
+  AssetParametersf1c98af167772b8a79b5e1e9319e42cc5d5a03e1f7ba18b82624bc60b639dbbcS3Bucket34C888D0:
     Type: String
-    Description: S3 bucket for asset "d240a4bc8a0e197fb5d6f22442def793964e158d9354c16255c0decf97857ab8"
-  AssetParametersd240a4bc8a0e197fb5d6f22442def793964e158d9354c16255c0decf97857ab8S3VersionKey1E765FD5:
+    Description: S3 bucket for asset "f1c98af167772b8a79b5e1e9319e42cc5d5a03e1f7ba18b82624bc60b639dbbc"
+  AssetParametersf1c98af167772b8a79b5e1e9319e42cc5d5a03e1f7ba18b82624bc60b639dbbcS3VersionKeyC54907EB:
     Type: String
-    Description: S3 key for asset version "d240a4bc8a0e197fb5d6f22442def793964e158d9354c16255c0decf97857ab8"
-  AssetParametersd240a4bc8a0e197fb5d6f22442def793964e158d9354c16255c0decf97857ab8ArtifactHashE3F929A1:
+    Description: S3 key for asset version "f1c98af167772b8a79b5e1e9319e42cc5d5a03e1f7ba18b82624bc60b639dbbc"
+  AssetParametersf1c98af167772b8a79b5e1e9319e42cc5d5a03e1f7ba18b82624bc60b639dbbcArtifactHashFA0C031C:
     Type: String
-    Description: Artifact hash for asset "d240a4bc8a0e197fb5d6f22442def793964e158d9354c16255c0decf97857ab8"
+    Description: Artifact hash for asset "f1c98af167772b8a79b5e1e9319e42cc5d5a03e1f7ba18b82624bc60b639dbbc"
+  AssetParameters1332bae1055f6541cca5d67e8e654b1b60585b36147a50f1572ee5455661025bS3BucketC0ED09E3:
+    Type: String
+    Description: S3 bucket for asset "1332bae1055f6541cca5d67e8e654b1b60585b36147a50f1572ee5455661025b"
+  AssetParameters1332bae1055f6541cca5d67e8e654b1b60585b36147a50f1572ee5455661025bS3VersionKey99AACC87:
+    Type: String
+    Description: S3 key for asset version "1332bae1055f6541cca5d67e8e654b1b60585b36147a50f1572ee5455661025b"
+  AssetParameters1332bae1055f6541cca5d67e8e654b1b60585b36147a50f1572ee5455661025bArtifactHashECCBD45E:
+    Type: String
+    Description: Artifact hash for asset "1332bae1055f6541cca5d67e8e654b1b60585b36147a50f1572ee5455661025b"
 Outputs:
   WorksManApiDefaultEndpoint2AE874EB:
     Value:

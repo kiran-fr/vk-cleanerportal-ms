@@ -34,9 +34,12 @@ sam local invoke WorksmnaScheduletcodes517FF821 -e functions/WorksmnaSchedule/mo
 sam local invoke DeleteWorkmanSchedule22944F3C -e functions/DeleteWorkmanSchedule/mock.json
 sam local invoke GetWorksmanScheduleC62DDBF7 -e functions/GetWorksmanSchedules/mock.json
 sam local invoke GetWorksmanjobsC1DF3F8D -e functions/GetWorksmanjobs/mock.json
-sam local invoke WorksmanjobsCreate9C217260 -e functions/GetWorksmanSchedules/mock.json
+sam local invoke WorksmanjobsCreate9C217260 -e functions/WorksmanjobsCreate/mock.json
 sam local invoke CreateBankDetailsEF6B9549 -e functions/CreateBankDetails/mock.json
 sam local invoke GetBankDetails125327D9 -e functions/GetBankDetails/mock.json
-sam local invoke CreateMessages23E7B181 -e functions/GetBankDetails/mock.json
-sam local invoke CreateMessages23E7B181 -e functions/GetBankDetails/mock.json
+sam local invoke CreateMessages23E7B181 -e functions/CreateMessages/mock.json
+sam local invoke GetMessagesEBEDDDD2 -e functions/GetMessages/mock.json
+
+<!-- customer table -->
+sam local invoke CreateCustomerTable11E80E27 -e functions/CreateCustomerTable/mock.json
 

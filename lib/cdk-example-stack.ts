@@ -16,7 +16,8 @@ import {
   GetMessagesLambda,
   CreateMessagesLambda,
   CreateBankDetailsLambda,
-  GetBankDetailsLambda
+  GetBankDetailsLambda,
+  CreateCustomerTableLambda
 } from './resources/lambda/allLambda';
 import * as sfn from "@aws-cdk/aws-stepfunctions";
 import * as tasks from "@aws-cdk/aws-stepfunctions-tasks";
@@ -38,7 +39,8 @@ import {
   GetMessagesApiGateway,
   CreateMessagesApiGateway,
   CreateBankDetailsApiGateway,
-  GetBankDetailsApiGateway
+  GetBankDetailsApiGateway,
+  CreateCustomerTableApiGateway
 } from "./resources/ApiGateway/AllApiGateWays";
 import * as apiGatewayAuthorizers from '@aws-cdk/aws-apigatewayv2-authorizers';
 import * as apiGatewayIntegrations from '@aws-cdk/aws-apigatewayv2-integrations';
@@ -70,6 +72,7 @@ export class CdkExampleStack extends cdk.Stack {
     const GetBankDetailsLambdaApi = new lambda.Function(this, "GetBankDetails", GetBankDetailsLambda())
     const CreateMessagesLambdaApi = new lambda.Function(this, "CreateMessages", CreateMessagesLambda())
     const GetMessagesLambdaApi = new lambda.Function(this, "GetMessages", GetMessagesLambda())
+    const CreateCustomerTableLambdaApi = new lambda.Function(this, "CreateCustomerTable", CreateCustomerTableLambda())
 
     const api = new apigateway.RestApi(this, 'WorksManApiDefault', ApigatewayDataConstants(apigateway));
 
@@ -189,6 +192,7 @@ export class CdkExampleStack extends cdk.Stack {
     WorksmanjobsCreateApiGateway(api, WorksmanjobsCreateLambdaApi, 'POST', auth)
     CreateBankDetailsApiGateway(api, CreateBankDetailsLambdaApi, 'POST', auth)
     CreateMessagesApiGateway(api, CreateMessagesLambdaApi, 'POST', auth)
+    CreateCustomerTableApiGateway(api, CreateCustomerTableLambdaApi, 'POST', auth)
 
     // GET APIS
     GetWorksmanAccountRegistartionStatusApiGateway(api, GetWorksmanAccountRegistartionStatus, 'GET', auth)

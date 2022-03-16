@@ -220,3 +220,13 @@ export const GetMessagesLambda = () => {
     timeout: cdk.Duration.seconds(35)
   }
 }
+export const CreateCustomerTableLambda = () => {
+  return {
+    code:lambda.Code.fromAsset('./functions/CreateCustomerTable'),
+    functionName:'CreateCustomerTableFun',
+    handler:'index.CreateCustomerTableHandler',
+    memorySize: 1024,
+    runtime: lambda.Runtime.NODEJS_14_X,
+    timeout: cdk.Duration.seconds(35)
+  }
+}
