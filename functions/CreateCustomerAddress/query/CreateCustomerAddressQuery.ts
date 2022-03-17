@@ -1,10 +1,17 @@
 
-export const CreateCustomerAddressQuery = (event: any) => {
+export const CreateCustomerAddressQuery = (customer_id: any, event: any) => {
     console.warn(event)
-    return `INSERT INTO cutomer_table  (
-        customer_name ,
-        customer_email ,
-        customer_phone_number 
-        ) VALUES('${event.customer_name}','${event.customer_email}','${event.customer_phone_number}')`
+    return `INSERT INTO customer_address_table  (
+            customer_id ,
+            street ,
+            post_code  ,
+            country 
+        ) VALUES('${customer_id}','${event.street}','${event.post_code}','${event.country}')`
+
+}
+
+export const getCreateCustomerId = (email: any) => {
+    console.warn(email)
+    return `SELECT customer_id from customer_table WHERE customer_email = '${email}' `
 
 }

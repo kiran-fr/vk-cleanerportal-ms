@@ -1,5 +1,6 @@
 {
-    "customer_name": "Daniel",
-    "customer_email":"daniel@gmail.com",
-    "customer_phone_number":"3256489684"
+    "email": "james@gmail.com",
+    "street": "New street",
+    "post_code": "3256489684",
+    "country": "3256489684"
 }

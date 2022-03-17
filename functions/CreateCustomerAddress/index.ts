@@ -1,11 +1,12 @@
-import { CreateCustomerAddressService } from "./services/CreateCustomerAddressService"
+import { CreateCustomerAddressService, getCustomerTableServiceId } from "./services/CreateCustomerAddressService"
 
 exports.CreateCustomerAddressHandler = async (event: any) => {
     try {
 
         // const data = JSON.parse(event)
-        console.warn("This is worksmand id", event)
-        await CreateCustomerAddressService(event)
+        const customer_id: any = await getCustomerTableServiceId(event.email)
+        console.warn("customer_idcustomer_id", customer_id[0].customer_id)
+        await CreateCustomerAddressService(customer_id[0].customer_id,event)
         return {
             statusCode: 200,
             body: event

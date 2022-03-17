@@ -5,7 +5,7 @@ exports.CreateCustomerTableHandler = async (event: any) => {
 
         // const data = JSON.parse(event)
         console.warn("This is worksmand id", event)
-        await CreateCustomerTableService(event)
+        let customer_data = await CreateCustomerTableService(event)
         return {
             statusCode: 200,
             body: event

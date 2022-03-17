@@ -17,7 +17,9 @@ import {
   CreateMessagesLambda,
   CreateBankDetailsLambda,
   GetBankDetailsLambda,
-  CreateCustomerTableLambda
+  CreateCustomerTableLambda,
+  CreateCustomerAddressLambda,
+  GetJobsLambda
 } from './resources/lambda/allLambda';
 import * as sfn from "@aws-cdk/aws-stepfunctions";
 import * as tasks from "@aws-cdk/aws-stepfunctions-tasks";
@@ -40,7 +42,9 @@ import {
   CreateMessagesApiGateway,
   CreateBankDetailsApiGateway,
   GetBankDetailsApiGateway,
-  CreateCustomerTableApiGateway
+  CreateCustomerTableApiGateway,
+  CreateCustomerAddressApiGateway,
+  GetJobsApiGateway
 } from "./resources/ApiGateway/AllApiGateWays";
 import * as apiGatewayAuthorizers from '@aws-cdk/aws-apigatewayv2-authorizers';
 import * as apiGatewayIntegrations from '@aws-cdk/aws-apigatewayv2-integrations';
@@ -73,6 +77,9 @@ export class CdkExampleStack extends cdk.Stack {
     const CreateMessagesLambdaApi = new lambda.Function(this, "CreateMessages", CreateMessagesLambda())
     const GetMessagesLambdaApi = new lambda.Function(this, "GetMessages", GetMessagesLambda())
     const CreateCustomerTableLambdaApi = new lambda.Function(this, "CreateCustomerTable", CreateCustomerTableLambda())
+    const CreateCustomerAddressLambdaApi = new lambda.Function(this, "CreateCustomerAddress", CreateCustomerAddressLambda())
+    const GetJobsLambdaApi = new lambda.Function(this, "GetJobs", GetJobsLambda())
+    
 
     const api = new apigateway.RestApi(this, 'WorksManApiDefault', ApigatewayDataConstants(apigateway));
 
@@ -89,40 +96,40 @@ export class CdkExampleStack extends cdk.Stack {
         requireUppercase: true,
         requireSymbols: true,
       },
-     standardAttributes:{
-      givenName: {
-        required:true,
-        mutable:true
+      standardAttributes: {
+        givenName: {
+          required: true,
+          mutable: true
+        },
+        familyName: {
+          required: true,
+          mutable: true
+        },
+        email: {
+          required: true,
+          mutable: true
+        },
+        address: {
+          required: true,
+          mutable: true
+        },
+        birthdate: {
+          required: true,
+          mutable: true
+        },
+        gender: {
+          required: true,
+          mutable: true
+        },
+        locale: {
+          required: true,
+          mutable: true
+        },
+        phoneNumber: {
+          required: true,
+          mutable: true
+        },
       },
-      familyName: {
-        required:true,
-        mutable:true
-      },
-      email: {
-        required:true,
-        mutable:true
-      },
-      address: {
-        required:true,
-        mutable:true
-      },
-      birthdate: {
-        required:true,
-        mutable:true
-      },
-      gender: {
-        required:true,
-        mutable:true
-      },
-      locale: {
-        required:true,
-        mutable:true
-      },
-      phoneNumber: {
-        required:true,
-        mutable:true
-      },
-     },
       accountRecovery: cognito.AccountRecovery.EMAIL_ONLY,
     });
 
@@ -137,10 +144,10 @@ export class CdkExampleStack extends cdk.Stack {
       locale: true,
       phoneNumber: true,
     };
-    
+
     const clientReadAttributes = new cognito.ClientAttributes()
       .withStandardAttributes(standardCognitoAttributes)
-    
+
     const clientWriteAttributes = new cognito.ClientAttributes()
       .withStandardAttributes({
         ...standardCognitoAttributes,
@@ -150,20 +157,20 @@ export class CdkExampleStack extends cdk.Stack {
 
 
 
-      const userPoolClient = new cognito.UserPoolClient(this, 'userpool-client', {
-        userPool,
-        authFlows: {  
-          adminUserPassword: true,
-          custom: true,
-          userSrp: true,
-          userPassword:true
-        },
-        supportedIdentityProviders: [
-          cognito.UserPoolClientIdentityProvider.COGNITO,
-        ],
-        readAttributes: clientReadAttributes,
-        writeAttributes: clientWriteAttributes,
-      });
+    const userPoolClient = new cognito.UserPoolClient(this, 'userpool-client', {
+      userPool,
+      authFlows: {
+        adminUserPassword: true,
+        custom: true,
+        userSrp: true,
+        userPassword: true
+      },
+      supportedIdentityProviders: [
+        cognito.UserPoolClientIdentityProvider.COGNITO,
+      ],
+      readAttributes: clientReadAttributes,
+      writeAttributes: clientWriteAttributes,
+    });
 
 
 
@@ -172,7 +179,7 @@ export class CdkExampleStack extends cdk.Stack {
     new cdk.CfnOutput(this, 'userPoolClientId', {
       value: userPoolClient.userPoolClientId,
     });
-    
+
     new cdk.CfnOutput(this, 'apiUrl', { value: api.url });
 
 
@@ -193,6 +200,7 @@ export class CdkExampleStack extends cdk.Stack {
     CreateBankDetailsApiGateway(api, CreateBankDetailsLambdaApi, 'POST', auth)
     CreateMessagesApiGateway(api, CreateMessagesLambdaApi, 'POST', auth)
     CreateCustomerTableApiGateway(api, CreateCustomerTableLambdaApi, 'POST', auth)
+    CreateCustomerAddressApiGateway(api, CreateCustomerTableLambdaApi, 'POST', auth)
 
     // GET APIS
     GetWorksmanAccountRegistartionStatusApiGateway(api, GetWorksmanAccountRegistartionStatus, 'GET', auth)
@@ -204,6 +212,7 @@ export class CdkExampleStack extends cdk.Stack {
     GetWorksmanjobsApiGateway(api, GetWorksmanjobsLambdaApi, 'GET', auth)
     GetBankDetailsApiGateway(api, GetBankDetailsLambdaApi, 'GET', auth)
     GetMessagesApiGateway(api, GetMessagesLambdaApi, 'GET', auth)
+    GetJobsApiGateway(api, GetJobsLambdaApi, 'GET', auth)
 
     // DELETE APIS
     DeletePostcodesApiGateway(api, DeletePostcodesLambdaApi, 'DELETE', auth)

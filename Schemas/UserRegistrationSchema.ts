@@ -198,6 +198,7 @@ const cutomer_table = () => {
                 )
         `
 }
+
 const customer_address_table = () => {
         return `        
         DROP TABLE IF EXISTS customer_address_table ;
@@ -213,4 +214,41 @@ const customer_address_table = () => {
 				
         `
 }
+
+
+const jobs_table = () => {
+        return `        
+        DROP TABLE IF EXISTS jobs_table ;
+
+        CREATE TABLE jobs_table (
+                job_id BIGSERIAL PRIMARY KEY,
+                worksman_id VARCHAR(225) NOT NULL,
+                customer_id VARCHAR(225) NOT NULL,
+                job_title VARCHAR(225) NOT NULL,
+                job_description VARCHAR(225) NOT NULL,
+                job_hours VARCHAR(225) NOT NULL,
+                job_time VARCHAR(225) NOT NULL,
+                job_date VARCHAR(225) NOT NULL,
+                job_status VARCHAR(225) NOT NULL,
+                created_on TIMESTAMP not null default current_timestamp
+                )
+				
+        `
+}
+const review_table = () => {
+        return `        
+        DROP TABLE IF EXISTS review_table ;
+
+        CREATE TABLE review_table (
+                reviwe_id BIGSERIAL PRIMARY KEY,
+                job_id VARCHAR(225) NOT NULL,
+                workman_id VARCHAR(225) NOT NULL,
+                customer_review VARCHAR(225) NOT NULL,
+                customer_rating VARCHAR(225) NOT NULL,
+                created_on TIMESTAMP not null default current_timestamp
+                )
+				
+        `
+}
+
 
