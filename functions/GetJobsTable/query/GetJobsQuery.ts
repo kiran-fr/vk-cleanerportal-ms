@@ -1,5 +1,9 @@
 export const GetJobsQuery = (event: any) => {
-    return `SELECT * from jobs_table where worksman_id ='${event.worksman_id}'`
+    return `SELECT * FROM jobs_table 
+    INNER JOIN customer_table
+    INNER JOIN customer_address_table
+    ON CAST ( customer_address_table.customer_id AS INTEGER)  = customer_table.customer_id 
+    ON customer_table.customer_id = CAST( jobs_table.customer_id AS INTEGER) WHERE worksman_id='${event.worksman_id}'`
 }
 
 export const GetReviewsQuery = (worksman_id: any) => {

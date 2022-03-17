@@ -3,15 +3,10 @@ import { getCustomerAddressDetailsService, getCustomerDetailsService, GetJobsSer
 exports.GetJobsHandler = async (event: any) => {
     try {
         const getJobs = await GetJobsServices(event)
-        const getReviews = await GetReviewsServices(event.worksman_id)
-        const getCustomerDetails = await getCustomerDetailsService()
-        const getCustomerAddress = await getCustomerAddressDetailsService()
         return {
             statusCode: 200,
             headers: {},
-            body: {
-                getJobs, getReviews,getCustomerDetails,getCustomerAddress
-            }
+            body: getJobs
         }
     } catch (exception) {
         console.log(`GetMessages Error 1 ${exception}`, event)
