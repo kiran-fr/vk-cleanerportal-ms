@@ -40,6 +40,9 @@ sam local invoke GetBankDetails125327D9 -e functions/GetBankDetails/mock.json
 sam local invoke CreateMessages23E7B181 -e functions/CreateMessages/mock.json
 sam local invoke GetMessagesEBEDDDD2 -e functions/GetMessages/mock.json
 sam local invoke GetJobsE878805E -e functions/GetJobsTable/mock.json
+sam local invoke GetPaymentDetailsE3A0032F -e functions/GetPaymentDetails/mock.json
+sam local invoke CreatePaymentHistoryDetails29607F15 -e functions/CreatePaymentHistoryDetails/mock.json
+sam local invoke GetPaymentHistoryDetails96306007 -e functions/CreatePaymentHistoryDetails/mock.json
 
 <!-- customer table -->
 sam local invoke CreateCustomerTable11E80E27 -e functions/CreateCustomerTable/mock.json

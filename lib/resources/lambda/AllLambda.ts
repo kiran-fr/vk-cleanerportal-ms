@@ -251,3 +251,38 @@ export const GetJobsLambda = () => {
     timeout: cdk.Duration.seconds(35)
   }
 }
+export const GetPaymentDetailsLambda = () => {
+  return {
+    code: lambda.Code.fromAsset('./functions/GetPaymentDetails'),
+    functionName: 'GetPaymentDetailsFun',
+    handler: 'index.GetPaymentDetailsHandler',
+    memorySize: 1024,
+    runtime: lambda.Runtime.NODEJS_14_X,
+    timeout: cdk.Duration.seconds(35)
+  }
+}
+
+export const CreatePaymentHistoryDetailsLambda = () => {
+  return {
+    code: lambda.Code.fromAsset('./functions/CreatePaymentHistoryDetails'),
+    functionName: 'CreatePaymentHistoryDetailsFun',
+    handler: 'index.CreatePaymentHistoryDetailsHandler',
+    memorySize: 1024,
+    runtime: lambda.Runtime.NODEJS_14_X,
+    timeout: cdk.Duration.seconds(35)
+  }
+}
+
+
+export const GetPaymentHistoryDetailsLambda = () => {
+  return {
+    code: lambda.Code.fromAsset('./functions/GetPaymentHistoryDetails'),
+    functionName: 'GetPaymentHistoryDetailsFun',
+    handler: 'index.GetPaymentHistoryDetailsHandler',
+    memorySize: 1024,
+    runtime: lambda.Runtime.NODEJS_14_X,
+    timeout: cdk.Duration.seconds(35)
+  }
+}
+
+

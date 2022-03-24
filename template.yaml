@@ -1264,7 +1264,7 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameters1baab8cab8daafd32106f9e7a3c0721c9ff9fa598af19160f2cd1bd7fc77be1cS3Bucket6EF3C55C
+          Ref: AssetParametersf72793a1bef30a642eafb4640b40718b24bbea6fc469f9c3eae3405a16ba07bfS3Bucket9BF8E767
         S3Key:
           Fn::Join:
             - ""
@@ -1272,12 +1272,12 @@ Resources:
                   - 0
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters1baab8cab8daafd32106f9e7a3c0721c9ff9fa598af19160f2cd1bd7fc77be1cS3VersionKey336B1B4D
+                      - Ref: AssetParametersf72793a1bef30a642eafb4640b40718b24bbea6fc469f9c3eae3405a16ba07bfS3VersionKey91495100
               - Fn::Select:
                   - 1
                   - Fn::Split:
                       - "||"
-                      - Ref: AssetParameters1baab8cab8daafd32106f9e7a3c0721c9ff9fa598af19160f2cd1bd7fc77be1cS3VersionKey336B1B4D
+                      - Ref: AssetParametersf72793a1bef30a642eafb4640b40718b24bbea6fc469f9c3eae3405a16ba07bfS3VersionKey91495100
       Role:
         Fn::GetAtt:
           - GetJobsServiceRole096CB5A5
@@ -1293,6 +1293,168 @@ Resources:
       aws:cdk:path: VrishkarServicesStacks/GetJobs/Resource
       aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetJobsTable
       aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetJobsTable
+      aws:asset:is-bundled: false
+      aws:asset:property: Code
+  GetPaymentDetailsServiceRole04045F23:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Action: sts:AssumeRole
+            Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+        Version: "2012-10-17"
+      ManagedPolicyArns:
+        - Fn::Join:
+            - ""
+            - - "arn:"
+              - Ref: AWS::Partition
+              - :iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+    Metadata:
+      aws:cdk:path: VrishkarServicesStacks/GetPaymentDetails/ServiceRole/Resource
+  GetPaymentDetailsE3A0032F:
+    Type: AWS::Lambda::Function
+    Properties:
+      Code:
+        S3Bucket:
+          Ref: AssetParameters98b4022d2260c41c8dcff542335bcd479856d03468e56d8c712648d5fcefa1c6S3Bucket2D796CE9
+        S3Key:
+          Fn::Join:
+            - ""
+            - - Fn::Select:
+                  - 0
+                  - Fn::Split:
+                      - "||"
+                      - Ref: AssetParameters98b4022d2260c41c8dcff542335bcd479856d03468e56d8c712648d5fcefa1c6S3VersionKey50EBB76A
+              - Fn::Select:
+                  - 1
+                  - Fn::Split:
+                      - "||"
+                      - Ref: AssetParameters98b4022d2260c41c8dcff542335bcd479856d03468e56d8c712648d5fcefa1c6S3VersionKey50EBB76A
+      Role:
+        Fn::GetAtt:
+          - GetPaymentDetailsServiceRole04045F23
+          - Arn
+      FunctionName: GetPaymentDetailsFun
+      Handler: index.GetPaymentDetailsHandler
+      MemorySize: 1024
+      Runtime: nodejs14.x
+      Timeout: 35
+    DependsOn:
+      - GetPaymentDetailsServiceRole04045F23
+    Metadata:
+      aws:cdk:path: VrishkarServicesStacks/GetPaymentDetails/Resource
+      aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetPaymentDetails
+      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetPaymentDetails
+      aws:asset:is-bundled: false
+      aws:asset:property: Code
+  CreatePaymentHistoryDetailsServiceRoleB88C1A96:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Action: sts:AssumeRole
+            Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+        Version: "2012-10-17"
+      ManagedPolicyArns:
+        - Fn::Join:
+            - ""
+            - - "arn:"
+              - Ref: AWS::Partition
+              - :iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+    Metadata:
+      aws:cdk:path: VrishkarServicesStacks/CreatePaymentHistoryDetails/ServiceRole/Resource
+  CreatePaymentHistoryDetails29607F15:
+    Type: AWS::Lambda::Function
+    Properties:
+      Code:
+        S3Bucket:
+          Ref: AssetParameters211e2246765e3c6368369ab4a0f9cd4f9e13bb41bc3750f9c9d8c0dbe8fdbb3aS3Bucket5AE5AAF8
+        S3Key:
+          Fn::Join:
+            - ""
+            - - Fn::Select:
+                  - 0
+                  - Fn::Split:
+                      - "||"
+                      - Ref: AssetParameters211e2246765e3c6368369ab4a0f9cd4f9e13bb41bc3750f9c9d8c0dbe8fdbb3aS3VersionKey3FB5FBA5
+              - Fn::Select:
+                  - 1
+                  - Fn::Split:
+                      - "||"
+                      - Ref: AssetParameters211e2246765e3c6368369ab4a0f9cd4f9e13bb41bc3750f9c9d8c0dbe8fdbb3aS3VersionKey3FB5FBA5
+      Role:
+        Fn::GetAtt:
+          - CreatePaymentHistoryDetailsServiceRoleB88C1A96
+          - Arn
+      FunctionName: CreatePaymentHistoryDetailsFun
+      Handler: index.CreatePaymentHistoryDetailsHandler
+      MemorySize: 1024
+      Runtime: nodejs14.x
+      Timeout: 35
+    DependsOn:
+      - CreatePaymentHistoryDetailsServiceRoleB88C1A96
+    Metadata:
+      aws:cdk:path: VrishkarServicesStacks/CreatePaymentHistoryDetails/Resource
+      aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\CreatePaymentHistoryDetails
+      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\CreatePaymentHistoryDetails
+      aws:asset:is-bundled: false
+      aws:asset:property: Code
+  GetPaymentHistoryDetailsServiceRoleE90AB70B:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Action: sts:AssumeRole
+            Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+        Version: "2012-10-17"
+      ManagedPolicyArns:
+        - Fn::Join:
+            - ""
+            - - "arn:"
+              - Ref: AWS::Partition
+              - :iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+    Metadata:
+      aws:cdk:path: VrishkarServicesStacks/GetPaymentHistoryDetails/ServiceRole/Resource
+  GetPaymentHistoryDetails96306007:
+    Type: AWS::Lambda::Function
+    Properties:
+      Code:
+        S3Bucket:
+          Ref: AssetParametersbeb5d4038efc0e30218ecc54f27c0fa9d0406163c0e40673ba93d8b501afa5e9S3Bucket9EDDEC34
+        S3Key:
+          Fn::Join:
+            - ""
+            - - Fn::Select:
+                  - 0
+                  - Fn::Split:
+                      - "||"
+                      - Ref: AssetParametersbeb5d4038efc0e30218ecc54f27c0fa9d0406163c0e40673ba93d8b501afa5e9S3VersionKey3B1B3190
+              - Fn::Select:
+                  - 1
+                  - Fn::Split:
+                      - "||"
+                      - Ref: AssetParametersbeb5d4038efc0e30218ecc54f27c0fa9d0406163c0e40673ba93d8b501afa5e9S3VersionKey3B1B3190
+      Role:
+        Fn::GetAtt:
+          - GetPaymentHistoryDetailsServiceRoleE90AB70B
+          - Arn
+      FunctionName: GetPaymentHistoryDetailsFun
+      Handler: index.GetPaymentHistoryDetailsHandler
+      MemorySize: 1024
+      Runtime: nodejs14.x
+      Timeout: 35
+    DependsOn:
+      - GetPaymentHistoryDetailsServiceRoleE90AB70B
+    Metadata:
+      aws:cdk:path: VrishkarServicesStacks/GetPaymentHistoryDetails/Resource
+      aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetPaymentHistoryDetails
+      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetPaymentHistoryDetails
       aws:asset:is-bundled: false
       aws:asset:property: Code
   WorksManApiDefault14BF881A:
@@ -1331,7 +1493,7 @@ Resources:
       - WorksManApiDefault14BF881A
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Account
-  WorksManApiDefaultDeployment59387D655dfae2dfa03b7dd125119cef41e86f60:
+  WorksManApiDefaultDeployment59387D65b7830daeca4f5d88a30ed73e0a0f2eda:
     Type: AWS::ApiGateway::Deployment
     Properties:
       RestApiId:
@@ -1350,6 +1512,9 @@ Resources:
       - WorksManApiDefaultCreateMessagesError5AEDF141
       - WorksManApiDefaultCreateMessagesModel0AB2AACF
       - WorksManApiDefaultCreateMessagesResponse7B730FE6
+      - WorksManApiDefaultCreatePaymentHistoryDetailsError20F7E54E
+      - WorksManApiDefaultCreatePaymentHistoryDetailsModelDA124365
+      - WorksManApiDefaultCreatePaymentHistoryDetailsResponse20CC00BC
       - WorksManApiDefaultCreateBankDetailsApiOPTIONSF10D7477
       - WorksManApiDefaultCreateBankDetailsApiPOST223C7E63
       - WorksManApiDefaultCreateBankDetailsApi862077E4
@@ -1362,6 +1527,9 @@ Resources:
       - WorksManApiDefaultCreateMessagesApiOPTIONS9A434022
       - WorksManApiDefaultCreateMessagesApiPOST508E6F71
       - WorksManApiDefaultCreateMessagesApi11B3B398
+      - WorksManApiDefaultCreatePaymentHistoryDetailsApiOPTIONSB1C93D15
+      - WorksManApiDefaultCreatePaymentHistoryDetailsApiPOST9F596849
+      - WorksManApiDefaultCreatePaymentHistoryDetailsApi2CD720C4
       - WorksManApiDefaultDeletePostcodesApiDELETE7F9BCD28
       - WorksManApiDefaultDeletePostcodesApiOPTIONS71D0DB95
       - WorksManApiDefaultDeletePostcodesApi32EE62FA
@@ -1383,6 +1551,12 @@ Resources:
       - WorksManApiDefaultGetMessagesApiGET33A37EA6
       - WorksManApiDefaultGetMessagesApiOPTIONSC2CFDC0E
       - WorksManApiDefaultGetMessagesApi8D945D82
+      - WorksManApiDefaultGetPaymentDetailsApiGETA9C4842B
+      - WorksManApiDefaultGetPaymentDetailsApiOPTIONSAD5C71D9
+      - WorksManApiDefaultGetPaymentDetailsApiEF7E4E5E
+      - WorksManApiDefaultGetPaymentHistoryDetailsApiGETF553111B
+      - WorksManApiDefaultGetPaymentHistoryDetailsApiOPTIONSB408657B
+      - WorksManApiDefaultGetPaymentHistoryDetailsApi4FFAC9F3
       - WorksManApiDefaultGetTestUserGETE8BDB74C
       - WorksManApiDefaultGetTestUserOPTIONS7A765F92
       - WorksManApiDefaultGetTestUserDBB7DC30
@@ -1437,6 +1611,10 @@ Resources:
       - WorksManApiDefaultGetJobsResp52BB87A1
       - WorksManApiDefaultGetMessagesError92707E12
       - WorksManApiDefaultGetMessagesResp545BEA1F
+      - WorksManApiDefaultGetPaymentDetailsErrEA013F72
+      - WorksManApiDefaultGetPaymentDetailsRes41A94449
+      - WorksManApiDefaultGetPaymentHistoryDetailsErr333DA8EC
+      - WorksManApiDefaultGetPaymentHistoryDetailsResC919EC6F
       - WorksManApiDefaultGetTestUserError59864B85
       - WorksManApiDefaultGetTestUseRespEFD0F97D
       - WorksManApiDefaultGetWorkmanDetailsError77364583
@@ -1473,7 +1651,7 @@ Resources:
       RestApiId:
         Ref: WorksManApiDefault14BF881A
       DeploymentId:
-        Ref: WorksManApiDefaultDeployment59387D655dfae2dfa03b7dd125119cef41e86f60
+        Ref: WorksManApiDefaultDeployment59387D65b7830daeca4f5d88a30ed73e0a0f2eda
       StageName: dev
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/DeploymentStage.dev/Resource
@@ -3124,6 +3302,168 @@ Resources:
       RequestParameters: {}
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/CreateCustomerAddressApi/POST/Resource
+  WorksManApiDefaultCreatePaymentHistoryDetailsApi2CD720C4:
+    Type: AWS::ApiGateway::Resource
+    Properties:
+      ParentId:
+        Fn::GetAtt:
+          - WorksManApiDefault14BF881A
+          - RootResourceId
+      PathPart: CreatePaymentHistoryDetailsApi
+      RestApiId:
+        Ref: WorksManApiDefault14BF881A
+    Metadata:
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/CreatePaymentHistoryDetailsApi/Resource
+  WorksManApiDefaultCreatePaymentHistoryDetailsApiOPTIONSB1C93D15:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      HttpMethod: OPTIONS
+      ResourceId:
+        Ref: WorksManApiDefaultCreatePaymentHistoryDetailsApi2CD720C4
+      RestApiId:
+        Ref: WorksManApiDefault14BF881A
+      AuthorizationType: NONE
+      Integration:
+        IntegrationResponses:
+          - ResponseParameters:
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes,schedule_day,schedule_time,schedule_date,user_id'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
+            StatusCode: "204"
+        RequestTemplates:
+          application/json: "{ statusCode: 200 }"
+        Type: MOCK
+      MethodResponses:
+        - ResponseParameters:
+            method.response.header.Access-Control-Allow-Headers: true
+            method.response.header.Access-Control-Allow-Origin: true
+            method.response.header.Access-Control-Allow-Methods: true
+          StatusCode: "204"
+    Metadata:
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/CreatePaymentHistoryDetailsApi/OPTIONS/Resource
+  WorksManApiDefaultCreatePaymentHistoryDetailsApiPOSTApiPermissionVrishkarServicesStacksWorksManApiDefault6454A935POSTCreatePaymentHistoryDetailsApi07401BA3:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName:
+        Fn::GetAtt:
+          - CreateCustomerTable11E80E27
+          - Arn
+      Principal: apigateway.amazonaws.com
+      SourceArn:
+        Fn::Join:
+          - ""
+          - - "arn:"
+            - Ref: AWS::Partition
+            - ":execute-api:"
+            - Ref: AWS::Region
+            - ":"
+            - Ref: AWS::AccountId
+            - ":"
+            - Ref: WorksManApiDefault14BF881A
+            - /
+            - Ref: WorksManApiDefaultDeploymentStagedev027FC376
+            - /POST/CreatePaymentHistoryDetailsApi
+    Metadata:
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/CreatePaymentHistoryDetailsApi/POST/ApiPermission.VrishkarServicesStacksWorksManApiDefault6454A935.POST..CreatePaymentHistoryDetailsApi
+  WorksManApiDefaultCreatePaymentHistoryDetailsApiPOSTApiPermissionTestVrishkarServicesStacksWorksManApiDefault6454A935POSTCreatePaymentHistoryDetailsApi437A51B3:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName:
+        Fn::GetAtt:
+          - CreateCustomerTable11E80E27
+          - Arn
+      Principal: apigateway.amazonaws.com
+      SourceArn:
+        Fn::Join:
+          - ""
+          - - "arn:"
+            - Ref: AWS::Partition
+            - ":execute-api:"
+            - Ref: AWS::Region
+            - ":"
+            - Ref: AWS::AccountId
+            - ":"
+            - Ref: WorksManApiDefault14BF881A
+            - /test-invoke-stage/POST/CreatePaymentHistoryDetailsApi
+    Metadata:
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/CreatePaymentHistoryDetailsApi/POST/ApiPermission.Test.VrishkarServicesStacksWorksManApiDefault6454A935.POST..CreatePaymentHistoryDetailsApi
+  WorksManApiDefaultCreatePaymentHistoryDetailsApiPOST9F596849:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      HttpMethod: POST
+      ResourceId:
+        Ref: WorksManApiDefaultCreatePaymentHistoryDetailsApi2CD720C4
+      RestApiId:
+        Ref: WorksManApiDefault14BF881A
+      AuthorizationType: COGNITO_USER_POOLS
+      AuthorizerId:
+        Ref: AuthorizerBD825682
+      Integration:
+        IntegrationHttpMethod: POST
+        IntegrationResponses:
+          - ResponseParameters:
+              method.response.header.Content-Type: "'application/json'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Credentials: "'true'"
+              method.response.header.Access-Control-Allow-Headers: "'*'"
+            ResponseTemplates:
+              application/json: '{"state":"ok","data":"$util.escapeJavaScript($input.body)"}'
+            StatusCode: "200"
+          - ResponseParameters:
+              method.response.header.Content-Type: "'application/json'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Credentials: "'true'"
+              method.response.header.Access-Control-Allow-Headers: "'*'"
+            ResponseTemplates:
+              application/json: "{\"state\":\"error\",\"message\":\"$util.escapeJavaScript($input.path('$.errorMessage'))\"}"
+            SelectionPattern: |-
+              (
+              |.)+
+            StatusCode: "400"
+        PassthroughBehavior: NEVER
+        RequestParameters: {}
+        RequestTemplates:
+          application/json: '"$util.escapeJavaScript($input.body)"'
+        Type: AWS
+        Uri:
+          Fn::Join:
+            - ""
+            - - "arn:"
+              - Ref: AWS::Partition
+              - ":apigateway:"
+              - Ref: AWS::Region
+              - :lambda:path/2015-03-31/functions/
+              - Fn::GetAtt:
+                  - CreateCustomerTable11E80E27
+                  - Arn
+              - /invocations
+      MethodResponses:
+        - ResponseModels:
+            application/json:
+              Ref: WorksManApiDefaultCreatePaymentHistoryDetailsResponse20CC00BC
+          ResponseParameters:
+            method.response.header.Content-Type: true
+            method.response.header.Access-Control-Allow-Origin: true
+            method.response.header.Access-Control-Allow-Credentials: true
+            method.response.header.Access-Control-Allow-Headers: true
+          StatusCode: "200"
+        - ResponseModels:
+            application/json:
+              Ref: WorksManApiDefaultCreatePaymentHistoryDetailsError20F7E54E
+          ResponseParameters:
+            method.response.header.Content-Type: true
+            method.response.header.Access-Control-Allow-Origin: true
+            method.response.header.Access-Control-Allow-Credentials: true
+            method.response.header.Access-Control-Allow-Headers: true
+          StatusCode: "400"
+      RequestModels:
+        application/json:
+          Ref: WorksManApiDefaultCreatePaymentHistoryDetailsModelDA124365
+      RequestParameters: {}
+    Metadata:
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/CreatePaymentHistoryDetailsApi/POST/Resource
   WorksManApiDefaultGetWorksmanAccountRegistartionStatusApiDEB51904:
     Type: AWS::ApiGateway::Resource
     Properties:
@@ -4750,6 +5090,328 @@ Resources:
         method.request.header.worksman_id: true
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/GetJobsApi/GET/Resource
+  WorksManApiDefaultGetPaymentDetailsApiEF7E4E5E:
+    Type: AWS::ApiGateway::Resource
+    Properties:
+      ParentId:
+        Fn::GetAtt:
+          - WorksManApiDefault14BF881A
+          - RootResourceId
+      PathPart: GetPaymentDetailsApi
+      RestApiId:
+        Ref: WorksManApiDefault14BF881A
+    Metadata:
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/GetPaymentDetailsApi/Resource
+  WorksManApiDefaultGetPaymentDetailsApiOPTIONSAD5C71D9:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      HttpMethod: OPTIONS
+      ResourceId:
+        Ref: WorksManApiDefaultGetPaymentDetailsApiEF7E4E5E
+      RestApiId:
+        Ref: WorksManApiDefault14BF881A
+      AuthorizationType: NONE
+      Integration:
+        IntegrationResponses:
+          - ResponseParameters:
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes,schedule_day,schedule_time,schedule_date,user_id'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
+            StatusCode: "204"
+        RequestTemplates:
+          application/json: "{ statusCode: 200 }"
+        Type: MOCK
+      MethodResponses:
+        - ResponseParameters:
+            method.response.header.Access-Control-Allow-Headers: true
+            method.response.header.Access-Control-Allow-Origin: true
+            method.response.header.Access-Control-Allow-Methods: true
+          StatusCode: "204"
+    Metadata:
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/GetPaymentDetailsApi/OPTIONS/Resource
+  WorksManApiDefaultGetPaymentDetailsApiGETApiPermissionVrishkarServicesStacksWorksManApiDefault6454A935GETGetPaymentDetailsApi436CC643:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName:
+        Fn::GetAtt:
+          - GetPaymentDetailsE3A0032F
+          - Arn
+      Principal: apigateway.amazonaws.com
+      SourceArn:
+        Fn::Join:
+          - ""
+          - - "arn:"
+            - Ref: AWS::Partition
+            - ":execute-api:"
+            - Ref: AWS::Region
+            - ":"
+            - Ref: AWS::AccountId
+            - ":"
+            - Ref: WorksManApiDefault14BF881A
+            - /
+            - Ref: WorksManApiDefaultDeploymentStagedev027FC376
+            - /GET/GetPaymentDetailsApi
+    Metadata:
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/GetPaymentDetailsApi/GET/ApiPermission.VrishkarServicesStacksWorksManApiDefault6454A935.GET..GetPaymentDetailsApi
+  WorksManApiDefaultGetPaymentDetailsApiGETApiPermissionTestVrishkarServicesStacksWorksManApiDefault6454A935GETGetPaymentDetailsApiBD93EF30:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName:
+        Fn::GetAtt:
+          - GetPaymentDetailsE3A0032F
+          - Arn
+      Principal: apigateway.amazonaws.com
+      SourceArn:
+        Fn::Join:
+          - ""
+          - - "arn:"
+            - Ref: AWS::Partition
+            - ":execute-api:"
+            - Ref: AWS::Region
+            - ":"
+            - Ref: AWS::AccountId
+            - ":"
+            - Ref: WorksManApiDefault14BF881A
+            - /test-invoke-stage/GET/GetPaymentDetailsApi
+    Metadata:
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/GetPaymentDetailsApi/GET/ApiPermission.Test.VrishkarServicesStacksWorksManApiDefault6454A935.GET..GetPaymentDetailsApi
+  WorksManApiDefaultGetPaymentDetailsApiGETA9C4842B:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      HttpMethod: GET
+      ResourceId:
+        Ref: WorksManApiDefaultGetPaymentDetailsApiEF7E4E5E
+      RestApiId:
+        Ref: WorksManApiDefault14BF881A
+      AuthorizationType: COGNITO_USER_POOLS
+      AuthorizerId:
+        Ref: AuthorizerBD825682
+      Integration:
+        IntegrationHttpMethod: POST
+        IntegrationResponses:
+          - ResponseParameters:
+              method.response.header.Content-Type: "'application/json'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Credentials: "'true'"
+              method.response.header.Access-Control-Allow-Headers: "'*'"
+            ResponseTemplates:
+              application/json: '{"state":"ok","data":"$util.escapeJavaScript($input.body)"}'
+            StatusCode: "200"
+          - ResponseParameters:
+              method.response.header.Content-Type: "'application/json'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Credentials: "'true'"
+              method.response.header.Access-Control-Allow-Headers: "'*'"
+            ResponseTemplates:
+              application/json: "{\"state\":\"error\",\"message\":\"$util.escapeJavaScript($input.path('$.errorMessage'))\"}"
+            SelectionPattern: |-
+              (
+              |.)+
+            StatusCode: "400"
+        PassthroughBehavior: NEVER
+        RequestParameters:
+          integration.request.header.worksman_id: method.request.header.worksman_id
+        RequestTemplates:
+          application/json: "{\"worksman_id\":\"$util.escapeJavaScript($input.params('worksman_id'))\"}"
+        Type: AWS
+        Uri:
+          Fn::Join:
+            - ""
+            - - "arn:"
+              - Ref: AWS::Partition
+              - ":apigateway:"
+              - Ref: AWS::Region
+              - :lambda:path/2015-03-31/functions/
+              - Fn::GetAtt:
+                  - GetPaymentDetailsE3A0032F
+                  - Arn
+              - /invocations
+      MethodResponses:
+        - ResponseModels:
+            application/json:
+              Ref: WorksManApiDefaultGetPaymentDetailsRes41A94449
+          ResponseParameters:
+            method.response.header.Content-Type: true
+            method.response.header.Access-Control-Allow-Origin: true
+            method.response.header.Access-Control-Allow-Credentials: true
+            method.response.header.Access-Control-Allow-Headers: true
+          StatusCode: "200"
+        - ResponseModels:
+            application/json:
+              Ref: WorksManApiDefaultGetPaymentDetailsErrEA013F72
+          ResponseParameters:
+            method.response.header.Content-Type: true
+            method.response.header.Access-Control-Allow-Origin: true
+            method.response.header.Access-Control-Allow-Credentials: true
+            method.response.header.Access-Control-Allow-Headers: true
+          StatusCode: "400"
+      RequestParameters:
+        method.request.header.worksman_id: true
+    Metadata:
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/GetPaymentDetailsApi/GET/Resource
+  WorksManApiDefaultGetPaymentHistoryDetailsApi4FFAC9F3:
+    Type: AWS::ApiGateway::Resource
+    Properties:
+      ParentId:
+        Fn::GetAtt:
+          - WorksManApiDefault14BF881A
+          - RootResourceId
+      PathPart: GetPaymentHistoryDetailsApi
+      RestApiId:
+        Ref: WorksManApiDefault14BF881A
+    Metadata:
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/GetPaymentHistoryDetailsApi/Resource
+  WorksManApiDefaultGetPaymentHistoryDetailsApiOPTIONSB408657B:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      HttpMethod: OPTIONS
+      ResourceId:
+        Ref: WorksManApiDefaultGetPaymentHistoryDetailsApi4FFAC9F3
+      RestApiId:
+        Ref: WorksManApiDefault14BF881A
+      AuthorizationType: NONE
+      Integration:
+        IntegrationResponses:
+          - ResponseParameters:
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes,schedule_day,schedule_time,schedule_date,user_id'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
+            StatusCode: "204"
+        RequestTemplates:
+          application/json: "{ statusCode: 200 }"
+        Type: MOCK
+      MethodResponses:
+        - ResponseParameters:
+            method.response.header.Access-Control-Allow-Headers: true
+            method.response.header.Access-Control-Allow-Origin: true
+            method.response.header.Access-Control-Allow-Methods: true
+          StatusCode: "204"
+    Metadata:
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/GetPaymentHistoryDetailsApi/OPTIONS/Resource
+  WorksManApiDefaultGetPaymentHistoryDetailsApiGETApiPermissionVrishkarServicesStacksWorksManApiDefault6454A935GETGetPaymentHistoryDetailsApi03229883:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName:
+        Fn::GetAtt:
+          - GetPaymentHistoryDetails96306007
+          - Arn
+      Principal: apigateway.amazonaws.com
+      SourceArn:
+        Fn::Join:
+          - ""
+          - - "arn:"
+            - Ref: AWS::Partition
+            - ":execute-api:"
+            - Ref: AWS::Region
+            - ":"
+            - Ref: AWS::AccountId
+            - ":"
+            - Ref: WorksManApiDefault14BF881A
+            - /
+            - Ref: WorksManApiDefaultDeploymentStagedev027FC376
+            - /GET/GetPaymentHistoryDetailsApi
+    Metadata:
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/GetPaymentHistoryDetailsApi/GET/ApiPermission.VrishkarServicesStacksWorksManApiDefault6454A935.GET..GetPaymentHistoryDetailsApi
+  WorksManApiDefaultGetPaymentHistoryDetailsApiGETApiPermissionTestVrishkarServicesStacksWorksManApiDefault6454A935GETGetPaymentHistoryDetailsApiBA697CA7:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName:
+        Fn::GetAtt:
+          - GetPaymentHistoryDetails96306007
+          - Arn
+      Principal: apigateway.amazonaws.com
+      SourceArn:
+        Fn::Join:
+          - ""
+          - - "arn:"
+            - Ref: AWS::Partition
+            - ":execute-api:"
+            - Ref: AWS::Region
+            - ":"
+            - Ref: AWS::AccountId
+            - ":"
+            - Ref: WorksManApiDefault14BF881A
+            - /test-invoke-stage/GET/GetPaymentHistoryDetailsApi
+    Metadata:
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/GetPaymentHistoryDetailsApi/GET/ApiPermission.Test.VrishkarServicesStacksWorksManApiDefault6454A935.GET..GetPaymentHistoryDetailsApi
+  WorksManApiDefaultGetPaymentHistoryDetailsApiGETF553111B:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      HttpMethod: GET
+      ResourceId:
+        Ref: WorksManApiDefaultGetPaymentHistoryDetailsApi4FFAC9F3
+      RestApiId:
+        Ref: WorksManApiDefault14BF881A
+      AuthorizationType: COGNITO_USER_POOLS
+      AuthorizerId:
+        Ref: AuthorizerBD825682
+      Integration:
+        IntegrationHttpMethod: POST
+        IntegrationResponses:
+          - ResponseParameters:
+              method.response.header.Content-Type: "'application/json'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Credentials: "'true'"
+              method.response.header.Access-Control-Allow-Headers: "'*'"
+            ResponseTemplates:
+              application/json: '{"state":"ok","data":"$util.escapeJavaScript($input.body)"}'
+            StatusCode: "200"
+          - ResponseParameters:
+              method.response.header.Content-Type: "'application/json'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Credentials: "'true'"
+              method.response.header.Access-Control-Allow-Headers: "'*'"
+            ResponseTemplates:
+              application/json: "{\"state\":\"error\",\"message\":\"$util.escapeJavaScript($input.path('$.errorMessage'))\"}"
+            SelectionPattern: |-
+              (
+              |.)+
+            StatusCode: "400"
+        PassthroughBehavior: NEVER
+        RequestParameters:
+          integration.request.header.worksman_id: method.request.header.worksman_id
+        RequestTemplates:
+          application/json: "{\"worksman_id\":\"$util.escapeJavaScript($input.params('worksman_id'))\"}"
+        Type: AWS
+        Uri:
+          Fn::Join:
+            - ""
+            - - "arn:"
+              - Ref: AWS::Partition
+              - ":apigateway:"
+              - Ref: AWS::Region
+              - :lambda:path/2015-03-31/functions/
+              - Fn::GetAtt:
+                  - GetPaymentHistoryDetails96306007
+                  - Arn
+              - /invocations
+      MethodResponses:
+        - ResponseModels:
+            application/json:
+              Ref: WorksManApiDefaultGetPaymentHistoryDetailsResC919EC6F
+          ResponseParameters:
+            method.response.header.Content-Type: true
+            method.response.header.Access-Control-Allow-Origin: true
+            method.response.header.Access-Control-Allow-Credentials: true
+            method.response.header.Access-Control-Allow-Headers: true
+          StatusCode: "200"
+        - ResponseModels:
+            application/json:
+              Ref: WorksManApiDefaultGetPaymentHistoryDetailsErr333DA8EC
+          ResponseParameters:
+            method.response.header.Content-Type: true
+            method.response.header.Access-Control-Allow-Origin: true
+            method.response.header.Access-Control-Allow-Credentials: true
+            method.response.header.Access-Control-Allow-Headers: true
+          StatusCode: "400"
+      RequestParameters:
+        method.request.header.worksman_id: true
+    Metadata:
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/GetPaymentHistoryDetailsApi/GET/Resource
   WorksManApiDefaultDeletePostcodesApi32EE62FA:
     Type: AWS::ApiGateway::Resource
     Properties:
@@ -5844,6 +6506,72 @@ Resources:
             type: string
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/CreateCustomerAddressError/Resource
+  WorksManApiDefaultCreatePaymentHistoryDetailsModelDA124365:
+    Type: AWS::ApiGateway::Model
+    Properties:
+      RestApiId:
+        Ref: WorksManApiDefault14BF881A
+      ContentType: application/json
+      Schema:
+        type: object
+        properties:
+          worksman_id:
+            type: string
+          job_id:
+            type: string
+          payment_id:
+            type: string
+          payment_history_date:
+            type: string
+          payment_method:
+            type: string
+          payment_history_amount:
+            type: string
+          payment_history_material_cost:
+            type: string
+          payment_history_tip:
+            type: string
+        required:
+          - worksman_id
+        $schema: http://json-schema.org/draft-04/schema#
+    Metadata:
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/CreatePaymentHistoryDetailsModel/Resource
+  WorksManApiDefaultCreatePaymentHistoryDetailsResponse20CC00BC:
+    Type: AWS::ApiGateway::Model
+    Properties:
+      RestApiId:
+        Ref: WorksManApiDefault14BF881A
+      ContentType: application/json
+      Name: CreatePaymentHistoryDetailsResponse
+      Schema:
+        $schema: http://json-schema.org/draft-04/schema#
+        title: CreatePaymentHistoryDetailsResponse
+        type: object
+        properties:
+          state:
+            type: string
+          greeting:
+            type: string
+    Metadata:
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/CreatePaymentHistoryDetailsResponse/Resource
+  WorksManApiDefaultCreatePaymentHistoryDetailsError20F7E54E:
+    Type: AWS::ApiGateway::Model
+    Properties:
+      RestApiId:
+        Ref: WorksManApiDefault14BF881A
+      ContentType: application/json
+      Name: CreatePaymentHistoryDetailsError
+      Schema:
+        $schema: http://json-schema.org/draft-04/schema#
+        title: CreatePaymentHistoryDetailsError
+        type: object
+        properties:
+          state:
+            type: string
+          message:
+            type: string
+    Metadata:
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/CreatePaymentHistoryDetailsError/Resource
   WorksManApiDefaultWorkmanStatusSuccess0764214A:
     Type: AWS::ApiGateway::Model
     Properties:
@@ -6184,6 +6912,74 @@ Resources:
             type: string
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/GetJobsError/Resource
+  WorksManApiDefaultGetPaymentDetailsRes41A94449:
+    Type: AWS::ApiGateway::Model
+    Properties:
+      RestApiId:
+        Ref: WorksManApiDefault14BF881A
+      ContentType: application/json
+      Name: GetPaymentDetailsRes
+      Schema:
+        $schema: http://json-schema.org/draft-04/schema#
+        type: object
+        properties:
+          state:
+            type: string
+          greeting:
+            type: string
+    Metadata:
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/GetPaymentDetailsRes/Resource
+  WorksManApiDefaultGetPaymentDetailsErrEA013F72:
+    Type: AWS::ApiGateway::Model
+    Properties:
+      RestApiId:
+        Ref: WorksManApiDefault14BF881A
+      ContentType: application/json
+      Name: GetPaymentDetailsErr
+      Schema:
+        $schema: http://json-schema.org/draft-04/schema#
+        type: object
+        properties:
+          state:
+            type: string
+          message:
+            type: string
+    Metadata:
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/GetPaymentDetailsErr/Resource
+  WorksManApiDefaultGetPaymentHistoryDetailsResC919EC6F:
+    Type: AWS::ApiGateway::Model
+    Properties:
+      RestApiId:
+        Ref: WorksManApiDefault14BF881A
+      ContentType: application/json
+      Name: GetPaymentHistoryDetailsRes
+      Schema:
+        $schema: http://json-schema.org/draft-04/schema#
+        type: object
+        properties:
+          state:
+            type: string
+          greeting:
+            type: string
+    Metadata:
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/GetPaymentHistoryDetailsRes/Resource
+  WorksManApiDefaultGetPaymentHistoryDetailsErr333DA8EC:
+    Type: AWS::ApiGateway::Model
+    Properties:
+      RestApiId:
+        Ref: WorksManApiDefault14BF881A
+      ContentType: application/json
+      Name: GetPaymentHistoryDetailsErr
+      Schema:
+        $schema: http://json-schema.org/draft-04/schema#
+        type: object
+        properties:
+          state:
+            type: string
+          message:
+            type: string
+    Metadata:
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/GetPaymentHistoryDetailsErr/Resource
   WorksManApiDefaultDeletePostcodesRespDD1CF5EC:
     Type: AWS::ApiGateway::Model
     Properties:
@@ -6670,15 +7466,42 @@ Parameters:
   AssetParameters4a7b365c3f99bb4214db261d7b357925ad49aff68a3b8ad285469fb530241a3cArtifactHashF233353A:
     Type: String
     Description: Artifact hash for asset "4a7b365c3f99bb4214db261d7b357925ad49aff68a3b8ad285469fb530241a3c"
-  AssetParameters1baab8cab8daafd32106f9e7a3c0721c9ff9fa598af19160f2cd1bd7fc77be1cS3Bucket6EF3C55C:
+  AssetParametersf72793a1bef30a642eafb4640b40718b24bbea6fc469f9c3eae3405a16ba07bfS3Bucket9BF8E767:
     Type: String
-    Description: S3 bucket for asset "1baab8cab8daafd32106f9e7a3c0721c9ff9fa598af19160f2cd1bd7fc77be1c"
-  AssetParameters1baab8cab8daafd32106f9e7a3c0721c9ff9fa598af19160f2cd1bd7fc77be1cS3VersionKey336B1B4D:
+    Description: S3 bucket for asset "f72793a1bef30a642eafb4640b40718b24bbea6fc469f9c3eae3405a16ba07bf"
+  AssetParametersf72793a1bef30a642eafb4640b40718b24bbea6fc469f9c3eae3405a16ba07bfS3VersionKey91495100:
     Type: String
-    Description: S3 key for asset version "1baab8cab8daafd32106f9e7a3c0721c9ff9fa598af19160f2cd1bd7fc77be1c"
-  AssetParameters1baab8cab8daafd32106f9e7a3c0721c9ff9fa598af19160f2cd1bd7fc77be1cArtifactHash61BB3592:
+    Description: S3 key for asset version "f72793a1bef30a642eafb4640b40718b24bbea6fc469f9c3eae3405a16ba07bf"
+  AssetParametersf72793a1bef30a642eafb4640b40718b24bbea6fc469f9c3eae3405a16ba07bfArtifactHash809C2EFF:
     Type: String
-    Description: Artifact hash for asset "1baab8cab8daafd32106f9e7a3c0721c9ff9fa598af19160f2cd1bd7fc77be1c"
+    Description: Artifact hash for asset "f72793a1bef30a642eafb4640b40718b24bbea6fc469f9c3eae3405a16ba07bf"
+  AssetParameters98b4022d2260c41c8dcff542335bcd479856d03468e56d8c712648d5fcefa1c6S3Bucket2D796CE9:
+    Type: String
+    Description: S3 bucket for asset "98b4022d2260c41c8dcff542335bcd479856d03468e56d8c712648d5fcefa1c6"
+  AssetParameters98b4022d2260c41c8dcff542335bcd479856d03468e56d8c712648d5fcefa1c6S3VersionKey50EBB76A:
+    Type: String
+    Description: S3 key for asset version "98b4022d2260c41c8dcff542335bcd479856d03468e56d8c712648d5fcefa1c6"
+  AssetParameters98b4022d2260c41c8dcff542335bcd479856d03468e56d8c712648d5fcefa1c6ArtifactHash008C6C56:
+    Type: String
+    Description: Artifact hash for asset "98b4022d2260c41c8dcff542335bcd479856d03468e56d8c712648d5fcefa1c6"
+  AssetParameters211e2246765e3c6368369ab4a0f9cd4f9e13bb41bc3750f9c9d8c0dbe8fdbb3aS3Bucket5AE5AAF8:
+    Type: String
+    Description: S3 bucket for asset "211e2246765e3c6368369ab4a0f9cd4f9e13bb41bc3750f9c9d8c0dbe8fdbb3a"
+  AssetParameters211e2246765e3c6368369ab4a0f9cd4f9e13bb41bc3750f9c9d8c0dbe8fdbb3aS3VersionKey3FB5FBA5:
+    Type: String
+    Description: S3 key for asset version "211e2246765e3c6368369ab4a0f9cd4f9e13bb41bc3750f9c9d8c0dbe8fdbb3a"
+  AssetParameters211e2246765e3c6368369ab4a0f9cd4f9e13bb41bc3750f9c9d8c0dbe8fdbb3aArtifactHashECC32149:
+    Type: String
+    Description: Artifact hash for asset "211e2246765e3c6368369ab4a0f9cd4f9e13bb41bc3750f9c9d8c0dbe8fdbb3a"
+  AssetParametersbeb5d4038efc0e30218ecc54f27c0fa9d0406163c0e40673ba93d8b501afa5e9S3Bucket9EDDEC34:
+    Type: String
+    Description: S3 bucket for asset "beb5d4038efc0e30218ecc54f27c0fa9d0406163c0e40673ba93d8b501afa5e9"
+  AssetParametersbeb5d4038efc0e30218ecc54f27c0fa9d0406163c0e40673ba93d8b501afa5e9S3VersionKey3B1B3190:
+    Type: String
+    Description: S3 key for asset version "beb5d4038efc0e30218ecc54f27c0fa9d0406163c0e40673ba93d8b501afa5e9"
+  AssetParametersbeb5d4038efc0e30218ecc54f27c0fa9d0406163c0e40673ba93d8b501afa5e9ArtifactHash3C86B2AB:
+    Type: String
+    Description: Artifact hash for asset "beb5d4038efc0e30218ecc54f27c0fa9d0406163c0e40673ba93d8b501afa5e9"
 Outputs:
   WorksManApiDefaultEndpoint2AE874EB:
     Value:

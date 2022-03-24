@@ -1,0 +1,12 @@
+
+
+{
+    "worksman_id":"42",
+    "job_id":"14",
+    "payment_id":"5",
+    "payment_history_date":"03-01-2021",
+    "payment_method":"google pay" ,
+    "payment_history_amount":"150" ,
+    "payment_history_material_cost":"200"      ,
+    "payment_history_tip":"50"
+}

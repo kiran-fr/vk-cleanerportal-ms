@@ -19,7 +19,10 @@ import {
   GetBankDetailsLambda,
   CreateCustomerTableLambda,
   CreateCustomerAddressLambda,
-  GetJobsLambda
+  GetJobsLambda,
+  GetPaymentDetailsLambda,
+  CreatePaymentHistoryDetailsLambda,
+  GetPaymentHistoryDetailsLambda
 } from './resources/lambda/allLambda';
 import * as sfn from "@aws-cdk/aws-stepfunctions";
 import * as tasks from "@aws-cdk/aws-stepfunctions-tasks";
@@ -44,7 +47,10 @@ import {
   GetBankDetailsApiGateway,
   CreateCustomerTableApiGateway,
   CreateCustomerAddressApiGateway,
-  GetJobsApiGateway
+  GetJobsApiGateway,
+  GetPaymentDetailsApiGateway,
+  CreatePaymentHistoryDetailsApiGateway,
+  GetPaymentHistoryDetailsApiGateway
 } from "./resources/ApiGateway/AllApiGateWays";
 import * as apiGatewayAuthorizers from '@aws-cdk/aws-apigatewayv2-authorizers';
 import * as apiGatewayIntegrations from '@aws-cdk/aws-apigatewayv2-integrations';
@@ -79,6 +85,9 @@ export class CdkExampleStack extends cdk.Stack {
     const CreateCustomerTableLambdaApi = new lambda.Function(this, "CreateCustomerTable", CreateCustomerTableLambda())
     const CreateCustomerAddressLambdaApi = new lambda.Function(this, "CreateCustomerAddress", CreateCustomerAddressLambda())
     const GetJobsLambdaApi = new lambda.Function(this, "GetJobs", GetJobsLambda())
+    const GetPaymentDetailsLambdaApi = new lambda.Function(this, "GetPaymentDetails", GetPaymentDetailsLambda())
+    const CreatePaymentHistoryDetailsLambdaApi = new lambda.Function(this, "CreatePaymentHistoryDetails", CreatePaymentHistoryDetailsLambda())
+    const GetPaymentHistoryDetailsLambdaApi = new lambda.Function(this, "GetPaymentHistoryDetails", GetPaymentHistoryDetailsLambda())
     
 
     const api = new apigateway.RestApi(this, 'WorksManApiDefault', ApigatewayDataConstants(apigateway));
@@ -201,6 +210,7 @@ export class CdkExampleStack extends cdk.Stack {
     CreateMessagesApiGateway(api, CreateMessagesLambdaApi, 'POST', auth)
     CreateCustomerTableApiGateway(api, CreateCustomerTableLambdaApi, 'POST', auth)
     CreateCustomerAddressApiGateway(api, CreateCustomerTableLambdaApi, 'POST', auth)
+    CreatePaymentHistoryDetailsApiGateway(api, CreateCustomerTableLambdaApi, 'POST', auth)
 
     // GET APIS
     GetWorksmanAccountRegistartionStatusApiGateway(api, GetWorksmanAccountRegistartionStatus, 'GET', auth)
@@ -213,6 +223,8 @@ export class CdkExampleStack extends cdk.Stack {
     GetBankDetailsApiGateway(api, GetBankDetailsLambdaApi, 'GET', auth)
     GetMessagesApiGateway(api, GetMessagesLambdaApi, 'GET', auth)
     GetJobsApiGateway(api, GetJobsLambdaApi, 'GET', auth)
+    GetPaymentDetailsApiGateway(api, GetPaymentDetailsLambdaApi, 'GET', auth)
+    GetPaymentHistoryDetailsApiGateway(api, GetPaymentHistoryDetailsLambdaApi, 'GET', auth)
 
     // DELETE APIS
     DeletePostcodesApiGateway(api, DeletePostcodesLambdaApi, 'DELETE', auth)

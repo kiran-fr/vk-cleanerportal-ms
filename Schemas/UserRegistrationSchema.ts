@@ -252,3 +252,85 @@ const review_table = () => {
 }
 
 
+const payment_table = () => {
+        return `        
+        DROP TABLE IF EXISTS payment_table ;
+
+        CREATE TABLE worksman_payment_table (
+                payment_id BIGSERIAL PRIMARY KEY,
+                worksman_id VARCHAR(225) NOT NULL,
+                payment_date VARCHAR(225) NOT NULL,
+                payment_status VARCHAR(225) NOT NULL,
+                payment_period_end VARCHAR(225) NOT NULL,
+                payment_netpay VARCHAR(225) NOT NULL,
+                payment_tip VARCHAR(225) NOT NULL,
+                payment_material_cost VARCHAR(225) NOT NULL,
+                payment_total VARCHAR(225) NOT NULL,
+                created_on TIMESTAMP not null default current_timestamp
+                )
+                
+
+                INSERT INTO worksman_payment_table (
+                        worksman_id,
+        payment_date ,
+        payment_status ,
+        payment_period_end ,
+        payment_netpay ,
+        payment_tip ,
+        payment_material_cost ,
+        payment_total 
+        ) VALUES ('45','21-03-2022','Done','1.03.2022 - 21.03.2022','310','150','50','510')
+                
+                
+                `
+}
+
+
+
+const workman_payment_history_table = () => {
+        return `        
+        DROP TABLE IF EXISTS workman_payment_history_table ;
+        
+        CREATE TABLE workman_payment_history_table (
+                payment_history_id BIGSERIAL PRIMARY KEY,
+                payment_id VARCHAR(225) NOT NULL,
+                job_id VARCHAR(225) NOT NULL,
+                payment_history_date VARCHAR(225) NOT NULL,
+                payment_history_amount VARCHAR(225) NOT NULL,
+                payment_history_material_cost VARCHAR(225) NOT NULL,
+                payment_history_tip VARCHAR(225) NOT NULL,
+                payment_history_total VARCHAR(225) NOT NULL,
+                created_on TIMESTAMP not null default current_timestamp
+                )		
+        `
+}
+
+
+
+
+
+
+// CREATE TABLE workman_payment_history_table (
+//         payment_history_id BIGSERIAL PRIMARY KEY,
+//         payment_id VARCHAR(225) NOT NULL,
+//         job_id VARCHAR(225) NOT NULL,
+//         payment_history_date VARCHAR(225) NOT NULL,
+//         payment_history_amount VARCHAR(225) NOT NULL,
+//         payment_history_material_cost VARCHAR(225) NOT NULL,
+//         payment_history_tip VARCHAR(225) NOT NULL,
+//         payment_history_total VARCHAR(225) NOT NULL,
+//         created_on TIMESTAMP not null default current_timestamp
+//         )
+
+
+
+// INSERT INTO workman_payment_history_table (
+//         payment_id ,
+//         job_id ,
+//         payment_history_date ,
+//         payment_method ,
+//         payment_history_amount ,
+//         payment_history_material_cost ,
+//         payment_history_tip ,
+//         payment_history_total 
+//         ) VALUES ('1','1','8-02-2022','Phone Pay','250','50','20','320')
