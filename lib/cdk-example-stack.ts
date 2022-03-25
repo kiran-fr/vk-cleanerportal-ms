@@ -23,7 +23,7 @@ import {
   GetPaymentDetailsLambda,
   CreatePaymentHistoryDetailsLambda,
   GetPaymentHistoryDetailsLambda
-} from './resources/lambda/allLambda';
+} from './alllambda';
 import * as sfn from "@aws-cdk/aws-stepfunctions";
 import * as tasks from "@aws-cdk/aws-stepfunctions-tasks";
 import * as apigateway from "@aws-cdk/aws-apigateway"
@@ -58,6 +58,7 @@ import * as cognito from '@aws-cdk/aws-cognito';
 
 export class CdkExampleStack extends cdk.Stack {
   public Machine: sfn.StateMachine;
+  // public readonly urlOutput: CfnOutput;
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
@@ -65,8 +66,6 @@ export class CdkExampleStack extends cdk.Stack {
     const WorksManTermsAndCondition = new lambda.Function(this, 'WorksManTermsAndCondition', WorksManTermsAndConditionLambda())
     const WorksManExperience = new lambda.Function(this, 'WorksManExperience', WorksManExperienceLambda())
     const GetWorksmanAccountRegistartionStatus = new lambda.Function(this, "GetWorksmanAccountRegistartionStatus", GetWorksmanAccountRegistartionStatusLambda())
-    const GetTestUser = new lambda.Function(this, "GetTestUser", GetTestUserLambda())
-    const PostTestUser = new lambda.Function(this, "PostTestUser", PostTestUserLambda())
     const getAllMobileNumbersDemo = new lambda.Function(this, "getAllMobileNumber", getAllMobileNumberLambda())
     const GetWorkmanDetailLambda = new lambda.Function(this, "GetWorkmanDetails", GetWorkmanDetailsLambda())
     const UpdateWorksmanDetailLambda = new lambda.Function(this, "UpdateWorksmanDetail", UpdateWorksmanDetailsLambda())
@@ -202,7 +201,7 @@ export class CdkExampleStack extends cdk.Stack {
     // POST APIS
     WorksmanTermsAndConditionsApiGateway(api, WorksManTermsAndCondition, 'POST', auth)
     worksmanExperienceApiGateway(api, WorksManExperience, 'POST', auth)
-    PostUserApiGateway(api, PostTestUser, 'POST', auth)
+    // PostUserApiGateway(api, PostTestUser, 'POST', auth)
     UserPostCodesApiGateway(api, UserPostCodeLambdaApi, 'POST', auth)
     WorksmnaScheduleApiGateway(api, WorksmnaScheduleLambdaApi, 'POST', auth)
     WorksmanjobsCreateApiGateway(api, WorksmanjobsCreateLambdaApi, 'POST', auth)
@@ -214,7 +213,7 @@ export class CdkExampleStack extends cdk.Stack {
 
     // GET APIS
     GetWorksmanAccountRegistartionStatusApiGateway(api, GetWorksmanAccountRegistartionStatus, 'GET', auth)
-    GetTestUserApiGateway(api, GetTestUser, 'GET', auth)
+    // GetTestUserApiGateway(api, GetTestUser, 'GET', auth)
     getAllMobileNumbersApiGateway(api, getAllMobileNumbersDemo, 'GET')
     GetWorkmanDetailsApiGateway(api, GetWorkmanDetailLambda, 'GET', auth)
     GetAllPostcodesApiGateway(api, GetAllPostcodesLambdaApi, 'GET', auth)

@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 require("source-map-support/register");
 const cdk = require("@aws-cdk/core");
-const cdk_example_stack_1 = require("../lib/cdk-example-stack");
+const cdkpipelines_demo_pipeline_stack_1 = require("../lib/cdkpipelines-demo-pipeline-stack");
 const app = new cdk.App();
 new cdk_example_stack_1.CdkExampleStack(app, 'VrishkarServicesStacks', {});
 // VrishkarServicesDevStack
