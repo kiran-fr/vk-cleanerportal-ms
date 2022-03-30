@@ -130,11 +130,11 @@ export const DeletePostcodesLambda = () => {
     timeout: cdk.Duration.seconds(35)
   }
 }
-export const WorksmnaScheduleLambda = () => {
+export const CreateWorksmanScheduleLambda = () => {
   return {
-    code: lambda.Code.fromAsset('./functions/WorksmnaSchedule'),
-    functionName: 'WorksmnaScheduleFun',
-    handler: 'index.WorksmnaScheduleHandler',
+    code: lambda.Code.fromAsset('./functions/CreateWorksmanSchedule'),
+    functionName: 'CreateWorksmanScheduleFun',
+    handler: 'index.CreateWorksmanScheduleHandler',
     memorySize: 1024,
     runtime: lambda.Runtime.NODEJS_14_X,
     timeout: cdk.Duration.seconds(35)

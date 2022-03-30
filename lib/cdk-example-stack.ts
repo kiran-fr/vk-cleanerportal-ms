@@ -2,13 +2,13 @@ import * as cdk from '@aws-cdk/core';
 import * as lambda from '@aws-cdk/aws-lambda';
 import {
   UserRegistrationLambda, WorksManTermsAndConditionLambda, WorksManExperienceLambda,
-  GetWorksmanAccountRegistartionStatusLambda, GetTestUserLambda, PostTestUserLambda, getAllMobileNumberLambda,
+  GetWorksmanAccountRegistartionStatusLambda, getAllMobileNumberLambda,
   GetWorkmanDetailsLambda,
   UpdateWorksmanDetailsLambda,
   UserPostCodesLambda,
   GetAllPostcodesLambda,
   DeletePostcodesLambda,
-  WorksmnaScheduleLambda,
+  CreateWorksmanScheduleLambda,
   DeleteWorkmanScheduleLambda,
   GetWorksmanSchedulesLambda,
   GetWorksmanjobsLambda,
@@ -23,20 +23,19 @@ import {
   GetPaymentDetailsLambda,
   CreatePaymentHistoryDetailsLambda,
   GetPaymentHistoryDetailsLambda
-} from './alllambda';
+} from './resources/lambda/alllambda';
 import * as sfn from "@aws-cdk/aws-stepfunctions";
-import * as tasks from "@aws-cdk/aws-stepfunctions-tasks";
 import * as apigateway from "@aws-cdk/aws-apigateway"
 import { ApigatewayDataConstants } from '../constants/ApiGatewayConstant';
 import {
-  WorksmanTermsAndConditionsApiGateway, PostUserApiGateway, getAllMobileNumbersApiGateway,
-  worksmanExperienceApiGateway, GetWorksmanAccountRegistartionStatusApiGateway, GetTestUserApiGateway,
+  WorksmanTermsAndConditionsApiGateway, getAllMobileNumbersApiGateway,
+  worksmanExperienceApiGateway, GetWorksmanAccountRegistartionStatusApiGateway,
   GetWorkmanDetailsApiGateway,
   UpdateWorksmanDetailsApiGateway,
   UserPostCodesApiGateway,
   GetAllPostcodesApiGateway,
   DeletePostcodesApiGateway,
-  WorksmnaScheduleApiGateway,
+  CreateWorksmanScheduleApiGateway,
   DeleteWorkmanScheduleApiGateway,
   GetWorksmanScheduleApiGateway,
   GetWorksmanjobsApiGateway,
@@ -52,8 +51,6 @@ import {
   CreatePaymentHistoryDetailsApiGateway,
   GetPaymentHistoryDetailsApiGateway
 } from "./resources/ApiGateway/AllApiGateWays";
-import * as apiGatewayAuthorizers from '@aws-cdk/aws-apigatewayv2-authorizers';
-import * as apiGatewayIntegrations from '@aws-cdk/aws-apigatewayv2-integrations';
 import * as cognito from '@aws-cdk/aws-cognito';
 
 export class CdkExampleStack extends cdk.Stack {
@@ -72,7 +69,7 @@ export class CdkExampleStack extends cdk.Stack {
     const UserPostCodeLambdaApi = new lambda.Function(this, "UserPostCodes", UserPostCodesLambda())
     const GetAllPostcodesLambdaApi = new lambda.Function(this, "GetAllPostcodes", GetAllPostcodesLambda())
     const DeletePostcodesLambdaApi = new lambda.Function(this, "DeletePostcodes", DeletePostcodesLambda())
-    const WorksmnaScheduleLambdaApi = new lambda.Function(this, "WorksmnaScheduletcodes", WorksmnaScheduleLambda())
+    const CreateWorksmanScheduleLambdaApi = new lambda.Function(this, "CreateWorksmanSchedule", CreateWorksmanScheduleLambda())
     const DeleteWorkmanScheduleLambdaApi = new lambda.Function(this, "DeleteWorkmanSchedule", DeleteWorkmanScheduleLambda())
     const GetWorksmanScheduleLambdaApi = new lambda.Function(this, "GetWorksmanSchedule", GetWorksmanSchedulesLambda())
     const GetWorksmanjobsLambdaApi = new lambda.Function(this, "GetWorksmanjobs", GetWorksmanjobsLambda())
@@ -87,7 +84,7 @@ export class CdkExampleStack extends cdk.Stack {
     const GetPaymentDetailsLambdaApi = new lambda.Function(this, "GetPaymentDetails", GetPaymentDetailsLambda())
     const CreatePaymentHistoryDetailsLambdaApi = new lambda.Function(this, "CreatePaymentHistoryDetails", CreatePaymentHistoryDetailsLambda())
     const GetPaymentHistoryDetailsLambdaApi = new lambda.Function(this, "GetPaymentHistoryDetails", GetPaymentHistoryDetailsLambda())
-    
+
 
     const api = new apigateway.RestApi(this, 'WorksManApiDefault', ApigatewayDataConstants(apigateway));
 
@@ -203,7 +200,7 @@ export class CdkExampleStack extends cdk.Stack {
     worksmanExperienceApiGateway(api, WorksManExperience, 'POST', auth)
     // PostUserApiGateway(api, PostTestUser, 'POST', auth)
     UserPostCodesApiGateway(api, UserPostCodeLambdaApi, 'POST', auth)
-    WorksmnaScheduleApiGateway(api, WorksmnaScheduleLambdaApi, 'POST', auth)
+    CreateWorksmanScheduleApiGateway(api, CreateWorksmanScheduleLambdaApi, 'POST', auth)
     WorksmanjobsCreateApiGateway(api, WorksmanjobsCreateLambdaApi, 'POST', auth)
     CreateBankDetailsApiGateway(api, CreateBankDetailsLambdaApi, 'POST', auth)
     CreateMessagesApiGateway(api, CreateMessagesLambdaApi, 'POST', auth)

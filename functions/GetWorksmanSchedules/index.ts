@@ -1,8 +1,8 @@
-import { GetWorksmanSchedulesServices } from "./services/GetWorksmanSchedulesServices"
+import { GetWorksmanScheduleServices } from "./services/GetWorksmanScheduleServices"
 
 exports.GetWorksmanSchedulesHandler = async (event: any) => {
     try {
-        const getSchedules = await GetWorksmanSchedulesServices(event)
+        const getSchedules = await GetWorksmanScheduleServices(event)
         return {
             statusCode: 200,
             headers: {},

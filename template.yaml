@@ -22,20 +22,8 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameters0f385c4082b5431fb23e2ff62fec4db876628b976757d48fda40ad7ecac8b231S3BucketF5A279B0
-        S3Key:
-          Fn::Join:
-            - ""
-            - - Fn::Select:
-                  - 0
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParameters0f385c4082b5431fb23e2ff62fec4db876628b976757d48fda40ad7ecac8b231S3VersionKeyEF05D883
-              - Fn::Select:
-                  - 1
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParameters0f385c4082b5431fb23e2ff62fec4db876628b976757d48fda40ad7ecac8b231S3VersionKeyEF05D883
+          Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
+        S3Key: 0f385c4082b5431fb23e2ff62fec4db876628b976757d48fda40ad7ecac8b231.zip
       Role:
         Fn::GetAtt:
           - UserRegistrationServiceRoleBCB3F31D
@@ -50,7 +38,6 @@ Resources:
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/UserRegistration/Resource
       aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\UserRegistration
-      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\UserRegistration
       aws:asset:is-bundled: false
       aws:asset:property: Code
   WorksManTermsAndConditionServiceRole06AE84AC:
@@ -76,20 +63,8 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameters599944c52abfaf95ad71390c17a991d86cda401edbb0b9cd294c93d0f5493e66S3BucketFBBFB664
-        S3Key:
-          Fn::Join:
-            - ""
-            - - Fn::Select:
-                  - 0
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParameters599944c52abfaf95ad71390c17a991d86cda401edbb0b9cd294c93d0f5493e66S3VersionKey21BC70DE
-              - Fn::Select:
-                  - 1
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParameters599944c52abfaf95ad71390c17a991d86cda401edbb0b9cd294c93d0f5493e66S3VersionKey21BC70DE
+          Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
+        S3Key: 599944c52abfaf95ad71390c17a991d86cda401edbb0b9cd294c93d0f5493e66.zip
       Role:
         Fn::GetAtt:
           - WorksManTermsAndConditionServiceRole06AE84AC
@@ -104,7 +79,6 @@ Resources:
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/WorksManTermsAndCondition/Resource
       aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\WorksManTermsAndCondition
-      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\WorksManTermsAndCondition
       aws:asset:is-bundled: false
       aws:asset:property: Code
   WorksManExperienceServiceRoleE9A759F2:
@@ -130,20 +104,8 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameters2a027a52ab7a615b4d9607177d383d3b16b6833cbf57c112c1ec3f6dd558cc93S3BucketCC62F05C
-        S3Key:
-          Fn::Join:
-            - ""
-            - - Fn::Select:
-                  - 0
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParameters2a027a52ab7a615b4d9607177d383d3b16b6833cbf57c112c1ec3f6dd558cc93S3VersionKey72398399
-              - Fn::Select:
-                  - 1
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParameters2a027a52ab7a615b4d9607177d383d3b16b6833cbf57c112c1ec3f6dd558cc93S3VersionKey72398399
+          Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
+        S3Key: 2a027a52ab7a615b4d9607177d383d3b16b6833cbf57c112c1ec3f6dd558cc93.zip
       Role:
         Fn::GetAtt:
           - WorksManExperienceServiceRoleE9A759F2
@@ -158,7 +120,6 @@ Resources:
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/WorksManExperience/Resource
       aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\WorksManExperience
-      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\WorksManExperience
       aws:asset:is-bundled: false
       aws:asset:property: Code
   GetWorksmanAccountRegistartionStatusServiceRole6BD0E8C2:
@@ -184,20 +145,8 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameterse54ec9f2cd4dff27b1b4eef2951812c89d6885bc3ab0de74463a2610aa889ab1S3Bucket77669657
-        S3Key:
-          Fn::Join:
-            - ""
-            - - Fn::Select:
-                  - 0
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParameterse54ec9f2cd4dff27b1b4eef2951812c89d6885bc3ab0de74463a2610aa889ab1S3VersionKeyB2602FE8
-              - Fn::Select:
-                  - 1
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParameterse54ec9f2cd4dff27b1b4eef2951812c89d6885bc3ab0de74463a2610aa889ab1S3VersionKeyB2602FE8
+          Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
+        S3Key: e54ec9f2cd4dff27b1b4eef2951812c89d6885bc3ab0de74463a2610aa889ab1.zip
       Role:
         Fn::GetAtt:
           - GetWorksmanAccountRegistartionStatusServiceRole6BD0E8C2
@@ -212,115 +161,6 @@ Resources:
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/GetWorksmanAccountRegistartionStatus/Resource
       aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetWorksmanAccountRegistartionStatus
-      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetWorksmanAccountRegistartionStatus
-      aws:asset:is-bundled: false
-      aws:asset:property: Code
-  GetTestUserServiceRole01730EC6:
-    Type: AWS::IAM::Role
-    Properties:
-      AssumeRolePolicyDocument:
-        Statement:
-          - Action: sts:AssumeRole
-            Effect: Allow
-            Principal:
-              Service: lambda.amazonaws.com
-        Version: "2012-10-17"
-      ManagedPolicyArns:
-        - Fn::Join:
-            - ""
-            - - "arn:"
-              - Ref: AWS::Partition
-              - :iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
-    Metadata:
-      aws:cdk:path: VrishkarServicesStacks/GetTestUser/ServiceRole/Resource
-  GetTestUser4654379B:
-    Type: AWS::Lambda::Function
-    Properties:
-      Code:
-        S3Bucket:
-          Ref: AssetParameters9cb30c2e9f898e5f6a50b07d5ae5d7edbcb4ff6075ef881b6c10b92509c1e2f0S3BucketFA52C3C7
-        S3Key:
-          Fn::Join:
-            - ""
-            - - Fn::Select:
-                  - 0
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParameters9cb30c2e9f898e5f6a50b07d5ae5d7edbcb4ff6075ef881b6c10b92509c1e2f0S3VersionKey796ED790
-              - Fn::Select:
-                  - 1
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParameters9cb30c2e9f898e5f6a50b07d5ae5d7edbcb4ff6075ef881b6c10b92509c1e2f0S3VersionKey796ED790
-      Role:
-        Fn::GetAtt:
-          - GetTestUserServiceRole01730EC6
-          - Arn
-      FunctionName: GetTestUser
-      Handler: index.handler
-      MemorySize: 1024
-      Runtime: nodejs14.x
-      Timeout: 35
-    DependsOn:
-      - GetTestUserServiceRole01730EC6
-    Metadata:
-      aws:cdk:path: VrishkarServicesStacks/GetTestUser/Resource
-      aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetTestUser
-      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetTestUser
-      aws:asset:is-bundled: false
-      aws:asset:property: Code
-  PostTestUserServiceRoleC6DDD923:
-    Type: AWS::IAM::Role
-    Properties:
-      AssumeRolePolicyDocument:
-        Statement:
-          - Action: sts:AssumeRole
-            Effect: Allow
-            Principal:
-              Service: lambda.amazonaws.com
-        Version: "2012-10-17"
-      ManagedPolicyArns:
-        - Fn::Join:
-            - ""
-            - - "arn:"
-              - Ref: AWS::Partition
-              - :iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
-    Metadata:
-      aws:cdk:path: VrishkarServicesStacks/PostTestUser/ServiceRole/Resource
-  PostTestUser4E6E6D03:
-    Type: AWS::Lambda::Function
-    Properties:
-      Code:
-        S3Bucket:
-          Ref: AssetParameters380251841887a864fc089aa778767c205dbb1064ae01de0a989e9d9ce4171af8S3BucketA5D4ABCD
-        S3Key:
-          Fn::Join:
-            - ""
-            - - Fn::Select:
-                  - 0
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParameters380251841887a864fc089aa778767c205dbb1064ae01de0a989e9d9ce4171af8S3VersionKey71AC1508
-              - Fn::Select:
-                  - 1
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParameters380251841887a864fc089aa778767c205dbb1064ae01de0a989e9d9ce4171af8S3VersionKey71AC1508
-      Role:
-        Fn::GetAtt:
-          - PostTestUserServiceRoleC6DDD923
-          - Arn
-      FunctionName: PostTestUser
-      Handler: index.handler
-      MemorySize: 1024
-      Runtime: nodejs14.x
-      Timeout: 35
-    DependsOn:
-      - PostTestUserServiceRoleC6DDD923
-    Metadata:
-      aws:cdk:path: VrishkarServicesStacks/PostTestUser/Resource
-      aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetPostTestUser
-      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetPostTestUser
       aws:asset:is-bundled: false
       aws:asset:property: Code
   getAllMobileNumberServiceRoleD38739BC:
@@ -346,20 +186,8 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParametersa7960ad56c8b041965d08884b00c5922944b29996fcecb7ee6e05641743f188cS3BucketA0968CBA
-        S3Key:
-          Fn::Join:
-            - ""
-            - - Fn::Select:
-                  - 0
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParametersa7960ad56c8b041965d08884b00c5922944b29996fcecb7ee6e05641743f188cS3VersionKey3A15AA59
-              - Fn::Select:
-                  - 1
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParametersa7960ad56c8b041965d08884b00c5922944b29996fcecb7ee6e05641743f188cS3VersionKey3A15AA59
+          Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
+        S3Key: a7960ad56c8b041965d08884b00c5922944b29996fcecb7ee6e05641743f188c.zip
       Role:
         Fn::GetAtt:
           - getAllMobileNumberServiceRoleD38739BC
@@ -374,7 +202,6 @@ Resources:
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/getAllMobileNumber/Resource
       aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\userEmailError
-      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\userEmailError
       aws:asset:is-bundled: false
       aws:asset:property: Code
   GetWorkmanDetailsServiceRole7D7C7A93:
@@ -400,20 +227,8 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParametersd0e1ceb4da11738be01b57a4bdba45fa5719d8dbf442d3ad1ce126f0b81f111eS3BucketA3236123
-        S3Key:
-          Fn::Join:
-            - ""
-            - - Fn::Select:
-                  - 0
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParametersd0e1ceb4da11738be01b57a4bdba45fa5719d8dbf442d3ad1ce126f0b81f111eS3VersionKey1FF14054
-              - Fn::Select:
-                  - 1
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParametersd0e1ceb4da11738be01b57a4bdba45fa5719d8dbf442d3ad1ce126f0b81f111eS3VersionKey1FF14054
+          Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
+        S3Key: d0e1ceb4da11738be01b57a4bdba45fa5719d8dbf442d3ad1ce126f0b81f111e.zip
       Role:
         Fn::GetAtt:
           - GetWorkmanDetailsServiceRole7D7C7A93
@@ -428,7 +243,6 @@ Resources:
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/GetWorkmanDetails/Resource
       aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetWorksmanDetails
-      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetWorksmanDetails
       aws:asset:is-bundled: false
       aws:asset:property: Code
   UpdateWorksmanDetailServiceRole84747935:
@@ -454,20 +268,8 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameters454acb2c2c4e5e2f7931f9198cf7f9a8a8a6b70adb77b3f5fb6cd55a7af742a6S3BucketAAFB0949
-        S3Key:
-          Fn::Join:
-            - ""
-            - - Fn::Select:
-                  - 0
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParameters454acb2c2c4e5e2f7931f9198cf7f9a8a8a6b70adb77b3f5fb6cd55a7af742a6S3VersionKeyFAC4B3F5
-              - Fn::Select:
-                  - 1
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParameters454acb2c2c4e5e2f7931f9198cf7f9a8a8a6b70adb77b3f5fb6cd55a7af742a6S3VersionKeyFAC4B3F5
+          Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
+        S3Key: 454acb2c2c4e5e2f7931f9198cf7f9a8a8a6b70adb77b3f5fb6cd55a7af742a6.zip
       Role:
         Fn::GetAtt:
           - UpdateWorksmanDetailServiceRole84747935
@@ -482,7 +284,6 @@ Resources:
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/UpdateWorksmanDetail/Resource
       aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\UpdateWorksmanDetails
-      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\UpdateWorksmanDetails
       aws:asset:is-bundled: false
       aws:asset:property: Code
   UserPostCodesServiceRoleCB809F91:
@@ -508,20 +309,8 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParametersc0bb14776931887c948225196a70b9db1a68b53676ce76d75244652a3b6894abS3Bucket7B39277B
-        S3Key:
-          Fn::Join:
-            - ""
-            - - Fn::Select:
-                  - 0
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParametersc0bb14776931887c948225196a70b9db1a68b53676ce76d75244652a3b6894abS3VersionKeyF25C2A50
-              - Fn::Select:
-                  - 1
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParametersc0bb14776931887c948225196a70b9db1a68b53676ce76d75244652a3b6894abS3VersionKeyF25C2A50
+          Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
+        S3Key: c0bb14776931887c948225196a70b9db1a68b53676ce76d75244652a3b6894ab.zip
       Role:
         Fn::GetAtt:
           - UserPostCodesServiceRoleCB809F91
@@ -536,7 +325,6 @@ Resources:
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/UserPostCodes/Resource
       aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\UserPostCodes
-      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\UserPostCodes
       aws:asset:is-bundled: false
       aws:asset:property: Code
   GetAllPostcodesServiceRoleBD916F10:
@@ -562,20 +350,8 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameters3cac9a560c9bbf2d1e1b5288af9ed956c824afc10416a11518c1f6e158997f47S3Bucket421BF21C
-        S3Key:
-          Fn::Join:
-            - ""
-            - - Fn::Select:
-                  - 0
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParameters3cac9a560c9bbf2d1e1b5288af9ed956c824afc10416a11518c1f6e158997f47S3VersionKey9CCDBC94
-              - Fn::Select:
-                  - 1
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParameters3cac9a560c9bbf2d1e1b5288af9ed956c824afc10416a11518c1f6e158997f47S3VersionKey9CCDBC94
+          Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
+        S3Key: 3cac9a560c9bbf2d1e1b5288af9ed956c824afc10416a11518c1f6e158997f47.zip
       Role:
         Fn::GetAtt:
           - GetAllPostcodesServiceRoleBD916F10
@@ -590,7 +366,6 @@ Resources:
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/GetAllPostcodes/Resource
       aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetAllPostcodes
-      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetAllPostcodes
       aws:asset:is-bundled: false
       aws:asset:property: Code
   DeletePostcodesServiceRole4286E553:
@@ -616,20 +391,8 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameters1b07510780d2525dc2d91b302d26520257d7e238bd930841d328dc194c408ae2S3Bucket2F3C6E08
-        S3Key:
-          Fn::Join:
-            - ""
-            - - Fn::Select:
-                  - 0
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParameters1b07510780d2525dc2d91b302d26520257d7e238bd930841d328dc194c408ae2S3VersionKey2D4C545D
-              - Fn::Select:
-                  - 1
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParameters1b07510780d2525dc2d91b302d26520257d7e238bd930841d328dc194c408ae2S3VersionKey2D4C545D
+          Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
+        S3Key: 1b07510780d2525dc2d91b302d26520257d7e238bd930841d328dc194c408ae2.zip
       Role:
         Fn::GetAtt:
           - DeletePostcodesServiceRole4286E553
@@ -644,10 +407,9 @@ Resources:
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/DeletePostcodes/Resource
       aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\DeletePostcodes
-      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\DeletePostcodes
       aws:asset:is-bundled: false
       aws:asset:property: Code
-  WorksmnaScheduletcodesServiceRole419B1F25:
+  CreateWorksmanScheduleServiceRole1230E12A:
     Type: AWS::IAM::Role
     Properties:
       AssumeRolePolicyDocument:
@@ -664,41 +426,28 @@ Resources:
               - Ref: AWS::Partition
               - :iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
     Metadata:
-      aws:cdk:path: VrishkarServicesStacks/WorksmnaScheduletcodes/ServiceRole/Resource
-  WorksmnaScheduletcodes517FF821:
+      aws:cdk:path: VrishkarServicesStacks/CreateWorksmanSchedule/ServiceRole/Resource
+  CreateWorksmanSchedule15C9D17D:
     Type: AWS::Lambda::Function
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParametersf9f905abe6011c126a4fdded3fedc666e77ff21858b32f092ad0d7a9cfcbb256S3Bucket9285000C
-        S3Key:
-          Fn::Join:
-            - ""
-            - - Fn::Select:
-                  - 0
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParametersf9f905abe6011c126a4fdded3fedc666e77ff21858b32f092ad0d7a9cfcbb256S3VersionKey6C919EE6
-              - Fn::Select:
-                  - 1
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParametersf9f905abe6011c126a4fdded3fedc666e77ff21858b32f092ad0d7a9cfcbb256S3VersionKey6C919EE6
+          Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
+        S3Key: 84adc036b0c9342f79df862cb44b234bb9102fcb640934baae5f7b703903c41d.zip
       Role:
         Fn::GetAtt:
-          - WorksmnaScheduletcodesServiceRole419B1F25
+          - CreateWorksmanScheduleServiceRole1230E12A
           - Arn
-      FunctionName: WorksmnaScheduleFun
-      Handler: index.WorksmnaScheduleHandler
+      FunctionName: CreateWorksmanScheduleFun
+      Handler: index.CreateWorksmanScheduleHandler
       MemorySize: 1024
       Runtime: nodejs14.x
       Timeout: 35
     DependsOn:
-      - WorksmnaScheduletcodesServiceRole419B1F25
+      - CreateWorksmanScheduleServiceRole1230E12A
     Metadata:
-      aws:cdk:path: VrishkarServicesStacks/WorksmnaScheduletcodes/Resource
-      aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\WorksmnaSchedule
-      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\WorksmnaSchedule
+      aws:cdk:path: VrishkarServicesStacks/CreateWorksmanSchedule/Resource
+      aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\CreateWorksmanSchedule
       aws:asset:is-bundled: false
       aws:asset:property: Code
   DeleteWorkmanScheduleServiceRoleDE63A6DE:
@@ -724,20 +473,8 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameters324a8071c0805bbb7616ff6d7dafdec3f5a5158d4dc808b45b543bf0fcc1edd8S3BucketC8A32765
-        S3Key:
-          Fn::Join:
-            - ""
-            - - Fn::Select:
-                  - 0
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParameters324a8071c0805bbb7616ff6d7dafdec3f5a5158d4dc808b45b543bf0fcc1edd8S3VersionKeyB6B01E93
-              - Fn::Select:
-                  - 1
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParameters324a8071c0805bbb7616ff6d7dafdec3f5a5158d4dc808b45b543bf0fcc1edd8S3VersionKeyB6B01E93
+          Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
+        S3Key: 324a8071c0805bbb7616ff6d7dafdec3f5a5158d4dc808b45b543bf0fcc1edd8.zip
       Role:
         Fn::GetAtt:
           - DeleteWorkmanScheduleServiceRoleDE63A6DE
@@ -752,7 +489,6 @@ Resources:
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/DeleteWorkmanSchedule/Resource
       aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\DeleteWorkmanSchedule
-      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\DeleteWorkmanSchedule
       aws:asset:is-bundled: false
       aws:asset:property: Code
   GetWorksmanScheduleServiceRoleE4B9B5D3:
@@ -778,20 +514,8 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameters8a06973223d306743ebf03efaf46701f411d1fcba883b326c4553b9f0090eaacS3Bucket2A5253F4
-        S3Key:
-          Fn::Join:
-            - ""
-            - - Fn::Select:
-                  - 0
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParameters8a06973223d306743ebf03efaf46701f411d1fcba883b326c4553b9f0090eaacS3VersionKeyF7C0B511
-              - Fn::Select:
-                  - 1
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParameters8a06973223d306743ebf03efaf46701f411d1fcba883b326c4553b9f0090eaacS3VersionKeyF7C0B511
+          Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
+        S3Key: 8a06973223d306743ebf03efaf46701f411d1fcba883b326c4553b9f0090eaac.zip
       Role:
         Fn::GetAtt:
           - GetWorksmanScheduleServiceRoleE4B9B5D3
@@ -806,7 +530,6 @@ Resources:
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/GetWorksmanSchedule/Resource
       aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetWorksmanSchedules
-      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetWorksmanSchedules
       aws:asset:is-bundled: false
       aws:asset:property: Code
   GetWorksmanjobsServiceRoleD07827B2:
@@ -832,20 +555,8 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameters229dd06f81240fa399d29c6f8b9ae54e73a0958d410b18dbe8a8fe791e8b7747S3Bucket9AB20889
-        S3Key:
-          Fn::Join:
-            - ""
-            - - Fn::Select:
-                  - 0
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParameters229dd06f81240fa399d29c6f8b9ae54e73a0958d410b18dbe8a8fe791e8b7747S3VersionKey43686DFE
-              - Fn::Select:
-                  - 1
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParameters229dd06f81240fa399d29c6f8b9ae54e73a0958d410b18dbe8a8fe791e8b7747S3VersionKey43686DFE
+          Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
+        S3Key: 229dd06f81240fa399d29c6f8b9ae54e73a0958d410b18dbe8a8fe791e8b7747.zip
       Role:
         Fn::GetAtt:
           - GetWorksmanjobsServiceRoleD07827B2
@@ -860,7 +571,6 @@ Resources:
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/GetWorksmanjobs/Resource
       aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetWorksmanjobs
-      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetWorksmanjobs
       aws:asset:is-bundled: false
       aws:asset:property: Code
   WorksmanjobsCreateServiceRole9BB86293:
@@ -886,20 +596,8 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParametersd58b1302e3fe9ed2133887cc52526740aeed77c3f52dfdb5ddcd33a438e11506S3Bucket1A0DB899
-        S3Key:
-          Fn::Join:
-            - ""
-            - - Fn::Select:
-                  - 0
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParametersd58b1302e3fe9ed2133887cc52526740aeed77c3f52dfdb5ddcd33a438e11506S3VersionKey083EFA1F
-              - Fn::Select:
-                  - 1
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParametersd58b1302e3fe9ed2133887cc52526740aeed77c3f52dfdb5ddcd33a438e11506S3VersionKey083EFA1F
+          Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
+        S3Key: d58b1302e3fe9ed2133887cc52526740aeed77c3f52dfdb5ddcd33a438e11506.zip
       Role:
         Fn::GetAtt:
           - WorksmanjobsCreateServiceRole9BB86293
@@ -914,7 +612,6 @@ Resources:
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/WorksmanjobsCreate/Resource
       aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\WorksmanjobsCreate
-      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\WorksmanjobsCreate
       aws:asset:is-bundled: false
       aws:asset:property: Code
   CreateBankDetailsServiceRole0EDAB387:
@@ -940,20 +637,8 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameters9f0636da98bb6e34332a73c955d911df6eaeadf2e524123b2ca8cd6c81ab4dd7S3Bucket08659E68
-        S3Key:
-          Fn::Join:
-            - ""
-            - - Fn::Select:
-                  - 0
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParameters9f0636da98bb6e34332a73c955d911df6eaeadf2e524123b2ca8cd6c81ab4dd7S3VersionKeyCCA9C399
-              - Fn::Select:
-                  - 1
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParameters9f0636da98bb6e34332a73c955d911df6eaeadf2e524123b2ca8cd6c81ab4dd7S3VersionKeyCCA9C399
+          Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
+        S3Key: 9f0636da98bb6e34332a73c955d911df6eaeadf2e524123b2ca8cd6c81ab4dd7.zip
       Role:
         Fn::GetAtt:
           - CreateBankDetailsServiceRole0EDAB387
@@ -968,7 +653,6 @@ Resources:
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/CreateBankDetails/Resource
       aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\CreateBankDetails
-      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\CreateBankDetails
       aws:asset:is-bundled: false
       aws:asset:property: Code
   GetBankDetailsServiceRoleEC4658D9:
@@ -994,20 +678,8 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameterse5036dcf8d7859dc87fb61421910ab6221bf371ed57424923fd875c7902e99f7S3Bucket4A43C921
-        S3Key:
-          Fn::Join:
-            - ""
-            - - Fn::Select:
-                  - 0
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParameterse5036dcf8d7859dc87fb61421910ab6221bf371ed57424923fd875c7902e99f7S3VersionKeyE6789BBE
-              - Fn::Select:
-                  - 1
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParameterse5036dcf8d7859dc87fb61421910ab6221bf371ed57424923fd875c7902e99f7S3VersionKeyE6789BBE
+          Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
+        S3Key: e5036dcf8d7859dc87fb61421910ab6221bf371ed57424923fd875c7902e99f7.zip
       Role:
         Fn::GetAtt:
           - GetBankDetailsServiceRoleEC4658D9
@@ -1022,7 +694,6 @@ Resources:
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/GetBankDetails/Resource
       aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetBankDetails
-      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetBankDetails
       aws:asset:is-bundled: false
       aws:asset:property: Code
   CreateMessagesServiceRole51834501:
@@ -1048,20 +719,8 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParametersa2756cf7c8d1f85e4a0e8ef0118515c9629bfdd1b00666882e8cc5704694faa0S3Bucket523F68FC
-        S3Key:
-          Fn::Join:
-            - ""
-            - - Fn::Select:
-                  - 0
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParametersa2756cf7c8d1f85e4a0e8ef0118515c9629bfdd1b00666882e8cc5704694faa0S3VersionKey0A5B1854
-              - Fn::Select:
-                  - 1
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParametersa2756cf7c8d1f85e4a0e8ef0118515c9629bfdd1b00666882e8cc5704694faa0S3VersionKey0A5B1854
+          Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
+        S3Key: a2756cf7c8d1f85e4a0e8ef0118515c9629bfdd1b00666882e8cc5704694faa0.zip
       Role:
         Fn::GetAtt:
           - CreateMessagesServiceRole51834501
@@ -1076,7 +735,6 @@ Resources:
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/CreateMessages/Resource
       aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\CreateMessages
-      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\CreateMessages
       aws:asset:is-bundled: false
       aws:asset:property: Code
   GetMessagesServiceRole900FF734:
@@ -1102,20 +760,8 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParametersf1c98af167772b8a79b5e1e9319e42cc5d5a03e1f7ba18b82624bc60b639dbbcS3Bucket34C888D0
-        S3Key:
-          Fn::Join:
-            - ""
-            - - Fn::Select:
-                  - 0
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParametersf1c98af167772b8a79b5e1e9319e42cc5d5a03e1f7ba18b82624bc60b639dbbcS3VersionKeyC54907EB
-              - Fn::Select:
-                  - 1
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParametersf1c98af167772b8a79b5e1e9319e42cc5d5a03e1f7ba18b82624bc60b639dbbcS3VersionKeyC54907EB
+          Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
+        S3Key: f1c98af167772b8a79b5e1e9319e42cc5d5a03e1f7ba18b82624bc60b639dbbc.zip
       Role:
         Fn::GetAtt:
           - GetMessagesServiceRole900FF734
@@ -1130,7 +776,6 @@ Resources:
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/GetMessages/Resource
       aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetMessages
-      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetMessages
       aws:asset:is-bundled: false
       aws:asset:property: Code
   CreateCustomerTableServiceRole779AF5B7:
@@ -1156,20 +801,8 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameters14362d3532f681f92bfd04e7354bef4954fe1c6443912cd9a7e0a283224aa815S3Bucket61F1AC9B
-        S3Key:
-          Fn::Join:
-            - ""
-            - - Fn::Select:
-                  - 0
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParameters14362d3532f681f92bfd04e7354bef4954fe1c6443912cd9a7e0a283224aa815S3VersionKeyE1C85738
-              - Fn::Select:
-                  - 1
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParameters14362d3532f681f92bfd04e7354bef4954fe1c6443912cd9a7e0a283224aa815S3VersionKeyE1C85738
+          Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
+        S3Key: 14362d3532f681f92bfd04e7354bef4954fe1c6443912cd9a7e0a283224aa815.zip
       Role:
         Fn::GetAtt:
           - CreateCustomerTableServiceRole779AF5B7
@@ -1184,7 +817,6 @@ Resources:
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/CreateCustomerTable/Resource
       aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\CreateCustomerTable
-      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\CreateCustomerTable
       aws:asset:is-bundled: false
       aws:asset:property: Code
   CreateCustomerAddressServiceRole2AF5E252:
@@ -1210,20 +842,8 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameters4a7b365c3f99bb4214db261d7b357925ad49aff68a3b8ad285469fb530241a3cS3BucketC47D351E
-        S3Key:
-          Fn::Join:
-            - ""
-            - - Fn::Select:
-                  - 0
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParameters4a7b365c3f99bb4214db261d7b357925ad49aff68a3b8ad285469fb530241a3cS3VersionKey0AC5A7B0
-              - Fn::Select:
-                  - 1
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParameters4a7b365c3f99bb4214db261d7b357925ad49aff68a3b8ad285469fb530241a3cS3VersionKey0AC5A7B0
+          Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
+        S3Key: 4a7b365c3f99bb4214db261d7b357925ad49aff68a3b8ad285469fb530241a3c.zip
       Role:
         Fn::GetAtt:
           - CreateCustomerAddressServiceRole2AF5E252
@@ -1238,7 +858,6 @@ Resources:
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/CreateCustomerAddress/Resource
       aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\CreateCustomerAddress
-      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\CreateCustomerAddress
       aws:asset:is-bundled: false
       aws:asset:property: Code
   GetJobsServiceRole096CB5A5:
@@ -1264,20 +883,8 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParametersf72793a1bef30a642eafb4640b40718b24bbea6fc469f9c3eae3405a16ba07bfS3Bucket9BF8E767
-        S3Key:
-          Fn::Join:
-            - ""
-            - - Fn::Select:
-                  - 0
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParametersf72793a1bef30a642eafb4640b40718b24bbea6fc469f9c3eae3405a16ba07bfS3VersionKey91495100
-              - Fn::Select:
-                  - 1
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParametersf72793a1bef30a642eafb4640b40718b24bbea6fc469f9c3eae3405a16ba07bfS3VersionKey91495100
+          Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
+        S3Key: f72793a1bef30a642eafb4640b40718b24bbea6fc469f9c3eae3405a16ba07bf.zip
       Role:
         Fn::GetAtt:
           - GetJobsServiceRole096CB5A5
@@ -1292,7 +899,6 @@ Resources:
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/GetJobs/Resource
       aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetJobsTable
-      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetJobsTable
       aws:asset:is-bundled: false
       aws:asset:property: Code
   GetPaymentDetailsServiceRole04045F23:
@@ -1318,20 +924,8 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameters98b4022d2260c41c8dcff542335bcd479856d03468e56d8c712648d5fcefa1c6S3Bucket2D796CE9
-        S3Key:
-          Fn::Join:
-            - ""
-            - - Fn::Select:
-                  - 0
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParameters98b4022d2260c41c8dcff542335bcd479856d03468e56d8c712648d5fcefa1c6S3VersionKey50EBB76A
-              - Fn::Select:
-                  - 1
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParameters98b4022d2260c41c8dcff542335bcd479856d03468e56d8c712648d5fcefa1c6S3VersionKey50EBB76A
+          Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
+        S3Key: 98b4022d2260c41c8dcff542335bcd479856d03468e56d8c712648d5fcefa1c6.zip
       Role:
         Fn::GetAtt:
           - GetPaymentDetailsServiceRole04045F23
@@ -1346,7 +940,6 @@ Resources:
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/GetPaymentDetails/Resource
       aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetPaymentDetails
-      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetPaymentDetails
       aws:asset:is-bundled: false
       aws:asset:property: Code
   CreatePaymentHistoryDetailsServiceRoleB88C1A96:
@@ -1372,20 +965,8 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParameters211e2246765e3c6368369ab4a0f9cd4f9e13bb41bc3750f9c9d8c0dbe8fdbb3aS3Bucket5AE5AAF8
-        S3Key:
-          Fn::Join:
-            - ""
-            - - Fn::Select:
-                  - 0
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParameters211e2246765e3c6368369ab4a0f9cd4f9e13bb41bc3750f9c9d8c0dbe8fdbb3aS3VersionKey3FB5FBA5
-              - Fn::Select:
-                  - 1
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParameters211e2246765e3c6368369ab4a0f9cd4f9e13bb41bc3750f9c9d8c0dbe8fdbb3aS3VersionKey3FB5FBA5
+          Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
+        S3Key: 211e2246765e3c6368369ab4a0f9cd4f9e13bb41bc3750f9c9d8c0dbe8fdbb3a.zip
       Role:
         Fn::GetAtt:
           - CreatePaymentHistoryDetailsServiceRoleB88C1A96
@@ -1400,7 +981,6 @@ Resources:
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/CreatePaymentHistoryDetails/Resource
       aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\CreatePaymentHistoryDetails
-      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\CreatePaymentHistoryDetails
       aws:asset:is-bundled: false
       aws:asset:property: Code
   GetPaymentHistoryDetailsServiceRoleE90AB70B:
@@ -1426,20 +1006,8 @@ Resources:
     Properties:
       Code:
         S3Bucket:
-          Ref: AssetParametersbeb5d4038efc0e30218ecc54f27c0fa9d0406163c0e40673ba93d8b501afa5e9S3Bucket9EDDEC34
-        S3Key:
-          Fn::Join:
-            - ""
-            - - Fn::Select:
-                  - 0
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParametersbeb5d4038efc0e30218ecc54f27c0fa9d0406163c0e40673ba93d8b501afa5e9S3VersionKey3B1B3190
-              - Fn::Select:
-                  - 1
-                  - Fn::Split:
-                      - "||"
-                      - Ref: AssetParametersbeb5d4038efc0e30218ecc54f27c0fa9d0406163c0e40673ba93d8b501afa5e9S3VersionKey3B1B3190
+          Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
+        S3Key: beb5d4038efc0e30218ecc54f27c0fa9d0406163c0e40673ba93d8b501afa5e9.zip
       Role:
         Fn::GetAtt:
           - GetPaymentHistoryDetailsServiceRoleE90AB70B
@@ -1454,7 +1022,6 @@ Resources:
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/GetPaymentHistoryDetails/Resource
       aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetPaymentHistoryDetails
-      aws:asset:original-path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetPaymentHistoryDetails
       aws:asset:is-bundled: false
       aws:asset:property: Code
   WorksManApiDefault14BF881A:
@@ -1493,7 +1060,7 @@ Resources:
       - WorksManApiDefault14BF881A
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Account
-  WorksManApiDefaultDeployment59387D65b7830daeca4f5d88a30ed73e0a0f2eda:
+  WorksManApiDefaultDeployment59387D65d4d7d69328a455d97baa23ab6283c542:
     Type: AWS::ApiGateway::Deployment
     Properties:
       RestApiId:
@@ -1515,6 +1082,9 @@ Resources:
       - WorksManApiDefaultCreatePaymentHistoryDetailsError20F7E54E
       - WorksManApiDefaultCreatePaymentHistoryDetailsModelDA124365
       - WorksManApiDefaultCreatePaymentHistoryDetailsResponse20CC00BC
+      - WorksManApiDefaultCreateWorksmanScheduleErrorDAB896D7
+      - WorksManApiDefaultCreateWorksmanScheduleModelEEEC25A2
+      - WorksManApiDefaultCreateWorksmanScheduleRes3A2EA432
       - WorksManApiDefaultCreateBankDetailsApiOPTIONSF10D7477
       - WorksManApiDefaultCreateBankDetailsApiPOST223C7E63
       - WorksManApiDefaultCreateBankDetailsApi862077E4
@@ -1530,6 +1100,9 @@ Resources:
       - WorksManApiDefaultCreatePaymentHistoryDetailsApiOPTIONSB1C93D15
       - WorksManApiDefaultCreatePaymentHistoryDetailsApiPOST9F596849
       - WorksManApiDefaultCreatePaymentHistoryDetailsApi2CD720C4
+      - WorksManApiDefaultCreateWorksmanScheduleApiOPTIONSFFEAE4DA
+      - WorksManApiDefaultCreateWorksmanScheduleApiPOSTCB09E732
+      - WorksManApiDefaultCreateWorksmanScheduleApiE59549EA
       - WorksManApiDefaultDeletePostcodesApiDELETE7F9BCD28
       - WorksManApiDefaultDeletePostcodesApiOPTIONS71D0DB95
       - WorksManApiDefaultDeletePostcodesApi32EE62FA
@@ -1557,9 +1130,6 @@ Resources:
       - WorksManApiDefaultGetPaymentHistoryDetailsApiGETF553111B
       - WorksManApiDefaultGetPaymentHistoryDetailsApiOPTIONSB408657B
       - WorksManApiDefaultGetPaymentHistoryDetailsApi4FFAC9F3
-      - WorksManApiDefaultGetTestUserGETE8BDB74C
-      - WorksManApiDefaultGetTestUserOPTIONS7A765F92
-      - WorksManApiDefaultGetTestUserDBB7DC30
       - WorksManApiDefaultGetWorkmanDetailsApiGET1DEBADB7
       - WorksManApiDefaultGetWorkmanDetailsApiOPTIONS890E131A
       - WorksManApiDefaultGetWorkmanDetailsApi686FA02A
@@ -1573,12 +1143,6 @@ Resources:
       - WorksManApiDefaultGetWorksmanScheduleApiOPTIONSF3700481
       - WorksManApiDefaultGetWorksmanScheduleApi24C45E47
       - WorksManApiDefaultOPTIONS8E17C658
-      - WorksManApiDefaultPostTestUserOPTIONS3820BAC3
-      - WorksManApiDefaultPostTestUserPOSTD489C6CD
-      - WorksManApiDefaultPostTestUserA156F313
-      - WorksManApiDefaultPostWorksmnaScheduleApiOPTIONSEE8F0B38
-      - WorksManApiDefaultPostWorksmnaScheduleApiPOSTFD69ED72
-      - WorksManApiDefaultPostWorksmnaScheduleApi1A8063EF
       - WorksManApiDefaultUpdateWorksmanDetailsApiOPTIONS72C8BD8A
       - WorksManApiDefaultUpdateWorksmanDetailsApiPUT0532CB1E
       - WorksManApiDefaultUpdateWorksmanDetailsApi6E0D1F7B
@@ -1598,7 +1162,6 @@ Resources:
       - WorksManApiDefaultDeletePostcodesRespDD1CF5EC
       - WorksManApiDefaultDeleteWorkmanScheduleError66030EB2
       - WorksManApiDefaultDeleteWorkmanScheduleRespFE04F26F
-      - WorksManApiDefaulterrorGetTestUserDF87D533
       - WorksManApiDefaultErrorpworksmanExperienceMethodsC96F351F
       - WorksManApiDefaultErrorWorksmanTermsAndConditions5BD861DC
       - WorksManApiDefaultgetAllMobileNumberC2B6FEA5
@@ -1615,24 +1178,17 @@ Resources:
       - WorksManApiDefaultGetPaymentDetailsRes41A94449
       - WorksManApiDefaultGetPaymentHistoryDetailsErr333DA8EC
       - WorksManApiDefaultGetPaymentHistoryDetailsResC919EC6F
-      - WorksManApiDefaultGetTestUserError59864B85
-      - WorksManApiDefaultGetTestUseRespEFD0F97D
       - WorksManApiDefaultGetWorkmanDetailsError77364583
       - WorksManApiDefaultGetWorkmanDetailsuceesEDEA4950
       - WorksManApiDefaultGetWorksmanjobsErrorD90FAFDE
       - WorksManApiDefaultGetWorksmanjobsResp5A938457
       - WorksManApiDefaultGetWorksmanScheduleError2636819E
       - WorksManApiDefaultGetWorksmanScheduleResp095537C6
-      - WorksManApiDefaultPostWorksmnaScheduleError5591DF35
-      - WorksManApiDefaultPostWorksmnaScheduleModel1D621DEC
-      - WorksManApiDefaultPostWorksmnaScheduleResF7926E82
-      - WorksManApiDefaultresGetTestUser79213937
       - WorksManApiDefaultRespworksmanExperienceMethods078E6FAD
       - WorksManApiDefaultResWorksmanTermsAndConditions753C52EC
       - WorksManApiDefaultUpdateWorksmanDetailsErrorB3E29AC8
       - WorksManApiDefaultUpdateWorksmanDetailsModel9015E4D8
       - WorksManApiDefaultUpdateWorksmanDetailsRes7D5E1167
-      - WorksManApiDefaultUserModel41F8C32B
       - WorksManApiDefaultUserPostCodesErrorCF3D0B53
       - WorksManApiDefaultUserPostCodesModel095BA274
       - WorksManApiDefaultUserPostCodesResponse5B3FFF06
@@ -1651,8 +1207,10 @@ Resources:
       RestApiId:
         Ref: WorksManApiDefault14BF881A
       DeploymentId:
-        Ref: WorksManApiDefaultDeployment59387D65b7830daeca4f5d88a30ed73e0a0f2eda
+        Ref: WorksManApiDefaultDeployment59387D65d4d7d69328a455d97baa23ab6283c542
       StageName: dev
+    DependsOn:
+      - WorksManApiDefaultAccount7B5AC316
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/DeploymentStage.dev/Resource
   WorksManApiDefaultOPTIONS8E17C658:
@@ -2008,166 +1566,6 @@ Resources:
       RequestParameters: {}
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/worksmanExperienceapi/POST/Resource
-  WorksManApiDefaultPostTestUserA156F313:
-    Type: AWS::ApiGateway::Resource
-    Properties:
-      ParentId:
-        Fn::GetAtt:
-          - WorksManApiDefault14BF881A
-          - RootResourceId
-      PathPart: PostTestUser
-      RestApiId:
-        Ref: WorksManApiDefault14BF881A
-    Metadata:
-      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/PostTestUser/Resource
-  WorksManApiDefaultPostTestUserOPTIONS3820BAC3:
-    Type: AWS::ApiGateway::Method
-    Properties:
-      HttpMethod: OPTIONS
-      ResourceId:
-        Ref: WorksManApiDefaultPostTestUserA156F313
-      RestApiId:
-        Ref: WorksManApiDefault14BF881A
-      AuthorizationType: NONE
-      Integration:
-        IntegrationResponses:
-          - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes,schedule_day,schedule_time,schedule_date,user_id'"
-              method.response.header.Access-Control-Allow-Origin: "'*'"
-              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
-            StatusCode: "204"
-        RequestTemplates:
-          application/json: "{ statusCode: 200 }"
-        Type: MOCK
-      MethodResponses:
-        - ResponseParameters:
-            method.response.header.Access-Control-Allow-Headers: true
-            method.response.header.Access-Control-Allow-Origin: true
-            method.response.header.Access-Control-Allow-Methods: true
-          StatusCode: "204"
-    Metadata:
-      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/PostTestUser/OPTIONS/Resource
-  WorksManApiDefaultPostTestUserPOSTApiPermissionVrishkarServicesStacksWorksManApiDefault6454A935POSTPostTestUser673FE837:
-    Type: AWS::Lambda::Permission
-    Properties:
-      Action: lambda:InvokeFunction
-      FunctionName:
-        Fn::GetAtt:
-          - PostTestUser4E6E6D03
-          - Arn
-      Principal: apigateway.amazonaws.com
-      SourceArn:
-        Fn::Join:
-          - ""
-          - - "arn:"
-            - Ref: AWS::Partition
-            - ":execute-api:"
-            - Ref: AWS::Region
-            - ":"
-            - Ref: AWS::AccountId
-            - ":"
-            - Ref: WorksManApiDefault14BF881A
-            - /
-            - Ref: WorksManApiDefaultDeploymentStagedev027FC376
-            - /POST/PostTestUser
-    Metadata:
-      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/PostTestUser/POST/ApiPermission.VrishkarServicesStacksWorksManApiDefault6454A935.POST..PostTestUser
-  WorksManApiDefaultPostTestUserPOSTApiPermissionTestVrishkarServicesStacksWorksManApiDefault6454A935POSTPostTestUser186B3C8D:
-    Type: AWS::Lambda::Permission
-    Properties:
-      Action: lambda:InvokeFunction
-      FunctionName:
-        Fn::GetAtt:
-          - PostTestUser4E6E6D03
-          - Arn
-      Principal: apigateway.amazonaws.com
-      SourceArn:
-        Fn::Join:
-          - ""
-          - - "arn:"
-            - Ref: AWS::Partition
-            - ":execute-api:"
-            - Ref: AWS::Region
-            - ":"
-            - Ref: AWS::AccountId
-            - ":"
-            - Ref: WorksManApiDefault14BF881A
-            - /test-invoke-stage/POST/PostTestUser
-    Metadata:
-      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/PostTestUser/POST/ApiPermission.Test.VrishkarServicesStacksWorksManApiDefault6454A935.POST..PostTestUser
-  WorksManApiDefaultPostTestUserPOSTD489C6CD:
-    Type: AWS::ApiGateway::Method
-    Properties:
-      HttpMethod: POST
-      ResourceId:
-        Ref: WorksManApiDefaultPostTestUserA156F313
-      RestApiId:
-        Ref: WorksManApiDefault14BF881A
-      AuthorizationType: NONE
-      Integration:
-        IntegrationHttpMethod: POST
-        IntegrationResponses:
-          - ResponseParameters:
-              method.response.header.Content-Type: "'application/json'"
-              method.response.header.Access-Control-Allow-Origin: "'*'"
-              method.response.header.Access-Control-Allow-Credentials: "'true'"
-              method.response.header.Access-Control-Allow-Headers: "'*'"
-            ResponseTemplates:
-              application/json: '{"state":"ok","data":"$util.escapeJavaScript($input.body)"}'
-            StatusCode: "200"
-          - ResponseParameters:
-              method.response.header.Content-Type: "'application/json'"
-              method.response.header.Access-Control-Allow-Origin: "'*'"
-              method.response.header.Access-Control-Allow-Credentials: "'true'"
-              method.response.header.Access-Control-Allow-Headers: "'*'"
-            ResponseTemplates:
-              application/json: "{\"state\":\"error\",\"message\":\"$util.escapeJavaScript($input.path('$.errorMessage'))\"}"
-            SelectionPattern: |-
-              (
-              |.)+
-            StatusCode: "400"
-        PassthroughBehavior: NEVER
-        RequestParameters: {}
-        RequestTemplates:
-          application/json: '{"worksmanId":"$util.escapeJavaScript($input.body)"}'
-        Type: AWS
-        Uri:
-          Fn::Join:
-            - ""
-            - - "arn:"
-              - Ref: AWS::Partition
-              - ":apigateway:"
-              - Ref: AWS::Region
-              - :lambda:path/2015-03-31/functions/
-              - Fn::GetAtt:
-                  - PostTestUser4E6E6D03
-                  - Arn
-              - /invocations
-      MethodResponses:
-        - ResponseModels:
-            application/json:
-              Ref: WorksManApiDefaultresGetTestUser79213937
-          ResponseParameters:
-            method.response.header.Content-Type: true
-            method.response.header.Access-Control-Allow-Origin: true
-            method.response.header.Access-Control-Allow-Credentials: true
-            method.response.header.Access-Control-Allow-Headers: true
-          StatusCode: "200"
-        - ResponseModels:
-            application/json:
-              Ref: WorksManApiDefaulterrorGetTestUserDF87D533
-          ResponseParameters:
-            method.response.header.Content-Type: true
-            method.response.header.Access-Control-Allow-Origin: true
-            method.response.header.Access-Control-Allow-Credentials: true
-            method.response.header.Access-Control-Allow-Headers: true
-          StatusCode: "400"
-      RequestModels:
-        application/json:
-          Ref: WorksManApiDefaultUserModel41F8C32B
-      RequestParameters: {}
-    Metadata:
-      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/PostTestUser/POST/Resource
   WorksManApiDefaultUserPostCodesApi7003E2DB:
     Type: AWS::ApiGateway::Resource
     Properties:
@@ -2330,24 +1728,24 @@ Resources:
       RequestParameters: {}
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/UserPostCodesApi/POST/Resource
-  WorksManApiDefaultPostWorksmnaScheduleApi1A8063EF:
+  WorksManApiDefaultCreateWorksmanScheduleApiE59549EA:
     Type: AWS::ApiGateway::Resource
     Properties:
       ParentId:
         Fn::GetAtt:
           - WorksManApiDefault14BF881A
           - RootResourceId
-      PathPart: PostWorksmnaScheduleApi
+      PathPart: CreateWorksmanScheduleApi
       RestApiId:
         Ref: WorksManApiDefault14BF881A
     Metadata:
-      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/PostWorksmnaScheduleApi/Resource
-  WorksManApiDefaultPostWorksmnaScheduleApiOPTIONSEE8F0B38:
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/CreateWorksmanScheduleApi/Resource
+  WorksManApiDefaultCreateWorksmanScheduleApiOPTIONSFFEAE4DA:
     Type: AWS::ApiGateway::Method
     Properties:
       HttpMethod: OPTIONS
       ResourceId:
-        Ref: WorksManApiDefaultPostWorksmnaScheduleApi1A8063EF
+        Ref: WorksManApiDefaultCreateWorksmanScheduleApiE59549EA
       RestApiId:
         Ref: WorksManApiDefault14BF881A
       AuthorizationType: NONE
@@ -2368,14 +1766,14 @@ Resources:
             method.response.header.Access-Control-Allow-Methods: true
           StatusCode: "204"
     Metadata:
-      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/PostWorksmnaScheduleApi/OPTIONS/Resource
-  WorksManApiDefaultPostWorksmnaScheduleApiPOSTApiPermissionVrishkarServicesStacksWorksManApiDefault6454A935POSTPostWorksmnaScheduleApiF558B3A4:
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/CreateWorksmanScheduleApi/OPTIONS/Resource
+  WorksManApiDefaultCreateWorksmanScheduleApiPOSTApiPermissionVrishkarServicesStacksWorksManApiDefault6454A935POSTCreateWorksmanScheduleApi65A0BF2A:
     Type: AWS::Lambda::Permission
     Properties:
       Action: lambda:InvokeFunction
       FunctionName:
         Fn::GetAtt:
-          - WorksmnaScheduletcodes517FF821
+          - CreateWorksmanSchedule15C9D17D
           - Arn
       Principal: apigateway.amazonaws.com
       SourceArn:
@@ -2391,16 +1789,16 @@ Resources:
             - Ref: WorksManApiDefault14BF881A
             - /
             - Ref: WorksManApiDefaultDeploymentStagedev027FC376
-            - /POST/PostWorksmnaScheduleApi
+            - /POST/CreateWorksmanScheduleApi
     Metadata:
-      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/PostWorksmnaScheduleApi/POST/ApiPermission.VrishkarServicesStacksWorksManApiDefault6454A935.POST..PostWorksmnaScheduleApi
-  WorksManApiDefaultPostWorksmnaScheduleApiPOSTApiPermissionTestVrishkarServicesStacksWorksManApiDefault6454A935POSTPostWorksmnaScheduleApiBAEF2ED6:
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/CreateWorksmanScheduleApi/POST/ApiPermission.VrishkarServicesStacksWorksManApiDefault6454A935.POST..CreateWorksmanScheduleApi
+  WorksManApiDefaultCreateWorksmanScheduleApiPOSTApiPermissionTestVrishkarServicesStacksWorksManApiDefault6454A935POSTCreateWorksmanScheduleApi0750169A:
     Type: AWS::Lambda::Permission
     Properties:
       Action: lambda:InvokeFunction
       FunctionName:
         Fn::GetAtt:
-          - WorksmnaScheduletcodes517FF821
+          - CreateWorksmanSchedule15C9D17D
           - Arn
       Principal: apigateway.amazonaws.com
       SourceArn:
@@ -2414,15 +1812,15 @@ Resources:
             - Ref: AWS::AccountId
             - ":"
             - Ref: WorksManApiDefault14BF881A
-            - /test-invoke-stage/POST/PostWorksmnaScheduleApi
+            - /test-invoke-stage/POST/CreateWorksmanScheduleApi
     Metadata:
-      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/PostWorksmnaScheduleApi/POST/ApiPermission.Test.VrishkarServicesStacksWorksManApiDefault6454A935.POST..PostWorksmnaScheduleApi
-  WorksManApiDefaultPostWorksmnaScheduleApiPOSTFD69ED72:
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/CreateWorksmanScheduleApi/POST/ApiPermission.Test.VrishkarServicesStacksWorksManApiDefault6454A935.POST..CreateWorksmanScheduleApi
+  WorksManApiDefaultCreateWorksmanScheduleApiPOSTCB09E732:
     Type: AWS::ApiGateway::Method
     Properties:
       HttpMethod: POST
       ResourceId:
-        Ref: WorksManApiDefaultPostWorksmnaScheduleApi1A8063EF
+        Ref: WorksManApiDefaultCreateWorksmanScheduleApiE59549EA
       RestApiId:
         Ref: WorksManApiDefault14BF881A
       AuthorizationType: COGNITO_USER_POOLS
@@ -2464,13 +1862,13 @@ Resources:
               - Ref: AWS::Region
               - :lambda:path/2015-03-31/functions/
               - Fn::GetAtt:
-                  - WorksmnaScheduletcodes517FF821
+                  - CreateWorksmanSchedule15C9D17D
                   - Arn
               - /invocations
       MethodResponses:
         - ResponseModels:
             application/json:
-              Ref: WorksManApiDefaultPostWorksmnaScheduleResF7926E82
+              Ref: WorksManApiDefaultCreateWorksmanScheduleRes3A2EA432
           ResponseParameters:
             method.response.header.Content-Type: true
             method.response.header.Access-Control-Allow-Origin: true
@@ -2479,7 +1877,7 @@ Resources:
           StatusCode: "200"
         - ResponseModels:
             application/json:
-              Ref: WorksManApiDefaultPostWorksmnaScheduleError5591DF35
+              Ref: WorksManApiDefaultCreateWorksmanScheduleErrorDAB896D7
           ResponseParameters:
             method.response.header.Content-Type: true
             method.response.header.Access-Control-Allow-Origin: true
@@ -2488,10 +1886,10 @@ Resources:
           StatusCode: "400"
       RequestModels:
         application/json:
-          Ref: WorksManApiDefaultPostWorksmnaScheduleModel1D621DEC
+          Ref: WorksManApiDefaultCreateWorksmanScheduleModelEEEC25A2
       RequestParameters: {}
     Metadata:
-      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/PostWorksmnaScheduleApi/POST/Resource
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/CreateWorksmanScheduleApi/POST/Resource
   WorksManApiDefaultWorksmanjobsCreateApi23D68B61:
     Type: AWS::ApiGateway::Resource
     Properties:
@@ -3629,169 +3027,6 @@ Resources:
         method.request.header.email: true
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/GetWorksmanAccountRegistartionStatusApi/GET/Resource
-  WorksManApiDefaultGetTestUserDBB7DC30:
-    Type: AWS::ApiGateway::Resource
-    Properties:
-      ParentId:
-        Fn::GetAtt:
-          - WorksManApiDefault14BF881A
-          - RootResourceId
-      PathPart: GetTestUser
-      RestApiId:
-        Ref: WorksManApiDefault14BF881A
-    Metadata:
-      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/GetTestUser/Resource
-  WorksManApiDefaultGetTestUserOPTIONS7A765F92:
-    Type: AWS::ApiGateway::Method
-    Properties:
-      HttpMethod: OPTIONS
-      ResourceId:
-        Ref: WorksManApiDefaultGetTestUserDBB7DC30
-      RestApiId:
-        Ref: WorksManApiDefault14BF881A
-      AuthorizationType: NONE
-      Integration:
-        IntegrationResponses:
-          - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes,schedule_day,schedule_time,schedule_date,user_id'"
-              method.response.header.Access-Control-Allow-Origin: "'*'"
-              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
-            StatusCode: "204"
-        RequestTemplates:
-          application/json: "{ statusCode: 200 }"
-        Type: MOCK
-      MethodResponses:
-        - ResponseParameters:
-            method.response.header.Access-Control-Allow-Headers: true
-            method.response.header.Access-Control-Allow-Origin: true
-            method.response.header.Access-Control-Allow-Methods: true
-          StatusCode: "204"
-    Metadata:
-      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/GetTestUser/OPTIONS/Resource
-  WorksManApiDefaultGetTestUserGETApiPermissionVrishkarServicesStacksWorksManApiDefault6454A935GETGetTestUser1552FAD3:
-    Type: AWS::Lambda::Permission
-    Properties:
-      Action: lambda:InvokeFunction
-      FunctionName:
-        Fn::GetAtt:
-          - GetTestUser4654379B
-          - Arn
-      Principal: apigateway.amazonaws.com
-      SourceArn:
-        Fn::Join:
-          - ""
-          - - "arn:"
-            - Ref: AWS::Partition
-            - ":execute-api:"
-            - Ref: AWS::Region
-            - ":"
-            - Ref: AWS::AccountId
-            - ":"
-            - Ref: WorksManApiDefault14BF881A
-            - /
-            - Ref: WorksManApiDefaultDeploymentStagedev027FC376
-            - /GET/GetTestUser
-    Metadata:
-      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/GetTestUser/GET/ApiPermission.VrishkarServicesStacksWorksManApiDefault6454A935.GET..GetTestUser
-  WorksManApiDefaultGetTestUserGETApiPermissionTestVrishkarServicesStacksWorksManApiDefault6454A935GETGetTestUser8D7671CD:
-    Type: AWS::Lambda::Permission
-    Properties:
-      Action: lambda:InvokeFunction
-      FunctionName:
-        Fn::GetAtt:
-          - GetTestUser4654379B
-          - Arn
-      Principal: apigateway.amazonaws.com
-      SourceArn:
-        Fn::Join:
-          - ""
-          - - "arn:"
-            - Ref: AWS::Partition
-            - ":execute-api:"
-            - Ref: AWS::Region
-            - ":"
-            - Ref: AWS::AccountId
-            - ":"
-            - Ref: WorksManApiDefault14BF881A
-            - /test-invoke-stage/GET/GetTestUser
-    Metadata:
-      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/GetTestUser/GET/ApiPermission.Test.VrishkarServicesStacksWorksManApiDefault6454A935.GET..GetTestUser
-  WorksManApiDefaultGetTestUserGETE8BDB74C:
-    Type: AWS::ApiGateway::Method
-    Properties:
-      HttpMethod: GET
-      ResourceId:
-        Ref: WorksManApiDefaultGetTestUserDBB7DC30
-      RestApiId:
-        Ref: WorksManApiDefault14BF881A
-      AuthorizationType: COGNITO_USER_POOLS
-      AuthorizerId:
-        Ref: AuthorizerBD825682
-      Integration:
-        IntegrationHttpMethod: POST
-        IntegrationResponses:
-          - ResponseParameters:
-              method.response.header.Content-Type: "'application/json'"
-              method.response.header.Access-Control-Allow-Origin: "'*'"
-              method.response.header.Access-Control-Allow-Credentials: "'true'"
-              method.response.header.Access-Control-Allow-Headers: "'*'"
-            ResponseTemplates:
-              application/json: '{"state":"ok","data":"$util.escapeJavaScript($input.body)"}'
-            StatusCode: "200"
-          - ResponseParameters:
-              method.response.header.Content-Type: "'application/json'"
-              method.response.header.Access-Control-Allow-Origin: "'*'"
-              method.response.header.Access-Control-Allow-Credentials: "'true'"
-              method.response.header.Access-Control-Allow-Headers: "'*'"
-            ResponseTemplates:
-              application/json: "{\"state\":\"error\",\"message\":\"$util.escapeJavaScript($input.path('$.errorMessage'))\"}"
-            SelectionPattern: |-
-              (
-              |.)+
-            StatusCode: "400"
-        PassthroughBehavior: NEVER
-        RequestParameters:
-          integration.request.querystring.worksmanId: method.request.querystring.worksmanId
-          integration.request.header.worksmanIdHeader: method.request.header.worksmanIdHeader
-        RequestTemplates:
-          application/json: "{\"worksmanId\":\"$util.escapeJavaScript($input.params('worksmanId'))\",\"worksmanIdHeader\":\"$util.escapeJavaScript($input.params('worksmanIdHeader'))\"}"
-        Type: AWS
-        Uri:
-          Fn::Join:
-            - ""
-            - - "arn:"
-              - Ref: AWS::Partition
-              - ":apigateway:"
-              - Ref: AWS::Region
-              - :lambda:path/2015-03-31/functions/
-              - Fn::GetAtt:
-                  - GetTestUser4654379B
-                  - Arn
-              - /invocations
-      MethodResponses:
-        - ResponseModels:
-            application/json:
-              Ref: WorksManApiDefaultGetTestUseRespEFD0F97D
-          ResponseParameters:
-            method.response.header.Content-Type: true
-            method.response.header.Access-Control-Allow-Origin: true
-            method.response.header.Access-Control-Allow-Credentials: true
-            method.response.header.Access-Control-Allow-Headers: true
-          StatusCode: "200"
-        - ResponseModels:
-            application/json:
-              Ref: WorksManApiDefaultGetTestUserError59864B85
-          ResponseParameters:
-            method.response.header.Content-Type: true
-            method.response.header.Access-Control-Allow-Origin: true
-            method.response.header.Access-Control-Allow-Credentials: true
-            method.response.header.Access-Control-Allow-Headers: true
-          StatusCode: "400"
-      RequestParameters:
-        method.request.querystring.worksmanId: true
-        method.request.header.worksmanIdHeader: true
-    Metadata:
-      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/GetTestUser/GET/Resource
   WorksManApiDefaultgetAllMobileNumbereApiGateway9859CBD0:
     Type: AWS::ApiGateway::Resource
     Properties:
@@ -6036,60 +5271,6 @@ Resources:
             type: string
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/ErrorpworksmanExperienceMethods/Resource
-  WorksManApiDefaultUserModel41F8C32B:
-    Type: AWS::ApiGateway::Model
-    Properties:
-      RestApiId:
-        Ref: WorksManApiDefault14BF881A
-      ContentType: application/json
-      Schema:
-        type: object
-        properties:
-          userId:
-            type: string
-          name:
-            type: string
-        required:
-          - userId
-        $schema: http://json-schema.org/draft-04/schema#
-    Metadata:
-      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/UserModel/Resource
-  WorksManApiDefaultresGetTestUser79213937:
-    Type: AWS::ApiGateway::Model
-    Properties:
-      RestApiId:
-        Ref: WorksManApiDefault14BF881A
-      ContentType: application/json
-      Name: resGetTestUser
-      Schema:
-        $schema: http://json-schema.org/draft-04/schema#
-        title: resGetTestUser
-        type: object
-        properties:
-          state:
-            type: string
-          greeting:
-            type: string
-    Metadata:
-      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/resGetTestUser/Resource
-  WorksManApiDefaulterrorGetTestUserDF87D533:
-    Type: AWS::ApiGateway::Model
-    Properties:
-      RestApiId:
-        Ref: WorksManApiDefault14BF881A
-      ContentType: application/json
-      Name: errorGetTestUser
-      Schema:
-        $schema: http://json-schema.org/draft-04/schema#
-        title: errorGetTestUser
-        type: object
-        properties:
-          state:
-            type: string
-          message:
-            type: string
-    Metadata:
-      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/errorGetTestUser/Resource
   WorksManApiDefaultUserPostCodesModel095BA274:
     Type: AWS::ApiGateway::Model
     Properties:
@@ -6144,7 +5325,7 @@ Resources:
             type: string
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/UserPostCodesError/Resource
-  WorksManApiDefaultPostWorksmnaScheduleModel1D621DEC:
+  WorksManApiDefaultCreateWorksmanScheduleModelEEEC25A2:
     Type: AWS::ApiGateway::Model
     Properties:
       RestApiId:
@@ -6155,25 +5336,25 @@ Resources:
         properties:
           worksman_id:
             type: string
-          schedule_day:
+          worksman_schedule_date:
             type: string
-          schedule_time:
+          worksman_schedule_time:
             type: string
         required:
           - worksman_id
         $schema: http://json-schema.org/draft-04/schema#
     Metadata:
-      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/PostWorksmnaScheduleModel/Resource
-  WorksManApiDefaultPostWorksmnaScheduleResF7926E82:
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/CreateWorksmanScheduleModel/Resource
+  WorksManApiDefaultCreateWorksmanScheduleRes3A2EA432:
     Type: AWS::ApiGateway::Model
     Properties:
       RestApiId:
         Ref: WorksManApiDefault14BF881A
       ContentType: application/json
-      Name: PostWorksmnaScheduleRes
+      Name: CreateWorksmanScheduleRes
       Schema:
         $schema: http://json-schema.org/draft-04/schema#
-        title: PostWorksmnaScheduleRes
+        title: CreateWorksmanScheduleRes
         type: object
         properties:
           state:
@@ -6181,17 +5362,17 @@ Resources:
           greeting:
             type: string
     Metadata:
-      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/PostWorksmnaScheduleRes/Resource
-  WorksManApiDefaultPostWorksmnaScheduleError5591DF35:
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/CreateWorksmanScheduleRes/Resource
+  WorksManApiDefaultCreateWorksmanScheduleErrorDAB896D7:
     Type: AWS::ApiGateway::Model
     Properties:
       RestApiId:
         Ref: WorksManApiDefault14BF881A
       ContentType: application/json
-      Name: PostWorksmnaScheduleError
+      Name: CreateWorksmanScheduleError
       Schema:
         $schema: http://json-schema.org/draft-04/schema#
-        title: PostWorksmnaScheduleError
+        title: CreateWorksmanScheduleError
         type: object
         properties:
           state:
@@ -6199,7 +5380,7 @@ Resources:
           message:
             type: string
     Metadata:
-      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/PostWorksmnaScheduleError/Resource
+      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/CreateWorksmanScheduleError/Resource
   WorksManApiDefaultWorksmanjobsCreateModel67F5BBDD:
     Type: AWS::ApiGateway::Model
     Properties:
@@ -6606,40 +5787,6 @@ Resources:
             type: string
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/WorkmanStatusError/Resource
-  WorksManApiDefaultGetTestUseRespEFD0F97D:
-    Type: AWS::ApiGateway::Model
-    Properties:
-      RestApiId:
-        Ref: WorksManApiDefault14BF881A
-      ContentType: application/json
-      Name: GetTestUseResp
-      Schema:
-        $schema: http://json-schema.org/draft-04/schema#
-        type: object
-        properties:
-          state:
-            type: string
-          greeting:
-            type: string
-    Metadata:
-      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/GetTestUseResp/Resource
-  WorksManApiDefaultGetTestUserError59864B85:
-    Type: AWS::ApiGateway::Model
-    Properties:
-      RestApiId:
-        Ref: WorksManApiDefault14BF881A
-      ContentType: application/json
-      Name: GetTestUserError
-      Schema:
-        $schema: http://json-schema.org/draft-04/schema#
-        type: object
-        properties:
-          state:
-            type: string
-          message:
-            type: string
-    Metadata:
-      aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/GetTestUserError/Resource
   WorksManApiDefaultgetAllMobileNumberC2B6FEA5:
     Type: AWS::ApiGateway::Model
     Properties:
@@ -7254,254 +6401,10 @@ Resources:
   CDKMetadata:
     Type: AWS::CDK::Metadata
     Properties:
-      Analytics: v2:deflate64:H4sIAAAAAAAA/1WRwW7CMAyGn4V7CKuYdl5h4oaGmPYAWep1pm1cxc4Qq/ruS1LK2Cmfnd/276TQxfpRPyyezZmXtmpWgyUPengTYxtVMoNErNHVakuOxQcravvpDsabDgR8Cl6D9CGnj8AUvIXEUV+hILlRpeZDa7qPyuhhF5xN6aS55wP4DplzAZpOD0dqc6N0jorXS5PssM6uYqw3wTYgG8OgTI+1ETibS6wDlrLHq58ZS2spOFEv0Ld06cBlw3dR2jPPm2BeJbffg3xRlS6vdL/ojfdUQZtFE1DtUOidwR+IWi5DLPX4Mz3aXzQqOyn1MGuT4MYzbFu8uv6fGcdRuThRn3j1XTzFH9XF4sSISx8Xxg70cTp/AdCaAu/tAQAA
+      Analytics: v2:deflate64:H4sIAAAAAAAA/1WPwW7CMAyGn4V7CKtAO68wcUNDTHuALPU60zauYmeIVX33JSlF7OTP9m/7d6GLzUY/LV7MhZe2alaDJQ96eBdjG1Uyg0Ss0dVq9+XegvRB1I4ciw9WUu0ETMFbSBwbFQqSG1XaN7Sm+6yMHvbB2VROmkc+gu+QOQ+g6fRwojYvSnFUvF6a5IB1NhJzvQ22AdkaBmV6rI3AxVzjHLCUPd78zFhaS8GJeoW+pWsHLht+yNJr+d4E8yt5/QHkm6rUvNHjo3c+UAVtFk1AtUOhDwZ/JGq5DHHU4y/47OeejcpOSj3M2iS48wy7Fm+u/1fGcVQuXtRnXv0Uz7pY62JxZsSljw9jB/o0xT/Ts6sJ4AEAAA==
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/CDKMetadata/Default
     Condition: CDKMetadataAvailable
-Parameters:
-  AssetParameters0f385c4082b5431fb23e2ff62fec4db876628b976757d48fda40ad7ecac8b231S3BucketF5A279B0:
-    Type: String
-    Description: S3 bucket for asset "0f385c4082b5431fb23e2ff62fec4db876628b976757d48fda40ad7ecac8b231"
-  AssetParameters0f385c4082b5431fb23e2ff62fec4db876628b976757d48fda40ad7ecac8b231S3VersionKeyEF05D883:
-    Type: String
-    Description: S3 key for asset version "0f385c4082b5431fb23e2ff62fec4db876628b976757d48fda40ad7ecac8b231"
-  AssetParameters0f385c4082b5431fb23e2ff62fec4db876628b976757d48fda40ad7ecac8b231ArtifactHash8B4F671B:
-    Type: String
-    Description: Artifact hash for asset "0f385c4082b5431fb23e2ff62fec4db876628b976757d48fda40ad7ecac8b231"
-  AssetParameters599944c52abfaf95ad71390c17a991d86cda401edbb0b9cd294c93d0f5493e66S3BucketFBBFB664:
-    Type: String
-    Description: S3 bucket for asset "599944c52abfaf95ad71390c17a991d86cda401edbb0b9cd294c93d0f5493e66"
-  AssetParameters599944c52abfaf95ad71390c17a991d86cda401edbb0b9cd294c93d0f5493e66S3VersionKey21BC70DE:
-    Type: String
-    Description: S3 key for asset version "599944c52abfaf95ad71390c17a991d86cda401edbb0b9cd294c93d0f5493e66"
-  AssetParameters599944c52abfaf95ad71390c17a991d86cda401edbb0b9cd294c93d0f5493e66ArtifactHash73B8C165:
-    Type: String
-    Description: Artifact hash for asset "599944c52abfaf95ad71390c17a991d86cda401edbb0b9cd294c93d0f5493e66"
-  AssetParameters2a027a52ab7a615b4d9607177d383d3b16b6833cbf57c112c1ec3f6dd558cc93S3BucketCC62F05C:
-    Type: String
-    Description: S3 bucket for asset "2a027a52ab7a615b4d9607177d383d3b16b6833cbf57c112c1ec3f6dd558cc93"
-  AssetParameters2a027a52ab7a615b4d9607177d383d3b16b6833cbf57c112c1ec3f6dd558cc93S3VersionKey72398399:
-    Type: String
-    Description: S3 key for asset version "2a027a52ab7a615b4d9607177d383d3b16b6833cbf57c112c1ec3f6dd558cc93"
-  AssetParameters2a027a52ab7a615b4d9607177d383d3b16b6833cbf57c112c1ec3f6dd558cc93ArtifactHash6BF71A89:
-    Type: String
-    Description: Artifact hash for asset "2a027a52ab7a615b4d9607177d383d3b16b6833cbf57c112c1ec3f6dd558cc93"
-  AssetParameterse54ec9f2cd4dff27b1b4eef2951812c89d6885bc3ab0de74463a2610aa889ab1S3Bucket77669657:
-    Type: String
-    Description: S3 bucket for asset "e54ec9f2cd4dff27b1b4eef2951812c89d6885bc3ab0de74463a2610aa889ab1"
-  AssetParameterse54ec9f2cd4dff27b1b4eef2951812c89d6885bc3ab0de74463a2610aa889ab1S3VersionKeyB2602FE8:
-    Type: String
-    Description: S3 key for asset version "e54ec9f2cd4dff27b1b4eef2951812c89d6885bc3ab0de74463a2610aa889ab1"
-  AssetParameterse54ec9f2cd4dff27b1b4eef2951812c89d6885bc3ab0de74463a2610aa889ab1ArtifactHashFBAF716C:
-    Type: String
-    Description: Artifact hash for asset "e54ec9f2cd4dff27b1b4eef2951812c89d6885bc3ab0de74463a2610aa889ab1"
-  AssetParameters9cb30c2e9f898e5f6a50b07d5ae5d7edbcb4ff6075ef881b6c10b92509c1e2f0S3BucketFA52C3C7:
-    Type: String
-    Description: S3 bucket for asset "9cb30c2e9f898e5f6a50b07d5ae5d7edbcb4ff6075ef881b6c10b92509c1e2f0"
-  AssetParameters9cb30c2e9f898e5f6a50b07d5ae5d7edbcb4ff6075ef881b6c10b92509c1e2f0S3VersionKey796ED790:
-    Type: String
-    Description: S3 key for asset version "9cb30c2e9f898e5f6a50b07d5ae5d7edbcb4ff6075ef881b6c10b92509c1e2f0"
-  AssetParameters9cb30c2e9f898e5f6a50b07d5ae5d7edbcb4ff6075ef881b6c10b92509c1e2f0ArtifactHashB5871201:
-    Type: String
-    Description: Artifact hash for asset "9cb30c2e9f898e5f6a50b07d5ae5d7edbcb4ff6075ef881b6c10b92509c1e2f0"
-  AssetParameters380251841887a864fc089aa778767c205dbb1064ae01de0a989e9d9ce4171af8S3BucketA5D4ABCD:
-    Type: String
-    Description: S3 bucket for asset "380251841887a864fc089aa778767c205dbb1064ae01de0a989e9d9ce4171af8"
-  AssetParameters380251841887a864fc089aa778767c205dbb1064ae01de0a989e9d9ce4171af8S3VersionKey71AC1508:
-    Type: String
-    Description: S3 key for asset version "380251841887a864fc089aa778767c205dbb1064ae01de0a989e9d9ce4171af8"
-  AssetParameters380251841887a864fc089aa778767c205dbb1064ae01de0a989e9d9ce4171af8ArtifactHashCD8DD379:
-    Type: String
-    Description: Artifact hash for asset "380251841887a864fc089aa778767c205dbb1064ae01de0a989e9d9ce4171af8"
-  AssetParametersa7960ad56c8b041965d08884b00c5922944b29996fcecb7ee6e05641743f188cS3BucketA0968CBA:
-    Type: String
-    Description: S3 bucket for asset "a7960ad56c8b041965d08884b00c5922944b29996fcecb7ee6e05641743f188c"
-  AssetParametersa7960ad56c8b041965d08884b00c5922944b29996fcecb7ee6e05641743f188cS3VersionKey3A15AA59:
-    Type: String
-    Description: S3 key for asset version "a7960ad56c8b041965d08884b00c5922944b29996fcecb7ee6e05641743f188c"
-  AssetParametersa7960ad56c8b041965d08884b00c5922944b29996fcecb7ee6e05641743f188cArtifactHash2BEDBD74:
-    Type: String
-    Description: Artifact hash for asset "a7960ad56c8b041965d08884b00c5922944b29996fcecb7ee6e05641743f188c"
-  AssetParametersd0e1ceb4da11738be01b57a4bdba45fa5719d8dbf442d3ad1ce126f0b81f111eS3BucketA3236123:
-    Type: String
-    Description: S3 bucket for asset "d0e1ceb4da11738be01b57a4bdba45fa5719d8dbf442d3ad1ce126f0b81f111e"
-  AssetParametersd0e1ceb4da11738be01b57a4bdba45fa5719d8dbf442d3ad1ce126f0b81f111eS3VersionKey1FF14054:
-    Type: String
-    Description: S3 key for asset version "d0e1ceb4da11738be01b57a4bdba45fa5719d8dbf442d3ad1ce126f0b81f111e"
-  AssetParametersd0e1ceb4da11738be01b57a4bdba45fa5719d8dbf442d3ad1ce126f0b81f111eArtifactHashAAAF55B3:
-    Type: String
-    Description: Artifact hash for asset "d0e1ceb4da11738be01b57a4bdba45fa5719d8dbf442d3ad1ce126f0b81f111e"
-  AssetParameters454acb2c2c4e5e2f7931f9198cf7f9a8a8a6b70adb77b3f5fb6cd55a7af742a6S3BucketAAFB0949:
-    Type: String
-    Description: S3 bucket for asset "454acb2c2c4e5e2f7931f9198cf7f9a8a8a6b70adb77b3f5fb6cd55a7af742a6"
-  AssetParameters454acb2c2c4e5e2f7931f9198cf7f9a8a8a6b70adb77b3f5fb6cd55a7af742a6S3VersionKeyFAC4B3F5:
-    Type: String
-    Description: S3 key for asset version "454acb2c2c4e5e2f7931f9198cf7f9a8a8a6b70adb77b3f5fb6cd55a7af742a6"
-  AssetParameters454acb2c2c4e5e2f7931f9198cf7f9a8a8a6b70adb77b3f5fb6cd55a7af742a6ArtifactHashC6DB59D1:
-    Type: String
-    Description: Artifact hash for asset "454acb2c2c4e5e2f7931f9198cf7f9a8a8a6b70adb77b3f5fb6cd55a7af742a6"
-  AssetParametersc0bb14776931887c948225196a70b9db1a68b53676ce76d75244652a3b6894abS3Bucket7B39277B:
-    Type: String
-    Description: S3 bucket for asset "c0bb14776931887c948225196a70b9db1a68b53676ce76d75244652a3b6894ab"
-  AssetParametersc0bb14776931887c948225196a70b9db1a68b53676ce76d75244652a3b6894abS3VersionKeyF25C2A50:
-    Type: String
-    Description: S3 key for asset version "c0bb14776931887c948225196a70b9db1a68b53676ce76d75244652a3b6894ab"
-  AssetParametersc0bb14776931887c948225196a70b9db1a68b53676ce76d75244652a3b6894abArtifactHash4AA01B84:
-    Type: String
-    Description: Artifact hash for asset "c0bb14776931887c948225196a70b9db1a68b53676ce76d75244652a3b6894ab"
-  AssetParameters3cac9a560c9bbf2d1e1b5288af9ed956c824afc10416a11518c1f6e158997f47S3Bucket421BF21C:
-    Type: String
-    Description: S3 bucket for asset "3cac9a560c9bbf2d1e1b5288af9ed956c824afc10416a11518c1f6e158997f47"
-  AssetParameters3cac9a560c9bbf2d1e1b5288af9ed956c824afc10416a11518c1f6e158997f47S3VersionKey9CCDBC94:
-    Type: String
-    Description: S3 key for asset version "3cac9a560c9bbf2d1e1b5288af9ed956c824afc10416a11518c1f6e158997f47"
-  AssetParameters3cac9a560c9bbf2d1e1b5288af9ed956c824afc10416a11518c1f6e158997f47ArtifactHash226B6634:
-    Type: String
-    Description: Artifact hash for asset "3cac9a560c9bbf2d1e1b5288af9ed956c824afc10416a11518c1f6e158997f47"
-  AssetParameters1b07510780d2525dc2d91b302d26520257d7e238bd930841d328dc194c408ae2S3Bucket2F3C6E08:
-    Type: String
-    Description: S3 bucket for asset "1b07510780d2525dc2d91b302d26520257d7e238bd930841d328dc194c408ae2"
-  AssetParameters1b07510780d2525dc2d91b302d26520257d7e238bd930841d328dc194c408ae2S3VersionKey2D4C545D:
-    Type: String
-    Description: S3 key for asset version "1b07510780d2525dc2d91b302d26520257d7e238bd930841d328dc194c408ae2"
-  AssetParameters1b07510780d2525dc2d91b302d26520257d7e238bd930841d328dc194c408ae2ArtifactHash66121F7E:
-    Type: String
-    Description: Artifact hash for asset "1b07510780d2525dc2d91b302d26520257d7e238bd930841d328dc194c408ae2"
-  AssetParametersf9f905abe6011c126a4fdded3fedc666e77ff21858b32f092ad0d7a9cfcbb256S3Bucket9285000C:
-    Type: String
-    Description: S3 bucket for asset "f9f905abe6011c126a4fdded3fedc666e77ff21858b32f092ad0d7a9cfcbb256"
-  AssetParametersf9f905abe6011c126a4fdded3fedc666e77ff21858b32f092ad0d7a9cfcbb256S3VersionKey6C919EE6:
-    Type: String
-    Description: S3 key for asset version "f9f905abe6011c126a4fdded3fedc666e77ff21858b32f092ad0d7a9cfcbb256"
-  AssetParametersf9f905abe6011c126a4fdded3fedc666e77ff21858b32f092ad0d7a9cfcbb256ArtifactHashEED913D1:
-    Type: String
-    Description: Artifact hash for asset "f9f905abe6011c126a4fdded3fedc666e77ff21858b32f092ad0d7a9cfcbb256"
-  AssetParameters324a8071c0805bbb7616ff6d7dafdec3f5a5158d4dc808b45b543bf0fcc1edd8S3BucketC8A32765:
-    Type: String
-    Description: S3 bucket for asset "324a8071c0805bbb7616ff6d7dafdec3f5a5158d4dc808b45b543bf0fcc1edd8"
-  AssetParameters324a8071c0805bbb7616ff6d7dafdec3f5a5158d4dc808b45b543bf0fcc1edd8S3VersionKeyB6B01E93:
-    Type: String
-    Description: S3 key for asset version "324a8071c0805bbb7616ff6d7dafdec3f5a5158d4dc808b45b543bf0fcc1edd8"
-  AssetParameters324a8071c0805bbb7616ff6d7dafdec3f5a5158d4dc808b45b543bf0fcc1edd8ArtifactHash86140946:
-    Type: String
-    Description: Artifact hash for asset "324a8071c0805bbb7616ff6d7dafdec3f5a5158d4dc808b45b543bf0fcc1edd8"
-  AssetParameters8a06973223d306743ebf03efaf46701f411d1fcba883b326c4553b9f0090eaacS3Bucket2A5253F4:
-    Type: String
-    Description: S3 bucket for asset "8a06973223d306743ebf03efaf46701f411d1fcba883b326c4553b9f0090eaac"
-  AssetParameters8a06973223d306743ebf03efaf46701f411d1fcba883b326c4553b9f0090eaacS3VersionKeyF7C0B511:
-    Type: String
-    Description: S3 key for asset version "8a06973223d306743ebf03efaf46701f411d1fcba883b326c4553b9f0090eaac"
-  AssetParameters8a06973223d306743ebf03efaf46701f411d1fcba883b326c4553b9f0090eaacArtifactHash45B2360F:
-    Type: String
-    Description: Artifact hash for asset "8a06973223d306743ebf03efaf46701f411d1fcba883b326c4553b9f0090eaac"
-  AssetParameters229dd06f81240fa399d29c6f8b9ae54e73a0958d410b18dbe8a8fe791e8b7747S3Bucket9AB20889:
-    Type: String
-    Description: S3 bucket for asset "229dd06f81240fa399d29c6f8b9ae54e73a0958d410b18dbe8a8fe791e8b7747"
-  AssetParameters229dd06f81240fa399d29c6f8b9ae54e73a0958d410b18dbe8a8fe791e8b7747S3VersionKey43686DFE:
-    Type: String
-    Description: S3 key for asset version "229dd06f81240fa399d29c6f8b9ae54e73a0958d410b18dbe8a8fe791e8b7747"
-  AssetParameters229dd06f81240fa399d29c6f8b9ae54e73a0958d410b18dbe8a8fe791e8b7747ArtifactHash26151C5E:
-    Type: String
-    Description: Artifact hash for asset "229dd06f81240fa399d29c6f8b9ae54e73a0958d410b18dbe8a8fe791e8b7747"
-  AssetParametersd58b1302e3fe9ed2133887cc52526740aeed77c3f52dfdb5ddcd33a438e11506S3Bucket1A0DB899:
-    Type: String
-    Description: S3 bucket for asset "d58b1302e3fe9ed2133887cc52526740aeed77c3f52dfdb5ddcd33a438e11506"
-  AssetParametersd58b1302e3fe9ed2133887cc52526740aeed77c3f52dfdb5ddcd33a438e11506S3VersionKey083EFA1F:
-    Type: String
-    Description: S3 key for asset version "d58b1302e3fe9ed2133887cc52526740aeed77c3f52dfdb5ddcd33a438e11506"
-  AssetParametersd58b1302e3fe9ed2133887cc52526740aeed77c3f52dfdb5ddcd33a438e11506ArtifactHash66E9102A:
-    Type: String
-    Description: Artifact hash for asset "d58b1302e3fe9ed2133887cc52526740aeed77c3f52dfdb5ddcd33a438e11506"
-  AssetParameters9f0636da98bb6e34332a73c955d911df6eaeadf2e524123b2ca8cd6c81ab4dd7S3Bucket08659E68:
-    Type: String
-    Description: S3 bucket for asset "9f0636da98bb6e34332a73c955d911df6eaeadf2e524123b2ca8cd6c81ab4dd7"
-  AssetParameters9f0636da98bb6e34332a73c955d911df6eaeadf2e524123b2ca8cd6c81ab4dd7S3VersionKeyCCA9C399:
-    Type: String
-    Description: S3 key for asset version "9f0636da98bb6e34332a73c955d911df6eaeadf2e524123b2ca8cd6c81ab4dd7"
-  AssetParameters9f0636da98bb6e34332a73c955d911df6eaeadf2e524123b2ca8cd6c81ab4dd7ArtifactHashB9C6ED1D:
-    Type: String
-    Description: Artifact hash for asset "9f0636da98bb6e34332a73c955d911df6eaeadf2e524123b2ca8cd6c81ab4dd7"
-  AssetParameterse5036dcf8d7859dc87fb61421910ab6221bf371ed57424923fd875c7902e99f7S3Bucket4A43C921:
-    Type: String
-    Description: S3 bucket for asset "e5036dcf8d7859dc87fb61421910ab6221bf371ed57424923fd875c7902e99f7"
-  AssetParameterse5036dcf8d7859dc87fb61421910ab6221bf371ed57424923fd875c7902e99f7S3VersionKeyE6789BBE:
-    Type: String
-    Description: S3 key for asset version "e5036dcf8d7859dc87fb61421910ab6221bf371ed57424923fd875c7902e99f7"
-  AssetParameterse5036dcf8d7859dc87fb61421910ab6221bf371ed57424923fd875c7902e99f7ArtifactHash6113E688:
-    Type: String
-    Description: Artifact hash for asset "e5036dcf8d7859dc87fb61421910ab6221bf371ed57424923fd875c7902e99f7"
-  AssetParametersa2756cf7c8d1f85e4a0e8ef0118515c9629bfdd1b00666882e8cc5704694faa0S3Bucket523F68FC:
-    Type: String
-    Description: S3 bucket for asset "a2756cf7c8d1f85e4a0e8ef0118515c9629bfdd1b00666882e8cc5704694faa0"
-  AssetParametersa2756cf7c8d1f85e4a0e8ef0118515c9629bfdd1b00666882e8cc5704694faa0S3VersionKey0A5B1854:
-    Type: String
-    Description: S3 key for asset version "a2756cf7c8d1f85e4a0e8ef0118515c9629bfdd1b00666882e8cc5704694faa0"
-  AssetParametersa2756cf7c8d1f85e4a0e8ef0118515c9629bfdd1b00666882e8cc5704694faa0ArtifactHash8F4621F2:
-    Type: String
-    Description: Artifact hash for asset "a2756cf7c8d1f85e4a0e8ef0118515c9629bfdd1b00666882e8cc5704694faa0"
-  AssetParametersf1c98af167772b8a79b5e1e9319e42cc5d5a03e1f7ba18b82624bc60b639dbbcS3Bucket34C888D0:
-    Type: String
-    Description: S3 bucket for asset "f1c98af167772b8a79b5e1e9319e42cc5d5a03e1f7ba18b82624bc60b639dbbc"
-  AssetParametersf1c98af167772b8a79b5e1e9319e42cc5d5a03e1f7ba18b82624bc60b639dbbcS3VersionKeyC54907EB:
-    Type: String
-    Description: S3 key for asset version "f1c98af167772b8a79b5e1e9319e42cc5d5a03e1f7ba18b82624bc60b639dbbc"
-  AssetParametersf1c98af167772b8a79b5e1e9319e42cc5d5a03e1f7ba18b82624bc60b639dbbcArtifactHashFA0C031C:
-    Type: String
-    Description: Artifact hash for asset "f1c98af167772b8a79b5e1e9319e42cc5d5a03e1f7ba18b82624bc60b639dbbc"
-  AssetParameters14362d3532f681f92bfd04e7354bef4954fe1c6443912cd9a7e0a283224aa815S3Bucket61F1AC9B:
-    Type: String
-    Description: S3 bucket for asset "14362d3532f681f92bfd04e7354bef4954fe1c6443912cd9a7e0a283224aa815"
-  AssetParameters14362d3532f681f92bfd04e7354bef4954fe1c6443912cd9a7e0a283224aa815S3VersionKeyE1C85738:
-    Type: String
-    Description: S3 key for asset version "14362d3532f681f92bfd04e7354bef4954fe1c6443912cd9a7e0a283224aa815"
-  AssetParameters14362d3532f681f92bfd04e7354bef4954fe1c6443912cd9a7e0a283224aa815ArtifactHashA6F1B14F:
-    Type: String
-    Description: Artifact hash for asset "14362d3532f681f92bfd04e7354bef4954fe1c6443912cd9a7e0a283224aa815"
-  AssetParameters4a7b365c3f99bb4214db261d7b357925ad49aff68a3b8ad285469fb530241a3cS3BucketC47D351E:
-    Type: String
-    Description: S3 bucket for asset "4a7b365c3f99bb4214db261d7b357925ad49aff68a3b8ad285469fb530241a3c"
-  AssetParameters4a7b365c3f99bb4214db261d7b357925ad49aff68a3b8ad285469fb530241a3cS3VersionKey0AC5A7B0:
-    Type: String
-    Description: S3 key for asset version "4a7b365c3f99bb4214db261d7b357925ad49aff68a3b8ad285469fb530241a3c"
-  AssetParameters4a7b365c3f99bb4214db261d7b357925ad49aff68a3b8ad285469fb530241a3cArtifactHashF233353A:
-    Type: String
-    Description: Artifact hash for asset "4a7b365c3f99bb4214db261d7b357925ad49aff68a3b8ad285469fb530241a3c"
-  AssetParametersf72793a1bef30a642eafb4640b40718b24bbea6fc469f9c3eae3405a16ba07bfS3Bucket9BF8E767:
-    Type: String
-    Description: S3 bucket for asset "f72793a1bef30a642eafb4640b40718b24bbea6fc469f9c3eae3405a16ba07bf"
-  AssetParametersf72793a1bef30a642eafb4640b40718b24bbea6fc469f9c3eae3405a16ba07bfS3VersionKey91495100:
-    Type: String
-    Description: S3 key for asset version "f72793a1bef30a642eafb4640b40718b24bbea6fc469f9c3eae3405a16ba07bf"
-  AssetParametersf72793a1bef30a642eafb4640b40718b24bbea6fc469f9c3eae3405a16ba07bfArtifactHash809C2EFF:
-    Type: String
-    Description: Artifact hash for asset "f72793a1bef30a642eafb4640b40718b24bbea6fc469f9c3eae3405a16ba07bf"
-  AssetParameters98b4022d2260c41c8dcff542335bcd479856d03468e56d8c712648d5fcefa1c6S3Bucket2D796CE9:
-    Type: String
-    Description: S3 bucket for asset "98b4022d2260c41c8dcff542335bcd479856d03468e56d8c712648d5fcefa1c6"
-  AssetParameters98b4022d2260c41c8dcff542335bcd479856d03468e56d8c712648d5fcefa1c6S3VersionKey50EBB76A:
-    Type: String
-    Description: S3 key for asset version "98b4022d2260c41c8dcff542335bcd479856d03468e56d8c712648d5fcefa1c6"
-  AssetParameters98b4022d2260c41c8dcff542335bcd479856d03468e56d8c712648d5fcefa1c6ArtifactHash008C6C56:
-    Type: String
-    Description: Artifact hash for asset "98b4022d2260c41c8dcff542335bcd479856d03468e56d8c712648d5fcefa1c6"
-  AssetParameters211e2246765e3c6368369ab4a0f9cd4f9e13bb41bc3750f9c9d8c0dbe8fdbb3aS3Bucket5AE5AAF8:
-    Type: String
-    Description: S3 bucket for asset "211e2246765e3c6368369ab4a0f9cd4f9e13bb41bc3750f9c9d8c0dbe8fdbb3a"
-  AssetParameters211e2246765e3c6368369ab4a0f9cd4f9e13bb41bc3750f9c9d8c0dbe8fdbb3aS3VersionKey3FB5FBA5:
-    Type: String
-    Description: S3 key for asset version "211e2246765e3c6368369ab4a0f9cd4f9e13bb41bc3750f9c9d8c0dbe8fdbb3a"
-  AssetParameters211e2246765e3c6368369ab4a0f9cd4f9e13bb41bc3750f9c9d8c0dbe8fdbb3aArtifactHashECC32149:
-    Type: String
-    Description: Artifact hash for asset "211e2246765e3c6368369ab4a0f9cd4f9e13bb41bc3750f9c9d8c0dbe8fdbb3a"
-  AssetParametersbeb5d4038efc0e30218ecc54f27c0fa9d0406163c0e40673ba93d8b501afa5e9S3Bucket9EDDEC34:
-    Type: String
-    Description: S3 bucket for asset "beb5d4038efc0e30218ecc54f27c0fa9d0406163c0e40673ba93d8b501afa5e9"
-  AssetParametersbeb5d4038efc0e30218ecc54f27c0fa9d0406163c0e40673ba93d8b501afa5e9S3VersionKey3B1B3190:
-    Type: String
-    Description: S3 key for asset version "beb5d4038efc0e30218ecc54f27c0fa9d0406163c0e40673ba93d8b501afa5e9"
-  AssetParametersbeb5d4038efc0e30218ecc54f27c0fa9d0406163c0e40673ba93d8b501afa5e9ArtifactHash3C86B2AB:
-    Type: String
-    Description: Artifact hash for asset "beb5d4038efc0e30218ecc54f27c0fa9d0406163c0e40673ba93d8b501afa5e9"
 Outputs:
   WorksManApiDefaultEndpoint2AE874EB:
     Value:
@@ -7610,4 +6513,22 @@ Conditions:
           - Fn::Equals:
               - Ref: AWS::Region
               - us-west-2
+Parameters:
+  BootstrapVersion:
+    Type: AWS::SSM::Parameter::Value<String>
+    Default: /cdk-bootstrap/hnb659fds/version
+    Description: Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]
+Rules:
+  CheckBootstrapVersion:
+    Assertions:
+      - Assert:
+          Fn::Not:
+            - Fn::Contains:
+                - - "1"
+                  - "2"
+                  - "3"
+                  - "4"
+                  - "5"
+                - Ref: BootstrapVersion
+        AssertDescription: CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI.
 

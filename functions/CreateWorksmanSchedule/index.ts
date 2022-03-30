@@ -1,10 +1,10 @@
-import { getPostCodesServices, WorksmnaScheduleServices } from "./services/WorksmnaScheduleServices"
+import { CreateWorksmnaScheduleServices } from "./services/CreateWorksmanScheduleServices"
 
-exports.WorksmnaScheduleHandler = async (event: any) => {
+exports.CreateWorksmanScheduleHandler = async (event: any) => {
     try {
         const data = JSON.parse(event)
-        console.log("This is eventevent",event)
-        await WorksmnaScheduleServices(data)
+        console.log("This is eventevent",data)
+        await CreateWorksmnaScheduleServices(data)
 
         return {
             statusCode: 200,

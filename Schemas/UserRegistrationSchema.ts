@@ -118,17 +118,17 @@ const worksman_postcodes = () => {
              );
         `
 }
-const worksman_schedule = () => {
+const worksman_schedule_table = () => {
         return `        
-        DROP TABLE IF EXISTS worksman_schedule ;
-
-          CREATE TABLE worksman_schedule (
-                          worksman_schedule_id SERIAL PRIMARY KEY,
-                          worksman_id  VARCHAR (255) NOT NULL,
-                          schedule_day VARCHAR(255) NOT NULL,
-                	  schedule_time VARCHAR(255) NOT NULL,
-                          created_on TIMESTAMP not null default current_timestamp
-                              );
+        DROP TABLE IF EXISTS worksman_schedule_table ;
+      
+CREATE TABLE worksman_schedule_table(
+            worksman_schedule_id BIGSERIAL PRIMARY KEY,
+            worksman_id VARCHAR(225) NOT NULL,
+            worksman_schedule_date VARCHAR(225) NOT NULL,
+            worksman_schedule_time VARCHAR(225) NOT NULL,
+            created_on TIMESTAMP not null default current_timestamp
+    )
         `
 }
 

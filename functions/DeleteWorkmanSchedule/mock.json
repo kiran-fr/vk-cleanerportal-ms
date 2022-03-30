@@ -1,5 +1,3 @@
 {
-        "worksman_id":"2",
-        "schedule_day": "Sun",
-        "schedule_time":"08:00-10:00"
+        "worksman_schedule_id":"1"
 }

@@ -30,7 +30,7 @@ sam local invoke UpdateWorksmanDetail764C9F8C -e functions/UpdateWorksmanDetails
 sam local invoke UserPostCodesEC5B0AD7 -e functions/UserPostCodes/mock.json
 sam local invoke GetAllPostcodes029D20CC -e functions/GetAllPostcodes/mock.json
 sam local invoke DeletePostcodes16F8A0A6 -e functions/DeletePostcodes/mock.json
-sam local invoke WorksmnaScheduletcodes517FF821 -e functions/WorksmnaSchedule/mock.json
+sam local invoke CreateWorksmanSchedule15C9D17D -e functions/CreateWorksmanSchedule/mock.json
 sam local invoke DeleteWorkmanSchedule22944F3C -e functions/DeleteWorkmanSchedule/mock.json
 sam local invoke GetWorksmanScheduleC62DDBF7 -e functions/GetWorksmanSchedules/mock.json
 sam local invoke GetWorksmanjobsC1DF3F8D -e functions/GetWorksmanjobs/mock.json
