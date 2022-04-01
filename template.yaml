@@ -433,7 +433,7 @@ Resources:
       Code:
         S3Bucket:
           Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
-        S3Key: 84adc036b0c9342f79df862cb44b234bb9102fcb640934baae5f7b703903c41d.zip
+        S3Key: c9a885e1a25392fc4ef64f72d8bd3ffd7bef8bedd52b6abb8b09c5d2f81965ad.zip
       Role:
         Fn::GetAtt:
           - CreateWorksmanScheduleServiceRole1230E12A
@@ -474,7 +474,7 @@ Resources:
       Code:
         S3Bucket:
           Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
-        S3Key: 324a8071c0805bbb7616ff6d7dafdec3f5a5158d4dc808b45b543bf0fcc1edd8.zip
+        S3Key: a09295241b5823f9c3618430a3f1268f040f39bf63425e0634642ff04d699d79.zip
       Role:
         Fn::GetAtt:
           - DeleteWorkmanScheduleServiceRoleDE63A6DE
@@ -515,7 +515,7 @@ Resources:
       Code:
         S3Bucket:
           Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
-        S3Key: 8a06973223d306743ebf03efaf46701f411d1fcba883b326c4553b9f0090eaac.zip
+        S3Key: 8460800fbaf95254d3917f3e67687df322f13e7910eb607401f41f6e7f383ed8.zip
       Role:
         Fn::GetAtt:
           - GetWorksmanScheduleServiceRoleE4B9B5D3
@@ -1060,7 +1060,7 @@ Resources:
       - WorksManApiDefault14BF881A
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Account
-  WorksManApiDefaultDeployment59387D65d4d7d69328a455d97baa23ab6283c542:
+  WorksManApiDefaultDeployment59387D65fb6f882d4b0a4d6394e4d77ff0dd5246:
     Type: AWS::ApiGateway::Deployment
     Properties:
       RestApiId:
@@ -1207,7 +1207,7 @@ Resources:
       RestApiId:
         Ref: WorksManApiDefault14BF881A
       DeploymentId:
-        Ref: WorksManApiDefaultDeployment59387D65d4d7d69328a455d97baa23ab6283c542
+        Ref: WorksManApiDefaultDeployment59387D65fb6f882d4b0a4d6394e4d77ff0dd5246
       StageName: dev
     DependsOn:
       - WorksManApiDefaultAccount7B5AC316
@@ -1227,7 +1227,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes,schedule_day,schedule_time,schedule_date,user_id'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -1266,7 +1266,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes,schedule_day,schedule_time,schedule_date,user_id'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -1428,7 +1428,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes,schedule_day,schedule_time,schedule_date,user_id'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -1590,7 +1590,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes,schedule_day,schedule_time,schedule_date,user_id'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -1752,7 +1752,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes,schedule_day,schedule_time,schedule_date,user_id'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -1914,7 +1914,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes,schedule_day,schedule_time,schedule_date,user_id'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -2076,7 +2076,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes,schedule_day,schedule_time,schedule_date,user_id'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -2238,7 +2238,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes,schedule_day,schedule_time,schedule_date,user_id'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -2400,7 +2400,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes,schedule_day,schedule_time,schedule_date,user_id'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -2562,7 +2562,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes,schedule_day,schedule_time,schedule_date,user_id'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -2724,7 +2724,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes,schedule_day,schedule_time,schedule_date,user_id'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -2886,7 +2886,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes,schedule_day,schedule_time,schedule_date,user_id'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -3051,7 +3051,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes,schedule_day,schedule_time,schedule_date,user_id'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -3210,7 +3210,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes,schedule_day,schedule_time,schedule_date,user_id'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -3375,7 +3375,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes,schedule_day,schedule_time,schedule_date,user_id'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -3536,7 +3536,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes,schedule_day,schedule_time,schedule_date,user_id'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -3634,12 +3634,9 @@ Resources:
             StatusCode: "400"
         PassthroughBehavior: NEVER
         RequestParameters:
-          integration.request.querystring.worksmanId: method.request.querystring.worksmanId
           integration.request.header.worksman_id: method.request.header.worksman_id
-          integration.request.header.schedule_day: method.request.header.schedule_day
-          integration.request.header.schedule_time: method.request.header.schedule_time
         RequestTemplates:
-          application/json: "{\"worksmanId\":\"$util.escapeJavaScript($input.params('worksmanId'))\",\"worksman_id\":\"$util.escapeJavaScript($input.params('worksman_id'))\",\"schedule_day\":\"$util.escapeJavaScript($input.params('schedule_day'))\",\"schedule_time\":\"$util.escapeJavaScript($input.params('schedule_time'))\"}"
+          application/json: "{\"worksman_id\":\"$util.escapeJavaScript($input.params('worksman_id'))\"}"
         Type: AWS
         Uri:
           Fn::Join:
@@ -3673,10 +3670,7 @@ Resources:
             method.response.header.Access-Control-Allow-Headers: true
           StatusCode: "400"
       RequestParameters:
-        method.request.querystring.worksmanId: true
         method.request.header.worksman_id: true
-        method.request.header.schedule_day: true
-        method.request.header.schedule_time: true
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/GetWorksmanScheduleApi/GET/Resource
   WorksManApiDefaultGetWorksmanjobsApi1CEFEBF3:
@@ -3703,7 +3697,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes,schedule_day,schedule_time,schedule_date,user_id'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -3864,7 +3858,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes,schedule_day,schedule_time,schedule_date,user_id'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -4025,7 +4019,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes,schedule_day,schedule_time,schedule_date,user_id'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -4188,7 +4182,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes,schedule_day,schedule_time,schedule_date,user_id'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -4349,7 +4343,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes,schedule_day,schedule_time,schedule_date,user_id'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -4510,7 +4504,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes,schedule_day,schedule_time,schedule_date,user_id'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -4671,7 +4665,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes,schedule_day,schedule_time,schedule_date,user_id'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -4836,7 +4830,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes,schedule_day,schedule_time,schedule_date,user_id'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -4934,13 +4928,9 @@ Resources:
             StatusCode: "400"
         PassthroughBehavior: NEVER
         RequestParameters:
-          integration.request.querystring.worksmanId: method.request.querystring.worksmanId
-          integration.request.header.worksman_id: method.request.header.worksman_id
-          integration.request.header.schedule_day: method.request.header.schedule_day
-          integration.request.header.schedule_time: method.request.header.schedule_time
-          integration.request.header.schedule_date: method.request.header.schedule_date
+          integration.request.header.worksman_schedule_id: method.request.header.worksman_schedule_id
         RequestTemplates:
-          application/json: "{\"worksmanId\":\"$util.escapeJavaScript($input.params('worksmanId'))\",\"worksman_id\":\"$util.escapeJavaScript($input.params('worksman_id'))\",\"schedule_day\":\"$util.escapeJavaScript($input.params('schedule_day'))\",\"schedule_time\":\"$util.escapeJavaScript($input.params('schedule_time'))\",\"schedule_date\":\"$util.escapeJavaScript($input.params('schedule_date'))\"}"
+          application/json: "{\"worksman_schedule_id\":\"$util.escapeJavaScript($input.params('worksman_schedule_id'))\"}"
         Type: AWS
         Uri:
           Fn::Join:
@@ -4974,11 +4964,7 @@ Resources:
             method.response.header.Access-Control-Allow-Headers: true
           StatusCode: "400"
       RequestParameters:
-        method.request.querystring.worksmanId: true
-        method.request.header.worksman_id: true
-        method.request.header.schedule_day: true
-        method.request.header.schedule_time: true
-        method.request.header.schedule_date: true
+        method.request.querystring.worksman_schedule_id: true
     Metadata:
       aws:cdk:path: VrishkarServicesStacks/WorksManApiDefault/Default/DeleteWorkmanScheduleApi/DELETE/Resource
   WorksManApiDefaultUpdateWorksmanDetailsApi6E0D1F7B:
@@ -5005,7 +4991,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,postcodes,schedule_day,schedule_time,schedule_date,user_id'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"

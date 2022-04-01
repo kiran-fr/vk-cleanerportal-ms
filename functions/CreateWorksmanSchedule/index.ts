@@ -3,7 +3,7 @@ import { CreateWorksmnaScheduleServices } from "./services/CreateWorksmanSchedul
 exports.CreateWorksmanScheduleHandler = async (event: any) => {
     try {
         const data = JSON.parse(event)
-        console.log("This is eventevent",data)
+        console.log("step-1",event)
         await CreateWorksmnaScheduleServices(data)
 
         return {

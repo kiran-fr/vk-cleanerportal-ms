@@ -2505,7 +2505,9 @@ export const DeleteWorkmanScheduleApiGateway = (api: any, lambdaFunctionName: an
       // - Source parameters (the value) are the source request parameters or expressions
       // @see: https://docs.aws.amazon.com/apigateway/latest/developerguide/request-response-data-mappings.html
       // 'integration.request.querystring.worksmanId': 'method.request.querystring.worksmanId'
-      'integration.request.header.worksman_schedule_id': 'method.request.header.worksman_schedule_id'
+      'integration.request.header.worksman_id': 'method.request.header.worksman_id',
+      'integration.request.header.worksman_schedule_date': 'method.request.header.worksman_schedule_date',
+      'integration.request.header.worksman_schedule_time': 'method.request.header.worksman_schedule_time'
 
 
       // method.request.header.PARAM_NAME
@@ -2517,7 +2519,9 @@ export const DeleteWorkmanScheduleApiGateway = (api: any, lambdaFunctionName: an
       //   //  on the integration parameters that you have specified
       //   // Check: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html
       'application/json': JSON.stringify({
-        worksman_schedule_id: "$util.escapeJavaScript($input.params('worksman_schedule_id'))"
+        worksman_id: "$util.escapeJavaScript($input.params('worksman_id'))",
+        worksman_schedule_date: "$util.escapeJavaScript($input.params('worksman_schedule_date'))",
+        worksman_schedule_time: "$util.escapeJavaScript($input.params('worksman_schedule_time'))"
       })
     },
 
@@ -2567,7 +2571,9 @@ export const DeleteWorkmanScheduleApiGateway = (api: any, lambdaFunctionName: an
   DeleteWorkmanSchedule.addMethod(methodType, integration, {
     // We can mark the parameters as required
     requestParameters: {
-      'method.request.querystring.worksman_schedule_id': true
+      'method.request.querystring.worksman_id': true,
+      'method.request.querystring.worksman_schedule_date': true,
+      'method.request.querystring.worksman_schedule_time': true
     },
     authorizer: authorizations,
     authorizationType: apigateway.AuthorizationType.COGNITO,
