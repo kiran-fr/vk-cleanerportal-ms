@@ -22,7 +22,8 @@ import {
   GetJobsLambda,
   GetPaymentDetailsLambda,
   CreatePaymentHistoryDetailsLambda,
-  GetPaymentHistoryDetailsLambda
+  GetPaymentHistoryDetailsLambda,
+  GetDistrictWisePostCodesLambda
 } from './resources/lambda/alllambda';
 import * as sfn from "@aws-cdk/aws-stepfunctions";
 import * as apigateway from "@aws-cdk/aws-apigateway"
@@ -49,7 +50,8 @@ import {
   GetJobsApiGateway,
   GetPaymentDetailsApiGateway,
   CreatePaymentHistoryDetailsApiGateway,
-  GetPaymentHistoryDetailsApiGateway
+  GetPaymentHistoryDetailsApiGateway,
+  GetDistrictWisePostCodesApiGateway
 } from "./resources/ApiGateway/AllApiGateWays";
 import * as cognito from '@aws-cdk/aws-cognito';
 
@@ -84,9 +86,10 @@ export class CdkExampleStack extends cdk.Stack {
     const GetPaymentDetailsLambdaApi = new lambda.Function(this, "GetPaymentDetails", GetPaymentDetailsLambda())
     const CreatePaymentHistoryDetailsLambdaApi = new lambda.Function(this, "CreatePaymentHistoryDetails", CreatePaymentHistoryDetailsLambda())
     const GetPaymentHistoryDetailsLambdaApi = new lambda.Function(this, "GetPaymentHistoryDetails", GetPaymentHistoryDetailsLambda())
+    const GetDistrictWisePostCodesLambdaApi = new lambda.Function(this, "GetDistrictWisePostCodes", GetDistrictWisePostCodesLambda())
 
 
-    const api = new apigateway.RestApi(this, 'WorksManApiDefault', ApigatewayDataConstants(apigateway));
+    const api = new apigateway.RestApi(this, 'WorksManApiData', ApigatewayDataConstants(apigateway));
 
     const userPool = new cognito.UserPool(this, 'userpool', {
       userPoolName: `vk-clean-portal`,
@@ -189,45 +192,46 @@ export class CdkExampleStack extends cdk.Stack {
 
 
 
-    const auth = new apigateway.CognitoUserPoolsAuthorizer(this, 'Authorizer', {
-      cognitoUserPools: [userPool]
-    });
+    // const auth = new apigateway.CognitoUserPoolsAuthorizer(this, 'Authorizer', {
+    //   cognitoUserPools: [userPool]
+    // });
 
 
 
-    // POST APIS
-    WorksmanTermsAndConditionsApiGateway(api, WorksManTermsAndCondition, 'POST', auth)
-    worksmanExperienceApiGateway(api, WorksManExperience, 'POST', auth)
-    // PostUserApiGateway(api, PostTestUser, 'POST', auth)
-    UserPostCodesApiGateway(api, UserPostCodeLambdaApi, 'POST', auth)
-    CreateWorksmanScheduleApiGateway(api, CreateWorksmanScheduleLambdaApi, 'POST', auth)
-    WorksmanjobsCreateApiGateway(api, WorksmanjobsCreateLambdaApi, 'POST', auth)
-    CreateBankDetailsApiGateway(api, CreateBankDetailsLambdaApi, 'POST', auth)
-    CreateMessagesApiGateway(api, CreateMessagesLambdaApi, 'POST', auth)
-    CreateCustomerTableApiGateway(api, CreateCustomerTableLambdaApi, 'POST', auth)
-    CreateCustomerAddressApiGateway(api, CreateCustomerTableLambdaApi, 'POST', auth)
-    CreatePaymentHistoryDetailsApiGateway(api, CreateCustomerTableLambdaApi, 'POST', auth)
+    // // POST APIS
+    // WorksmanTermsAndConditionsApiGateway(api, WorksManTermsAndCondition, 'POST', auth)
+    // worksmanExperienceApiGateway(api, WorksManExperience, 'POST', auth)
+    // // PostUserApiGateway(api, PostTestUser, 'POST', auth)
+    // UserPostCodesApiGateway(api, UserPostCodeLambdaApi, 'POST', auth)
+    // CreateWorksmanScheduleApiGateway(api, CreateWorksmanScheduleLambdaApi, 'POST', auth)
+    // WorksmanjobsCreateApiGateway(api, WorksmanjobsCreateLambdaApi, 'POST', auth)
+    // CreateBankDetailsApiGateway(api, CreateBankDetailsLambdaApi, 'POST', auth)
+    // CreateMessagesApiGateway(api, CreateMessagesLambdaApi, 'POST', auth)
+    // CreateCustomerTableApiGateway(api, CreateCustomerTableLambdaApi, 'POST', auth)
+    // CreateCustomerAddressApiGateway(api, CreateCustomerTableLambdaApi, 'POST', auth)
+    // CreatePaymentHistoryDetailsApiGateway(api, CreateCustomerTableLambdaApi, 'POST', auth)
 
-    // GET APIS
-    GetWorksmanAccountRegistartionStatusApiGateway(api, GetWorksmanAccountRegistartionStatus, 'GET', auth)
-    // GetTestUserApiGateway(api, GetTestUser, 'GET', auth)
-    getAllMobileNumbersApiGateway(api, getAllMobileNumbersDemo, 'GET')
-    GetWorkmanDetailsApiGateway(api, GetWorkmanDetailLambda, 'GET', auth)
-    GetAllPostcodesApiGateway(api, GetAllPostcodesLambdaApi, 'GET', auth)
-    GetWorksmanScheduleApiGateway(api, GetWorksmanScheduleLambdaApi, 'GET', auth)
-    GetWorksmanjobsApiGateway(api, GetWorksmanjobsLambdaApi, 'GET', auth)
-    GetBankDetailsApiGateway(api, GetBankDetailsLambdaApi, 'GET', auth)
-    GetMessagesApiGateway(api, GetMessagesLambdaApi, 'GET', auth)
-    GetJobsApiGateway(api, GetJobsLambdaApi, 'GET', auth)
-    GetPaymentDetailsApiGateway(api, GetPaymentDetailsLambdaApi, 'GET', auth)
-    GetPaymentHistoryDetailsApiGateway(api, GetPaymentHistoryDetailsLambdaApi, 'GET', auth)
+    // // GET APIS
+    // GetWorksmanAccountRegistartionStatusApiGateway(api, GetWorksmanAccountRegistartionStatus, 'GET', auth)
+    // // GetTestUserApiGateway(api, GetTestUser, 'GET', auth)
+    // getAllMobileNumbersApiGateway(api, getAllMobileNumbersDemo, 'GET')
+    // GetWorkmanDetailsApiGateway(api, GetWorkmanDetailLambda, 'GET', auth)
+    // GetAllPostcodesApiGateway(api, GetAllPostcodesLambdaApi, 'GET', auth)
+    // GetWorksmanScheduleApiGateway(api, GetWorksmanScheduleLambdaApi, 'GET', auth)
+    // GetWorksmanjobsApiGateway(api, GetWorksmanjobsLambdaApi, 'GET', auth)
+    // GetBankDetailsApiGateway(api, GetBankDetailsLambdaApi, 'GET', auth)
+    // GetMessagesApiGateway(api, GetMessagesLambdaApi, 'GET', auth)
+    // GetJobsApiGateway(api, GetJobsLambdaApi, 'GET', auth)
+    // GetPaymentDetailsApiGateway(api, GetPaymentDetailsLambdaApi, 'GET', auth)
+    // GetPaymentHistoryDetailsApiGateway(api, GetPaymentHistoryDetailsLambdaApi, 'GET', auth)
+    // GetDistrictWisePostCodesApiGateway(api, GetDistrictWisePostCodesLambdaApi, 'GET', auth)
 
-    // DELETE APIS
-    DeletePostcodesApiGateway(api, DeletePostcodesLambdaApi, 'DELETE', auth)
-    DeleteWorkmanScheduleApiGateway(api, DeleteWorkmanScheduleLambdaApi, 'DELETE', auth)
+    // // DELETE APIS
+    // DeletePostcodesApiGateway(api, DeletePostcodesLambdaApi, 'DELETE', auth)
+    // DeleteWorkmanScheduleApiGateway(api, DeleteWorkmanScheduleLambdaApi, 'DELETE', auth)
 
-    // UPDATE APIS
-    UpdateWorksmanDetailsApiGateway(api, UpdateWorksmanDetailLambda, 'PUT', auth)
+    // // UPDATE APIS
+    // UpdateWorksmanDetailsApiGateway(api, UpdateWorksmanDetailLambda, 'PUT', auth)
 
   }
 }

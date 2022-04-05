@@ -4,6 +4,6 @@ import * as cdk from '@aws-cdk/core';
 import { CdkExampleStack } from '../lib/cdk-example-stack';
 
 const app = new cdk.App();
-new CdkExampleStack(app, 'VrishkarServicesStacks', {
+new CdkExampleStack(app, 'VrishkarServicesDevStacks', {
     
 });
