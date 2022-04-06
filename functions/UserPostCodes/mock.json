@@ -1,4 +1,12 @@
-{
-        "worksman_id": "3",
-        "postcodes":"54384"
-}
+[
+        {
+                "worksman_id": "3",
+                "postcodes": "D12",
+                "district": "District"
+        },
+        {
+                "worksman_id": "3",
+                "postcodes": "D13",
+                "district": "District"
+        }
+]

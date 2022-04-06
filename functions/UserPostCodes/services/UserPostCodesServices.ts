@@ -8,6 +8,7 @@ export const UserPostCodesServices = async (event: any) => {
         const data = await sequelizeConnection.query(UserPostCodesQuery(event), {
             type: QueryTypes.INSERT
         })
+        return data
     } catch (exception) {
         console.log(`UserPostCodesServices Error ${exception}`)
         throw exception

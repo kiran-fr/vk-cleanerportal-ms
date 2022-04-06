@@ -19,6 +19,7 @@ export const ApigatewayDataConstants = (apigateway: any) => {
         'user_id',
         'worksman_schedule_date',
         'worksman_schedule_time',
+        'postcodes',
         'district'
       ]
     }

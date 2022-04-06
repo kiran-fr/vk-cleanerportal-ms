@@ -10,6 +10,6 @@ export const WorksManTermsAndConditionQuery = (event:any) => {
 
 export const WorksmanTermsAndConditionStepQuery  = (worksmanId:any) => {
     console.warn(worksmanId)
-    return ` UPDATE worksman_table SET current_step='worksman-T&C' WHERE worksman_id = ${worksmanId}; `
+    return ` UPDATE worksman_table SET current_step='worksman-T&C' , is_user_active_status=${false} WHERE worksman_id = ${worksmanId}; `
   }
 

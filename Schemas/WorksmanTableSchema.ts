@@ -31,6 +31,7 @@ const worksman_Table = () => {
         nationality VARCHAR(255) NOT NULL,
         current_step VARCHAR(255),
         iscompleted_registration_process VARCHAR(255),
+        is_user_active_status BOOLEAN
         created_on TIMESTAMP not null default current_timestamp
         )
         `
@@ -111,11 +112,12 @@ const worksman_postcodes = () => {
         DROP TABLE IF EXISTS worksman_postcodes ;
 
         CREATE TABLE worksman_postcodes (
-                postcodes_id SERIAL PRIMARY KEY,
+                postcodes_id BIGSERIAL PRIMARY KEY,
                 worksman_id  VARCHAR (255) NOT NULL,
                 postcodes VARCHAR(255) NOT NULL,
+                district VARCHAR(255) NOT NULL,
                 created_on TIMESTAMP not null default current_timestamp
-             );
+             )
         `
 }
 const worksman_schedule_table = () => {
