@@ -1,7 +1,7 @@
 
 export const CreateMessagesQuery = (event: any) => {
     console.warn(event)
-    return `INSERT INTO jobs_table  (
+    return `INSERT INTO worksman_jobs_table  (
         worksman_id,
         customer_id,
         job_title,

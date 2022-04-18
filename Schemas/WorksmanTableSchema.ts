@@ -220,9 +220,9 @@ const customer_address_table = () => {
 
 const jobs_table = () => {
         return `        
-        DROP TABLE IF EXISTS jobs_table ;
+        DROP TABLE IF EXISTS worksman_jobs_table ;
 
-        CREATE TABLE jobs_table (
+        CREATE TABLE worksman_jobs_table (
                 job_id BIGSERIAL PRIMARY KEY,
                 worksman_id VARCHAR(225) NOT NULL,
                 customer_id VARCHAR(225) NOT NULL,

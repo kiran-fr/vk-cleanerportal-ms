@@ -24,7 +24,8 @@ import {
   CreatePaymentHistoryDetailsLambda,
   GetPaymentHistoryDetailsLambda,
   GetDistrictWisePostCodesLambda,
-  UpdateBankDetailsLambda
+  UpdateBankDetailsLambda,
+  GetListOfJobsBasedOnMonthLambda
 } from './resources/lambda/alllambda';
 import * as sfn from "@aws-cdk/aws-stepfunctions";
 import * as apigateway from "@aws-cdk/aws-apigateway"
@@ -53,7 +54,8 @@ import {
   CreatePaymentHistoryDetailsApiGateway,
   GetPaymentHistoryDetailsApiGateway,
   GetDistrictWisePostCodesApiGateway,
-  UpdateBankDetailsApiGateway
+  UpdateBankDetailsApiGateway,
+  GetListOfJobsBasedOnMonthApiGateway
 } from "./resources/ApiGateway/AllApiGateWays";
 import * as cognito from '@aws-cdk/aws-cognito';
 
@@ -85,6 +87,7 @@ export class CdkExampleStack extends cdk.Stack {
     const CreateCustomerTableLambdaApi = new lambda.Function(this, "CreateCustomerTable", CreateCustomerTableLambda())
     const CreateCustomerAddressLambdaApi = new lambda.Function(this, "CreateCustomerAddress", CreateCustomerAddressLambda())
     const GetJobsLambdaApi = new lambda.Function(this, "GetJobs", GetJobsLambda())
+    const GetListOfJobsBasedOnMonthLambdaApi = new lambda.Function(this, "GetListOfJobsBasedOnMonth", GetListOfJobsBasedOnMonthLambda())
     const GetPaymentDetailsLambdaApi = new lambda.Function(this, "GetPaymentDetails", GetPaymentDetailsLambda())
     const CreatePaymentHistoryDetailsLambdaApi = new lambda.Function(this, "CreatePaymentHistoryDetails", CreatePaymentHistoryDetailsLambda())
     const GetPaymentHistoryDetailsLambdaApi = new lambda.Function(this, "GetPaymentHistoryDetails", GetPaymentHistoryDetailsLambda())
@@ -225,6 +228,7 @@ export class CdkExampleStack extends cdk.Stack {
     GetBankDetailsApiGateway(api, GetBankDetailsLambdaApi, 'GET', auth)
     GetMessagesApiGateway(api, GetMessagesLambdaApi, 'GET', auth)
     GetJobsApiGateway(api, GetJobsLambdaApi, 'GET', auth)
+    GetListOfJobsBasedOnMonthApiGateway(api, GetListOfJobsBasedOnMonthLambdaApi, 'GET', auth)
     GetPaymentDetailsApiGateway(api, GetPaymentDetailsLambdaApi, 'GET', auth)
     GetPaymentHistoryDetailsApiGateway(api, GetPaymentHistoryDetailsLambdaApi, 'GET', auth)
     GetDistrictWisePostCodesApiGateway(api, GetDistrictWisePostCodesLambdaApi, 'GET', auth)
