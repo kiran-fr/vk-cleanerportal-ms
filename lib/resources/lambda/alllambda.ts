@@ -190,6 +190,16 @@ export const CreateBankDetailsLambda = () => {
     timeout: cdk.Duration.seconds(35)
   }
 }
+export const UpdateBankDetailsLambda = () => {
+  return {
+    code: lambda.Code.fromAsset('./functions/UpdateBankDetails'),
+    functionName: 'UpdateBankDetailsFun',
+    handler: 'index.UpdateBankDetailsHandler',
+    memorySize: 1024,
+    runtime: lambda.Runtime.NODEJS_14_X,
+    timeout: cdk.Duration.seconds(35)
+  }
+}
 export const GetBankDetailsLambda = () => {
   return {
     code: lambda.Code.fromAsset('./functions/GetBankDetails'),

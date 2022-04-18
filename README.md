@@ -37,6 +37,7 @@ sam local invoke GetWorksmanjobsC1DF3F8D -e functions/GetWorksmanjobs/mock.json
 sam local invoke WorksmanjobsCreate9C217260 -e functions/WorksmanjobsCreate/mock.json
 sam local invoke CreateBankDetailsEF6B9549 -e functions/CreateBankDetails/mock.json
 sam local invoke GetBankDetails125327D9 -e functions/GetBankDetails/mock.json
+sam local invoke UpdateBankDetailsA9E25F06 -e functions/UpdateBankDetails/mock.json
 sam local invoke CreateMessages23E7B181 -e functions/CreateMessages/mock.json
 sam local invoke GetMessagesEBEDDDD2 -e functions/GetMessages/mock.json
 sam local invoke GetJobsE878805E -e functions/GetJobsTable/mock.json

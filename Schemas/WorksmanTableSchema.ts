@@ -165,7 +165,7 @@ const bank_details = () => {
                 account_name VARCHAR(255) NOT NULL,
                 sort_code VARCHAR(255) NOT NULL,
                 account_number VARCHAR(255) NOT NULL,
-                bank_name VARCHAR(255) NOT NULL,
+                bank_name VARCHAR(255) UNIQUE NOT NULL,
                 created_on TIMESTAMP not null default current_timestamp
                     );
         `

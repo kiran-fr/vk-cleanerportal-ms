@@ -23,7 +23,8 @@ import {
   GetPaymentDetailsLambda,
   CreatePaymentHistoryDetailsLambda,
   GetPaymentHistoryDetailsLambda,
-  GetDistrictWisePostCodesLambda
+  GetDistrictWisePostCodesLambda,
+  UpdateBankDetailsLambda
 } from './resources/lambda/alllambda';
 import * as sfn from "@aws-cdk/aws-stepfunctions";
 import * as apigateway from "@aws-cdk/aws-apigateway"
@@ -51,7 +52,8 @@ import {
   GetPaymentDetailsApiGateway,
   CreatePaymentHistoryDetailsApiGateway,
   GetPaymentHistoryDetailsApiGateway,
-  GetDistrictWisePostCodesApiGateway
+  GetDistrictWisePostCodesApiGateway,
+  UpdateBankDetailsApiGateway
 } from "./resources/ApiGateway/AllApiGateWays";
 import * as cognito from '@aws-cdk/aws-cognito';
 
@@ -87,6 +89,7 @@ export class CdkExampleStack extends cdk.Stack {
     const CreatePaymentHistoryDetailsLambdaApi = new lambda.Function(this, "CreatePaymentHistoryDetails", CreatePaymentHistoryDetailsLambda())
     const GetPaymentHistoryDetailsLambdaApi = new lambda.Function(this, "GetPaymentHistoryDetails", GetPaymentHistoryDetailsLambda())
     const GetDistrictWisePostCodesLambdaApi = new lambda.Function(this, "GetDistrictWisePostCodes", GetDistrictWisePostCodesLambda())
+    const UpdateBankDetailsLambdaApi = new lambda.Function(this, "UpdateBankDetails", UpdateBankDetailsLambda())
 
 
     const api = new apigateway.RestApi(this, 'WorksmanApiData', ApigatewayDataConstants(apigateway));
@@ -232,6 +235,7 @@ export class CdkExampleStack extends cdk.Stack {
 
     // // UPDATE APIS
     // UpdateWorksmanDetailsApiGateway(api, UpdateWorksmanDetailLambda, 'PUT', auth)
+    UpdateBankDetailsApiGateway(api, UpdateBankDetailsLambdaApi, 'PUT', auth)
 
   }
 }
