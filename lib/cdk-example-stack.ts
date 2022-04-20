@@ -238,7 +238,7 @@ export class CdkExampleStack extends cdk.Stack {
     DeleteWorkmanScheduleApiGateway(api, DeleteWorkmanScheduleLambdaApi, 'DELETE', auth)
 
     // // UPDATE APIS
-    // UpdateWorksmanDetailsApiGateway(api, UpdateWorksmanDetailLambda, 'PUT', auth)
+    UpdateWorksmanDetailsApiGateway(api, UpdateWorksmanDetailLambda, 'PUT', auth)
     UpdateBankDetailsApiGateway(api, UpdateBankDetailsLambdaApi, 'PUT', auth)
 
   }

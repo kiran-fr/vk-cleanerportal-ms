@@ -1793,7 +1793,8 @@ export const GetWorksmanScheduleApiGateway = (api: any, lambdaFunctionName: any,
       // - Source parameters (the value) are the source request parameters or expressions
       // @see: https://docs.aws.amazon.com/apigateway/latest/developerguide/request-response-data-mappings.html
       // 'integration.request.querystring.worksmanId': 'method.request.querystring.worksmanId'
-      'integration.request.header.worksman_id': 'method.request.header.worksman_id'
+      'integration.request.header.worksman_id': 'method.request.header.worksman_id',
+      'integration.request.header.worksman_schedule_date': 'method.request.header.worksman_schedule_date'
 
 
       // method.request.header.PARAM_NAME
@@ -1805,7 +1806,8 @@ export const GetWorksmanScheduleApiGateway = (api: any, lambdaFunctionName: any,
       //   //  on the integration parameters that you have specified
       //   // Check: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html
       'application/json': JSON.stringify({
-        worksman_id: "$util.escapeJavaScript($input.params('worksman_id'))"
+        worksman_id: "$util.escapeJavaScript($input.params('worksman_id'))",
+        worksman_schedule_date: "$util.escapeJavaScript($input.params('worksman_schedule_date'))"
       })
     },
 
@@ -1855,7 +1857,8 @@ export const GetWorksmanScheduleApiGateway = (api: any, lambdaFunctionName: any,
   GetWorksmanSchedule.addMethod(methodType, integration, {
     // We can mark the parameters as required
     requestParameters: {
-      'method.request.header.worksman_id': true
+      'method.request.header.worksman_id': true,
+      'method.request.header.worksman_schedule_date': true
     },
     authorizer: authorizations,
     authorizationType: apigateway.AuthorizationType.COGNITO,
