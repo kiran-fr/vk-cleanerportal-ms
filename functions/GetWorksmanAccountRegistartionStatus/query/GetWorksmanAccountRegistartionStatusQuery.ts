@@ -1,7 +1,7 @@
 
 export const GetWorksmanAccountRegistartionStatusQuery = (worksmanId: any) => {
     console.warn(worksmanId)
-    return ` SELECT * FROM worksman_table WHERE worksman_id = ${worksmanId}`
+    return ` SELECT * FROM worksman_table WHERE worksman_id = '${worksmanId}'`
 }
 
 export const getCurrentAccountStatusId = (email: any) => {

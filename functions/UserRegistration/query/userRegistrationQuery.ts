@@ -17,8 +17,8 @@ export const WorksManAddressQuery = (event:any,worksman_id:any) => {
   console
     return `INSERT INTO worksman_address_table  (
         worksman_id,
-        first_line,
-        second_line,
+        house_number,
+        street,
         county ,
         city ,
         postcode 

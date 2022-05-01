@@ -2,7 +2,7 @@ import { DeleteWorkmanScheduleService } from "./services/DeleteWorkmanScheduleSe
 
 exports.DeleteWorkmanScheduleHandler = async (event: any) => {
     try {
-        await DeleteWorkmanScheduleService(event)        
+        // await DeleteWorkmanScheduleService(event)  
         console.warn(event)
         return {
             statusCode: 200,

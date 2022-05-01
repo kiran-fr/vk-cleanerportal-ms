@@ -8,7 +8,7 @@ export const UserRegistrationLambda = () => {
     handler: 'index.UserRegistrationHanlder',
     memorySize: 1024,
     runtime: lambda.Runtime.NODEJS_14_X,
-    timeout: cdk.Duration.seconds(15)
+    timeout: cdk.Duration.seconds(35)
   }
 }
 
@@ -19,7 +19,7 @@ export const WorksManTermsAndConditionLambda = () => {
     handler: 'index.WorksManTermsAndConditionHandler',
     memorySize: 1024,
     runtime: lambda.Runtime.NODEJS_14_X,
-    timeout: cdk.Duration.seconds(15)
+    timeout: cdk.Duration.seconds(35)
   }
 }
 
@@ -30,7 +30,7 @@ export const WorksManExperienceLambda = () => {
     handler: 'index.WorksManExperienceHandler',
     memorySize: 1024,
     runtime: lambda.Runtime.NODEJS_14_X,
-    timeout: cdk.Duration.seconds(15)
+    timeout: cdk.Duration.seconds(35)
   }
 }
 

@@ -1,12 +1,7 @@
-[
+
         {
-                "worksman_schedule_date": "2022-03-17T06:45:15.000Z",
-                "worksman_schedule_time": "08:00-10:00",
-                "worksman_id": "42"
-        },
-        {
-                "worksman_schedule_date": "2022-03-17T06:45:15.000Z",
-                "worksman_schedule_time": "08:00-10:00",
-                "worksman_id": "42"
+                "schedule_date": "01 May 2022",
+                "schedule_time": ["08:00-10:00", "10:00-12:00", "12:00-14:00"],
+                "worksman_id": "e1632924-c8ac-11ec-a2f4-16e7866bc173",
+                "is_active":1
         }
-]

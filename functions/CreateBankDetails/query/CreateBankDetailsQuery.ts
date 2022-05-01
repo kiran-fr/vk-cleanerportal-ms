@@ -1,6 +1,5 @@
 
 export const CreateBankDetailsQuery  = (event:any) => {
-    console.warn("CreateBankDetailsQuery",event)
     return `INSERT INTO bank_details_table  (
         worksman_id,
         account_name,

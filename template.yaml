@@ -23,7 +23,7 @@ Resources:
       Code:
         S3Bucket:
           Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
-        S3Key: 113d9b2952cf8e0c5eaccf614615a8ec77658e1ec0044534426f8bf08f5fe3f5.zip
+        S3Key: 322e72b798b6ddd641ac533a35bb1fe6c01489bdcf330b870fae44ff2e28101f.zip
       Role:
         Fn::GetAtt:
           - UserRegistrationServiceRoleBCB3F31D
@@ -32,7 +32,7 @@ Resources:
       Handler: index.UserRegistrationHanlder
       MemorySize: 1024
       Runtime: nodejs14.x
-      Timeout: 15
+      Timeout: 35
     DependsOn:
       - UserRegistrationServiceRoleBCB3F31D
     Metadata:
@@ -64,7 +64,7 @@ Resources:
       Code:
         S3Bucket:
           Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
-        S3Key: c0b7d580097b982d0000812a7694cbcaf1fa0c1974e142d2728e5b2db1a2a02a.zip
+        S3Key: 4fc34f7b1c1682150a0be52d016e95c03c14bd84594cd751c5a9c526fd464d06.zip
       Role:
         Fn::GetAtt:
           - WorksManTermsAndConditionServiceRole06AE84AC
@@ -73,7 +73,7 @@ Resources:
       Handler: index.WorksManTermsAndConditionHandler
       MemorySize: 1024
       Runtime: nodejs14.x
-      Timeout: 15
+      Timeout: 35
     DependsOn:
       - WorksManTermsAndConditionServiceRole06AE84AC
     Metadata:
@@ -105,7 +105,7 @@ Resources:
       Code:
         S3Bucket:
           Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
-        S3Key: b93ce4abba9084b83474a8b6be5e8a108c0961a8ec0ac1f183ebafe0c16c799a.zip
+        S3Key: 4e26fe07a6a7769803a042e07f0b58cff8ec7c1a0abb4a9951b0290a5cbfe358.zip
       Role:
         Fn::GetAtt:
           - WorksManExperienceServiceRoleE9A759F2
@@ -114,7 +114,7 @@ Resources:
       Handler: index.WorksManExperienceHandler
       MemorySize: 1024
       Runtime: nodejs14.x
-      Timeout: 15
+      Timeout: 35
     DependsOn:
       - WorksManExperienceServiceRoleE9A759F2
     Metadata:
@@ -146,7 +146,7 @@ Resources:
       Code:
         S3Bucket:
           Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
-        S3Key: e54ec9f2cd4dff27b1b4eef2951812c89d6885bc3ab0de74463a2610aa889ab1.zip
+        S3Key: fbd6380e7f1905363dc06de6d9ec96796c871846767dffe82db0384c11a18eea.zip
       Role:
         Fn::GetAtt:
           - GetWorksmanAccountRegistartionStatusServiceRole6BD0E8C2
@@ -433,7 +433,7 @@ Resources:
       Code:
         S3Bucket:
           Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
-        S3Key: 2ca17396a4adce8d794854366ff7b121ac9e206dca7e968eaabb536076dd3871.zip
+        S3Key: 2dae794588e5a0773627b04dddc29935d1b4c248e9b5d07ae6748091ec0c7f6f.zip
       Role:
         Fn::GetAtt:
           - CreateWorksmanScheduleServiceRole1230E12A
@@ -474,7 +474,7 @@ Resources:
       Code:
         S3Bucket:
           Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
-        S3Key: 381cb2bb877a2dd21822bc0ea1efc7105841d967255ac6678b38b74fd265323b.zip
+        S3Key: ec0ac34749e045f467358cbd59ddd41e646fd91796d56de0b547e49dd69d0ba7.zip
       Role:
         Fn::GetAtt:
           - DeleteWorkmanScheduleServiceRoleDE63A6DE
@@ -515,7 +515,7 @@ Resources:
       Code:
         S3Bucket:
           Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
-        S3Key: 1f4048f7c502ebdbec661905f19f8501a5e1ef8febf6e4dd1b2502f76b9bfae6.zip
+        S3Key: 6f1266c5e49eb49bff2f62374ab399f7f6090cb607986adacc441eb6c2acd3f8.zip
       Role:
         Fn::GetAtt:
           - GetWorksmanScheduleServiceRoleE4B9B5D3
@@ -556,7 +556,7 @@ Resources:
       Code:
         S3Bucket:
           Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
-        S3Key: 229dd06f81240fa399d29c6f8b9ae54e73a0958d410b18dbe8a8fe791e8b7747.zip
+        S3Key: 8d1e04215eb99aa947f16d6bbad7c49eef314229fff4571dc8ea116cc45ac35c.zip
       Role:
         Fn::GetAtt:
           - GetWorksmanjobsServiceRoleD07827B2
@@ -638,7 +638,7 @@ Resources:
       Code:
         S3Bucket:
           Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
-        S3Key: 9f0636da98bb6e34332a73c955d911df6eaeadf2e524123b2ca8cd6c81ab4dd7.zip
+        S3Key: a5d6b37d88b3bc477a3eae70feacb92b2f81bc95971e7296fc6937daebea1b94.zip
       Role:
         Fn::GetAtt:
           - CreateBankDetailsServiceRole0EDAB387
@@ -884,7 +884,7 @@ Resources:
       Code:
         S3Bucket:
           Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
-        S3Key: f72793a1bef30a642eafb4640b40718b24bbea6fc469f9c3eae3405a16ba07bf.zip
+        S3Key: a8d5c4ec753f65d761f259158805066d6de98690e274488d9c295b3df1ba4a8c.zip
       Role:
         Fn::GetAtt:
           - GetJobsServiceRole096CB5A5
@@ -899,6 +899,47 @@ Resources:
     Metadata:
       aws:cdk:path: VrishkarServicesDevStacks/GetJobs/Resource
       aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetJobsTable
+      aws:asset:is-bundled: false
+      aws:asset:property: Code
+  GetListOfJobsBasedOnMonthServiceRoleCC15C673:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Action: sts:AssumeRole
+            Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+        Version: "2012-10-17"
+      ManagedPolicyArns:
+        - Fn::Join:
+            - ""
+            - - "arn:"
+              - Ref: AWS::Partition
+              - :iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStacks/GetListOfJobsBasedOnMonth/ServiceRole/Resource
+  GetListOfJobsBasedOnMonthF7F4DF22:
+    Type: AWS::Lambda::Function
+    Properties:
+      Code:
+        S3Bucket:
+          Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
+        S3Key: ef56b06d39cc874dd63a69d5d1a06cb06f7bf485e734ffc34e1fc8c72dab101c.zip
+      Role:
+        Fn::GetAtt:
+          - GetListOfJobsBasedOnMonthServiceRoleCC15C673
+          - Arn
+      FunctionName: GetListOfJobsBasedOnMonthFun
+      Handler: index.GetListOfJobsBasedOnMonthHandler
+      MemorySize: 1024
+      Runtime: nodejs14.x
+      Timeout: 35
+    DependsOn:
+      - GetListOfJobsBasedOnMonthServiceRoleCC15C673
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStacks/GetListOfJobsBasedOnMonth/Resource
+      aws:asset:path: C:\Users\Lenovo\vrishkar\vk-cleanerportal-ms\functions\GetListOfJobsBasedOnMonth
       aws:asset:is-bundled: false
       aws:asset:property: Code
   GetPaymentDetailsServiceRole04045F23:
@@ -1007,7 +1048,7 @@ Resources:
       Code:
         S3Bucket:
           Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
-        S3Key: beb5d4038efc0e30218ecc54f27c0fa9d0406163c0e40673ba93d8b501afa5e9.zip
+        S3Key: 8d6905f3f5184c4561dec6856f57424626264a9527f7e215e79ded12a4d41667.zip
       Role:
         Fn::GetAtt:
           - GetPaymentHistoryDetailsServiceRoleE90AB70B
@@ -1089,7 +1130,7 @@ Resources:
       Code:
         S3Bucket:
           Fn::Sub: cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}
-        S3Key: 300c5900a26dfe657de5a089b3a2639a71774758b3f5728cf55c71322b48202f.zip
+        S3Key: 2e362281216fa83d04ef0496a5b324c02f20098e50e080f0d22847e6bfce1e00.zip
       Role:
         Fn::GetAtt:
           - UpdateBankDetailsServiceRole4E770C60
@@ -1142,7 +1183,7 @@ Resources:
       - WorksmanApiData98FA1C09
     Metadata:
       aws:cdk:path: VrishkarServicesDevStacks/WorksmanApiData/Account
-  WorksmanApiDataDeploymentA92EDC935b8a95d9aadca88ac08ab2b8faef6334:
+  WorksmanApiDataDeploymentA92EDC936ff412754ce9f7c15a4de434fa47319e:
     Type: AWS::ApiGateway::Deployment
     Properties:
       RestApiId:
@@ -1191,6 +1232,9 @@ Resources:
       - WorksmanApiDataGetJobsApiGETD45992F7
       - WorksmanApiDataGetJobsApiOPTIONS28532535
       - WorksmanApiDataGetJobsApi910EFB62
+      - WorksmanApiDataGetListOfJobsBasedOnMonthApiGETD35EDF67
+      - WorksmanApiDataGetListOfJobsBasedOnMonthApiOPTIONS65581122
+      - WorksmanApiDataGetListOfJobsBasedOnMonthApi95C968F7
       - WorksmanApiDataGetMessagesApiGETBC72D9B3
       - WorksmanApiDataGetMessagesApiOPTIONSF9CDBFAD
       - WorksmanApiDataGetMessagesApi19FCE89C
@@ -1216,6 +1260,9 @@ Resources:
       - WorksmanApiDataUpdateBankDetailsApiOPTIONSDFF568DC
       - WorksmanApiDataUpdateBankDetailsApiPUT3274AE15
       - WorksmanApiDataUpdateBankDetailsApi5B5A7292
+      - WorksmanApiDataUpdateWorksmanDetailsApiOPTIONSD921B2A3
+      - WorksmanApiDataUpdateWorksmanDetailsApiPUTBE7772EA
+      - WorksmanApiDataUpdateWorksmanDetailsApi84D0087F
       - WorksmanApiDataworksmanExperienceapiOPTIONS1C299098
       - WorksmanApiDataworksmanExperienceapiPOST9DC9EBC1
       - WorksmanApiDataworksmanExperienceapiEF23C411
@@ -1241,6 +1288,8 @@ Resources:
       - WorksmanApiDataGetDistrictWisePostCodesRes6EC45338
       - WorksmanApiDataGetJobsError85B350D2
       - WorksmanApiDataGetJobsResp03739CA8
+      - WorksmanApiDataGetListOfJobsBasedOnMonthErr10410E3C
+      - WorksmanApiDataGetListOfJobsBasedOnMonthResFA3C429B
       - WorksmanApiDataGetMessagesErrorB209CEEC
       - WorksmanApiDataGetMessagesResp3946AD34
       - WorksmanApiDataGetPaymentDetailsErrC5567887
@@ -1258,6 +1307,9 @@ Resources:
       - WorksmanApiDataUpdateBankDetailsErrorE3AAF572
       - WorksmanApiDataUpdateBankDetailsModel87571A12
       - WorksmanApiDataUpdateBankDetailsRes27FAC034
+      - WorksmanApiDataUpdateWorksmanDetailsError675A9A65
+      - WorksmanApiDataUpdateWorksmanDetailsModel4D1CF46A
+      - WorksmanApiDataUpdateWorksmanDetailsResF8C90C15
       - WorksmanApiDataUserPostCodesErrorE2AC47EB
       - WorksmanApiDataUserPostCodesModel6052E87D
       - WorksmanApiDataUserPostCodesResponse9DDA18BA
@@ -1276,7 +1328,7 @@ Resources:
       RestApiId:
         Ref: WorksmanApiData98FA1C09
       DeploymentId:
-        Ref: WorksmanApiDataDeploymentA92EDC935b8a95d9aadca88ac08ab2b8faef6334
+        Ref: WorksmanApiDataDeploymentA92EDC936ff412754ce9f7c15a4de434fa47319e
       StageName: dev
     DependsOn:
       - WorksmanApiDataAccountF04FE1A8
@@ -1296,7 +1348,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id,worksman_schedule_date,worksman_schedule_time,postcodes,district'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,schedule_id,schedule_date,job_mon_year,user_id,postcodes,district'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -1335,7 +1387,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id,worksman_schedule_date,worksman_schedule_time,postcodes,district'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,schedule_id,schedule_date,job_mon_year,user_id,postcodes,district'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -1497,7 +1549,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id,worksman_schedule_date,worksman_schedule_time,postcodes,district'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,schedule_id,schedule_date,job_mon_year,user_id,postcodes,district'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -1659,7 +1711,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id,worksman_schedule_date,worksman_schedule_time,postcodes,district'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,schedule_id,schedule_date,job_mon_year,user_id,postcodes,district'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -1821,7 +1873,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id,worksman_schedule_date,worksman_schedule_time,postcodes,district'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,schedule_id,schedule_date,job_mon_year,user_id,postcodes,district'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -1983,7 +2035,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id,worksman_schedule_date,worksman_schedule_time,postcodes,district'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,schedule_id,schedule_date,job_mon_year,user_id,postcodes,district'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -2145,7 +2197,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id,worksman_schedule_date,worksman_schedule_time,postcodes,district'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,schedule_id,schedule_date,job_mon_year,user_id,postcodes,district'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -2307,7 +2359,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id,worksman_schedule_date,worksman_schedule_time,postcodes,district'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,schedule_id,schedule_date,job_mon_year,user_id,postcodes,district'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -2469,7 +2521,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id,worksman_schedule_date,worksman_schedule_time,postcodes,district'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,schedule_id,schedule_date,job_mon_year,user_id,postcodes,district'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -2634,7 +2686,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id,worksman_schedule_date,worksman_schedule_time,postcodes,district'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,schedule_id,schedule_date,job_mon_year,user_id,postcodes,district'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -2793,7 +2845,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id,worksman_schedule_date,worksman_schedule_time,postcodes,district'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,schedule_id,schedule_date,job_mon_year,user_id,postcodes,district'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -2891,8 +2943,6 @@ Resources:
             StatusCode: "400"
         PassthroughBehavior: NEVER
         RequestParameters:
-          integration.request.querystring.worksmanId: method.request.querystring.worksmanId
-          integration.request.header.worksmanIdHeader: method.request.header.worksmanIdHeader
           integration.request.header.worksman_id: method.request.header.worksman_id
         RequestTemplates:
           application/json: "{\"worksmanId\":\"$util.escapeJavaScript($input.params('worksmanId'))\",\"worksman_id\":\"$util.escapeJavaScript($input.params('worksman_id'))\"}"
@@ -2958,7 +3008,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id,worksman_schedule_date,worksman_schedule_time,postcodes,district'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,schedule_id,schedule_date,job_mon_year,user_id,postcodes,district'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -3119,7 +3169,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id,worksman_schedule_date,worksman_schedule_time,postcodes,district'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,schedule_id,schedule_date,job_mon_year,user_id,postcodes,district'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -3218,8 +3268,9 @@ Resources:
         PassthroughBehavior: NEVER
         RequestParameters:
           integration.request.header.worksman_id: method.request.header.worksman_id
+          integration.request.header.schedule_date: method.request.header.schedule_date
         RequestTemplates:
-          application/json: "{\"worksman_id\":\"$util.escapeJavaScript($input.params('worksman_id'))\"}"
+          application/json: "{\"worksman_id\":\"$util.escapeJavaScript($input.params('worksman_id'))\",\"schedule_date\":\"$util.escapeJavaScript($input.params('schedule_date'))\"}"
         Type: AWS
         Uri:
           Fn::Join:
@@ -3254,6 +3305,7 @@ Resources:
           StatusCode: "400"
       RequestParameters:
         method.request.header.worksman_id: true
+        method.request.header.schedule_date: true
     Metadata:
       aws:cdk:path: VrishkarServicesDevStacks/WorksmanApiData/Default/GetWorksmanScheduleApi/GET/Resource
   WorksmanApiDataGetWorksmanjobsApi1DA29B58:
@@ -3280,7 +3332,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id,worksman_schedule_date,worksman_schedule_time,postcodes,district'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,schedule_id,schedule_date,job_mon_year,user_id,postcodes,district'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -3441,7 +3493,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id,worksman_schedule_date,worksman_schedule_time,postcodes,district'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,schedule_id,schedule_date,job_mon_year,user_id,postcodes,district'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -3602,7 +3654,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id,worksman_schedule_date,worksman_schedule_time,postcodes,district'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,schedule_id,schedule_date,job_mon_year,user_id,postcodes,district'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -3765,7 +3817,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id,worksman_schedule_date,worksman_schedule_time,postcodes,district'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,schedule_id,schedule_date,job_mon_year,user_id,postcodes,district'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -3902,6 +3954,169 @@ Resources:
         method.request.header.worksman_id: true
     Metadata:
       aws:cdk:path: VrishkarServicesDevStacks/WorksmanApiData/Default/GetJobsApi/GET/Resource
+  WorksmanApiDataGetListOfJobsBasedOnMonthApi95C968F7:
+    Type: AWS::ApiGateway::Resource
+    Properties:
+      ParentId:
+        Fn::GetAtt:
+          - WorksmanApiData98FA1C09
+          - RootResourceId
+      PathPart: GetListOfJobsBasedOnMonthApi
+      RestApiId:
+        Ref: WorksmanApiData98FA1C09
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStacks/WorksmanApiData/Default/GetListOfJobsBasedOnMonthApi/Resource
+  WorksmanApiDataGetListOfJobsBasedOnMonthApiOPTIONS65581122:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      HttpMethod: OPTIONS
+      ResourceId:
+        Ref: WorksmanApiDataGetListOfJobsBasedOnMonthApi95C968F7
+      RestApiId:
+        Ref: WorksmanApiData98FA1C09
+      AuthorizationType: NONE
+      Integration:
+        IntegrationResponses:
+          - ResponseParameters:
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,schedule_id,schedule_date,job_mon_year,user_id,postcodes,district'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
+            StatusCode: "204"
+        RequestTemplates:
+          application/json: "{ statusCode: 200 }"
+        Type: MOCK
+      MethodResponses:
+        - ResponseParameters:
+            method.response.header.Access-Control-Allow-Headers: true
+            method.response.header.Access-Control-Allow-Origin: true
+            method.response.header.Access-Control-Allow-Methods: true
+          StatusCode: "204"
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStacks/WorksmanApiData/Default/GetListOfJobsBasedOnMonthApi/OPTIONS/Resource
+  WorksmanApiDataGetListOfJobsBasedOnMonthApiGETApiPermissionVrishkarServicesDevStacksWorksmanApiData5AF985C5GETGetListOfJobsBasedOnMonthApiAF461FA4:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName:
+        Fn::GetAtt:
+          - GetListOfJobsBasedOnMonthF7F4DF22
+          - Arn
+      Principal: apigateway.amazonaws.com
+      SourceArn:
+        Fn::Join:
+          - ""
+          - - "arn:"
+            - Ref: AWS::Partition
+            - ":execute-api:"
+            - Ref: AWS::Region
+            - ":"
+            - Ref: AWS::AccountId
+            - ":"
+            - Ref: WorksmanApiData98FA1C09
+            - /
+            - Ref: WorksmanApiDataDeploymentStagedev6C7183E5
+            - /GET/GetListOfJobsBasedOnMonthApi
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStacks/WorksmanApiData/Default/GetListOfJobsBasedOnMonthApi/GET/ApiPermission.VrishkarServicesDevStacksWorksmanApiData5AF985C5.GET..GetListOfJobsBasedOnMonthApi
+  WorksmanApiDataGetListOfJobsBasedOnMonthApiGETApiPermissionTestVrishkarServicesDevStacksWorksmanApiData5AF985C5GETGetListOfJobsBasedOnMonthApiD17CA552:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName:
+        Fn::GetAtt:
+          - GetListOfJobsBasedOnMonthF7F4DF22
+          - Arn
+      Principal: apigateway.amazonaws.com
+      SourceArn:
+        Fn::Join:
+          - ""
+          - - "arn:"
+            - Ref: AWS::Partition
+            - ":execute-api:"
+            - Ref: AWS::Region
+            - ":"
+            - Ref: AWS::AccountId
+            - ":"
+            - Ref: WorksmanApiData98FA1C09
+            - /test-invoke-stage/GET/GetListOfJobsBasedOnMonthApi
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStacks/WorksmanApiData/Default/GetListOfJobsBasedOnMonthApi/GET/ApiPermission.Test.VrishkarServicesDevStacksWorksmanApiData5AF985C5.GET..GetListOfJobsBasedOnMonthApi
+  WorksmanApiDataGetListOfJobsBasedOnMonthApiGETD35EDF67:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      HttpMethod: GET
+      ResourceId:
+        Ref: WorksmanApiDataGetListOfJobsBasedOnMonthApi95C968F7
+      RestApiId:
+        Ref: WorksmanApiData98FA1C09
+      AuthorizationType: COGNITO_USER_POOLS
+      AuthorizerId:
+        Ref: AuthorizerBD825682
+      Integration:
+        IntegrationHttpMethod: POST
+        IntegrationResponses:
+          - ResponseParameters:
+              method.response.header.Content-Type: "'application/json'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Credentials: "'true'"
+              method.response.header.Access-Control-Allow-Headers: "'*'"
+            ResponseTemplates:
+              application/json: '{"state":"ok","data":"$util.escapeJavaScript($input.body)"}'
+            StatusCode: "200"
+          - ResponseParameters:
+              method.response.header.Content-Type: "'application/json'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Credentials: "'true'"
+              method.response.header.Access-Control-Allow-Headers: "'*'"
+            ResponseTemplates:
+              application/json: "{\"state\":\"error\",\"message\":\"$util.escapeJavaScript($input.path('$.errorMessage'))\"}"
+            SelectionPattern: |-
+              (
+              |.)+
+            StatusCode: "400"
+        PassthroughBehavior: NEVER
+        RequestParameters:
+          integration.request.header.worksman_id: method.request.header.worksman_id
+          integration.request.header.job_mon_year: method.request.header.job_mon_year
+        RequestTemplates:
+          application/json: "{\"worksman_id\":\"$util.escapeJavaScript($input.params('worksman_id'))\",\"job_mon_year\":\"$util.escapeJavaScript($input.params('job_mon_year'))\"}"
+        Type: AWS
+        Uri:
+          Fn::Join:
+            - ""
+            - - "arn:"
+              - Ref: AWS::Partition
+              - ":apigateway:"
+              - Ref: AWS::Region
+              - :lambda:path/2015-03-31/functions/
+              - Fn::GetAtt:
+                  - GetListOfJobsBasedOnMonthF7F4DF22
+                  - Arn
+              - /invocations
+      MethodResponses:
+        - ResponseModels:
+            application/json:
+              Ref: WorksmanApiDataGetListOfJobsBasedOnMonthResFA3C429B
+          ResponseParameters:
+            method.response.header.Content-Type: true
+            method.response.header.Access-Control-Allow-Origin: true
+            method.response.header.Access-Control-Allow-Credentials: true
+            method.response.header.Access-Control-Allow-Headers: true
+          StatusCode: "200"
+        - ResponseModels:
+            application/json:
+              Ref: WorksmanApiDataGetListOfJobsBasedOnMonthErr10410E3C
+          ResponseParameters:
+            method.response.header.Content-Type: true
+            method.response.header.Access-Control-Allow-Origin: true
+            method.response.header.Access-Control-Allow-Credentials: true
+            method.response.header.Access-Control-Allow-Headers: true
+          StatusCode: "400"
+      RequestParameters:
+        method.request.header.worksman_id: true
+        method.request.header.job_mon_year: true
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStacks/WorksmanApiData/Default/GetListOfJobsBasedOnMonthApi/GET/Resource
   WorksmanApiDataGetPaymentDetailsApiD9FEFBDA:
     Type: AWS::ApiGateway::Resource
     Properties:
@@ -3926,7 +4141,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id,worksman_schedule_date,worksman_schedule_time,postcodes,district'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,schedule_id,schedule_date,job_mon_year,user_id,postcodes,district'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -4087,7 +4302,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id,worksman_schedule_date,worksman_schedule_time,postcodes,district'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,schedule_id,schedule_date,job_mon_year,user_id,postcodes,district'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -4248,7 +4463,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id,worksman_schedule_date,worksman_schedule_time,postcodes,district'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,schedule_id,schedule_date,job_mon_year,user_id,postcodes,district'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -4409,7 +4624,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id,worksman_schedule_date,worksman_schedule_time,postcodes,district'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,schedule_id,schedule_date,job_mon_year,user_id,postcodes,district'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -4574,7 +4789,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id,worksman_schedule_date,worksman_schedule_time,postcodes,district'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,schedule_id,schedule_date,job_mon_year,user_id,postcodes,district'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -4672,11 +4887,9 @@ Resources:
             StatusCode: "400"
         PassthroughBehavior: NEVER
         RequestParameters:
-          integration.request.header.worksman_id: method.request.header.worksman_id
-          integration.request.header.worksman_schedule_date: method.request.header.worksman_schedule_date
-          integration.request.header.worksman_schedule_time: method.request.header.worksman_schedule_time
+          integration.request.header.schedule_id: method.request.header.schedule_id
         RequestTemplates:
-          application/json: "{\"worksman_id\":\"$util.escapeJavaScript($input.params('worksman_id'))\",\"worksman_schedule_date\":\"$util.escapeJavaScript($input.params('worksman_schedule_date'))\",\"worksman_schedule_time\":\"$util.escapeJavaScript($input.params('worksman_schedule_time'))\"}"
+          application/json: "{\"schedule_id\":\"$util.escapeJavaScript($input.params('schedule_id'))\"}"
         Type: AWS
         Uri:
           Fn::Join:
@@ -4710,11 +4923,171 @@ Resources:
             method.response.header.Access-Control-Allow-Headers: true
           StatusCode: "400"
       RequestParameters:
-        method.request.querystring.worksman_id: true
-        method.request.querystring.worksman_schedule_date: true
-        method.request.querystring.worksman_schedule_time: true
+        method.request.querystring.schedule_id: true
     Metadata:
       aws:cdk:path: VrishkarServicesDevStacks/WorksmanApiData/Default/DeleteWorkmanScheduleApi/DELETE/Resource
+  WorksmanApiDataUpdateWorksmanDetailsApi84D0087F:
+    Type: AWS::ApiGateway::Resource
+    Properties:
+      ParentId:
+        Fn::GetAtt:
+          - WorksmanApiData98FA1C09
+          - RootResourceId
+      PathPart: UpdateWorksmanDetailsApi
+      RestApiId:
+        Ref: WorksmanApiData98FA1C09
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStacks/WorksmanApiData/Default/UpdateWorksmanDetailsApi/Resource
+  WorksmanApiDataUpdateWorksmanDetailsApiOPTIONSD921B2A3:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      HttpMethod: OPTIONS
+      ResourceId:
+        Ref: WorksmanApiDataUpdateWorksmanDetailsApi84D0087F
+      RestApiId:
+        Ref: WorksmanApiData98FA1C09
+      AuthorizationType: NONE
+      Integration:
+        IntegrationResponses:
+          - ResponseParameters:
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,schedule_id,schedule_date,job_mon_year,user_id,postcodes,district'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
+            StatusCode: "204"
+        RequestTemplates:
+          application/json: "{ statusCode: 200 }"
+        Type: MOCK
+      MethodResponses:
+        - ResponseParameters:
+            method.response.header.Access-Control-Allow-Headers: true
+            method.response.header.Access-Control-Allow-Origin: true
+            method.response.header.Access-Control-Allow-Methods: true
+          StatusCode: "204"
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStacks/WorksmanApiData/Default/UpdateWorksmanDetailsApi/OPTIONS/Resource
+  WorksmanApiDataUpdateWorksmanDetailsApiPUTApiPermissionVrishkarServicesDevStacksWorksmanApiData5AF985C5PUTUpdateWorksmanDetailsApiA2EB54C9:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName:
+        Fn::GetAtt:
+          - UpdateWorksmanDetail764C9F8C
+          - Arn
+      Principal: apigateway.amazonaws.com
+      SourceArn:
+        Fn::Join:
+          - ""
+          - - "arn:"
+            - Ref: AWS::Partition
+            - ":execute-api:"
+            - Ref: AWS::Region
+            - ":"
+            - Ref: AWS::AccountId
+            - ":"
+            - Ref: WorksmanApiData98FA1C09
+            - /
+            - Ref: WorksmanApiDataDeploymentStagedev6C7183E5
+            - /PUT/UpdateWorksmanDetailsApi
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStacks/WorksmanApiData/Default/UpdateWorksmanDetailsApi/PUT/ApiPermission.VrishkarServicesDevStacksWorksmanApiData5AF985C5.PUT..UpdateWorksmanDetailsApi
+  WorksmanApiDataUpdateWorksmanDetailsApiPUTApiPermissionTestVrishkarServicesDevStacksWorksmanApiData5AF985C5PUTUpdateWorksmanDetailsApi3A3A5351:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName:
+        Fn::GetAtt:
+          - UpdateWorksmanDetail764C9F8C
+          - Arn
+      Principal: apigateway.amazonaws.com
+      SourceArn:
+        Fn::Join:
+          - ""
+          - - "arn:"
+            - Ref: AWS::Partition
+            - ":execute-api:"
+            - Ref: AWS::Region
+            - ":"
+            - Ref: AWS::AccountId
+            - ":"
+            - Ref: WorksmanApiData98FA1C09
+            - /test-invoke-stage/PUT/UpdateWorksmanDetailsApi
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStacks/WorksmanApiData/Default/UpdateWorksmanDetailsApi/PUT/ApiPermission.Test.VrishkarServicesDevStacksWorksmanApiData5AF985C5.PUT..UpdateWorksmanDetailsApi
+  WorksmanApiDataUpdateWorksmanDetailsApiPUTBE7772EA:
+    Type: AWS::ApiGateway::Method
+    Properties:
+      HttpMethod: PUT
+      ResourceId:
+        Ref: WorksmanApiDataUpdateWorksmanDetailsApi84D0087F
+      RestApiId:
+        Ref: WorksmanApiData98FA1C09
+      AuthorizationType: COGNITO_USER_POOLS
+      AuthorizerId:
+        Ref: AuthorizerBD825682
+      Integration:
+        IntegrationHttpMethod: POST
+        IntegrationResponses:
+          - ResponseParameters:
+              method.response.header.Content-Type: "'application/json'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Credentials: "'true'"
+              method.response.header.Access-Control-Allow-Headers: "'*'"
+            ResponseTemplates:
+              application/json: '{"state":"ok","data":"$util.escapeJavaScript($input.body)"}'
+            StatusCode: "200"
+          - ResponseParameters:
+              method.response.header.Content-Type: "'application/json'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+              method.response.header.Access-Control-Allow-Credentials: "'true'"
+              method.response.header.Access-Control-Allow-Headers: "'*'"
+            ResponseTemplates:
+              application/json: "{\"state\":\"error\",\"message\":\"$util.escapeJavaScript($input.path('$.errorMessage'))\"}"
+            SelectionPattern: |-
+              (
+              |.)+
+            StatusCode: "400"
+        PassthroughBehavior: NEVER
+        RequestParameters: {}
+        RequestTemplates:
+          application/json: '"$util.escapeJavaScript($input.body)"'
+        Type: AWS
+        Uri:
+          Fn::Join:
+            - ""
+            - - "arn:"
+              - Ref: AWS::Partition
+              - ":apigateway:"
+              - Ref: AWS::Region
+              - :lambda:path/2015-03-31/functions/
+              - Fn::GetAtt:
+                  - UpdateWorksmanDetail764C9F8C
+                  - Arn
+              - /invocations
+      MethodResponses:
+        - ResponseModels:
+            application/json:
+              Ref: WorksmanApiDataUpdateWorksmanDetailsResF8C90C15
+          ResponseParameters:
+            method.response.header.Content-Type: true
+            method.response.header.Access-Control-Allow-Origin: true
+            method.response.header.Access-Control-Allow-Credentials: true
+            method.response.header.Access-Control-Allow-Headers: true
+          StatusCode: "200"
+        - ResponseModels:
+            application/json:
+              Ref: WorksmanApiDataUpdateWorksmanDetailsError675A9A65
+          ResponseParameters:
+            method.response.header.Content-Type: true
+            method.response.header.Access-Control-Allow-Origin: true
+            method.response.header.Access-Control-Allow-Credentials: true
+            method.response.header.Access-Control-Allow-Headers: true
+          StatusCode: "400"
+      RequestModels:
+        application/json:
+          Ref: WorksmanApiDataUpdateWorksmanDetailsModel4D1CF46A
+      RequestParameters: {}
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStacks/WorksmanApiData/Default/UpdateWorksmanDetailsApi/PUT/Resource
   WorksmanApiDataUpdateBankDetailsApi5B5A7292:
     Type: AWS::ApiGateway::Resource
     Properties:
@@ -4739,7 +5112,7 @@ Resources:
       Integration:
         IntegrationResponses:
           - ResponseParameters:
-              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,worksman_schedule_id,user_id,worksman_schedule_date,worksman_schedule_time,postcodes,district'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,worksmanIdHeader,email,worksman_id,schedule_id,schedule_date,job_mon_year,user_id,postcodes,district'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
               method.response.header.Access-Control-Allow-Methods: "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'"
             StatusCode: "204"
@@ -5072,10 +5445,12 @@ Resources:
         properties:
           worksman_id:
             type: string
-          worksman_schedule_date:
+          schedule_date:
             type: string
-          worksman_schedule_time:
+          schedule_time:
             type: string
+          is_active:
+            type: number
         required:
           - worksman_id
         $schema: http://json-schema.org/draft-04/schema#
@@ -5619,6 +5994,40 @@ Resources:
             type: string
     Metadata:
       aws:cdk:path: VrishkarServicesDevStacks/WorksmanApiData/GetJobsError/Resource
+  WorksmanApiDataGetListOfJobsBasedOnMonthResFA3C429B:
+    Type: AWS::ApiGateway::Model
+    Properties:
+      RestApiId:
+        Ref: WorksmanApiData98FA1C09
+      ContentType: application/json
+      Name: GetListOfJobsBasedOnMonthRes
+      Schema:
+        $schema: http://json-schema.org/draft-04/schema#
+        type: object
+        properties:
+          state:
+            type: string
+          greeting:
+            type: string
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStacks/WorksmanApiData/GetListOfJobsBasedOnMonthRes/Resource
+  WorksmanApiDataGetListOfJobsBasedOnMonthErr10410E3C:
+    Type: AWS::ApiGateway::Model
+    Properties:
+      RestApiId:
+        Ref: WorksmanApiData98FA1C09
+      ContentType: application/json
+      Name: GetListOfJobsBasedOnMonthErr
+      Schema:
+        $schema: http://json-schema.org/draft-04/schema#
+        type: object
+        properties:
+          state:
+            type: string
+          message:
+            type: string
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStacks/WorksmanApiData/GetListOfJobsBasedOnMonthErr/Resource
   WorksmanApiDataGetPaymentDetailsRes5D34FD6D:
     Type: AWS::ApiGateway::Model
     Properties:
@@ -5789,6 +6198,62 @@ Resources:
             type: string
     Metadata:
       aws:cdk:path: VrishkarServicesDevStacks/WorksmanApiData/DeleteWorkmanScheduleError/Resource
+  WorksmanApiDataUpdateWorksmanDetailsModel4D1CF46A:
+    Type: AWS::ApiGateway::Model
+    Properties:
+      RestApiId:
+        Ref: WorksmanApiData98FA1C09
+      ContentType: application/json
+      Schema:
+        type: object
+        properties:
+          worksman_id:
+            type: string
+          email:
+            type: string
+          phone:
+            type: string
+        required:
+          - worksman_id
+        $schema: http://json-schema.org/draft-04/schema#
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStacks/WorksmanApiData/UpdateWorksmanDetailsModel/Resource
+  WorksmanApiDataUpdateWorksmanDetailsResF8C90C15:
+    Type: AWS::ApiGateway::Model
+    Properties:
+      RestApiId:
+        Ref: WorksmanApiData98FA1C09
+      ContentType: application/json
+      Name: UpdateWorksmanDetailsRes
+      Schema:
+        $schema: http://json-schema.org/draft-04/schema#
+        title: UpdateWorksmanDetailsRes
+        type: object
+        properties:
+          state:
+            type: string
+          greeting:
+            type: string
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStacks/WorksmanApiData/UpdateWorksmanDetailsRes/Resource
+  WorksmanApiDataUpdateWorksmanDetailsError675A9A65:
+    Type: AWS::ApiGateway::Model
+    Properties:
+      RestApiId:
+        Ref: WorksmanApiData98FA1C09
+      ContentType: application/json
+      Name: UpdateWorksmanDetailsError
+      Schema:
+        $schema: http://json-schema.org/draft-04/schema#
+        title: UpdateWorksmanDetailsError
+        type: object
+        properties:
+          state:
+            type: string
+          message:
+            type: string
+    Metadata:
+      aws:cdk:path: VrishkarServicesDevStacks/WorksmanApiData/UpdateWorksmanDetailsError/Resource
   WorksmanApiDataUpdateBankDetailsModel87571A12:
     Type: AWS::ApiGateway::Model
     Properties:
@@ -5807,6 +6272,8 @@ Resources:
           account_number:
             type: string
           bank_name:
+            type: string
+          bank_detail_id:
             type: string
         required:
           - worksman_id

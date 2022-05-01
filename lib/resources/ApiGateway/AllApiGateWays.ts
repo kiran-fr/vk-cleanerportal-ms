@@ -362,7 +362,6 @@ export const PostUserApiGateway = (api: any, lambdaFunctionName: any, methodType
     methodResponses: postresponseMethods(api, "resGetTestUser", "errorGetTestUser")
   });
 }
-
 export const CreateWorksmanScheduleApiGateway = (api: any, lambdaFunctionName: any, methodType: string, authorizations: any) => {
 
   // 👇 add a todos resource
@@ -372,15 +371,17 @@ export const CreateWorksmanScheduleApiGateway = (api: any, lambdaFunctionName: a
     schema: {
       type: apigateway.JsonSchemaType.OBJECT,
       properties: {
-
         worksman_id: {
           type: apigateway.JsonSchemaType.STRING
         },
-        worksman_schedule_date: {
+        schedule_date: {
           type: apigateway.JsonSchemaType.STRING
         },
-        worksman_schedule_time: {
+        schedule_time: {
           type: apigateway.JsonSchemaType.STRING
+        },
+        is_active: {
+          type: apigateway.JsonSchemaType.NUMBER
         }
       },
       required: ['worksman_id']
@@ -475,7 +476,6 @@ export const CreateWorksmanScheduleApiGateway = (api: any, lambdaFunctionName: a
     methodResponses: postresponseMethods(api, "CreateWorksmanScheduleRes", "CreateWorksmanScheduleError")
   });
 }
-
 export const createPostcodesApiGateway = (api: any, lambdaFunctionName: any, methodType: string, authorizations: any) => {
 
   // 👇 add a todos resource
@@ -586,7 +586,6 @@ export const createPostcodesApiGateway = (api: any, lambdaFunctionName: any, met
     methodResponses: postresponseMethods(api, "UserPostCodesResponse", "UserPostCodesError")
   });
 }
-
 export const WorksmanjobsCreateApiGateway = (api: any, lambdaFunctionName: any, methodType: string, authorizations: any) => {
 
   // 👇 add a todos resource
@@ -1794,7 +1793,7 @@ export const GetWorksmanScheduleApiGateway = (api: any, lambdaFunctionName: any,
       // @see: https://docs.aws.amazon.com/apigateway/latest/developerguide/request-response-data-mappings.html
       // 'integration.request.querystring.worksmanId': 'method.request.querystring.worksmanId'
       'integration.request.header.worksman_id': 'method.request.header.worksman_id',
-      'integration.request.header.worksman_schedule_date': 'method.request.header.worksman_schedule_date'
+      'integration.request.header.schedule_date': 'method.request.header.schedule_date'
 
 
       // method.request.header.PARAM_NAME
@@ -1807,7 +1806,7 @@ export const GetWorksmanScheduleApiGateway = (api: any, lambdaFunctionName: any,
       //   // Check: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html
       'application/json': JSON.stringify({
         worksman_id: "$util.escapeJavaScript($input.params('worksman_id'))",
-        worksman_schedule_date: "$util.escapeJavaScript($input.params('worksman_schedule_date'))"
+        schedule_date: "$util.escapeJavaScript($input.params('schedule_date'))"
       })
     },
 
@@ -1858,7 +1857,7 @@ export const GetWorksmanScheduleApiGateway = (api: any, lambdaFunctionName: any,
     // We can mark the parameters as required
     requestParameters: {
       'method.request.header.worksman_id': true,
-      'method.request.header.worksman_schedule_date': true
+      'method.request.header.schedule_date': true
     },
     authorizer: authorizations,
     authorizationType: apigateway.AuthorizationType.COGNITO,
@@ -2599,7 +2598,7 @@ export const DeleteWorkmanScheduleApiGateway = (api: any, lambdaFunctionName: an
       // - Source parameters (the value) are the source request parameters or expressions
       // @see: https://docs.aws.amazon.com/apigateway/latest/developerguide/request-response-data-mappings.html
       // 'integration.request.querystring.worksmanId': 'method.request.querystring.worksmanId'
-      'integration.request.header.worksman_schedule_id': 'method.request.header.worksman_schedule_id'
+      'integration.request.header.schedule_id': 'method.request.header.schedule_id'
 
 
       // method.request.header.PARAM_NAME
@@ -2611,7 +2610,7 @@ export const DeleteWorkmanScheduleApiGateway = (api: any, lambdaFunctionName: an
       //   //  on the integration parameters that you have specified
       //   // Check: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html
       'application/json': JSON.stringify({
-        worksman_schedule_id: "$util.escapeJavaScript($input.params('worksman_schedule_id'))",
+        schedule_id: "$util.escapeJavaScript($input.params('schedule_id'))",
       })
     },
 
@@ -2661,7 +2660,7 @@ export const DeleteWorkmanScheduleApiGateway = (api: any, lambdaFunctionName: an
   DeleteWorkmanSchedule.addMethod(methodType, integration, {
     // We can mark the parameters as required
     requestParameters: {
-      'method.request.querystring.worksman_schedule_id': true,
+      'method.request.querystring.schedule_id': true,
     },
     authorizer: authorizations,
     authorizationType: apigateway.AuthorizationType.COGNITO,

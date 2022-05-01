@@ -10,7 +10,6 @@ export const WorksManExperienceQuery = (event: any) => {
     `
 }
 
-
 export const WorksmanEligibilityQuery = (event: any) => {
     console.warn("This is worksman eligibility", event)
     return `
@@ -22,5 +21,5 @@ export const WorksmanEligibilityQuery = (event: any) => {
 
 export const WorksmanExperienceStepQuery = (worksmanId: any) => {
     console.warn(worksmanId)
-    return ` UPDATE worksman_table SET current_step ='worksmanexperience',is_user_active_status=${true} WHERE worksman_id = ${worksmanId}; `
+    return ` UPDATE worksman_table SET current_step ='worksmanexperience' WHERE worksman_id = '${worksmanId}'; `
 }

@@ -25,7 +25,7 @@ export const WorksmanTermsAndConditionStepService = (worksmanId: any) => {
             type: QueryTypes.UPDATE
         })
     } catch (exception) {
-        console.log(`Get Works Man Terms And Condition Service Error ${exception}`)
+        console.log(`WorksmanTermsAndConditionStepService ${exception}`)
         throw exception;
     }
 }
