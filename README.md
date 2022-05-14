@@ -33,6 +33,7 @@ sam local invoke DeletePostcodes16F8A0A6 -e functions/DeletePostcodes/mock.json
 sam local invoke CreateWorksmanSchedule15C9D17D -e functions/CreateWorksmanSchedule/mock.json
 sam local invoke DeleteWorkmanSchedule22944F3C -e functions/DeleteWorkmanSchedule/mock.json
 sam local invoke GetWorksmanScheduleC62DDBF7 -e functions/GetWorksmanSchedules/mock.json
+sam local invoke GetAllSchedules29DCCC34 -e functions/GetAllSchedules/mock.json
 sam local invoke GetWorksmanjobsC1DF3F8D -e functions/GetWorksmanjobs/mock.json
 sam local invoke WorksmanjobsCreate9C217260 -e functions/WorksmanjobsCreate/mock.json
 sam local invoke CreateBankDetailsEF6B9549 -e functions/CreateBankDetails/mock.json

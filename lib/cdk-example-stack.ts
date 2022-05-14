@@ -52,7 +52,6 @@ import {
   GetBankDetailsApiGateway,
   GetJobsApiGateway,
   GetPaymentDetailsApiGateway,
-  CreatePaymentHistoryDetailsApiGateway,
   GetPaymentHistoryDetailsApiGateway,
   GetDistrictWisePostCodesApiGateway,
   UpdateBankDetailsApiGateway,
